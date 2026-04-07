@@ -1,0 +1,68 @@
+# =========================
+# Unity generated folders
+# =========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+
+# =========================
+# Auto-generated VS / Rider / IDE files
+# =========================
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# =========================
+# Unity meta / crash / test
+# =========================
+sysinfo.txt
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Package cache
+# =========================
+Packages/packages-lock.json
+
+# =========================
+# Build artifacts
+# =========================
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.ipa
+
+# =========================
+# Uncomment only if needed
+# =========================
+# If you use Addressables build data and do not want to track it:
+# Assets/AddressableAssetsData/*/*.bin*
+
+# If you use generated Lighting data and do not want to track it:
+# Assets/**/LightingData.asset

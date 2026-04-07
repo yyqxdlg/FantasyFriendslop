@@ -1,0 +1,4 @@
+repository "ComputerGameDesign/ComputerGameDesign@5774027575624@cloud"
+  path "/"
+    br "/main"
+    co "/main"
