@@ -1,0 +1,3154 @@
+fileFormatVersion: 2
+guid: 9ff5eebccdf8c6a4898a7acdd113b9d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5431841433254514965
+    second: Friendslop Items_0
+  - first:
+      213: -8242508993154348944
+    second: Friendslop Items_1
+  - first:
+      213: 3473089193462936521
+    second: Friendslop Items_2
+  - first:
+      213: 7299633891399139147
+    second: Friendslop Items_3
+  - first:
+      213: -7848455273981711619
+    second: Friendslop Items_4
+  - first:
+      213: 4989916754727320277
+    second: Friendslop Items_5
+  - first:
+      213: 4076140284765693335
+    second: Friendslop Items_6
+  - first:
+      213: -4460251814212569032
+    second: Friendslop Items_7
+  - first:
+      213: -4877688254857320687
+    second: Friendslop Items_8
+  - first:
+      213: -1636664080325952590
+    second: Friendslop Items_9
+  - first:
+      213: -1834013458202328513
+    second: Friendslop Items_10
+  - first:
+      213: -352587909819638923
+    second: Friendslop Items_11
+  - first:
+      213: -804396409683932864
+    second: Friendslop Items_12
+  - first:
+      213: 9152136594096086371
+    second: Friendslop Items_13
+  - first:
+      213: -598395973629072324
+    second: Friendslop Items_14
+  - first:
+      213: 1447479263187940814
+    second: Friendslop Items_15
+  - first:
+      213: -2838173390578765177
+    second: Friendslop Items_16
+  - first:
+      213: 9121413893403108894
+    second: Friendslop Items_17
+  - first:
+      213: -5888527161184348654
+    second: Friendslop Items_18
+  - first:
+      213: -5849115545156873256
+    second: Friendslop Items_19
+  - first:
+      213: 7922066944449634553
+    second: Friendslop Items_20
+  - first:
+      213: -1202557587327707364
+    second: Friendslop Items_21
+  - first:
+      213: 6883766872736307742
+    second: Friendslop Items_22
+  - first:
+      213: 7639531472179674420
+    second: Friendslop Items_23
+  - first:
+      213: -1592729271695173590
+    second: Friendslop Items_24
+  - first:
+      213: 2090609562324076452
+    second: Friendslop Items_25
+  - first:
+      213: -7701764934199269995
+    second: Friendslop Items_26
+  - first:
+      213: 5929032076549162992
+    second: Friendslop Items_27
+  - first:
+      213: 4821148316891344901
+    second: Friendslop Items_28
+  - first:
+      213: -4328755835593758422
+    second: Friendslop Items_29
+  - first:
+      213: 3401752573341273083
+    second: Friendslop Items_30
+  - first:
+      213: -200604166670459463
+    second: Friendslop Items_31
+  - first:
+      213: 2915836286107102077
+    second: Friendslop Items_32
+  - first:
+      213: -6600260936610033866
+    second: Friendslop Items_33
+  - first:
+      213: 7017221443837508553
+    second: Friendslop Items_34
+  - first:
+      213: 4214286895346904701
+    second: Friendslop Items_35
+  - first:
+      213: 3871989794571719142
+    second: Friendslop Items_36
+  - first:
+      213: 4480671680757003448
+    second: Friendslop Items_37
+  - first:
+      213: -8376509975386859846
+    second: Friendslop Items_38
+  - first:
+      213: -1692378348440895824
+    second: Friendslop Items_39
+  - first:
+      213: 352148966826261932
+    second: Friendslop Items_40
+  - first:
+      213: 4215753300906040420
+    second: Friendslop Items_41
+  - first:
+      213: 554511500327695554
+    second: Friendslop Items_42
+  - first:
+      213: -8452687610732020935
+    second: Friendslop Items_43
+  - first:
+      213: -4140237156874282398
+    second: Friendslop Items_44
+  - first:
+      213: -9185846399669125480
+    second: Friendslop Items_45
+  - first:
+      213: 3069126103305718312
+    second: Friendslop Items_46
+  - first:
+      213: 2197404608185027223
+    second: Friendslop Items_47
+  - first:
+      213: 8748202893410115784
+    second: Friendslop Items_48
+  - first:
+      213: 8698431051739352392
+    second: Friendslop Items_49
+  - first:
+      213: -2337554972060875396
+    second: Friendslop Items_50
+  - first:
+      213: 1054899485029108122
+    second: Friendslop Items_51
+  - first:
+      213: -7485085242220206136
+    second: Friendslop Items_52
+  - first:
+      213: -51487071694226880
+    second: Friendslop Items_53
+  - first:
+      213: 5343363359382256360
+    second: Friendslop Items_54
+  - first:
+      213: -5898196897844005648
+    second: Friendslop Items_55
+  - first:
+      213: 8594957205092977799
+    second: Friendslop Items_56
+  - first:
+      213: 4953883866502246893
+    second: Friendslop Items_57
+  - first:
+      213: -6058355740622449308
+    second: Friendslop Items_58
+  - first:
+      213: -8208084350423969672
+    second: Friendslop Items_59
+  - first:
+      213: 2512311584919582469
+    second: Friendslop Items_60
+  - first:
+      213: 4454040913633915567
+    second: Friendslop Items_61
+  - first:
+      213: 3658879181960749294
+    second: Friendslop Items_62
+  - first:
+      213: -14579522398836668
+    second: Friendslop Items_63
+  - first:
+      213: 3414846254046478300
+    second: Friendslop Items_64
+  - first:
+      213: -7122411079332276530
+    second: Friendslop Items_65
+  - first:
+      213: -1614597039005059252
+    second: Friendslop Items_66
+  - first:
+      213: 874307864489794718
+    second: Friendslop Items_67
+  - first:
+      213: -7896596114201081916
+    second: Friendslop Items_68
+  - first:
+      213: -5694735407975798914
+    second: Friendslop Items_69
+  - first:
+      213: 296690894807397242
+    second: Friendslop Items_70
+  - first:
+      213: -845925909565332225
+    second: Friendslop Items_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Friendslop Items_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beead9edef83e94b0800000000000000
+      internalID: -5431841433254514965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 078821dcdb9bc9d80800000000000000
+      internalID: -8242508993154348944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c33b916834e23030800000000000000
+      internalID: 3473089193462936521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1608
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f7f3f59528d4560800000000000000
+      internalID: 7299633891399139147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfa67ced28fa41390800000000000000
+      internalID: -7848455273981711619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5daba48c9debf3540800000000000000
+      internalID: 4989916754727320277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7956e102efb519830800000000000000
+      internalID: 4076140284765693335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838711d3b900a12c0800000000000000
+      internalID: -4460251814212569032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_8
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11762241068fe4cb0800000000000000
+      internalID: -4877688254857320687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_9
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bbb78bb0b66949e0800000000000000
+      internalID: -1636664080325952590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_10
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f32809e0a764c86e0800000000000000
+      internalID: -1834013458202328513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b5a130a2b5b1bf0800000000000000
+      internalID: -352587909819638923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 049803e2ab536d4f0800000000000000
+      internalID: -804396409683932864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d53f20ebbe20f70800000000000000
+      internalID: 9152136594096086371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_14
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ca0dc480212b7f0800000000000000
+      internalID: -598395973629072324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_15
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5bf0688ba761410800000000000000
+      internalID: 1447479263187940814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_16
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782369ba658cc98d0800000000000000
+      internalID: -2838173390578765177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_17
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16ea95db95c59e70800000000000000
+      internalID: 9121413893403108894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_18
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2161e53eebfb74ea0800000000000000
+      internalID: -5888527161184348654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_19
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d395b0d664c3dea0800000000000000
+      internalID: -5849115545156873256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_20
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f0e8ceb9e5d0fd60800000000000000
+      internalID: 7922066944449634553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_21
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c179169ee38af4fe0800000000000000
+      internalID: -1202557587327707364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_22
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a9c0ebf7d088f50800000000000000
+      internalID: 6883766872736307742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_23
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43dbfa1e561150a60800000000000000
+      internalID: 7639531472179674420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_24
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a281e318a2d75e9e0800000000000000
+      internalID: -1592729271695173590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_25
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a78c560256530d10800000000000000
+      internalID: 2090609562324076452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5952e791995dd1590800000000000000
+      internalID: -7701764934199269995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_27
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f70c90a247284250800000000000000
+      internalID: 5929032076549162992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_28
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500f7c5c9d828e240800000000000000
+      internalID: 4821148316891344901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_29
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29e804908b2de3c0800000000000000
+      internalID: -4328755835593758422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_30
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfb07c331f3753f20800000000000000
+      internalID: 3401752573341273083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_31
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bdd421c29f473df0800000000000000
+      internalID: -200604166670459463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_32
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7bab9847a1277820800000000000000
+      internalID: 2915836286107102077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_33
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1560
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63fc878d5a92764a0800000000000000
+      internalID: -6600260936610033866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_34
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb303e69bd226160800000000000000
+      internalID: 7017221443837508553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_35
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e6cb26a972c7a30800000000000000
+      internalID: 4214286895346904701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_36
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1926714321cb530800000000000000
+      internalID: 3871989794571719142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_37
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b47cae672b8e2e30800000000000000
+      internalID: 4480671680757003448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab6dc8bde88a0cb80800000000000000
+      internalID: -8376509975386859846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_39
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0be3e93dbd67388e0800000000000000
+      internalID: -1692378348440895824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_40
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cad33bb9e9513e400800000000000000
+      internalID: 352148966826261932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_41
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c5f298a4d518a30800000000000000
+      internalID: 4215753300906040420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_42
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c4b6e8854502b700800000000000000
+      internalID: 554511500327695554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_43
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93bf8fcf66502ba80800000000000000
+      internalID: -8452687610732020935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_44
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a92a2ed3cea86c0800000000000000
+      internalID: -4140237156874282398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_45
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ebb624e51558080800000000000000
+      internalID: -9185846399669125480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_46
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1544
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82a8a661ee9b79a20800000000000000
+      internalID: 3069126103305718312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_47
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79accaa49dfbe7e10800000000000000
+      internalID: 2197404608185027223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_48
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c021cc7e2cd76970800000000000000
+      internalID: 8748202893410115784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_49
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84dc62e84f807b870800000000000000
+      internalID: 8698431051739352392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_50
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c750d5743265f8fd0800000000000000
+      internalID: -2337554972060875396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_51
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1528
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9907e61e71c3ae00800000000000000
+      internalID: 1054899485029108122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_52
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1512
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c722ff31a2af1890800000000000000
+      internalID: -7485085242220206136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_53
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1512
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04af325f7c4194ff0800000000000000
+      internalID: -51487071694226880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_54
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1512
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea31dd3aa0772a40800000000000000
+      internalID: 5343363359382256360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_55
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1512
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f472b0eb25652ea0800000000000000
+      internalID: -5898196897844005648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_56
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1512
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c404d3a0c674770800000000000000
+      internalID: 8594957205092977799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_57
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1b769312bbfb440800000000000000
+      internalID: 4953883866502246893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_58
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465104d6d856ceba0800000000000000
+      internalID: -6058355740622449308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_59
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870598685c6071e80800000000000000
+      internalID: -8208084350423969672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_60
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507fa3063168dd220800000000000000
+      internalID: 2512311584919582469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_61
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa2b438cc9eefcd30800000000000000
+      internalID: 4454040913633915567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_62
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0a7dcfa33f6c230800000000000000
+      internalID: 3658879181960749294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_63
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4482c6a60043ccff0800000000000000
+      internalID: -14579522398836668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_64
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf730f4398f36f20800000000000000
+      internalID: 3414846254046478300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_65
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6d7180cdc182d90800000000000000
+      internalID: -7122411079332276530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_66
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c47b4ba2c8cc799e0800000000000000
+      internalID: -1614597039005059252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_67
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c9e37de5a222c00800000000000000
+      internalID: 874307864489794718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_68
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1448
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c7805e0ca7a96290800000000000000
+      internalID: -7896596114201081916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_69
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1448
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7763c5815c38f0b0800000000000000
+      internalID: -5694735407975798914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_70
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1448
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7376110cce0e1400800000000000000
+      internalID: 296690894807397242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_71
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1448
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff42f0efddaa244f0800000000000000
+      internalID: -845925909565332225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_72
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1448
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49678b272f6f4b48af5e0364791e66e
+      internalID: 1408234004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_73
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf876aa6e9d5f214fb8d4e14e12eabcb
+      internalID: -1297879281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_74
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1055f609deb04354196abc34f2639656
+      internalID: 1488049170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_75
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f4f0e815e104148929ba76a444d517
+      internalID: 1026757957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_76
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84e50f33f2cb474bb079e57d882cb18
+      internalID: 104876166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_77
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71a13a6f3f4e3149a1781825d4c3130
+      internalID: -1001493952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_78
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f496a4ebd4b74b41a78013422785fee
+      internalID: -29887175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_79
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f63fba1691be4428d4d0083ecacbf1
+      internalID: -54487410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_80
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad8a9456414d87498bff404c3887f7c
+      internalID: -1469107842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_81
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975cf4a09bea66d4fa8a8f167c74b42b
+      internalID: -804814688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_82
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d92cae6dc06ea479d86d54b3d95416
+      internalID: -116409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_83
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50fb7aa0a065b64d8dd241caba94314
+      internalID: 833641618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_84
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c088b4b80aa8a924e90f24ee9c4c1d85
+      internalID: 1660813219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_85
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0abac49dd18a36741a1058328848545a
+      internalID: -1572441520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_86
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aaa5c584bcf17a4e97d0ac2cceb621b
+      internalID: -1669487970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_87
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 299fc80c47748e8429aaf9dbeeac1abc
+      internalID: 1221384682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_88
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3f821b941bb8d4dbc4ee9577cec63d
+      internalID: 2111530709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_89
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fcb8306345fb124fbb1653106510cfb
+      internalID: 500960465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_90
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130f720f88bc58b45930e9a5e1ad4f9d
+      internalID: -58780278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_91
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2455e11f2752b3a4ca5c7d1ec4a5a6e6
+      internalID: 831315224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_92
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01059330ea75e7947a44342a74e63924
+      internalID: 348396298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_93
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b5b673aa977e546bc2f3a10fc50269
+      internalID: -1856163200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_94
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f281e6b64b375ed4aa0d462a9affe7ad
+      internalID: -1534791068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_95
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcbb11a0803310247bdfb697b1d3902b
+      internalID: 1099413641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_96
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 439d9aa9aed08004d87781189e13b3db
+      internalID: 1148233814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_97
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b725f45ec06635b44901456eaf1dc3e1
+      internalID: -1797262755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_98
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63722a7a25e7a3547b09b25610bec026
+      internalID: 414430798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_99
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b452fee30c04b44cb6c1e55ca9a00a4
+      internalID: 1121860904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_100
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d43bf14bad49b9438d1ba72d3dc683d
+      internalID: -1011310307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_101
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec3457ce0aebca4b9e9ba50438544d9
+      internalID: -1258790257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_102
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b21df8a8caf904f85f7d0239b16ec0
+      internalID: 789212329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_103
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b1c8eba1799de4aac344964f22b6b7
+      internalID: 193819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_104
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4945937e9aa46344b9d0ded7024c254b
+      internalID: 1088882698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_105
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba806accbdf551408df23a221b59b52
+      internalID: -477104962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_106
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a638df7cae6007b48add39ac946eec34
+      internalID: -717916407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_107
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dacb98eb78d2e94cb495f9dd681d530
+      internalID: -698201493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_108
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de772b96ef1a5a6459b5020b2a7c0b5e
+      internalID: -1953985244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_109
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b7d83898331e04e8b68d44b4fe7282
+      internalID: 979849987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_110
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c399e235e98b1b44f8eb96c432a6bf9d
+      internalID: -1026420990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_111
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c474a7b3b8d8048a3e17684ab39ba4
+      internalID: 384583803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_112
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50dfc0fc52b5e32428f50f6e5e68b7ed
+      internalID: 2073416699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_113
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172db00fac557d94fadfc980952490d8
+      internalID: 1407643149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_114
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf159d47a3bdafa4cbb69c5b19b64128
+      internalID: 1264974155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_115
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669d770841f96554da321dc4b08573c7
+      internalID: -492766888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_116
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a441ffa2d0402843b134762d188e08f
+      internalID: -98465106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_117
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22042737732e71342837a7ba24bd8622
+      internalID: 836143853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_118
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5145fb2b70dce26498aae94397be1c23
+      internalID: 1074259410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_119
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0f4627e14a5704d908b47aea100db7
+      internalID: 880268293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_120
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38837e76955bf2d44890cf7e66f76e2e
+      internalID: 652368156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Friendslop Items_121
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1c2e33d62e57148bdfe7dc92464be9
+      internalID: -1040647059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a62914eb2405bff48875d301bf35e5b3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Friendslop Items_0: -5431841433254514965
+      Friendslop Items_1: -8242508993154348944
+      Friendslop Items_10: -1834013458202328513
+      Friendslop Items_100: -1011310307
+      Friendslop Items_101: -1258790257
+      Friendslop Items_102: 789212329
+      Friendslop Items_103: 193819
+      Friendslop Items_104: 1088882698
+      Friendslop Items_105: -477104962
+      Friendslop Items_106: -717916407
+      Friendslop Items_107: -698201493
+      Friendslop Items_108: -1953985244
+      Friendslop Items_109: 979849987
+      Friendslop Items_11: -352587909819638923
+      Friendslop Items_110: -1026420990
+      Friendslop Items_111: 384583803
+      Friendslop Items_112: 2073416699
+      Friendslop Items_113: 1407643149
+      Friendslop Items_114: 1264974155
+      Friendslop Items_115: -492766888
+      Friendslop Items_116: -98465106
+      Friendslop Items_117: 836143853
+      Friendslop Items_118: 1074259410
+      Friendslop Items_119: 880268293
+      Friendslop Items_12: -804396409683932864
+      Friendslop Items_120: 652368156
+      Friendslop Items_121: -1040647059
+      Friendslop Items_13: 9152136594096086371
+      Friendslop Items_14: -598395973629072324
+      Friendslop Items_15: 1447479263187940814
+      Friendslop Items_16: -2838173390578765177
+      Friendslop Items_17: 9121413893403108894
+      Friendslop Items_18: -5888527161184348654
+      Friendslop Items_19: -5849115545156873256
+      Friendslop Items_2: 3473089193462936521
+      Friendslop Items_20: 7922066944449634553
+      Friendslop Items_21: -1202557587327707364
+      Friendslop Items_22: 6883766872736307742
+      Friendslop Items_23: 7639531472179674420
+      Friendslop Items_24: -1592729271695173590
+      Friendslop Items_25: 2090609562324076452
+      Friendslop Items_26: -7701764934199269995
+      Friendslop Items_27: 5929032076549162992
+      Friendslop Items_28: 4821148316891344901
+      Friendslop Items_29: -4328755835593758422
+      Friendslop Items_3: 7299633891399139147
+      Friendslop Items_30: 3401752573341273083
+      Friendslop Items_31: -200604166670459463
+      Friendslop Items_32: 2915836286107102077
+      Friendslop Items_33: -6600260936610033866
+      Friendslop Items_34: 7017221443837508553
+      Friendslop Items_35: 4214286895346904701
+      Friendslop Items_36: 3871989794571719142
+      Friendslop Items_37: 4480671680757003448
+      Friendslop Items_38: -8376509975386859846
+      Friendslop Items_39: -1692378348440895824
+      Friendslop Items_4: -7848455273981711619
+      Friendslop Items_40: 352148966826261932
+      Friendslop Items_41: 4215753300906040420
+      Friendslop Items_42: 554511500327695554
+      Friendslop Items_43: -8452687610732020935
+      Friendslop Items_44: -4140237156874282398
+      Friendslop Items_45: -9185846399669125480
+      Friendslop Items_46: 3069126103305718312
+      Friendslop Items_47: 2197404608185027223
+      Friendslop Items_48: 8748202893410115784
+      Friendslop Items_49: 8698431051739352392
+      Friendslop Items_5: 4989916754727320277
+      Friendslop Items_50: -2337554972060875396
+      Friendslop Items_51: 1054899485029108122
+      Friendslop Items_52: -7485085242220206136
+      Friendslop Items_53: -51487071694226880
+      Friendslop Items_54: 5343363359382256360
+      Friendslop Items_55: -5898196897844005648
+      Friendslop Items_56: 8594957205092977799
+      Friendslop Items_57: 4953883866502246893
+      Friendslop Items_58: -6058355740622449308
+      Friendslop Items_59: -8208084350423969672
+      Friendslop Items_6: 4076140284765693335
+      Friendslop Items_60: 2512311584919582469
+      Friendslop Items_61: 4454040913633915567
+      Friendslop Items_62: 3658879181960749294
+      Friendslop Items_63: -14579522398836668
+      Friendslop Items_64: 3414846254046478300
+      Friendslop Items_65: -7122411079332276530
+      Friendslop Items_66: -1614597039005059252
+      Friendslop Items_67: 874307864489794718
+      Friendslop Items_68: -7896596114201081916
+      Friendslop Items_69: -5694735407975798914
+      Friendslop Items_7: -4460251814212569032
+      Friendslop Items_70: 296690894807397242
+      Friendslop Items_71: -845925909565332225
+      Friendslop Items_72: 1408234004
+      Friendslop Items_73: -1297879281
+      Friendslop Items_74: 1488049170
+      Friendslop Items_75: 1026757957
+      Friendslop Items_76: 104876166
+      Friendslop Items_77: -1001493952
+      Friendslop Items_78: -29887175
+      Friendslop Items_79: -54487410
+      Friendslop Items_8: -4877688254857320687
+      Friendslop Items_80: -1469107842
+      Friendslop Items_81: -804814688
+      Friendslop Items_82: -116409
+      Friendslop Items_83: 833641618
+      Friendslop Items_84: 1660813219
+      Friendslop Items_85: -1572441520
+      Friendslop Items_86: -1669487970
+      Friendslop Items_87: 1221384682
+      Friendslop Items_88: 2111530709
+      Friendslop Items_89: 500960465
+      Friendslop Items_9: -1636664080325952590
+      Friendslop Items_90: -58780278
+      Friendslop Items_91: 831315224
+      Friendslop Items_92: 348396298
+      Friendslop Items_93: -1856163200
+      Friendslop Items_94: -1534791068
+      Friendslop Items_95: 1099413641
+      Friendslop Items_96: 1148233814
+      Friendslop Items_97: -1797262755
+      Friendslop Items_98: 414430798
+      Friendslop Items_99: 1121860904
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
