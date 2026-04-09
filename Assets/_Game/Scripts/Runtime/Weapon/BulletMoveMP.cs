@@ -34,11 +34,17 @@ public class BulletMoveMP : NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject != creator)
+        if (collision.gameObject != creator && !collision.isTrigger)
         {
 
             if (IsServer)
             {
+                BasicEnemyScript scriptEnemyHit = collision.gameObject.GetComponent<BasicEnemyScript>();
+                if(scriptEnemyHit != null)
+                {
+                    scriptEnemyHit.TakeDamage(2);
+                }
+
                 gameObject.GetComponent<NetworkObject>().Despawn(true);
             }
         }

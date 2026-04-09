@@ -9,6 +9,10 @@ public class MultiPlayerMovement : NetworkBehaviour
 	[SerializeField] private Transform spawnedObjectPrefab;
 	public float speed = 5f;
 
+	public float attackCooldown = 1f;
+
+	private float attackCooldownCurr = 1f;
+
 	[Header("Shoot")]
 	public GameObject bulletPrefab;
 	public float bulletOffset = 0.6f;
@@ -44,19 +48,9 @@ public class MultiPlayerMovement : NetworkBehaviour
 			animator.SetFloat("Speed", movement.magnitude);
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetMouseButtonDown(0))
 		{
-			//Transform spawnedObjectTransform = Instantiate(spawnedObjectPrefab);
-			//spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
-
-			Vector2 mousePos = cam.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-
-			Vector2 selfPos = new Vector2(transform.position.x, transform.position.y);
-
-			Vector2 directionVector = mousePos - selfPos;
-
-			spawnObjectServerRpc(selfPos, directionVector);
-			//Shoot();
+			Shoot();
 		}
 	}
 
@@ -81,18 +75,22 @@ public class MultiPlayerMovement : NetworkBehaviour
 		rb.linearVelocity = movement.normalized * speed;
 	}
 
-	void Shoot()
+	void AttemptShoot()
 	{
-		if (bulletPrefab == null) return;
-
-		Vector3 spawnPosition = transform.position + (Vector3)(lastMoveDirection * bulletOffset);
-
-		GameObject bulletObj = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
-
-		Bullet bullet = bulletObj.GetComponent<Bullet>();
-		if (bullet != null)
+		if (attackCooldown >= 0)
 		{
-			bullet.SetDirection(lastMoveDirection);
+
 		}
 	}
+
+	void Shoot()
+	{
+        Vector2 mousePos = cam.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+
+        Vector2 selfPos = new Vector2(transform.position.x, transform.position.y);
+
+        Vector2 directionVector = mousePos - selfPos;
+
+        spawnObjectServerRpc(selfPos, directionVector);
+    }
 }

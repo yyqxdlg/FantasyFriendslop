@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletMoveMP
   ShowTopMostFoldoutHeaderGroup: 1
-  speed: 2
+  speed: 5
   lifeTime: 5
+  creator: {fileID: 0}
 --- !u!114 &206579634329782360
 MonoBehaviour:
   m_ObjectHideFlags: 0

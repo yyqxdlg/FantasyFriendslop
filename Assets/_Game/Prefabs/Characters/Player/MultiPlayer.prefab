@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1304465813179282898}
   m_Layer: 0
   m_Name: MultiPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3126044816
+  GlobalObjectIdHash: 1916780211
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -137,6 +137,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnedObjectPrefab: {fileID: 5781850604906514888, guid: 1575f900df5253d45ab4ea9bef204894, type: 3}
   speed: 5
+  attackCooldown: 1
   bulletPrefab: {fileID: 5338150398637041020, guid: 96efa3f80f4d4074dbfa3752dcc9dd53, type: 3}
   bulletOffset: 0.6
 --- !u!50 &2281014092804740205
