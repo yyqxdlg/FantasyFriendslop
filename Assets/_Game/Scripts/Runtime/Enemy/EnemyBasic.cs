@@ -49,7 +49,7 @@ public class EnemyBasic : NetworkBehaviour
 
 	public void TakeDamage(float Damage)
 	{
-        health.Value -= 1;
+        health.Value -= Damage;
 
         if (health.Value <= 0)
         {
@@ -101,7 +101,7 @@ public class EnemyBasic : NetworkBehaviour
 
 	public void AttemptAttack()
 	{
-		if(attackCooldownCurr <= 0)
+        if (attackCooldownCurr <= 0)
 		{
 			attackCooldownCurr = attackCooldown;
 			Attack();

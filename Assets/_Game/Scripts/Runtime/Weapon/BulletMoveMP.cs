@@ -8,6 +8,7 @@ public class BulletMoveMP : NetworkBehaviour
 
 	public float speed = 8f;
 	public float lifeTime = 2f;
+    public float damage = 1f;
 
 	private Rigidbody2D rb;
 
@@ -42,7 +43,7 @@ public class BulletMoveMP : NetworkBehaviour
                 EnemyBasic scriptEnemyHit = collision.gameObject.GetComponent<EnemyBasic>();
                 if(scriptEnemyHit != null)
                 {
-                    scriptEnemyHit.TakeDamage(2);
+                    scriptEnemyHit.TakeDamage(damage);
                 }
 
                 gameObject.GetComponent<NetworkObject>().Despawn(true);

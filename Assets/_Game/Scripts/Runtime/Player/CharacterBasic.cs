@@ -116,6 +116,11 @@ public class CharacterBasic : NetworkBehaviour
     void FixedUpdate()
     {
         rb.linearVelocity = movement.normalized * speed;
+
+		if (!alive.Value)
+		{
+            rb.linearVelocity = new Vector2(0, 0);
+        }
     }
 
     [ServerRpc]
