@@ -24,6 +24,8 @@ public class MultiPlayerMovement : NetworkBehaviour
 
 	private Camera cam;
 
+	private bool shooting;
+
 	void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -50,7 +52,23 @@ public class MultiPlayerMovement : NetworkBehaviour
 
 		if (Input.GetMouseButtonDown(0))
 		{
-			Shoot();
+            shooting = true;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+			shooting = false;
+        }
+
+		if (shooting)
+		{
+			AttemptAttack();
+		}
+
+
+        if (attackCooldownCurr > 0f)
+		{
+			attackCooldownCurr -= Time.deltaTime;
 		}
 	}
 
@@ -75,15 +93,16 @@ public class MultiPlayerMovement : NetworkBehaviour
 		rb.linearVelocity = movement.normalized * speed;
 	}
 
-	void AttemptShoot()
+	void AttemptAttack()
 	{
-		if (attackCooldown >= 0)
+		if (attackCooldownCurr <= 0)
 		{
-
+            Attack();
+			attackCooldownCurr = attackCooldown;
 		}
 	}
 
-	void Shoot()
+	void Attack()
 	{
         Vector2 mousePos = cam.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
 
