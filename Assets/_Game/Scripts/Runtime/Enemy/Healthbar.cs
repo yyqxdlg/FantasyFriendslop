@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealthBar : MonoBehaviour
+public class Healthbar : MonoBehaviour
 {
 
     public Slider mainSlider;
@@ -10,11 +10,5 @@ public class EnemyHealthBar : MonoBehaviour
     public void UpdateHealthBar(float health, float maxHealth)
     {
         mainSlider.value = health / maxHealth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

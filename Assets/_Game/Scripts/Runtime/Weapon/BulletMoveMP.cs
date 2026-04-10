@@ -39,7 +39,7 @@ public class BulletMoveMP : NetworkBehaviour
 
             if (IsServer)
             {
-                BasicEnemyScript scriptEnemyHit = collision.gameObject.GetComponent<BasicEnemyScript>();
+                EnemyBasic scriptEnemyHit = collision.gameObject.GetComponent<EnemyBasic>();
                 if(scriptEnemyHit != null)
                 {
                     scriptEnemyHit.TakeDamage(2);

@@ -3,7 +3,7 @@ using Unity.Netcode;
 using System;
 using UnityEngine.Rendering;
 
-public class MultiPlayerMovement : NetworkBehaviour
+public class CharacterBasic : NetworkBehaviour
 {
 
 	[SerializeField] private Transform spawnedObjectPrefab;
@@ -13,7 +13,15 @@ public class MultiPlayerMovement : NetworkBehaviour
 
 	private float attackCooldownCurr = 1f;
 
-	[Header("Shoot")]
+	public float maxHealth = 10f;
+
+    [SerializeField] private Healthbar healthBar;
+
+    public NetworkVariable<float> health = new NetworkVariable<float>();
+
+	public NetworkVariable<bool> alive = new NetworkVariable<bool>();
+
+    [Header("Attack")]
 	public GameObject bulletPrefab;
 	public float bulletOffset = 0.6f;
 
@@ -31,13 +39,28 @@ public class MultiPlayerMovement : NetworkBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
 		cam = Camera.main;
-	}
 
-	void Update()
+        healthBar = GetComponentInChildren<Healthbar>();
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        if (!IsServer) return;
+
+        health.Value = maxHealth;
+
+		alive.Value = true;
+    }
+
+    void Update()
 	{
-		if (!IsOwner) return;
+        healthBar.UpdateHealthBar(health.Value, maxHealth);
 
-		movement.x = Input.GetAxisRaw("Horizontal");
+        if (!IsOwner) return;
+
+		if (!alive.Value) return;
+
+        movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");
 
 		if (movement != Vector2.zero)
@@ -72,7 +95,30 @@ public class MultiPlayerMovement : NetworkBehaviour
 		}
 	}
 
-	[ServerRpc]
+    public void TakeDamage(float Damage)
+    {
+		if (!alive.Value) return;
+
+        health.Value -= Damage;
+
+        if (health.Value <= 0)
+        {
+			Die();
+		}
+    }
+
+	public void Die()
+	{
+		alive.Value = false;
+		rb.linearVelocity = new Vector2 (0, 0);
+	}
+
+    void FixedUpdate()
+    {
+        rb.linearVelocity = movement.normalized * speed;
+    }
+
+    [ServerRpc]
 	private void spawnObjectServerRpc(Vector2 spawnPos, Vector2 directionVector)
 	{
 		Transform spawnedObjectTransform = Instantiate(spawnedObjectPrefab, spawnPos, Quaternion.identity);
@@ -86,11 +132,6 @@ public class MultiPlayerMovement : NetworkBehaviour
 		bulletScript.SetCreator(gameObject);
 
 		spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
-	}
-
-	void FixedUpdate()
-	{
-		rb.linearVelocity = movement.normalized * speed;
 	}
 
 	void AttemptAttack()
