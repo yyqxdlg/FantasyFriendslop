@@ -16,9 +16,9 @@ public class EnemyBasic : NetworkBehaviour
 
 	private EnemyTargetRange targetingRange;
 
-	private GameObject target;
+	protected GameObject target;
 
-	private Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
 
     [Header("Attack")]
@@ -108,12 +108,11 @@ public class EnemyBasic : NetworkBehaviour
 		}
 	}
 
-	public void Attack()
+	public virtual void Attack()
 	{
         target.GetComponent<CharacterBasic>().TakeDamage(attackDamage);
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		healthBar.UpdateHealthBar(health.Value, maxHealth);
