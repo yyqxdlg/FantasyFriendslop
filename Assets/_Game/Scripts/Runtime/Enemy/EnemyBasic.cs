@@ -10,21 +10,32 @@ public class EnemyBasic : NetworkBehaviour
 
 	public NetworkVariable<float> health = new NetworkVariable<float>();
 
-	[SerializeField] private Healthbar healthBar;
+	[SerializeField] protected Healthbar healthBar;
 
 	[SerializeField] private GameObject targetingRangeObject;
 
-	private EnemyTargetRange targetingRange;
+    protected EnemyTargetRange targetingRange;
 
 	protected GameObject target;
 
     protected Rigidbody2D rb;
+    
+    [Header("Movement")]
+    public float standingRange = 0f;
 
+    [Header("Strafing")]
+    public float strafeSpeed = 1.5f;
+
+    private int strafeDirection = 1; // 1 or -1
+
+    public float strafeChangeInterval = 2f;
+
+    private float strafeTimer;
 
     [Header("Attack")]
     public float attackCooldown = 1f;
 
-    private float attackCooldownCurr = 1f;
+    protected float attackCooldownCurr = 1f;
 
 	public float attackDamage = 1f;
 
@@ -62,7 +73,7 @@ public class EnemyBasic : NetworkBehaviour
         gameObject.GetComponent<NetworkObject>().Despawn(true);
     }
 
-	private float DistanceToSelf(GameObject obj)
+    protected float DistanceToSelf(GameObject obj)
 	{
 		return Vector2.Distance(gameObject.transform.position, obj.transform.position);
 	}
@@ -113,26 +124,49 @@ public class EnemyBasic : NetworkBehaviour
         target.GetComponent<CharacterBasic>().TakeDamage(attackDamage);
 	}
 
-	void Update()
-	{
-		healthBar.UpdateHealthBar(health.Value, maxHealth);
+    void Update()
+    {
+        healthBar.UpdateHealthBar(health.Value, maxHealth);
 
-		if (!IsServer) return;
+        if (!IsServer) return;
 
-		attackCooldownCurr -= Time.deltaTime;
+        attackCooldownCurr -= Time.deltaTime;
+        target = NearestLivingTarget();
 
-		target = NearestLivingTarget();
+        if (target != null)
+        {
+            float distance = DistanceToSelf(target);
+            Vector2 dir = DirToTarget();
 
-		if (target != null)
-		{
-			rb.linearVelocity = DirToTarget() * speed;
+            // Perpendicular direction (for strafing)
+            Vector2 strafeDir = new Vector2(-dir.y, dir.x) * strafeDirection;
 
-			if(DistanceToSelf(target) < attackRange)
-			{
-				AttemptAttack();
-			}
-		}
+            if (distance > standingRange)
+            {
+                //Move toward target and slighttly strafe
+                rb.linearVelocity = (dir * speed + strafeDir * strafeSpeed);
+            }
+            else if (distance < standingRange * 0.8f)
+            {
+                //move away and strafe
+                rb.linearVelocity = (-dir * speed + strafeDir * strafeSpeed);
+            }
+            else
+            {
+                //stay inside range
+                rb.linearVelocity = strafeDir * strafeSpeed;
+            }
 
-	}
-
+            if (distance <= attackRange)
+            {
+                AttemptAttack();
+            }
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
 }
+
+

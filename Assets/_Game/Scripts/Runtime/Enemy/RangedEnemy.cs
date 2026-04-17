@@ -5,20 +5,20 @@ public class RangedEnemy : EnemyBasic
 {
     [Header("Ranged Attack")]
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform firePoint; // Optional: where bullets spawn from
+    [SerializeField] private Transform firePoint; 
     [SerializeField] private float bulletSpeed = 10f;
+    [SerializeField] private float stopDistance = 8f; // Distance to stop and attack
+
+
 
     public override void Attack()
     {
         if (target == null) return;
 
-        // Determine spawn position
         Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;
 
-        // Instantiate bullet
         GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
 
-        // Configure bullet before spawning
         EnemyBullet bulletScript = bullet.GetComponent<EnemyBullet>();
         if (bulletScript != null)
         {
@@ -28,7 +28,6 @@ public class RangedEnemy : EnemyBasic
             bulletScript.speed = bulletSpeed;
         }
 
-        // Spawn it on the network
         NetworkObject netObj = bullet.GetComponent<NetworkObject>();
         if (netObj != null)
         {
