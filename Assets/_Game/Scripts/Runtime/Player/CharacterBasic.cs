@@ -21,6 +21,13 @@ public class CharacterBasic : NetworkBehaviour
 
 	public NetworkVariable<bool> alive = new NetworkVariable<bool>();
 
+	private Vector2 mousePos = Vector2.zero;
+    private Vector2 weaponPos = Vector2.zero;
+	[SerializeField] private float weaponDistFromCenter = 1;
+    [SerializeField] private WeaponSprite weaponScript;
+
+    [SerializeField] private GameObject weaponSprite;
+
 	//for animation
 	public NetworkVariable<int> facing = new NetworkVariable<int>(
         0,
@@ -125,6 +132,12 @@ public class CharacterBasic : NetworkBehaviour
 		// update isMoving
 		isMoving.Value = movement != Vector2.zero;
 
+		// update mouse position
+		updateMousePos();
+
+		//update weapon position
+		updateWeaponPos();
+
 		// if (movement != Vector2.zero)
 		// {
 		// 	lastMoveDirection = movement.normalized;
@@ -224,15 +237,32 @@ public class CharacterBasic : NetworkBehaviour
 		}
 	}
 
-	void Attack()
+	void updateMousePos()
 	{
-        Vector2 mousePos = cam.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        mousePos = cam.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+    }
 
-        Vector2 selfPos = new Vector2(transform.position.x, transform.position.y);
+    void updateWeaponPos()
+	{
+        if (!IsOwner) { return; }
 
-        Vector2 directionVector = mousePos - selfPos;
+        Vector2 playerPos2D = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 
-        spawnObjectServerRpc(selfPos, directionVector);
+        Vector2 dirVector = (mousePos - playerPos2D).normalized * weaponDistFromCenter;
+
+        weaponPos = playerPos2D + dirVector;
+
+		weaponScript.updatePosAndRot(weaponPos, dirVector);
+    }
+
+
+    void Attack()
+	{
+        updateMousePos();
+
+        Vector2 directionVector = mousePos - weaponPos;
+
+        spawnObjectServerRpc(weaponPos, directionVector);
     }
 
 	// player choose 
