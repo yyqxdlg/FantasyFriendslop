@@ -63,7 +63,7 @@ public class CharacterBasic : NetworkBehaviour
 	private Rigidbody2D rb;
 	private Vector2 movement;
 	private Vector2 lastMoveDirection = Vector2.down;
-	private Animator animator;
+	[SerializeField] private Animator animator;
 
 	private Camera cam;
 
@@ -72,7 +72,7 @@ public class CharacterBasic : NetworkBehaviour
 	void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		animator = GetComponent<Animator>();
+		//animator = GetComponent<Animator>();
 		cam = Camera.main;
 
         healthBar = GetComponentInChildren<Healthbar>();
