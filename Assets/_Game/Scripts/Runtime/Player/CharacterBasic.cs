@@ -21,7 +21,35 @@ public class CharacterBasic : NetworkBehaviour
 
 	public NetworkVariable<bool> alive = new NetworkVariable<bool>();
 
+	//for animation
+	public NetworkVariable<int> facing = new NetworkVariable<int>(
+        0,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
+
+	public NetworkVariable<bool> isMoving = new NetworkVariable<bool>(
+			false,
+			NetworkVariableReadPermission.Everyone,
+			NetworkVariableWritePermission.Owner
+	);
+
+	[SerializeField] private RuntimeAnimatorController yellowController;
+	[SerializeField] private RuntimeAnimatorController greenController;
+	[SerializeField] private RuntimeAnimatorController blueController;
+	[SerializeField] private RuntimeAnimatorController redController;
+
+	// 0 = Yellow
+	// 1 = Green
+	// 2 = Blue
+	// 3 = Red
+	public NetworkVariable<int> characterType = new NetworkVariable<int>(
+    0,
+    NetworkVariableReadPermission.Everyone,
+    NetworkVariableWritePermission.Server
+	);
     [Header("Attack")]
+
 	public GameObject bulletPrefab;
 	public float bulletOffset = 0.6f;
 
@@ -44,34 +72,68 @@ public class CharacterBasic : NetworkBehaviour
     }
 
     public override void OnNetworkSpawn()
-    {
-        if (!IsServer) return;
+	{
+			if (IsServer)
+			{
+					health.Value = maxHealth;
+					alive.Value = true;
+			}
 
-        health.Value = maxHealth;
+			characterType.OnValueChanged += OnCharacterTypeChanged;
 
-		alive.Value = true;
-    }
+			ApplyCharacterType(characterType.Value);
+
+			if (IsOwner)
+			{
+					SetCharacterTypeServerRpc(CharacterSelectData.SelectedCharacter);
+			}
+	}
 
     void Update()
 	{
         healthBar.UpdateHealthBar(health.Value, maxHealth);
-
+		UpdateAnimatorVisuals();
         if (!IsOwner) return;
+		//the player is dead
+		if (!alive.Value)
+		{
+			movement = Vector2.zero;
+			isMoving.Value = false;
+			return;
+		}
 
-		if (!alive.Value) return;
-
-        movement.x = Input.GetAxisRaw("Horizontal");
+    movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");
-
-		if (movement != Vector2.zero)
+		// update direction
+		if (movement.x > 0)
 		{
-			lastMoveDirection = movement.normalized;
+				facing.Value = 2; // Right
+		}
+		else if (movement.x < 0)
+		{
+				facing.Value = 1; // Left
+		}
+		else if (movement.y > 0)
+		{
+				facing.Value = 3; // Up
+		}
+		else if (movement.y < 0)
+		{
+				facing.Value = 0; // Down
 		}
 
-		if (animator != null)
-		{
-			animator.SetFloat("Speed", movement.magnitude);
-		}
+		// update isMoving
+		isMoving.Value = movement != Vector2.zero;
+
+		// if (movement != Vector2.zero)
+		// {
+		// 	lastMoveDirection = movement.normalized;
+		// }
+
+		// if (animator != null)
+		// {
+		// 	animator.SetFloat("Speed", movement.magnitude);
+		// }
 
 		if (Input.GetMouseButtonDown(0))
 		{
@@ -107,6 +169,16 @@ public class CharacterBasic : NetworkBehaviour
 		}
     }
 
+	// update animator
+	void UpdateAnimatorVisuals()
+	{
+			if (animator == null) return;
+
+			animator.SetBool("IsMoving", isMoving.Value);
+			animator.SetInteger("Facing", facing.Value);
+			animator.SetBool("IsDead", !alive.Value);
+	}
+
 	public void Die()
 	{
 		alive.Value = false;
@@ -115,12 +187,16 @@ public class CharacterBasic : NetworkBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = movement.normalized * speed;
+			// 
+      if (!IsOwner) return;
+        
 
-		if (!alive.Value)
-		{
-            rb.linearVelocity = new Vector2(0, 0);
-        }
+			if (!alive.Value)
+			{
+        rb.linearVelocity = new Vector2(0, 0);
+				return;
+      }
+			rb.linearVelocity = movement.normalized * speed;
     }
 
     [ServerRpc]
@@ -158,4 +234,42 @@ public class CharacterBasic : NetworkBehaviour
 
         spawnObjectServerRpc(selfPos, directionVector);
     }
+
+	// player choose 
+	private void ApplyCharacterType(int type)
+	{
+			if (animator == null)
+			{
+					animator = GetComponent<Animator>();
+			}
+
+			switch (type)
+			{
+					case 0:
+							animator.runtimeAnimatorController = yellowController;
+							break;
+					case 1:
+							animator.runtimeAnimatorController = greenController;
+							break;
+					case 2:
+							animator.runtimeAnimatorController = blueController;
+							break;
+					case 3:
+							animator.runtimeAnimatorController = redController;
+							break;
+					default:
+							animator.runtimeAnimatorController = yellowController;
+							break;
+			}
+	}
+	private void OnCharacterTypeChanged(int oldValue, int newValue)
+	{
+			ApplyCharacterType(newValue);
+	}
+	[ServerRpc]
+	private void SetCharacterTypeServerRpc(int type)
+	{
+			type = Mathf.Clamp(type, 0, 3);
+			characterType.Value = type;
+	}
 }
