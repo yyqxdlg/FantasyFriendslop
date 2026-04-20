@@ -692,6 +692,7 @@ MonoBehaviour:
   hostBtn: {fileID: 1108939803}
   clientBtn: {fileID: 822574526}
   ipField: {fileID: 374710484}
+  characterSelectUI: {fileID: 1370917024}
 --- !u!114 &399260207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,7 +824,7 @@ MonoBehaviour:
   timerMax: 5
   spawnPos: {x: 7, y: 0}
   spawnPosRange: {x: 2, y: 2}
-  enemyPrefab: {fileID: 8497165169282153330, guid: c241db0772d98b047a40303b25e9b99b, type: 3}
+  enemyPrefab: {fileID: 8497165169282153330, guid: b0a07d393539dbc43900d6427bb821c3, type: 3}
 --- !u!4 &613574666
 Transform:
   m_ObjectHideFlags: 0
@@ -2651,6 +2652,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
   text: {fileID: 2110997271}
+  yellowPrefab: {fileID: 4805312749659784564, guid: ffb01217fe939c04380e99881030249b, type: 3}
+  greenPrefab: {fileID: 4805312749659784564, guid: ffb01217fe939c04380e99881030249b, type: 3}
+  bluePrefab: {fileID: 4805312749659784564, guid: ffb01217fe939c04380e99881030249b, type: 3}
+  redPrefab: {fileID: 4805312749659784564, guid: 7c6c2001891159548938ff930923bdf7, type: 3}
+  chosenClassPrefab: {fileID: 4805312749659784564, guid: ffb01217fe939c04380e99881030249b, type: 3}
 --- !u!1 &1530903856
 GameObject:
   m_ObjectHideFlags: 0

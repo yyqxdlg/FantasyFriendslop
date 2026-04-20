@@ -10,14 +10,21 @@ public class BulletMoveMP : NetworkBehaviour
 	public float lifeTime = 2f;
     public float damage = 1f;
 
-	private Rigidbody2D rb;
+    [NonSerialized] public Boolean despawnOnHit = true;
+
+    [NonSerialized] public Rigidbody2D rb;
 
     public GameObject creator;
 
-	void Awake()
+	public void Awake()
 	{
-		rb = GetComponent<Rigidbody2D>();
-		rb.linearVelocity = new Vector2(1, 0) * speed;
+        rb = GetComponent<Rigidbody2D>();
+        AwakeBehaviour();
+    }
+
+    public virtual void AwakeBehaviour()
+    {
+        rb.linearVelocity = new Vector2(1, 0) * speed;
     }
 
     public override void OnNetworkSpawn()
@@ -46,7 +53,11 @@ public class BulletMoveMP : NetworkBehaviour
                     scriptEnemyHit.TakeDamage(damage);
                 }
 
-                gameObject.GetComponent<NetworkObject>().Despawn(true);
+                if (despawnOnHit)
+                {
+                    gameObject.GetComponent<NetworkObject>().Despawn(true);
+                }
+                
             }
         }
     }

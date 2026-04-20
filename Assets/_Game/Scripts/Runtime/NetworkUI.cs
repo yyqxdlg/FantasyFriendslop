@@ -16,6 +16,13 @@ public class NetworkUI : MonoBehaviour
 
     [SerializeField] private TMP_InputField ipField;
 
+    [SerializeField] private CharacterSelectUI characterSelectUI;
+
+    private GameObject getChosenClassPrefab()
+    {
+        return characterSelectUI.chosenClassPrefab;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -24,12 +31,18 @@ public class NetworkUI : MonoBehaviour
         serverBtn.onClick.AddListener(() =>
         {
             HideUI();
+
+            NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
+
             NetworkManager.Singleton.StartServer();
         });
 
         hostBtn.onClick.AddListener(() =>
         {
             HideUI();
+
+            NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
+
             NetworkManager.Singleton.StartHost();
         });
 
@@ -37,6 +50,9 @@ public class NetworkUI : MonoBehaviour
         {
             HideUI();
             Debug.Log(ipField.text);
+
+            NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
+
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(ipField.text, 7777);
             NetworkManager.Singleton.StartClient();
         });

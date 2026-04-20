@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -385471074312244252}
   - component: {fileID: -1595808054938939409}
   m_Layer: 0
-  m_Name: BulletMP
+  m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   speed: 5
   lifeTime: 5
   damage: 2
-  creator: {fileID: 3388104308899182308, guid: c241db0772d98b047a40303b25e9b99b, type: 3}
+  creator: {fileID: 0}
 --- !u!114 &206579634329782360
 MonoBehaviour:
   m_ObjectHideFlags: 0

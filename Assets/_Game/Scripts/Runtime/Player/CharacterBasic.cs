@@ -5,8 +5,6 @@ using UnityEngine.Rendering;
 
 public class CharacterBasic : NetworkBehaviour
 {
-
-	[SerializeField] private Transform spawnedObjectPrefab;
 	public float speed = 5f;
 
 	public float attackCooldown = 1f;
@@ -25,8 +23,6 @@ public class CharacterBasic : NetworkBehaviour
     private Vector2 weaponPos = Vector2.zero;
 	[SerializeField] private float weaponDistFromCenter = 1;
     [SerializeField] private WeaponSprite weaponScript;
-
-    [SerializeField] private GameObject weaponSprite;
 
 	//for animation
 	public NetworkVariable<int> facing = new NetworkVariable<int>(
@@ -57,8 +53,8 @@ public class CharacterBasic : NetworkBehaviour
 	);
     [Header("Attack")]
 
-	public GameObject bulletPrefab;
-	public float bulletOffset = 0.6f;
+    [SerializeField] private Transform projectilePrefab;
+    public float bulletOffset = 0.6f;
 
 	private Rigidbody2D rb;
 	private Vector2 movement;
@@ -215,7 +211,7 @@ public class CharacterBasic : NetworkBehaviour
     [ServerRpc]
 	private void spawnObjectServerRpc(Vector2 spawnPos, Vector2 directionVector)
 	{
-		Transform spawnedObjectTransform = Instantiate(spawnedObjectPrefab, spawnPos, Quaternion.identity);
+		Transform spawnedObjectTransform = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
 
 		Rigidbody2D bulletRb = spawnedObjectTransform.GetComponent<Rigidbody2D>();
 
