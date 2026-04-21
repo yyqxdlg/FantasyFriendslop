@@ -11,7 +11,7 @@ using static UnityEngine.EventSystems.EventTrigger;
 public class BulletMoveMP : NetworkBehaviour
 {
     public float speedFromProjectile = 1f;
-	public float lifeTime = 2f;
+    public float lifeTime = 2f;
     public float damage = 1f;
 
     [NonSerialized] public float speed = 0f;
@@ -31,8 +31,8 @@ public class BulletMoveMP : NetworkBehaviour
 
     private List<EntityId> enemiesHit = new List<EntityId>();
 
-	public void Awake()
-	{
+    public void Awake()
+    {
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -71,14 +71,15 @@ public class BulletMoveMP : NetworkBehaviour
                 GameObject objectHit = collision.gameObject;
 
                 EnemyBasic enemyHitScript = objectHit.GetComponent<EnemyBasic>();
-                if(enemyHitScript != null)
+                if (enemyHitScript != null)
                 {
                     if (preventRepeatedHits)
                     {
                         if (enemiesHit.Contains(objectHit.GetEntityId()))
                         {
                             return;
-                        } else
+                        }
+                        else
                         {
                             enemiesHit.Add(objectHit.GetEntityId());
                         }
@@ -91,9 +92,11 @@ public class BulletMoveMP : NetworkBehaviour
 
                 if (despawnOnHit)
                 {
-                    gameObject.GetComponent<NetworkObject>().Despawn(true);
+                    NetworkObject netObj = gameObject.GetComponent<NetworkObject>();
+                    if (netObj != null && netObj.IsSpawned)
+                        netObj.Despawn(true);
                 }
-                
+
             }
         }
     }
