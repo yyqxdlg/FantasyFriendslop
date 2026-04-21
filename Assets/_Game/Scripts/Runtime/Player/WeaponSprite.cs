@@ -14,7 +14,6 @@ public class WeaponSprite : NetworkBehaviour
 		gameObject.transform.position = new Vector3(pos.x, pos.y, 0);
 
 		float angle = FFUtilities.CounterClockwiseAngle(dir, new Vector2(1, 0));
-		Debug.Log(angle);
 
 		gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
 	

@@ -1,8 +1,12 @@
 
+using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Unity.Netcode;
 using UnityEditor.TextCore.Text;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class BulletMoveMP : NetworkBehaviour
 {
@@ -14,11 +18,18 @@ public class BulletMoveMP : NetworkBehaviour
 
     [NonSerialized] public Vector2 movementDir = Vector2.zero;
 
-    [NonSerialized] public Boolean despawnOnHit = true;
-
     [NonSerialized] public Rigidbody2D rb;
 
     public GameObject creator;
+
+
+    [NonSerialized] public Boolean despawnOnHit = true;
+
+    // when this is false, the bullet will check objects it hits so that it can't damage the same one twice
+    // irrelevant if despawnOnHit is set to true
+    [NonSerialized] public Boolean preventRepeatedHits = false;
+
+    private List<EntityId> enemiesHit = new List<EntityId>();
 
 	public void Awake()
 	{
@@ -57,10 +68,25 @@ public class BulletMoveMP : NetworkBehaviour
 
             if (IsServer)
             {
-                EnemyBasic scriptEnemyHit = collision.gameObject.GetComponent<EnemyBasic>();
-                if(scriptEnemyHit != null)
+                GameObject objectHit = collision.gameObject;
+
+                EnemyBasic enemyHitScript = objectHit.GetComponent<EnemyBasic>();
+                if(enemyHitScript != null)
                 {
-                    scriptEnemyHit.TakeDamage(damage);
+                    if (preventRepeatedHits)
+                    {
+                        if (enemiesHit.Contains(objectHit.GetEntityId()))
+                        {
+                            return;
+                        } else
+                        {
+                            enemiesHit.Add(objectHit.GetEntityId());
+                        }
+                    }
+
+                    OnEnemyHitEffect(enemyHitScript);
+
+
                 }
 
                 if (despawnOnHit)
@@ -70,6 +96,11 @@ public class BulletMoveMP : NetworkBehaviour
                 
             }
         }
+    }
+
+    public virtual void OnEnemyHitEffect(EnemyBasic enemyHitScript)
+    {
+        enemyHitScript.TakeDamage(damage);
     }
 
     public void networkDestroy()

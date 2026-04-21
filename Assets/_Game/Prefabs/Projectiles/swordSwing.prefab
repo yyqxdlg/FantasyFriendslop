@@ -289,4 +289,5 @@ MonoBehaviour:
   lifeTime: 2
   damage: 1
   creator: {fileID: 0}
-  swingAngleWidth: 180
+  swingAngleWidth: 90
+  knockBack: 1

@@ -68,6 +68,11 @@ public class EnemyBasic : NetworkBehaviour
         }
     }
 
+    public void KnockBack(Vector2 knockVector)
+    {
+        rb.AddForce(knockVector);
+    }
+
 	public void Die()
 	{
         gameObject.GetComponent<NetworkObject>().Despawn(true);
