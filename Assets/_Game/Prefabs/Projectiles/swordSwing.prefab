@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 723339977810442216}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167,8 +167,8 @@ Transform:
   m_GameObject: {fileID: 4604796085051570476}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.608, y: 0.535, z: 0}
-  m_LocalScale: {x: 0.93599236, y: 0.06668946, z: 0.46799618}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4075453, y: 0.100287616, z: 0.70377266}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3657630761702037613}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3476609701
+  GlobalObjectIdHash: 3106950121
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -285,7 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  speed: 2
+  speedFromProjectile: 3
   lifeTime: 2
   damage: 1
   creator: {fileID: 0}
+  swingAngleWidth: 180

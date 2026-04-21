@@ -213,13 +213,9 @@ public class CharacterBasic : NetworkBehaviour
 	{
 		Transform spawnedObjectTransform = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
 
-		Rigidbody2D bulletRb = spawnedObjectTransform.GetComponent<Rigidbody2D>();
-
-		bulletRb.linearVelocity = bulletRb.linearVelocity.magnitude * directionVector.normalized;
-
 		BulletMoveMP bulletScript = spawnedObjectTransform.GetComponent<BulletMoveMP>();
 
-		bulletScript.SetCreator(gameObject);
+		bulletScript.Fire(gameObject, directionVector.normalized, 1);
 
 		spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
 	}

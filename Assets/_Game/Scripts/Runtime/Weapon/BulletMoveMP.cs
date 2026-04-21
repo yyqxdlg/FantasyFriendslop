@@ -1,14 +1,18 @@
 
 using System;
 using Unity.Netcode;
+using UnityEditor.TextCore.Text;
 using UnityEngine;
 
 public class BulletMoveMP : NetworkBehaviour
 {
-
-	public float speed = 8f;
+    public float speedFromProjectile = 1f;
 	public float lifeTime = 2f;
     public float damage = 1f;
+
+    [NonSerialized] public float speed = 0f;
+
+    [NonSerialized] public Vector2 movementDir = Vector2.zero;
 
     [NonSerialized] public Boolean despawnOnHit = true;
 
@@ -19,17 +23,23 @@ public class BulletMoveMP : NetworkBehaviour
 	public void Awake()
 	{
         rb = GetComponent<Rigidbody2D>();
-        AwakeBehaviour();
     }
 
-    public virtual void AwakeBehaviour()
+    // start movement of projectile
+    public void Fire(GameObject creator, Vector2 fireDir, float initialSpeedFromShooter)
     {
-        rb.linearVelocity = new Vector2(1, 0) * speed;
+        this.creator = creator;
+
+        speed = initialSpeedFromShooter * speedFromProjectile;
+
+        movementDir = fireDir;
+
+        FireBehaviour();
     }
 
-    public override void OnNetworkSpawn()
+    public virtual void FireBehaviour()
     {
-        if (!IsServer) return;
+        rb.linearVelocity = movementDir.normalized * speed;
 
         Invoke("networkDestroy", lifeTime);
     }
@@ -62,7 +72,7 @@ public class BulletMoveMP : NetworkBehaviour
         }
     }
 
-    private void networkDestroy()
+    public void networkDestroy()
     {
         gameObject.GetComponent<NetworkObject>().Despawn(true);
     }
