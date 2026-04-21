@@ -238,6 +238,8 @@ public class CharacterBasic : NetworkBehaviour
 	{
         if (!IsOwner) { return; }
 
+		if(weaponScript == null) { return; }
+
         Vector2 playerPos2D = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 
         Vector2 dirVector = (mousePos - playerPos2D).normalized * weaponDistFromCenter;

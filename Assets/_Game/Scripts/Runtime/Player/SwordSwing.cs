@@ -8,26 +8,30 @@ public class SwordSwing : BulletMoveMP
 
     public float swingAngleWidth = 45;
 
+    private float offsetAngle;
+
     public override void FireBehaviour()   
     {
         despawnOnHit = false;
 
-        lifeTime = 1 / speedFromProjectile;
+        lifeTime = 1 / speed;
+
+        offsetAngle = FFUtilities.CounterClockwiseAngle(movementDir, new Vector2(1, 0));
 
         Invoke("networkDestroy", lifeTime);
     }
 
-    private float angleFromT(float t)
+    private float AngleFromT(float t)
     {
-        return (-(swingAngleWidth / 2) + t * swingAngleWidth);
+        return offsetAngle + ((-(swingAngleWidth / 2) + t * swingAngleWidth));
     }
 
     public void Update()
     {
         gameObject.transform.position = creator.transform.position;
 
-        t += Time.deltaTime * speedFromProjectile;
+        t += Time.deltaTime * speed;
 
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, angleFromT(t));
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, AngleFromT(t));
     }
 }

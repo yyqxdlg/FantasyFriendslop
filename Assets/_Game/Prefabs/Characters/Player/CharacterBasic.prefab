@@ -462,7 +462,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   speed: 5
   attackCooldown: 0.5
-  maxHealth: 10
+  maxHealth: 20
   healthBar: {fileID: 0}
   health:
     UpdateTraits:

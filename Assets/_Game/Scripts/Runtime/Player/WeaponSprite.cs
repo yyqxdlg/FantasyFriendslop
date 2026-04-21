@@ -13,12 +13,8 @@ public class WeaponSprite : NetworkBehaviour
 	{
 		gameObject.transform.position = new Vector3(pos.x, pos.y, 0);
 
-		float angle = (Mathf.Acos(Vector2.Dot(dir, new Vector2(1,0)) / dir.magnitude)) * (180 / Mathf.PI);
-
-		if (Mathf.Sign(dir.y) == -1)
-		{
-			angle = 360 - angle;
-		}
+		float angle = FFUtilities.CounterClockwiseAngle(dir, new Vector2(1, 0));
+		Debug.Log(angle);
 
 		gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
 	
