@@ -1,7 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 
-public class EnemyBasic : NetworkBehaviour
+public class EnemyBasic : Spawnable
 {
 
 	public float maxHealth = 10.0f;

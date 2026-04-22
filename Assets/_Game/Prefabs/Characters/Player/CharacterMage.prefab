@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1887746272
+  GlobalObjectIdHash: 2325388411
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -493,8 +493,11 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
   projectilePrefab: {fileID: 5781850604906514888, guid: 1575f900df5253d45ab4ea9bef204894, type: 3}
+  summonPrefabName: Slime
   bulletOffset: 0.6
   animator: {fileID: 951356924983260439}
+  abilityCooldownsMax:
+  - 10
 --- !u!50 &2281014092804740205
 Rigidbody2D:
   serializedVersion: 5

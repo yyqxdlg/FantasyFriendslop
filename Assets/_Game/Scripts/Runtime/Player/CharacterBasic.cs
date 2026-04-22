@@ -3,7 +3,7 @@ using Unity.Netcode;
 using System;
 using UnityEngine.Rendering;
 
-public class CharacterBasic : NetworkBehaviour
+public class CharacterBasic : Spawnable
 {
 	public float speed = 5f;
 
@@ -51,6 +51,9 @@ public class CharacterBasic : NetworkBehaviour
     [Header("Attack")]
 
     [SerializeField] private Transform projectilePrefab;
+
+    [SerializeField] private string summonPrefabName;
+
     public float bulletOffset = 0.6f;
 
 	private Rigidbody2D rb;
@@ -304,7 +307,9 @@ public class CharacterBasic : NetworkBehaviour
 	{
 		if(abilityId == 0)
 		{
-			gameObject.transform.position = Vector2.zero;
+			//gameObject.transform.position = Vector2.zero;
+
+			SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, true, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
 
 			return;
 		}
@@ -324,6 +329,7 @@ public class CharacterBasic : NetworkBehaviour
 	{
 			ApplyCharacterType(newValue);
 	}
+
 	[ServerRpc]
 	private void SetCharacterTypeServerRpc(int type)
 	{

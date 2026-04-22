@@ -8,7 +8,7 @@ using UnityEditor.TextCore.Text;
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 
-public class BulletMoveMP : NetworkBehaviour
+public class BulletMoveMP : Spawnable
 {
     public float speedFromProjectile = 1f;
 	public float lifeTime = 2f;
@@ -19,9 +19,6 @@ public class BulletMoveMP : NetworkBehaviour
     [NonSerialized] public Vector2 movementDir = Vector2.zero;
 
     [NonSerialized] public Rigidbody2D rb;
-
-    public GameObject creator;
-
 
     [NonSerialized] public Boolean despawnOnHit = true;
 
@@ -39,7 +36,7 @@ public class BulletMoveMP : NetworkBehaviour
     // start movement of projectile
     public void Fire(GameObject creator, Vector2 fireDir, float initialSpeedFromShooter)
     {
-        this.creator = creator;
+        this.SetCreator(creator);
 
         speed = initialSpeedFromShooter * speedFromProjectile;
 
@@ -55,18 +52,13 @@ public class BulletMoveMP : NetworkBehaviour
         Invoke("networkDestroy", lifeTime);
     }
 
-    public void SetCreator(GameObject creator)
-    {
-        this.creator = creator;
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject != creator && !collision.isTrigger)
+        if (collision.gameObject != GetCreator() && !collision.isTrigger)
         {
 
-            if (IsServer)
+            if (IsOwner)
             {
                 GameObject objectHit = collision.gameObject;
 

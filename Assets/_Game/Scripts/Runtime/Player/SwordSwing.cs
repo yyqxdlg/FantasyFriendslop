@@ -34,7 +34,7 @@ public class SwordSwing : BulletMoveMP
     {
         if (!IsServer) { return; }
 
-        gameObject.transform.position = creator.transform.position;
+        gameObject.transform.position = GetCreator().transform.position;
 
         t += Time.deltaTime * speed;
 
@@ -45,7 +45,7 @@ public class SwordSwing : BulletMoveMP
     {
         enemyHitScript.TakeDamage(damage);
 
-        Vector2 knockBackVector = (enemyHitScript.gameObject.transform.position - creator.transform.position) * 1000 * knockBack;
+        Vector2 knockBackVector = (enemyHitScript.gameObject.transform.position - GetCreator().transform.position) * 1000 * knockBack;
 
         enemyHitScript.KnockBack(knockBackVector);
     }

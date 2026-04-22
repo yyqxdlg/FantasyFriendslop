@@ -3,14 +3,12 @@ using UnityEditor.PackageManager;
 using UnityEngine;
 public class CharacterSelectPlate : NetworkBehaviour
 {
-    public Transform characterPrefab;
+    public string characterSpawnableName;
 
     public string acceptedTag;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!IsServer) { return; }
-
-        Debug.Log("Collision");
 
         if (collision.gameObject.tag == acceptedTag)
         {
@@ -18,7 +16,7 @@ public class CharacterSelectPlate : NetworkBehaviour
 
             ulong playerId = collision.gameObject.GetComponent<NetworkObject>().OwnerClientId;
 
-            SpawnerUtil.Instance.NetworkSpawnGameObject(characterPrefab, gameObject.transform.position, playerId);
+            SpawnerUtil.Instance.NetworkSpawnGameObject(characterSpawnableName, gameObject.transform.position, playerId, true, ulong.MaxValue);
         }
     }
 }

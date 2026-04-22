@@ -997,7 +997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  characterPrefab: {fileID: 4275550321903137566, guid: 86b48964e9e7f5343add440ff65c6600, type: 3}
+  characterSpawnableName: CharacterArcher
   acceptedTag: Ghost
 --- !u!114 &492793560
 MonoBehaviour:
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  characterPrefab: {fileID: 4275550321903137566, guid: b2c274dc47f72e342a57a928353b0b3a, type: 3}
+  characterSpawnableName: CharacterPriest
   acceptedTag: Ghost
 --- !u!114 &501252827
 MonoBehaviour:
@@ -1704,6 +1704,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
+  spawnables:
+  - {fileID: 4275550321903137566, guid: 5c15fd9e6ffd0704aa5c645a13efbc58, type: 3}
+  - {fileID: 4275550321903137566, guid: ffb01217fe939c04380e99881030249b, type: 3}
+  - {fileID: 4275550321903137566, guid: b2c274dc47f72e342a57a928353b0b3a, type: 3}
+  - {fileID: 4275550321903137566, guid: ddf997724eedbb042a80698bb3bccff7, type: 3}
+  - {fileID: 4275550321903137566, guid: 7c6c2001891159548938ff930923bdf7, type: 3}
+  - {fileID: 4275550321903137566, guid: 86b48964e9e7f5343add440ff65c6600, type: 3}
+  - {fileID: 8497165169282153330, guid: c241db0772d98b047a40303b25e9b99b, type: 3}
+  - {fileID: 8497165169282153330, guid: b0a07d393539dbc43900d6427bb821c3, type: 3}
+  spawnablesNames:
+  - Ghost
+  - CharacterBasic
+  - CharacterPriest
+  - CharacterMage
+  - CharacterWarrior
+  - CharacterArcher
+  - RangedEnemy
+  - Slime
 --- !u!4 &706246470
 Transform:
   m_ObjectHideFlags: 0
@@ -2442,7 +2460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  characterPrefab: {fileID: 4275550321903137566, guid: ddf997724eedbb042a80698bb3bccff7, type: 3}
+  characterSpawnableName: CharacterMage
   acceptedTag: Ghost
 --- !u!114 &907115875
 MonoBehaviour:
@@ -2876,7 +2894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  characterPrefab: {fileID: 4275550321903137566, guid: 7c6c2001891159548938ff930923bdf7, type: 3}
+  characterSpawnableName: CharacterWarrior
   acceptedTag: Ghost
 --- !u!61 &1045530801
 BoxCollider2D:
@@ -3651,7 +3669,7 @@ Transform:
   m_GameObject: {fileID: 1373004277}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.32, y: 1.192, z: 0}
+  m_LocalPosition: {x: -6.25, y: 1.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3670,7 +3688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  characterPrefab: {fileID: 4275550321903137566, guid: 5c15fd9e6ffd0704aa5c645a13efbc58, type: 3}
+  characterSpawnableName: Ghost
   acceptedTag: Player
 --- !u!114 &1373004280
 MonoBehaviour:

@@ -1,31 +1,65 @@
-using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
 public class SpawnerUtil : NetworkBehaviour
 {
+	public Transform[] spawnables;
+	public string[] spawnablesNames;
+	public static SpawnerUtil Instance { get; private set; }
 
-    public static SpawnerUtil Instance { get; private set; }
+	void Awake()
+	{
+		if (Instance != null && Instance != this)
+		{
+			Destroy(gameObject);
+			return;
+		}
 
-    void Awake()
-    {
-        if (Instance != null && Instance != this)
+		Instance = this;
+	}
+
+	public void NetworkSpawnGameObject(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, bool spawnerIsOwnerBool, ulong creatorObjectNetworkId)
+	{
+		SpawnObjectServerRpc(spawnableName, spawnPos, spawnerClientId, spawnerIsOwnerBool, creatorObjectNetworkId);
+	}
+
+	public Transform GetGobByName(string name)
+	{
+		int index = Array.IndexOf(spawnablesNames, name);
+
+		Debug.Log(index);
+
+        return spawnables[index];
+	}
+
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+	void SpawnObjectServerRpc(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, bool spawnerIsOwnerBool, ulong creatorObjectNetworkId)
+	{
+		Debug.Log("HELLO WORLD");
+
+		Transform spawnedObjectTransform = Instantiate(GetGobByName(spawnableName), spawnPos, Quaternion.identity);
+
+		ulong ownerId = 0;
+
+		if (spawnerIsOwnerBool)
+		{
+			ownerId = spawnerClientId;
+		}
+		
+		spawnedObjectTransform.GetComponent<NetworkObject>().SpawnWithOwnership(ownerId);
+
+		NetworkObject netObj;
+
+        if (creatorObjectNetworkId == ulong.MaxValue)
         {
-            Destroy(gameObject);
-            return;
+			netObj = null;
+        } else
+		{
+            NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(creatorObjectNetworkId, out netObj);
         }
 
-        Instance = this;
-    }
 
-    public Transform NetworkSpawnGameObject(Transform gob, Vector2 spawnPos, ulong spawnerId)
-    {
-        Transform spawnedObjectTransform = Instantiate(gob, spawnPos, Quaternion.identity);
-
-        spawnedObjectTransform.GetComponent<NetworkObject>().SpawnWithOwnership(spawnerId);
-
-        return spawnedObjectTransform;
-    }
+		spawnedObjectTransform.gameObject.GetComponent<Spawnable>().SetCreator(netObj.gameObject);
+	}
 }
