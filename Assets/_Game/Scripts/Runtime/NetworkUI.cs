@@ -32,7 +32,7 @@ public class NetworkUI : MonoBehaviour
         {
             HideUI();
 
-            NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
+            //NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
 
             NetworkManager.Singleton.StartServer();
         });
@@ -41,7 +41,7 @@ public class NetworkUI : MonoBehaviour
         {
             HideUI();
 
-            NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
+            //NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
 
             NetworkManager.Singleton.StartHost();
         });
@@ -51,7 +51,7 @@ public class NetworkUI : MonoBehaviour
             HideUI();
             Debug.Log(ipField.text);
 
-            NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
+            //NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
 
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(ipField.text, 7777);
             NetworkManager.Singleton.StartClient();

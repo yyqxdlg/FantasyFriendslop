@@ -1,6 +1,8 @@
 using UnityEngine;
+using Unity.Netcode;
+using System;
 
-public class FFUtilities : MonoBehaviour
+public class FFUtilities : NetworkBehaviour
 {
     public static float CounterClockwiseAngle(Vector2 a, Vector2 b)
     {

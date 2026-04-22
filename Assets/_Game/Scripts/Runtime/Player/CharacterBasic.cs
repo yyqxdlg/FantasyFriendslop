@@ -37,16 +37,13 @@ public class CharacterBasic : NetworkBehaviour
 			NetworkVariableWritePermission.Owner
 	);
 
-	[SerializeField] private RuntimeAnimatorController yellowController;
-	[SerializeField] private RuntimeAnimatorController greenController;
-	[SerializeField] private RuntimeAnimatorController blueController;
-	[SerializeField] private RuntimeAnimatorController redController;
+	[SerializeField] private RuntimeAnimatorController animController;
 
-	// 0 = Yellow
-	// 1 = Green
-	// 2 = Blue
-	// 3 = Red
-	public NetworkVariable<int> characterType = new NetworkVariable<int>(
+    // 0 = Yellow
+    // 1 = Green
+    // 2 = Blue
+    // 3 = Red
+    public NetworkVariable<int> characterType = new NetworkVariable<int>(
     0,
     NetworkVariableReadPermission.Everyone,
     NetworkVariableWritePermission.Server
@@ -105,7 +102,7 @@ public class CharacterBasic : NetworkBehaviour
 			return;
 		}
 
-    movement.x = Input.GetAxisRaw("Horizontal");
+		movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");
 		// update direction
 		if (movement.x > 0)
@@ -267,24 +264,7 @@ public class CharacterBasic : NetworkBehaviour
 					animator = GetComponent<Animator>();
 			}
 
-			switch (type)
-			{
-					case 0:
-							animator.runtimeAnimatorController = yellowController;
-							break;
-					case 1:
-							animator.runtimeAnimatorController = greenController;
-							break;
-					case 2:
-							animator.runtimeAnimatorController = blueController;
-							break;
-					case 3:
-							animator.runtimeAnimatorController = redController;
-							break;
-					default:
-							animator.runtimeAnimatorController = yellowController;
-							break;
-			}
+			animator.runtimeAnimatorController = animController;
 	}
 	private void OnCharacterTypeChanged(int oldValue, int newValue)
 	{
