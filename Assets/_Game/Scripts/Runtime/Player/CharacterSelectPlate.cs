@@ -16,7 +16,7 @@ public class CharacterSelectPlate : NetworkBehaviour
 
             ulong playerId = collision.gameObject.GetComponent<NetworkObject>().OwnerClientId;
 
-            SpawnerUtil.Instance.NetworkSpawnGameObject(characterSpawnableName, gameObject.transform.position, playerId, true, ulong.MaxValue);
+            SpawnerUtil.Instance.NetworkSpawnGameObject(characterSpawnableName, gameObject.transform.position, playerId, ulong.MaxValue);
         }
     }
 }

@@ -19,47 +19,31 @@ public class SpawnerUtil : NetworkBehaviour
 		Instance = this;
 	}
 
-	public void NetworkSpawnGameObject(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, bool spawnerIsOwnerBool, ulong creatorObjectNetworkId)
+	public void NetworkSpawnGameObject(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, ulong creatorObjectNetworkId)
 	{
-		SpawnObjectServerRpc(spawnableName, spawnPos, spawnerClientId, spawnerIsOwnerBool, creatorObjectNetworkId);
+		SpawnObjectServerRpc(spawnableName, spawnPos, spawnerClientId, creatorObjectNetworkId);
 	}
 
 	public Transform GetGobByName(string name)
 	{
 		int index = Array.IndexOf(spawnablesNames, name);
 
-		Debug.Log(index);
-
         return spawnables[index];
 	}
 
     [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
-	void SpawnObjectServerRpc(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, bool spawnerIsOwnerBool, ulong creatorObjectNetworkId)
+	void SpawnObjectServerRpc(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, ulong creatorObjectNetworkId)
 	{
-		Debug.Log("HELLO WORLD");
-
 		Transform spawnedObjectTransform = Instantiate(GetGobByName(spawnableName), spawnPos, Quaternion.identity);
 
-		ulong ownerId = 0;
+		ulong ownerId = spawnerClientId;
 
-		if (spawnerIsOwnerBool)
-		{
-			ownerId = spawnerClientId;
-		}
-		
-		spawnedObjectTransform.GetComponent<NetworkObject>().SpawnWithOwnership(ownerId);
-
-		NetworkObject netObj;
-
-        if (creatorObjectNetworkId == ulong.MaxValue)
-        {
-			netObj = null;
-        } else
-		{
-            NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(creatorObjectNetworkId, out netObj);
-        }
+		Debug.Log("spawning object?: " + spawnedObjectTransform == null);
 
 
-		spawnedObjectTransform.gameObject.GetComponent<Spawnable>().SetCreator(netObj.gameObject);
-	}
+
+        spawnedObjectTransform.gameObject.GetComponent<Spawnable>().SetCreator(creatorObjectNetworkId);
+
+        spawnedObjectTransform.GetComponent<NetworkObject>().SpawnWithOwnership(ownerId);
+    }
 }

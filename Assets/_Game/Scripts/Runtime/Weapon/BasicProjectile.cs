@@ -8,7 +8,7 @@ using UnityEditor.TextCore.Text;
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 
-public class BulletMoveMP : Spawnable
+public class BasicProjectile : Spawnable
 {
     public float speedFromProjectile = 1f;
 	public float lifeTime = 2f;
@@ -28,17 +28,20 @@ public class BulletMoveMP : Spawnable
 
     private List<EntityId> enemiesHit = new List<EntityId>();
 
-	public void Awake()
-	{
+    public void Start()
+    {
+        if (!IsOwner) { return; }
         rb = GetComponent<Rigidbody2D>();
-    }
+
+        Fire();
+    }  
 
     // start movement of projectile
-    public void Fire(GameObject creator, Vector2 fireDir, float initialSpeedFromShooter)
+    public void Fire()
     {
-        this.SetCreator(creator);
+        Vector2 fireDir = (GetCreator().GetComponent<CharacterBasic>().mousePos - new Vector2(GetCreator().transform.position.x, GetCreator().transform.position.y)).normalized;
 
-        speed = initialSpeedFromShooter * speedFromProjectile;
+        speed = speedFromProjectile;
 
         movementDir = fireDir;
 
@@ -49,7 +52,7 @@ public class BulletMoveMP : Spawnable
     {
         rb.linearVelocity = movementDir.normalized * speed;
 
-        Invoke("networkDestroy", lifeTime);
+        Invoke("NetworkDestroy", lifeTime);
     }
 
 
@@ -83,7 +86,7 @@ public class BulletMoveMP : Spawnable
 
                 if (despawnOnHit)
                 {
-                    gameObject.GetComponent<NetworkObject>().Despawn(true);
+                    NetworkDestroy();
                 }
                 
             }
@@ -95,7 +98,13 @@ public class BulletMoveMP : Spawnable
         enemyHitScript.TakeDamage(damage);
     }
 
-    public void networkDestroy()
+    public void NetworkDestroy()
+    {
+        NetworkDestroyServerRpc();
+    }
+
+    [ServerRpc]
+    public void NetworkDestroyServerRpc()
     {
         gameObject.GetComponent<NetworkObject>().Despawn(true);
     }

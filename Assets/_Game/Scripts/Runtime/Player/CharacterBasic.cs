@@ -19,7 +19,7 @@ public class CharacterBasic : Spawnable
 
 	public NetworkVariable<bool> alive = new NetworkVariable<bool>();
 
-	private Vector2 mousePos = Vector2.zero;
+	public Vector2 mousePos = Vector2.zero;
     private Vector2 weaponPos = Vector2.zero;
 	[SerializeField] private float weaponDistFromCenter = 1;
     [SerializeField] private WeaponSprite weaponScript;
@@ -50,11 +50,9 @@ public class CharacterBasic : Spawnable
 	);
     [Header("Attack")]
 
-    [SerializeField] private Transform projectilePrefab;
+    [SerializeField] private string projectileSpawnableName;
 
     [SerializeField] private string summonPrefabName;
-
-    public float bulletOffset = 0.6f;
 
 	private Rigidbody2D rb;
 	private Vector2 movement;
@@ -243,18 +241,6 @@ public class CharacterBasic : Spawnable
 			rb.linearVelocity = movement.normalized * speed;
     }
 
-    [ServerRpc]
-	private void spawnObjectServerRpc(Vector2 spawnPos, Vector2 directionVector)
-	{
-		Transform spawnedObjectTransform = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
-
-		BulletMoveMP bulletScript = spawnedObjectTransform.GetComponent<BulletMoveMP>();
-
-		bulletScript.Fire(gameObject, directionVector.normalized, 1);
-
-		spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
-	}
-
 	void AttemptAttack()
 	{
 		if (attackCooldownCurr <= 0)
@@ -289,9 +275,7 @@ public class CharacterBasic : Spawnable
 	{
         updateMousePos();
 
-        Vector2 directionVector = mousePos - weaponPos;
-
-        spawnObjectServerRpc(weaponPos, directionVector);
+        SpawnerUtil.Instance.NetworkSpawnGameObject(projectileSpawnableName, weaponPos, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
     }
 
 	void AttemptAbility(int abilityId)
@@ -309,7 +293,7 @@ public class CharacterBasic : Spawnable
 		{
 			//gameObject.transform.position = Vector2.zero;
 
-			SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, true, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
+			SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
 
 			return;
 		}

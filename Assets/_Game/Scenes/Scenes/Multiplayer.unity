@@ -1713,6 +1713,8 @@ MonoBehaviour:
   - {fileID: 4275550321903137566, guid: 86b48964e9e7f5343add440ff65c6600, type: 3}
   - {fileID: 8497165169282153330, guid: c241db0772d98b047a40303b25e9b99b, type: 3}
   - {fileID: 8497165169282153330, guid: b0a07d393539dbc43900d6427bb821c3, type: 3}
+  - {fileID: 5781850604906514888, guid: 1575f900df5253d45ab4ea9bef204894, type: 3}
+  - {fileID: 5781850604906514888, guid: 1e3c4a52086d9044ebf333678082577c, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -1722,6 +1724,8 @@ MonoBehaviour:
   - CharacterArcher
   - RangedEnemy
   - Slime
+  - Bullet
+  - SwordSwing
 --- !u!4 &706246470
 Transform:
   m_ObjectHideFlags: 0

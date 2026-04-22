@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
 
-public class GhostScript : NetworkBehaviour
+public class GhostScript : Spawnable
 {
 
     private Vector2 movement;

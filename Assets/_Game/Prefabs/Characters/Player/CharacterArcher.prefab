@@ -460,6 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiPlayerMovement
   ShowTopMostFoldoutHeaderGroup: 1
+  creator: {fileID: 0}
   speed: 5
   attackCooldown: 0.5
   maxHealth: 20
@@ -474,6 +475,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
+  mousePos: {x: 0, y: 0}
   weaponDistFromCenter: 1
   weaponScript: {fileID: 7889255609381936137}
   facing:
@@ -492,7 +494,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  projectilePrefab: {fileID: 5781850604906514888, guid: 1575f900df5253d45ab4ea9bef204894, type: 3}
+  projectileSpawnableName: Bullet
   summonPrefabName: RangedEnemy
   bulletOffset: 0.6
   animator: {fileID: 951356924983260439}

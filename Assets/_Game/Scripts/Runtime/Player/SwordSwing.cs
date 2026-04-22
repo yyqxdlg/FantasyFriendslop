@@ -1,7 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 
-public class SwordSwing : BulletMoveMP
+public class SwordSwing : BasicProjectile
 {
 
     private float t = 0;
@@ -32,7 +32,7 @@ public class SwordSwing : BulletMoveMP
 
     public void Update()
     {
-        if (!IsServer) { return; }
+        if (!IsOwner || GetCreator() == null) { return; }
 
         gameObject.transform.position = GetCreator().transform.position;
 

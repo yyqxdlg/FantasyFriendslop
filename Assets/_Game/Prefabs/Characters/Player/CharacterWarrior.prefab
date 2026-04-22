@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 290618656
+  GlobalObjectIdHash: 659989294
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -553,6 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
+  creator: {fileID: 0}
   speed: 5
   attackCooldown: 0.5
   maxHealth: 10
@@ -567,6 +568,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
+  mousePos: {x: 0, y: 0}
   weaponDistFromCenter: 1
   weaponScript: {fileID: 3090946945941574559}
   facing:
@@ -585,9 +587,11 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  projectilePrefab: {fileID: 5781850604906514888, guid: 1e3c4a52086d9044ebf333678082577c, type: 3}
-  bulletOffset: 0.6
+  projectileSpawnableName: SwordSwing
+  summonPrefabName: 
   animator: {fileID: 951356924983260439}
+  abilityCooldownsMax:
+  - 10
 --- !u!50 &2281014092804740205
 Rigidbody2D:
   serializedVersion: 5
