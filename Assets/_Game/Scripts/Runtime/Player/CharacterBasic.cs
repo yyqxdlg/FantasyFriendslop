@@ -62,6 +62,12 @@ public class CharacterBasic : NetworkBehaviour
 
 	private bool shooting;
 
+	private bool[] attemptingAbilities = new bool[] { false };
+
+	public float[] abilityCooldownsMax = new float[] { 10 };
+
+	private float[] abilityCooldownsCurrent = new float[] { 0 };
+
 	void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -156,12 +162,41 @@ public class CharacterBasic : NetworkBehaviour
 			AttemptAttack();
 		}
 
+		if (Input.GetKeyDown(KeyCode.E))
+		{
+			attemptingAbilities[0] = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            attemptingAbilities[0] = false;
+        }
+
+		if (shooting)
+		{
+			AttemptAttack();
+		}
+
+        if (attemptingAbilities[0])
+        {
+			AttemptAbility(0);
+        }
 
         if (attackCooldownCurr > 0f)
 		{
 			attackCooldownCurr -= Time.deltaTime;
 		}
-	}
+
+		for (int i = 0; i < attemptingAbilities.Length; i++)
+		{
+			if (abilityCooldownsCurrent[i] > 0f)
+			{
+				abilityCooldownsCurrent[i] -= Time.deltaTime;
+			}
+		}
+
+        InGameUI.Instance.setText(abilityCooldownsCurrent[0].ToString("F2"));
+    }
 
     public void TakeDamage(float Damage)
     {
@@ -255,6 +290,25 @@ public class CharacterBasic : NetworkBehaviour
 
         spawnObjectServerRpc(weaponPos, directionVector);
     }
+
+	void AttemptAbility(int abilityId)
+	{
+        if (abilityCooldownsCurrent[abilityId] <= 0)
+        {
+            DoAbility(abilityId);
+			abilityCooldownsCurrent[abilityId] = abilityCooldownsMax[abilityId];
+        }
+    }
+
+	void DoAbility(int abilityId)
+	{
+		if(abilityId == 0)
+		{
+			gameObject.transform.position = Vector2.zero;
+
+			return;
+		}
+	}
 
 	// player choose 
 	private void ApplyCharacterType(int type)

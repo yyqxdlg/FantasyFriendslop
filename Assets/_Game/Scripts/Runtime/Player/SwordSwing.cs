@@ -32,6 +32,8 @@ public class SwordSwing : BulletMoveMP
 
     public void Update()
     {
+        if (!IsServer) { return; }
+
         gameObject.transform.position = creator.transform.position;
 
         t += Time.deltaTime * speed;
