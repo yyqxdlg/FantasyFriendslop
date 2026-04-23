@@ -38,10 +38,6 @@ public class SpawnerUtil : NetworkBehaviour
 
 		ulong ownerId = spawnerClientId;
 
-		Debug.Log("spawning object?: " + spawnedObjectTransform == null);
-
-
-
         spawnedObjectTransform.gameObject.GetComponent<Spawnable>().SetCreator(creatorObjectNetworkId);
 
         spawnedObjectTransform.GetComponent<NetworkObject>().SpawnWithOwnership(ownerId);

@@ -22,7 +22,8 @@ public class SwordSwing : BasicProjectile
 
         offsetAngle = FFUtilities.CounterClockwiseAngle(movementDir, new Vector2(1, 0));
 
-        Invoke("networkDestroy", lifeTime);
+        if (!IsOwner) { return; }
+        Invoke("NetworkDestroy", lifeTime);
     }
 
     private float AngleFromT(float t)
@@ -45,7 +46,7 @@ public class SwordSwing : BasicProjectile
     {
         enemyHitScript.TakeDamage(damage);
 
-        Vector2 knockBackVector = (enemyHitScript.gameObject.transform.position - GetCreator().transform.position) * 1000 * knockBack;
+        Vector2 knockBackVector = (enemyHitScript.gameObject.transform.position - GetCreator().transform.position) * 1 * knockBack;
 
         enemyHitScript.KnockBack(knockBackVector);
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.Netcode;
+using System;
 
 public class EnemyBasic : Spawnable
 {
@@ -23,7 +24,16 @@ public class EnemyBasic : Spawnable
 	[Header("Movement")]
 	public float standingRange = 0f;
 
-	[Header("Strafing")]
+	//when enemy is knocked back, this value is set to something, and decays back to zero over time
+	private Vector2 knockbackVector = Vector2.zero;
+
+    [NonSerialized] public float knockbackMultiplier = 1f;
+
+    [NonSerialized] public float knockbackDecayMultiplier = 0.5f;
+
+
+
+    [Header("Strafing")]
 	public float strafeSpeed = 1.5f;
 
 	private int strafeDirection = 1; // 1 or -1
@@ -74,9 +84,15 @@ public class EnemyBasic : Spawnable
         }
     }
 
-	public void KnockBack(Vector2 knockVector)
+    public void KnockBack(Vector2 knockVector)
 	{
-		rb.AddForce(knockVector);
+		KnockBackServerRpc(knockVector * knockbackMultiplier);
+	}
+
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    public void KnockBackServerRpc(Vector2 knockVector)
+	{
+		knockbackVector = knockVector;
 	}
 
 	public void Die()
@@ -137,6 +153,8 @@ public class EnemyBasic : Spawnable
 
 	void Update()
 	{
+		DecayKnockbackVector();
+
 		healthBar.UpdateHealthBar(health.Value, maxHealth);
 
 		if (!IsServer) return;
@@ -154,18 +172,18 @@ public class EnemyBasic : Spawnable
 
 			if (distance > standingRange)
 			{
-				//Move toward target and slighttly strafe
-				rb.linearVelocity = (dir * speed + strafeDir * strafeSpeed);
+                //Move toward target and slighttly strafe
+                ApplyMoveVector(dir * speed + strafeDir * strafeSpeed);
 			}
 			else if (distance < standingRange * 0.8f)
 			{
-				//move away and strafe
-				rb.linearVelocity = (-dir * speed + strafeDir * strafeSpeed);
+                //move away and strafe
+                ApplyMoveVector(-dir * speed + strafeDir * strafeSpeed);
 			}
 			else
 			{
 				//stay inside range
-				rb.linearVelocity = strafeDir * strafeSpeed;
+				ApplyMoveVector(strafeDir * strafeSpeed);
 			}
 
 			if (distance <= attackRange)
@@ -175,9 +193,37 @@ public class EnemyBasic : Spawnable
 		}
 		else
 		{
-			rb.linearVelocity = Vector2.zero;
+            ApplyMoveVector(Vector2.zero);
 		}
 	}
+
+	//applies the desired movement vector to motion, but takes into account knockback
+    private void ApplyMoveVector(Vector2 movementVector)
+    {
+		if (movementVector.magnitude > 0.01)
+		{
+			rb.linearVelocity = movementVector + knockbackVector;
+		}
+        else
+        {
+			if(knockbackVector.magnitude > 0.01)
+			{
+                Vector2 counterKnockbackMovement = -knockbackVector.normalized * speed;
+            }
+        }
+    }
+
+	private void DecayKnockbackVector()
+	{
+        if (knockbackVector.magnitude > 0.01)
+		{
+			knockbackVector -= knockbackVector.normalized * knockbackDecayMultiplier * Time.deltaTime;
+		}
+        else
+        {
+			knockbackVector = Vector2.zero;
+        }
+    }
 }
 
 

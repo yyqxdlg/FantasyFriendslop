@@ -4,11 +4,13 @@ using Unity.Netcode;
 //anything spawnable by the spawner util must extend this, so that it can keep track of its creator
 public class Spawnable : NetworkBehaviour
 {
+	private ulong preSpawnCreatorId;
+
 	public NetworkVariable<ulong> creatorNetworkId = new NetworkVariable<ulong>();
 
-	//public GameObject creator;
+    //public GameObject creator;
 
-	/*
+    /*
     public override void OnNetworkSpawn()
     {
 		creatorNetworkId.OnValueChanged += (prevId, newId) =>
@@ -29,6 +31,13 @@ public class Spawnable : NetworkBehaviour
     }
 	*/
 
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+		creatorNetworkId.Value = preSpawnCreatorId;
+    }
+
 	public GameObject GetCreator()
 	{
 		if (creatorNetworkId.Value == ulong.MaxValue)
@@ -46,6 +55,13 @@ public class Spawnable : NetworkBehaviour
 
 	public void SetCreator(ulong newCreatorNetworkId)
 	{
-		creatorNetworkId.Value = newCreatorNetworkId;
+		if (NetworkObject.IsSpawned)
+		{
+            creatorNetworkId.Value = newCreatorNetworkId;
+        }
+        else
+        {
+			preSpawnCreatorId = newCreatorNetworkId;
+        }
     }
 }

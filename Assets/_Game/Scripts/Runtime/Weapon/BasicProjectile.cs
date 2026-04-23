@@ -30,7 +30,6 @@ public class BasicProjectile : Spawnable
 
     public void Start()
     {
-        if (!IsOwner) { return; }
         rb = GetComponent<Rigidbody2D>();
 
         Fire();
@@ -52,6 +51,7 @@ public class BasicProjectile : Spawnable
     {
         rb.linearVelocity = movementDir.normalized * speed;
 
+        if (!IsOwner) { return; }
         Invoke("NetworkDestroy", lifeTime);
     }
 
