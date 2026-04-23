@@ -229,16 +229,13 @@ public class CharacterBasic : Spawnable
 
     void FixedUpdate()
     {
-			// 
       if (!IsOwner) return;
-        
-
-			if (!alive.Value)
-			{
-        rb.linearVelocity = new Vector2(0, 0);
-				return;
-      }
-			rb.linearVelocity = movement.normalized * speed;
+		if (!alive.Value)
+		{
+			rb.linearVelocity = new Vector2(0, 0);
+			return;
+		}
+		rb.linearVelocity = movement.normalized * speed;
     }
 
 	void AttemptAttack()
@@ -291,11 +288,9 @@ public class CharacterBasic : Spawnable
 	{
 		if(abilityId == 0)
 		{
-			//gameObject.transform.position = Vector2.zero;
+            updateMousePos();
 
-			SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
-
-			return;
+            SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
 		}
 	}
 

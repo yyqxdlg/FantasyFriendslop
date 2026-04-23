@@ -200,17 +200,7 @@ public class EnemyBasic : Spawnable
 	//applies the desired movement vector to motion, but takes into account knockback
     private void ApplyMoveVector(Vector2 movementVector)
     {
-		if (movementVector.magnitude > 0.01)
-		{
-			rb.linearVelocity = movementVector + knockbackVector;
-		}
-        else
-        {
-			if(knockbackVector.magnitude > 0.01)
-			{
-                Vector2 counterKnockbackMovement = -knockbackVector.normalized * speed;
-            }
-        }
+		rb.linearVelocity = movementVector + knockbackVector;
     }
 
 	private void DecayKnockbackVector()
