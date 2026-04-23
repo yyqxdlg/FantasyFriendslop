@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 6159244442380671589, guid: bb8cd8d8e0f9fe54ba96f19e3709dead, type: 3}
+  m_Sprite: {fileID: 3542127132570728493, guid: bb8cd8d8e0f9fe54ba96f19e3709dead, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: -5725688224788454672}
   - component: {fileID: -3798260423952276214}
   m_Layer: 8
-  m_Name: CharacterBasic
+  m_Name: CharacterPriest
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3126044816
+  GlobalObjectIdHash: 4204883692
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -488,7 +488,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  animController: {fileID: 9100000, guid: 1665adfa041b09041919e2ed97b996f3, type: 2}
+  animController: {fileID: 9100000, guid: 3ad44029bfa830344bb4ad194f556ce6, type: 2}
   characterType:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0

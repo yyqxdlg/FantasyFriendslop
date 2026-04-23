@@ -20,7 +20,6 @@ public class EnemyBullet : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        // Set velocity after direction is set
         rb.linearVelocity = direction * speed;
 
         Invoke("networkDestroy", lifeTime);
@@ -34,7 +33,7 @@ public class EnemyBullet : NetworkBehaviour
     public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
-        // If already spawned, update velocity immediately
+
         if (rb != null && IsServer)
         {
             rb.linearVelocity = direction * speed;
@@ -47,12 +46,14 @@ public class EnemyBullet : NetworkBehaviour
         {
             if (IsServer)
             {
-                // Damage players instead of enemies
+
                 CharacterBasic characterHit = collision.gameObject.GetComponent<CharacterBasic>();
+
                 if (characterHit != null)
                 {
                     characterHit.TakeDamage(damage);
                 }
+
                 gameObject.GetComponent<NetworkObject>().Despawn(true);
             }
         }

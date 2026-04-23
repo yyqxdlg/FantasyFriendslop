@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 194953803571781780}
   - component: {fileID: 7637840475430784620}
   - component: {fileID: 2584596412214117649}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 5058986524659981913}
   - component: {fileID: 2244395354023418901}
   - component: {fileID: 813989656027771425}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4617170319376880623}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 3531163685520308510}
   - component: {fileID: 232659275722252281}
   - component: {fileID: 4832192965437554087}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 533012489
+  GlobalObjectIdHash: 3031373282
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -415,7 +415,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3388104308899182308}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -492,6 +492,9 @@ MonoBehaviour:
     m_InternalValue: 0
   healthBar: {fileID: 0}
   targetingRangeObject: {fileID: 2900984723075450811}
+  standingRange: 0
+  strafeSpeed: 1.5
+  strafeChangeInterval: 2
   attackCooldown: 2
   attackDamage: 2
   attackRange: 1.5
@@ -565,7 +568,7 @@ GameObject:
   - component: {fileID: 6616514193127163003}
   - component: {fileID: 4208682253468377908}
   - component: {fileID: 5566468541944531818}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +671,7 @@ GameObject:
   - component: {fileID: 9086390196001624954}
   - component: {fileID: 5141993668787629462}
   - component: {fileID: 2735062354002586751}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

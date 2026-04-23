@@ -6,29 +6,40 @@ public class CharacterSelectUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
 
+    [SerializeField] private GameObject yellowPrefab;
+    [SerializeField] private GameObject greenPrefab;
+    [SerializeField] private GameObject bluePrefab;
+    [SerializeField] private GameObject redPrefab;
+
+    public GameObject chosenClassPrefab;
+
     public void updateUI()
     {
         if(CharacterSelectData.SelectedCharacter == 0)
         {
             text.text = "Priest";
+            chosenClassPrefab = yellowPrefab;
             text.color = Color.yellow;
         }
 
         if (CharacterSelectData.SelectedCharacter == 1)
         {
             text.text = "Archer";
+            chosenClassPrefab = greenPrefab;
             text.color = Color.green;
         }
 
         if (CharacterSelectData.SelectedCharacter == 2)
         {
             text.text = "Mage";
+            chosenClassPrefab = bluePrefab;
             text.color = new Color(0,32,84);
         }
 
         if (CharacterSelectData.SelectedCharacter == 3)
         {
             text.text = "Warrior";
+            chosenClassPrefab = redPrefab;
             text.color = Color.red;
         }
     }

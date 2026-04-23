@@ -6,7 +6,11 @@ using Unity.Netcode.Transports.UTP;
 
 public class NetworkUI : MonoBehaviour
 {
-    private CanvasGroup canvasGroup;
+    private CanvasGroup networkCanvasGroup;
+
+    public GameObject inGameCanvasObject;
+
+    private CanvasGroup inGameCanvasGroup;
 
     [SerializeField] private Button serverBtn;
 
@@ -16,35 +20,51 @@ public class NetworkUI : MonoBehaviour
 
     [SerializeField] private TMP_InputField ipField;
 
+    [SerializeField] private CharacterSelectUI characterSelectUI;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        canvasGroup = GetComponent<CanvasGroup>();
+        networkCanvasGroup = GetComponent<CanvasGroup>();
+
+        inGameCanvasGroup = inGameCanvasObject.GetComponent<CanvasGroup>();
 
         serverBtn.onClick.AddListener(() =>
         {
-            HideUI();
+            InGameUIMode();
+
+            //NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
+
             NetworkManager.Singleton.StartServer();
         });
 
         hostBtn.onClick.AddListener(() =>
         {
-            HideUI();
+            InGameUIMode();
+
+            //NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
+
             NetworkManager.Singleton.StartHost();
         });
 
         clientBtn.onClick.AddListener(() =>
         {
-            HideUI();
+            InGameUIMode();
             Debug.Log(ipField.text);
+
+            //NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
+
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(ipField.text, 7777);
             NetworkManager.Singleton.StartClient();
         });
     }
 
-    public void HideUI()
+    public void InGameUIMode()
     {
-        canvasGroup.alpha = 0;
-        canvasGroup.blocksRaycasts = true;
+        networkCanvasGroup.alpha = 0;
+        networkCanvasGroup.blocksRaycasts = true;
+
+        inGameCanvasGroup.alpha = 1;
+        inGameCanvasGroup.blocksRaycasts = false;
     }
 }

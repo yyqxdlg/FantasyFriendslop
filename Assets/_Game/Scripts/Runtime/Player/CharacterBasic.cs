@@ -3,10 +3,8 @@ using Unity.Netcode;
 using System;
 using UnityEngine.Rendering;
 
-public class CharacterBasic : NetworkBehaviour
+public class CharacterBasic : Spawnable
 {
-
-	[SerializeField] private Transform spawnedObjectPrefab;
 	public float speed = 5f;
 
 	public float attackCooldown = 1f;
@@ -21,12 +19,10 @@ public class CharacterBasic : NetworkBehaviour
 
 	public NetworkVariable<bool> alive = new NetworkVariable<bool>();
 
-	private Vector2 mousePos = Vector2.zero;
+	public Vector2 mousePos = Vector2.zero;
     private Vector2 weaponPos = Vector2.zero;
 	[SerializeField] private float weaponDistFromCenter = 1;
     [SerializeField] private WeaponSprite weaponScript;
-
-    [SerializeField] private GameObject weaponSprite;
 
 	//for animation
 	public NetworkVariable<int> facing = new NetworkVariable<int>(
@@ -41,38 +37,42 @@ public class CharacterBasic : NetworkBehaviour
 			NetworkVariableWritePermission.Owner
 	);
 
-	[SerializeField] private RuntimeAnimatorController yellowController;
-	[SerializeField] private RuntimeAnimatorController greenController;
-	[SerializeField] private RuntimeAnimatorController blueController;
-	[SerializeField] private RuntimeAnimatorController redController;
+	[SerializeField] private RuntimeAnimatorController animController;
 
-	// 0 = Yellow
-	// 1 = Green
-	// 2 = Blue
-	// 3 = Red
-	public NetworkVariable<int> characterType = new NetworkVariable<int>(
+    // 0 = Yellow
+    // 1 = Green
+    // 2 = Blue
+    // 3 = Red
+    public NetworkVariable<int> characterType = new NetworkVariable<int>(
     0,
     NetworkVariableReadPermission.Everyone,
     NetworkVariableWritePermission.Server
 	);
     [Header("Attack")]
 
-	public GameObject bulletPrefab;
-	public float bulletOffset = 0.6f;
+    [SerializeField] private string projectileSpawnableName;
+
+    [SerializeField] private string summonPrefabName;
 
 	private Rigidbody2D rb;
 	private Vector2 movement;
 	private Vector2 lastMoveDirection = Vector2.down;
-	private Animator animator;
+	[SerializeField] private Animator animator;
 
 	private Camera cam;
 
 	private bool shooting;
 
+	private bool[] attemptingAbilities = new bool[] { false };
+
+	public float[] abilityCooldownsMax = new float[] { 10 };
+
+	private float[] abilityCooldownsCurrent = new float[] { 0 };
+
 	void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		animator = GetComponent<Animator>();
+		//animator = GetComponent<Animator>();
 		cam = Camera.main;
 
         healthBar = GetComponentInChildren<Healthbar>();
@@ -109,7 +109,7 @@ public class CharacterBasic : NetworkBehaviour
 			return;
 		}
 
-    movement.x = Input.GetAxisRaw("Horizontal");
+		movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");
 		// update direction
 		if (movement.x > 0)
@@ -163,12 +163,41 @@ public class CharacterBasic : NetworkBehaviour
 			AttemptAttack();
 		}
 
+		if (Input.GetKeyDown(KeyCode.E))
+		{
+			attemptingAbilities[0] = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            attemptingAbilities[0] = false;
+        }
+
+		if (shooting)
+		{
+			AttemptAttack();
+		}
+
+        if (attemptingAbilities[0])
+        {
+			AttemptAbility(0);
+        }
 
         if (attackCooldownCurr > 0f)
 		{
 			attackCooldownCurr -= Time.deltaTime;
 		}
-	}
+
+		for (int i = 0; i < attemptingAbilities.Length; i++)
+		{
+			if (abilityCooldownsCurrent[i] > 0f)
+			{
+				abilityCooldownsCurrent[i] -= Time.deltaTime;
+			}
+		}
+
+        InGameUI.Instance.setText(abilityCooldownsCurrent[0].ToString("F2"));
+    }
 
     public void TakeDamage(float Damage)
     {
@@ -200,33 +229,14 @@ public class CharacterBasic : NetworkBehaviour
 
     void FixedUpdate()
     {
-			// 
       if (!IsOwner) return;
-        
-
-			if (!alive.Value)
-			{
-        rb.linearVelocity = new Vector2(0, 0);
-				return;
-      }
-			rb.linearVelocity = movement.normalized * speed;
+		if (!alive.Value)
+		{
+			rb.linearVelocity = new Vector2(0, 0);
+			return;
+		}
+		rb.linearVelocity = movement.normalized * speed;
     }
-
-    [ServerRpc]
-	private void spawnObjectServerRpc(Vector2 spawnPos, Vector2 directionVector)
-	{
-		Transform spawnedObjectTransform = Instantiate(spawnedObjectPrefab, spawnPos, Quaternion.identity);
-
-		Rigidbody2D bulletRb = spawnedObjectTransform.GetComponent<Rigidbody2D>();
-
-		bulletRb.linearVelocity = bulletRb.linearVelocity.magnitude * directionVector.normalized;
-
-		BulletMoveMP bulletScript = spawnedObjectTransform.GetComponent<BulletMoveMP>();
-
-		bulletScript.SetCreator(gameObject);
-
-		spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
-	}
 
 	void AttemptAttack()
 	{
@@ -246,6 +256,8 @@ public class CharacterBasic : NetworkBehaviour
 	{
         if (!IsOwner) { return; }
 
+		if(weaponScript == null) { return; }
+
         Vector2 playerPos2D = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 
         Vector2 dirVector = (mousePos - playerPos2D).normalized * weaponDistFromCenter;
@@ -260,10 +272,27 @@ public class CharacterBasic : NetworkBehaviour
 	{
         updateMousePos();
 
-        Vector2 directionVector = mousePos - weaponPos;
-
-        spawnObjectServerRpc(weaponPos, directionVector);
+        SpawnerUtil.Instance.NetworkSpawnGameObject(projectileSpawnableName, weaponPos, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
     }
+
+	void AttemptAbility(int abilityId)
+	{
+        if (abilityCooldownsCurrent[abilityId] <= 0)
+        {
+            DoAbility(abilityId);
+			abilityCooldownsCurrent[abilityId] = abilityCooldownsMax[abilityId];
+        }
+    }
+
+	void DoAbility(int abilityId)
+	{
+		if(abilityId == 0)
+		{
+            updateMousePos();
+
+            SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
+		}
+	}
 
 	// player choose 
 	private void ApplyCharacterType(int type)
@@ -273,29 +302,13 @@ public class CharacterBasic : NetworkBehaviour
 					animator = GetComponent<Animator>();
 			}
 
-			switch (type)
-			{
-					case 0:
-							animator.runtimeAnimatorController = yellowController;
-							break;
-					case 1:
-							animator.runtimeAnimatorController = greenController;
-							break;
-					case 2:
-							animator.runtimeAnimatorController = blueController;
-							break;
-					case 3:
-							animator.runtimeAnimatorController = redController;
-							break;
-					default:
-							animator.runtimeAnimatorController = yellowController;
-							break;
-			}
+			animator.runtimeAnimatorController = animController;
 	}
 	private void OnCharacterTypeChanged(int oldValue, int newValue)
 	{
 			ApplyCharacterType(newValue);
 	}
+
 	[ServerRpc]
 	private void SetCharacterTypeServerRpc(int type)
 	{
