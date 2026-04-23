@@ -96,7 +96,7 @@ public class CharacterBasic : Spawnable
 			}
 	}
 
-    void Update()
+    public virtual void Update()
 	{
         healthBar.UpdateHealthBar(health.Value, maxHealth);
 		UpdateAnimatorVisuals();
@@ -211,8 +211,24 @@ public class CharacterBasic : Spawnable
 		}
     }
 
-	// update animator
-	void UpdateAnimatorVisuals()
+    public void HealAmount(float heal)
+    {
+        if (!alive.Value) return;
+
+		float newHealth = health.Value + heal;
+		if (newHealth <= maxHealth)
+		{
+            health.Value = newHealth;
+        }
+		else
+		{
+			health.Value = maxHealth;
+		}
+        
+    }
+
+    // update animator
+    void UpdateAnimatorVisuals()
 	{
 			if (animator == null) return;
 
@@ -284,7 +300,7 @@ public class CharacterBasic : Spawnable
         }
     }
 
-	void DoAbility(int abilityId)
+	public virtual void DoAbility(int abilityId)
 	{
 		if(abilityId == 0)
 		{
