@@ -28,6 +28,11 @@ public class SpawnerUtil : NetworkBehaviour
 	{
 		int index = Array.IndexOf(spawnablesNames, name);
 
+		if (index == -1)
+		{
+			throw new Exception("Spawnable with the name: \"" + name + "\" does not exist"); 
+		}
+
         return spawnables[index];
 	}
 

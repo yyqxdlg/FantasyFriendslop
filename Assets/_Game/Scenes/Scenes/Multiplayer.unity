@@ -1715,6 +1715,11 @@ MonoBehaviour:
   - {fileID: 8497165169282153330, guid: b0a07d393539dbc43900d6427bb821c3, type: 3}
   - {fileID: 5781850604906514888, guid: 1575f900df5253d45ab4ea9bef204894, type: 3}
   - {fileID: 5781850604906514888, guid: 1e3c4a52086d9044ebf333678082577c, type: 3}
+  - {fileID: 5781850604906514888, guid: 5e318d43058782744afe45658b0f2f83, type: 3}
+  - {fileID: 5781850604906514888, guid: a2cc2ed1a285ceb43b797bb51fb72fc4, type: 3}
+  - {fileID: 5781850604906514888, guid: acb40297a3dbebc46a81cc0ca39970f0, type: 3}
+  - {fileID: 5781850604906514888, guid: b69afc377806ff04c9ad786c5d098bed, type: 3}
+  - {fileID: 5781850604906514888, guid: 4868572283d09db4cb0a63400f677fe8, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -1726,6 +1731,11 @@ MonoBehaviour:
   - Slime
   - Bullet
   - SwordSwing
+  - swordSwingBig
+  - firebolt
+  - smallExplosion
+  - fireball
+  - largeExplosion
 --- !u!4 &706246470
 Transform:
   m_ObjectHideFlags: 0

@@ -64,4 +64,15 @@ public class Spawnable : NetworkBehaviour
 			preSpawnCreatorId = newCreatorNetworkId;
         }
     }
+
+    public void NetworkDestroy()
+    {
+        NetworkDestroyServerRpc();
+    }
+
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    public void NetworkDestroyServerRpc()
+    {
+        gameObject.GetComponent<NetworkObject>().Despawn(true);
+    }
 }

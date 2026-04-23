@@ -460,7 +460,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiPlayerMovement
   ShowTopMostFoldoutHeaderGroup: 1
-  creator: {fileID: 0}
+  creatorNetworkId:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
   speed: 5
   attackCooldown: 0.5
   maxHealth: 20
@@ -494,9 +498,8 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  projectileSpawnableName: Bullet
-  summonPrefabName: Slime
-  bulletOffset: 0.6
+  projectileSpawnableName: firebolt
+  summonPrefabName: fireball
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
   - 10

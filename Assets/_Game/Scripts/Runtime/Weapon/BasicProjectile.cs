@@ -63,26 +63,8 @@ public class BasicProjectile : Spawnable
 
             if (IsOwner)
             {
-                GameObject objectHit = collision.gameObject;
 
-                EnemyBasic enemyHitScript = objectHit.GetComponent<EnemyBasic>();
-                if(enemyHitScript != null)
-                {
-                    if (preventRepeatedHits)
-                    {
-                        if (enemiesHit.Contains(objectHit.GetEntityId()))
-                        {
-                            return;
-                        } else
-                        {
-                            enemiesHit.Add(objectHit.GetEntityId());
-                        }
-                    }
-
-                    OnEnemyHitEffect(enemyHitScript);
-
-
-                }
+                OnHitAnyEffect(collision);
 
                 if (despawnOnHit)
                 {
@@ -93,20 +75,32 @@ public class BasicProjectile : Spawnable
         }
     }
 
+    public virtual void OnHitAnyEffect(Collider2D collision)
+    {
+        GameObject objectHit = collision.gameObject;
+
+        EnemyBasic enemyHitScript = objectHit.GetComponent<EnemyBasic>();
+        if (enemyHitScript != null)
+        {
+            if (preventRepeatedHits)
+            {
+                if (enemiesHit.Contains(objectHit.GetEntityId()))
+                {
+                    return;
+                }
+                else
+                {
+                    enemiesHit.Add(objectHit.GetEntityId());
+                }
+            }
+
+            OnEnemyHitEffect(enemyHitScript);
+        }
+    }
+
     public virtual void OnEnemyHitEffect(EnemyBasic enemyHitScript)
     {
         enemyHitScript.TakeDamage(damage);
-    }
-
-    public void NetworkDestroy()
-    {
-        NetworkDestroyServerRpc();
-    }
-
-    [ServerRpc]
-    public void NetworkDestroyServerRpc()
-    {
-        gameObject.GetComponent<NetworkObject>().Despawn(true);
     }
 
 }
