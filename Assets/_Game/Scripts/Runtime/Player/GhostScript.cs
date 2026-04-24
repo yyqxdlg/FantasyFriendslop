@@ -33,6 +33,8 @@ public class GhostScript : Spawnable
     {
         if (!IsOwner) return;
 
+        cam.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10);
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 

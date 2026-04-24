@@ -101,6 +101,9 @@ public class CharacterBasic : Spawnable
         healthBar.UpdateHealthBar(health.Value, maxHealth);
 		UpdateAnimatorVisuals();
         if (!IsOwner) return;
+
+		cam.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10) ;
+
 		//the player is dead
 		if (!alive.Value)
 		{
