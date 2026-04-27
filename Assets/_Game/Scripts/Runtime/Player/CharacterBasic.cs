@@ -80,6 +80,16 @@ public class CharacterBasic : Spawnable
 
     public override void OnNetworkSpawn()
 	{
+			NetworkObject netObj = GetComponent<NetworkObject>();
+
+			Debug.Log(
+					$"CharacterBasic OnNetworkSpawn: {name}, " +
+					$"IsServer={IsServer}, " +
+					$"IsOwner={IsOwner}, " +
+					$"OwnerClientId={OwnerClientId}, " +
+					$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
+					$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
+			);
 			if (IsServer)
 			{
 					health.Value = maxHealth;

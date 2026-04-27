@@ -58,28 +58,39 @@ public class StatueEnemy : EnemyBasic
     // Uses NetworkManager to count all alive players, then checks how many are in the trigger zone.
     private bool HasSeenAllAlivePlayers()
     {
+        CharacterBasic[] characters = FindObjectsByType<CharacterBasic>(FindObjectsSortMode.None);
+
         int totalAlivePlayers = 0;
         int alivePlayersInRange = 0;
 
-        foreach (var client in NetworkManager.Singleton.ConnectedClients.Values)
+        foreach (CharacterBasic character in characters)
         {
-            if (client.PlayerObject == null) continue;
+            if (character == null) continue;
 
-            CharacterBasic character = client.PlayerObject.GetComponent<CharacterBasic>();
-            if (character == null || !character.alive.Value) continue;
+            NetworkObject netObj = character.GetComponentInParent<NetworkObject>();
+
+            if (netObj == null) continue;
+            if (!netObj.IsSpawned) continue;
+            if (!character.alive.Value) continue;
 
             totalAlivePlayers++;
 
-            // Check if this player is currently inside range trigger
             for (int i = 0; i < targetingRange.GetNumberOfTargets(); i++)
             {
-                if (targetingRange.GetTarget(i) == client.PlayerObject.gameObject)
+                GameObject detected = targetingRange.GetTarget(i);
+                if (detected == null) continue;
+
+                CharacterBasic detectedCharacter = detected.GetComponentInParent<CharacterBasic>();
+
+                if (detectedCharacter == character)
                 {
                     alivePlayersInRange++;
                     break;
                 }
             }
         }
+
+        Debug.Log($"Statue activation: {alivePlayersInRange}/{totalAlivePlayers}");
 
         return totalAlivePlayers > 0 && alivePlayersInRange >= totalAlivePlayers;
     }
@@ -109,11 +120,12 @@ public class StatueEnemy : EnemyBasic
 
     private void SpawnSwing()
     {
+        /*
         if (target == null) return;
 
         GameObject swing = Instantiate(swingPrefab, transform.position, Quaternion.identity);
 
-        BulletMoveMP swingScript = swing.GetComponent<BulletMoveMP>();
+        BasicProjectile swingScript = swing.GetComponent<BasicProjectile>();
         if (swingScript != null)
         {
             swingScript.damage = attackDamage;
@@ -122,5 +134,10 @@ public class StatueEnemy : EnemyBasic
         }
 
         swing.GetComponent<NetworkObject>().Spawn();
+        */
+
+        Debug.Log("Spawnswing");
+
+        SpawnerUtil.Instance.NetworkSpawnGameObject("EnemySwing", gameObject.transform.position, 0, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
     }
 }

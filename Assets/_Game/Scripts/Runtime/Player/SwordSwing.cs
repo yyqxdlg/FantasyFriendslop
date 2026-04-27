@@ -33,17 +33,41 @@ public class SwordSwing : BasicProjectile
 
     public void Update()
     {
-        if (!IsOwner || GetCreator() == null) { return; }
+        if (!IsOwner) return;
 
-        gameObject.transform.position = GetCreator().transform.position;
+        GameObject creator = GetCreator();
+
+        if (creator == null)
+        {
+            if (IsServer && IsSpawned)
+            {
+                NetworkDestroy();
+            }
+
+            return;
+        }
+
+        transform.position = creator.transform.position;
 
         t += Time.deltaTime * speed;
 
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, AngleFromT(t));
+        transform.rotation = Quaternion.Euler(0, 0, AngleFromT(t));
     }
 
     public override void OnEnemyHitEffect(EnemyBasic enemyHitScript)
     {
+        
+        GameObject creator = GetCreator();
+
+        if (creator == null)
+        {
+            if (IsServer && IsSpawned)
+            {
+                NetworkDestroy();
+            }
+
+            return;
+        }
         enemyHitScript.TakeDamage(damage);
 
         Vector2 knockBackVector = (enemyHitScript.gameObject.transform.position - GetCreator().transform.position) * 1 * knockBack;

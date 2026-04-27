@@ -15,7 +15,7 @@ public class BasicProjectile : Spawnable
     public float lifeTime = 2f;
     public float damage = 1f;
 
-    [NonSerialized] public float speed = 0f;
+    [NonSerialized] public float speed = 1f;
 
     [NonSerialized] public Vector2 movementDir = Vector2.zero;
 
@@ -37,7 +37,7 @@ public class BasicProjectile : Spawnable
     }  
 
     // start movement of projectile
-    public void Fire()
+    public virtual void Fire()
     {
         Vector2 fireDir = (GetCreator().GetComponent<CharacterBasic>().mousePos - new Vector2(GetCreator().transform.position.x, GetCreator().transform.position.y)).normalized;
 
