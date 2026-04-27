@@ -1176,6 +1176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomDoor
   ShowTopMostFoldoutHeaderGroup: 1
+  roomId: 1
   doorVisual: {fileID: 1900567527}
   enemySpawnableNames:
   - Slime
@@ -1189,6 +1190,8 @@ MonoBehaviour:
   - {fileID: 724611788}
   - {fileID: 1368755638}
   - {fileID: 1963698582}
+  dropKeyWhenCleared: 1
+  keySpawnableName: RoomKey
   playerTag: Player
   proximityRadius: 3
   playerEntryPoints:
@@ -2237,6 +2240,7 @@ MonoBehaviour:
   - {fileID: 5781850604906514888, guid: acb40297a3dbebc46a81cc0ca39970f0, type: 3}
   - {fileID: 5781850604906514888, guid: b69afc377806ff04c9ad786c5d098bed, type: 3}
   - {fileID: 5781850604906514888, guid: 4868572283d09db4cb0a63400f677fe8, type: 3}
+  - {fileID: 3457117036930357012, guid: 2273df5867e4d7745b4d45d42580f619, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -2253,6 +2257,7 @@ MonoBehaviour:
   - smallExplosion
   - fireball
   - largeExplosion
+  - RoomKey
 --- !u!4 &706246470
 Transform:
   m_ObjectHideFlags: 0
