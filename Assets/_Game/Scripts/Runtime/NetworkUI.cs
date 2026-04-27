@@ -44,8 +44,19 @@ public class NetworkUI : MonoBehaviour
 
             //NetworkManager.Singleton.NetworkConfig.PlayerPrefab = getChosenClassPrefab();
 
-            NetworkManager.Singleton.StartHost();
-        });
+           GameObject playerPrefab = NetworkManager.Singleton.NetworkConfig.PlayerPrefab;
+
+            Debug.Log($"PlayerPrefab is null = {playerPrefab == null}");
+
+            if (playerPrefab != null)
+            {
+                Debug.Log($"PlayerPrefab name = {playerPrefab.name}");
+            }
+
+            bool started = NetworkManager.Singleton.StartHost();
+
+            Debug.Log($"StartHost result = {started}");
+                });
 
         clientBtn.onClick.AddListener(() =>
         {

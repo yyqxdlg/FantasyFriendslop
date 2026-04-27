@@ -639,7 +639,7 @@ MonoBehaviour:
   timerMax: 5
   spawnPos: {x: 7, y: 0}
   spawnPosRange: {x: 2, y: 2}
-  enemyPrefab: {fileID: 8497165169282153330, guid: b0a07d393539dbc43900d6427bb821c3, type: 3}
+  enemyPrefab: {fileID: 8497165169282153330, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
 --- !u!114 &189789549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   - Slime
   - Slime
   - Slime
-  - Slime
+  - StatueEnemy
   spawnPoints:
   - {fileID: 821575776}
   - {fileID: 587674091}
@@ -1878,7 +1878,7 @@ MonoBehaviour:
   timerMax: 5
   spawnPos: {x: 7, y: 0}
   spawnPosRange: {x: 2, y: 2}
-  enemyPrefab: {fileID: 8497165169282153330, guid: b0a07d393539dbc43900d6427bb821c3, type: 3}
+  enemyPrefab: {fileID: 8497165169282153330, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
 --- !u!4 &613574666
 Transform:
   m_ObjectHideFlags: 0
@@ -2241,6 +2241,9 @@ MonoBehaviour:
   - {fileID: 5781850604906514888, guid: b69afc377806ff04c9ad786c5d098bed, type: 3}
   - {fileID: 5781850604906514888, guid: 4868572283d09db4cb0a63400f677fe8, type: 3}
   - {fileID: 3457117036930357012, guid: 2273df5867e4d7745b4d45d42580f619, type: 3}
+  - {fileID: 8497165169282153330, guid: bd63bcddf9ffa814181eb15f6e735e88, type: 3}
+  - {fileID: 8497165169282153330, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
+  - {fileID: 5781850604906514888, guid: a38acd5f51d42f54aa8e8381968f73e5, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -2258,6 +2261,9 @@ MonoBehaviour:
   - fireball
   - largeExplosion
   - RoomKey
+  - Jellyfish
+  - StatueEnemy
+  - EnemySwing
 --- !u!4 &706246470
 Transform:
   m_ObjectHideFlags: 0

@@ -1,78 +1,97 @@
 using UnityEngine;
 using Unity.Netcode;
 
-//anything spawnable by the spawner util must extend this, so that it can keep track of its creator
+// Anything spawnable by the spawner util must extend this,
+// so that it can keep track of its creator.
 public class Spawnable : NetworkBehaviour
 {
-	private ulong preSpawnCreatorId;
+    private ulong preSpawnCreatorId = ulong.MaxValue;
 
-	public NetworkVariable<ulong> creatorNetworkId = new NetworkVariable<ulong>();
-
-    //public GameObject creator;
-
-    /*
-    public override void OnNetworkSpawn()
-    {
-		creatorNetworkId.OnValueChanged += (prevId, newId) =>
-		{
-			CreatorChangeFromNetworkId();
-		};
-    }
-	public void CreatorChangeFromNetworkId()
-	{
-		if(creatorNetworkId.Value == ulong.MaxValue) { return; }
-
-		Debug.Log("SET CREATOR " + creatorNetworkId.Value);
-
-		NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(creatorNetworkId.Value, out NetworkObject netObj);
-		creator = netObj.gameObject;
-
-        Debug.Log("Creator null? " + creator == null);
-    }
-	*/
+    public NetworkVariable<ulong> creatorNetworkId = new NetworkVariable<ulong>(
+        ulong.MaxValue,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    );
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
 
-		creatorNetworkId.Value = preSpawnCreatorId;
+        // NetworkVariables should only be written by the server by default.
+        if (IsServer)
+        {
+            creatorNetworkId.Value = preSpawnCreatorId;
+        }
     }
 
-	public GameObject GetCreator()
-	{
-		if (creatorNetworkId.Value == ulong.MaxValue)
-		{
-			return null;
-		}
-		else
-		{
-            NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(creatorNetworkId.Value, out NetworkObject netObj);
-
-            return netObj.gameObject;
+    public GameObject GetCreator()
+    {
+        if (creatorNetworkId.Value == ulong.MaxValue)
+        {
+            return null;
         }
 
-	}
+        if (NetworkManager.Singleton == null)
+        {
+            return null;
+        }
 
-	public void SetCreator(ulong newCreatorNetworkId)
-	{
-		if (NetworkObject.IsSpawned)
-		{
+        if (NetworkManager.Singleton.SpawnManager == null)
+        {
+            return null;
+        }
+
+        bool found = NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(
+            creatorNetworkId.Value,
+            out NetworkObject netObj
+        );
+
+        if (!found || netObj == null)
+        {
+            return null;
+        }
+
+        if (!netObj.IsSpawned)
+        {
+            return null;
+        }
+
+        return netObj.gameObject;
+    }
+
+    public void SetCreator(ulong newCreatorNetworkId)
+    {
+        if (NetworkObject != null && NetworkObject.IsSpawned)
+        {
+            if (!IsServer)
+            {
+                Debug.LogWarning($"{name}: SetCreator was called on a non-server instance.");
+                return;
+            }
+
             creatorNetworkId.Value = newCreatorNetworkId;
         }
         else
         {
-			preSpawnCreatorId = newCreatorNetworkId;
+            preSpawnCreatorId = newCreatorNetworkId;
         }
     }
 
     public void NetworkDestroy()
     {
+        if (!IsSpawned) return;
+
         NetworkDestroyServerRpc();
     }
 
     [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
     public void NetworkDestroyServerRpc()
     {
-        gameObject.GetComponent<NetworkObject>().Despawn(true);
+        NetworkObject netObj = GetComponent<NetworkObject>();
+
+        if (netObj == null) return;
+        if (!netObj.IsSpawned) return;
+
+        netObj.Despawn(true);
     }
 }

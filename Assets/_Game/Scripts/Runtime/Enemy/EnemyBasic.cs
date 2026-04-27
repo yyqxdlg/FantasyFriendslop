@@ -20,17 +20,17 @@ public class EnemyBasic : Spawnable
     // old
 	public float maxHealth = 10.0f;
 
-	public float speed = 2f;
+    public float speed = 2f;
 
-	public NetworkVariable<float> health = new NetworkVariable<float>();
+    public NetworkVariable<float> health = new NetworkVariable<float>();
 
-	[SerializeField] protected Healthbar healthBar;
+    [SerializeField] protected Healthbar healthBar;
 
-	[SerializeField] private GameObject targetingRangeObject;
+    [SerializeField] private GameObject targetingRangeObject;
 
 	protected EnemyTargetRange targetingRange;
 
-	protected GameObject target;
+    protected GameObject target;
 
 	protected Rigidbody2D rb;
 	
@@ -60,28 +60,28 @@ public class EnemyBasic : Spawnable
 
 	protected float attackCooldownCurr = 1f;
 
-	public float attackDamage = 1f;
+    public float attackDamage = 1f;
 
-	public float attackRange = 1f;
+    public float attackRange = 1f;
 
 
-	void Awake()
-	{
-		healthBar = GetComponentInChildren<Healthbar>();
+    protected void Awake()
+    {
+        healthBar = GetComponentInChildren<Healthbar>();
 
-		rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
 		targetingRange = targetingRangeObject.GetComponent<EnemyTargetRange>();
 	}
 
-	public override void OnNetworkSpawn()
-	{
-		if (!IsServer) return;
+    public override void OnNetworkSpawn()
+    {
+        if (!IsServer) return;
 
-		health.Value = maxHealth;
-	}
+        health.Value = maxHealth;
+    }
 
-	public void TakeDamage(float Damage)
+	public virtual void TakeDamage(float Damage)
 	{
 		TakeDamageServerRpc(Damage);
 	}
@@ -109,7 +109,7 @@ public class EnemyBasic : Spawnable
 	}
     // add more when ebemy die
 
-	public void Die()
+	public virtual void Die()
     {
         if (!IsServer) return;
         if (hasDied) return;
@@ -130,20 +130,20 @@ public class EnemyBasic : Spawnable
         }
     }
 
-	protected float DistanceToSelf(GameObject obj)
-	{
-		return Vector2.Distance(gameObject.transform.position, obj.transform.position);
-	}
+    protected float DistanceToSelf(GameObject obj)
+    {
+        return Vector2.Distance(gameObject.transform.position, obj.transform.position);
+    }
 
-	public GameObject NearestLivingTarget()
-	{
-		GameObject targetOut = null;
+    public GameObject NearestLivingTarget()
+    {
+        GameObject targetOut = null;
 
-		float targetOutDistance = float.MaxValue;
+        float targetOutDistance = float.MaxValue;
 
-		for (int i = 0; i < targetingRange.GetNumberOfTargets(); i++)
-		{
-			GameObject currentTarget = targetingRange.GetTarget(i);
+        for (int i = 0; i < targetingRange.GetNumberOfTargets(); i++)
+        {
+            GameObject currentTarget = targetingRange.GetTarget(i);
 
 			if (currentTarget.GetComponent<CharacterBasic>().alive.Value)
 			{
@@ -157,75 +157,65 @@ public class EnemyBasic : Spawnable
 			}
 		}
 
-		return targetOut;
+        return targetOut;
+    }
+
+    public Vector2 DirToTarget()
+    {
+
+        return (target.transform.position - gameObject.transform.position).normalized;
+
 	}
 
-	public Vector2 DirToTarget()
-	{
+public void AttemptAttack()
+{
+    if (attackCooldownCurr <= 0)
+    {
+        attackCooldownCurr = attackCooldown;
+        Attack();
+    }
+}
 
-		return (target.transform.position - gameObject.transform.position).normalized;
+public virtual void Attack()
+{
+    target.GetComponent<CharacterBasic>().TakeDamage(attackDamage);
+}
 
-	}
+void Update()
+{
+    DecayKnockbackVector();
+    healthBar.UpdateHealthBar(health.Value, maxHealth);
+    ServerUpdate();
+}
 
-	public void AttemptAttack()
-	{
-		if (attackCooldownCurr <= 0)
-		{
-			attackCooldownCurr = attackCooldown;
-			Attack();
-		}
-	}
+protected virtual void ServerUpdate()
+{
+    if (!IsServer) return;
 
-	public virtual void Attack()
-	{
-		target.GetComponent<CharacterBasic>().TakeDamage(attackDamage);
-	}
+    attackCooldownCurr -= Time.deltaTime;
+    target = NearestLivingTarget();
 
-	void Update()
-	{
-		DecayKnockbackVector();
+    if (target != null)
+    {
+        float distance = DistanceToSelf(target);
+        Vector2 dir = DirToTarget();
+        Vector2 strafeDir = new Vector2(-dir.y, dir.x) * strafeDirection;
 
-		healthBar.UpdateHealthBar(health.Value, maxHealth);
+        if (distance > standingRange)
+            ApplyMoveVector(dir * speed + strafeDir * strafeSpeed);
+        else if (distance < standingRange * 0.8f)
+            ApplyMoveVector(-dir * speed + strafeDir * strafeSpeed);
+        else
+            ApplyMoveVector(strafeDir * strafeSpeed);
 
-		if (!IsServer) return;
-
-		attackCooldownCurr -= Time.deltaTime;
-		target = NearestLivingTarget();
-
-		if (target != null)
-		{
-			float distance = DistanceToSelf(target);
-			Vector2 dir = DirToTarget();
-
-			// Perpendicular direction (for strafing)
-			Vector2 strafeDir = new Vector2(-dir.y, dir.x) * strafeDirection;
-
-			if (distance > standingRange)
-			{
-                //Move toward target and slighttly strafe
-                ApplyMoveVector(dir * speed + strafeDir * strafeSpeed);
-			}
-			else if (distance < standingRange * 0.8f)
-			{
-                //move away and strafe
-                ApplyMoveVector(-dir * speed + strafeDir * strafeSpeed);
-			}
-			else
-			{
-				//stay inside range
-				ApplyMoveVector(strafeDir * strafeSpeed);
-			}
-
-			if (distance <= attackRange)
-			{
-				AttemptAttack();
-			}
-		}
-		else
-		{
-            ApplyMoveVector(Vector2.zero);
-		}
-	}
+        if (distance <= attackRange)
+            AttemptAttack();
+    }
+    else
+    {
+        ApplyMoveVector(Vector2.zero);
+    }
+}
 
 	//applies the desired movement vector to motion, but takes into account knockback
     private void ApplyMoveVector(Vector2 movementVector)
