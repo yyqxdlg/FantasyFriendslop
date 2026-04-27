@@ -68,7 +68,7 @@ public class EnemyBasic : Spawnable
         health.Value = maxHealth;
     }
 
-	public void TakeDamage(float Damage)
+	public virtual void TakeDamage(float Damage)
 	{
 		TakeDamageServerRpc(Damage);
 	}

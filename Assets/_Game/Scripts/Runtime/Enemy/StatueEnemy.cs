@@ -109,11 +109,12 @@ public class StatueEnemy : EnemyBasic
 
     private void SpawnSwing()
     {
+        /*
         if (target == null) return;
 
         GameObject swing = Instantiate(swingPrefab, transform.position, Quaternion.identity);
 
-        BulletMoveMP swingScript = swing.GetComponent<BulletMoveMP>();
+        BasicProjectile swingScript = swing.GetComponent<BasicProjectile>();
         if (swingScript != null)
         {
             swingScript.damage = attackDamage;
@@ -122,5 +123,10 @@ public class StatueEnemy : EnemyBasic
         }
 
         swing.GetComponent<NetworkObject>().Spawn();
+        */
+
+        Debug.Log("Spawnswing");
+
+        SpawnerUtil.Instance.NetworkSpawnGameObject("enemySwing", gameObject.transform.position, 0, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
     }
 }

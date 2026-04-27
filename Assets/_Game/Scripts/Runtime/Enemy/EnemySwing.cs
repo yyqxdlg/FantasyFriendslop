@@ -12,7 +12,7 @@ public class EnemySwing : SwordSwing
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!IsServer) return;
-        if (collision.gameObject == creator || collision.isTrigger) return;
+        if (collision.gameObject == GetCreator() || collision.isTrigger) return;
 
         CharacterBasic player = collision.gameObject.GetComponent<CharacterBasic>();
         if (player == null) return;
