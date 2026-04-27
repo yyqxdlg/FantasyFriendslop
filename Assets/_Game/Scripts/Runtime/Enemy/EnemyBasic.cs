@@ -4,8 +4,21 @@ using System;
 
 public class EnemyBasic : Spawnable
 {
+    // add roomid, every own a roomid
+    public static event Action<int, Vector3> OnEnemyDiedInRoom;
 
-    public float maxHealth = 10.0f;
+    [SerializeField] private int roomId = -1;
+
+    private bool hasDied = false;
+
+    public int RoomId => roomId;
+
+    public void SetRoomId(int newRoomId)
+    {
+        roomId = newRoomId;
+    }
+    // old
+	public float maxHealth = 10.0f;
 
     public float speed = 2f;
 
@@ -94,10 +107,27 @@ public class EnemyBasic : Spawnable
 	{
 		knockbackVector = knockVector;
 	}
+    // add more when ebemy die
 
-    public virtual void Die()
+	public virtual void Die()
     {
-        gameObject.GetComponent<NetworkObject>().Despawn(true);
+        if (!IsServer) return;
+        if (hasDied) return;
+
+        hasDied = true;
+
+        OnEnemyDiedInRoom?.Invoke(roomId, transform.position);
+
+        NetworkObject netObj = GetComponent<NetworkObject>();
+
+        if (netObj != null && netObj.IsSpawned)
+        {
+            netObj.Despawn(true);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     protected float DistanceToSelf(GameObject obj)

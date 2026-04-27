@@ -31,5 +31,7 @@ public class InGameUI : MonoBehaviour
 	public void setText(string newText)
 	{
 		text.text = newText;
+		 // Show when there's text, hide when empty
+    canvasGroup.alpha = string.IsNullOrEmpty(newText) ? 0 : 1;
 	}
 }

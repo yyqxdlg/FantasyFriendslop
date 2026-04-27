@@ -4,7 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
-using UnityEditor.TextCore.Text;
+// using UnityEditor.TextCore.Text;
+using TMPro;
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 
@@ -36,7 +37,7 @@ public class BasicProjectile : Spawnable
     }  
 
     // start movement of projectile
-    public void Fire()
+    public virtual void Fire()
     {
         Vector2 fireDir = (GetCreator().GetComponent<CharacterBasic>().mousePos - new Vector2(GetCreator().transform.position.x, GetCreator().transform.position.y)).normalized;
 
