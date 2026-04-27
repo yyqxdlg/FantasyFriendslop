@@ -10,6 +10,9 @@ public class EnemyBullet : NetworkBehaviour
     private Rigidbody2D rb;
     public GameObject creator;
     private Vector2 direction = Vector2.right;
+    [Header("Audio")]
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField][Range(0f, 1f)] private float hitVolume = 1f;
 
     void Awake()
     {
@@ -53,6 +56,8 @@ public class EnemyBullet : NetworkBehaviour
                 {
                     characterHit.TakeDamage(damage);
                 }
+                if (hitSound != null)
+                    AudioSource.PlayClipAtPoint(hitSound, transform.position, hitVolume);
 
                 gameObject.GetComponent<NetworkObject>().Despawn(true);
             }

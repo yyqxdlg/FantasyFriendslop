@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 158327429
+  GlobalObjectIdHash: 1458243887
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -247,3 +247,5 @@ MonoBehaviour:
   lifeTime: 2
   damage: 1
   creator: {fileID: 3388104308899182308, guid: c241db0772d98b047a40303b25e9b99b, type: 3}
+  hitSound: {fileID: 8300000, guid: edd1dc3928941e1488911297031fdece, type: 3}
+  hitVolume: 1
