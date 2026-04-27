@@ -12,7 +12,7 @@ using static UnityEngine.EventSystems.EventTrigger;
 public class BasicProjectile : Spawnable
 {
     public float speedFromProjectile = 1f;
-	public float lifeTime = 2f;
+    public float lifeTime = 2f;
     public float damage = 1f;
 
     [NonSerialized] public float speed = 0f;
@@ -71,7 +71,7 @@ public class BasicProjectile : Spawnable
                 {
                     NetworkDestroy();
                 }
-                
+
             }
         }
     }
