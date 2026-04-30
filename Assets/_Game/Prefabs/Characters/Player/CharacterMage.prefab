@@ -270,7 +270,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 9193499568806405463, guid: f031ef3349c299644b527fed0b00ec3e, type: 3}
+  m_Sprite: {fileID: -4421300922047078791, guid: 603cbbd722e12dd4a9d440d72e028ae6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2325388411
+  GlobalObjectIdHash: 1887746272
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -504,6 +504,7 @@ MonoBehaviour:
   abilityCooldownsMax:
   - 10
   attackSoundName: test audio clip
+  attackSoundRange: 20
 --- !u!50 &2281014092804740205
 Rigidbody2D:
   serializedVersion: 5
