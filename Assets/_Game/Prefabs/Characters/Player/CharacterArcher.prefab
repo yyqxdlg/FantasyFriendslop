@@ -498,8 +498,8 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  projectileSpawnableName: Bullet
-  summonPrefabName: RangedEnemy
+  projectileSpawnableName: Arrow
+  summonPrefabName: ArrowPiercing
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
   - 10
@@ -774,6 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSprite
   ShowTopMostFoldoutHeaderGroup: 1
+  lockRot: 0
 --- !u!114 &113933801495077536
 MonoBehaviour:
   m_ObjectHideFlags: 0

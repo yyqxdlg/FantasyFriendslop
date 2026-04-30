@@ -622,13 +622,14 @@ MonoBehaviour:
   summonPrefabName: 
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
-  - 10
+  - 5
   attackSoundName: test audio clip
   attackSoundRange: 20
   radiusObject: {fileID: 6058392212051303098}
-  auraCooldownMax: 2
-  auraHeal: 2
+  auraCooldownMax: 0.5
+  auraHeal: 1
   auraDamage: 1
+  selfHeal: 0.5
 --- !u!1 &5486628184577562929
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +856,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.5557904, y: 5.5557904, z: 5.5557904}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4275550321903137566}

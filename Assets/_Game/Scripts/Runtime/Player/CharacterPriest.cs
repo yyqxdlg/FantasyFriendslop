@@ -10,13 +10,15 @@ public class CharacterPriest : CharacterBasic
 	private SpriteRenderer auraRenderer;
 
 
-	public float auraCooldownMax;
+	public float auraCooldownMax = 1f;
 
 	private float auraCooldownCurr;
 
-	public float auraHeal;
+	public float auraHeal = 1f;
 
-	public float auraDamage;
+	public float auraDamage = 1f;
+
+	public float selfHeal = 1f;
 
 	private bool healAura = true;
 	public override void Update()
@@ -45,7 +47,10 @@ public class CharacterPriest : CharacterBasic
 
 		auraRenderer = radiusObject.GetComponent<SpriteRenderer>();
 
-		auraRenderer.color = Color.green;
+		Color newColor = Color.green;
+		newColor.a = 0.5f;
+
+		auraRenderer.color = newColor;
 	}
 
 	private void ApplyAura()
@@ -55,24 +60,38 @@ public class CharacterPriest : CharacterBasic
 			for (int i = 0; i < objectsInAura.GetNumberOfTargets(); i++)
 			{
 				CharacterBasic currPlayerScript = objectsInAura.GetTarget(i).GetComponent<CharacterBasic>();
-				if (currPlayerScript != null)
+                EnemyBasic currEnemyScript = objectsInAura.GetTarget(i).GetComponent<EnemyBasic>();
+
+                if (currPlayerScript != null)
 				{
 					currPlayerScript.HealAmount(auraHeal);
 				}
-			}
+
+                if (currEnemyScript != null)
+                {
+                    currEnemyScript.HealAmount(auraHeal);
+                }
+            }
 		}
 		else
 		{
+			HealAmount(selfHeal);
 
 			for (int i = 0; i < objectsInAura.GetNumberOfTargets(); i++)
 			{
-				EnemyBasic currEnemyScript = objectsInAura.GetTarget(i).GetComponent<EnemyBasic>();
+                CharacterBasic currPlayerScript = objectsInAura.GetTarget(i).GetComponent<CharacterBasic>();
+                EnemyBasic currEnemyScript = objectsInAura.GetTarget(i).GetComponent<EnemyBasic>();
 
                 if (currEnemyScript != null)
 				{
 					currEnemyScript.TakeDamage(auraDamage);
 				}
-			}
+
+                if (currPlayerScript != null)
+                {
+                    currPlayerScript.TakeDamage(auraDamage);
+                }
+            }
 		}
 	}
 
@@ -84,11 +103,17 @@ public class CharacterPriest : CharacterBasic
 
 			if (healAura)
 			{
-                auraRenderer.color = Color.green;
+                Color newColor = Color.green;
+                newColor.a = 0.5f;
+
+                auraRenderer.color = newColor;
             }
             else
             {
-                auraRenderer.color = Color.red;
+                Color newColor = Color.red;
+                newColor.a = 0.5f;
+
+                auraRenderer.color = newColor;
             }
         }
 	}

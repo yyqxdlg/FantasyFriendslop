@@ -2244,6 +2244,8 @@ MonoBehaviour:
   - {fileID: 8497165169282153330, guid: bd63bcddf9ffa814181eb15f6e735e88, type: 3}
   - {fileID: 8497165169282153330, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
   - {fileID: 5781850604906514888, guid: a38acd5f51d42f54aa8e8381968f73e5, type: 3}
+  - {fileID: 5781850604906514888, guid: 33628a088ef131f4c9e633f4bbe1d435, type: 3}
+  - {fileID: 4058061203523029959, guid: 0bb1a17c924a1cb4f869ced70a890cdc, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -2264,6 +2266,8 @@ MonoBehaviour:
   - Jellyfish
   - StatueEnemy
   - EnemySwing
+  - Arrow
+  - ArrowPiercing
 --- !u!4 &706246470
 Transform:
   m_ObjectHideFlags: 0
@@ -3065,6 +3069,7 @@ MonoBehaviour:
   soundObject: {fileID: 5763644363560340009, guid: cdd24c0aa42cead41a2f17df19267594, type: 3}
   audioClips:
   - {fileID: 8300000, guid: edd1dc3928941e1488911297031fdece, type: 3}
+  player: {fileID: 0}
 --- !u!4 &899920083
 Transform:
   m_ObjectHideFlags: 0
