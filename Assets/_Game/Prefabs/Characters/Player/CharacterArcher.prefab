@@ -460,7 +460,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiPlayerMovement
   ShowTopMostFoldoutHeaderGroup: 1
-  creator: {fileID: 0}
+  creatorNetworkId:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 18446744073709551615
   speed: 5
   attackCooldown: 0.5
   maxHealth: 20
@@ -496,10 +500,11 @@ MonoBehaviour:
     m_InternalValue: 0
   projectileSpawnableName: Bullet
   summonPrefabName: RangedEnemy
-  bulletOffset: 0.6
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
   - 10
+  attackSoundName: test audio clip
+  attackSoundRange: 20
 --- !u!50 &2281014092804740205
 Rigidbody2D:
   serializedVersion: 5

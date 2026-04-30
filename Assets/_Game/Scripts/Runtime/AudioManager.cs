@@ -8,6 +8,8 @@ public class AudioManager : NetworkBehaviour
 
     public AudioClip[] audioClips;
 
+	public GameObject player;
+
     public static AudioManager Instance { get; private set; }
 	void Awake()
 	{
@@ -20,13 +22,16 @@ public class AudioManager : NetworkBehaviour
 		Instance = this;
 	}
 
-	public void PlayRandomSound(string[] possibleClipNames, Vector2 playPos, float volume)
+	// note: if you want to play a sound with uniform sound across the map, make range float.MaxValue
+	public void PlayRandomSound(string[] possibleClipNames, Vector2 playPos, float volume, float range)
 	{
-		PlaySound(possibleClipNames[Random.Range(0, possibleClipNames.Length)], playPos, volume);
+		PlaySound(possibleClipNames[Random.Range(0, possibleClipNames.Length)], playPos, volume, range);
 	}
-	public void PlaySound(string clipName, Vector2 playPos, float volume)
+
+    // note: if you want to play a sound with uniform sound across the map, make range float.MaxValue
+    public void PlaySound(string clipName, Vector2 playPos, float volume, float range)
 	{
-        PlaySoundEveryoneRpc(clipName, playPos, volume);
+        PlaySoundEveryoneRpc(clipName, playPos, volume, range);
 	}
 
 	private AudioClip GetSoundClip(string clipName)
@@ -43,13 +48,30 @@ public class AudioManager : NetworkBehaviour
 	}
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
-	public void PlaySoundEveryoneRpc(string clipName, Vector2 playPos, float volume)
+	public void PlaySoundEveryoneRpc(string clipName, Vector2 playPos, float volume, float range)
 	{
         AudioSource source = Instantiate(soundObject, playPos, Quaternion.identity);
 
         AudioClip clip = GetSoundClip(clipName);
 
-		source.GetComponent<SoundObject>().PlaySound(clip, volume);
+		float distToPlayer = ((Vector2)player.transform.position - playPos).magnitude;
+
+        float playVolume = volume;
+
+
+        if (range != float.MaxValue)
+        {
+            float distT = 1 - (distToPlayer / range);
+
+            if (distT < 0)
+            {
+                distT = 0;
+            }
+
+            playVolume = distT * volume;
+        }
+
+		source.GetComponent<SoundObject>().PlaySound(clip, playVolume);
     }
 
 }

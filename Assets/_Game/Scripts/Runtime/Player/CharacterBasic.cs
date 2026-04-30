@@ -79,6 +79,7 @@ public class CharacterBasic : Spawnable
 
     [Header("Sounds")]
     [SerializeField] private string attackSoundName;
+    [SerializeField] private float attackSoundRange = 20f;
 
     void Awake()
 	{
@@ -87,6 +88,8 @@ public class CharacterBasic : Spawnable
 		cam = Camera.main;
 
         healthBar = GetComponentInChildren<Healthbar>();
+
+		AudioManager.Instance.player = gameObject;
     }
 
     public override void OnNetworkSpawn()
@@ -325,7 +328,12 @@ public class CharacterBasic : Spawnable
 
         SpawnerUtil.Instance.NetworkSpawnGameObject(projectileSpawnableName, weaponPos, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
 
-		AudioManager.Instance.PlaySound(attackSoundName, (Vector2) gameObject.transform.position, 1);
+		PlayAttackSound();
+    }
+
+	public void PlayAttackSound()
+	{
+        AudioManager.Instance.PlaySound(attackSoundName, (Vector2)gameObject.transform.position, 1, attackSoundRange);
     }
 
 	void AttemptAbility(int abilityId)
