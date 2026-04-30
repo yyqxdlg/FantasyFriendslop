@@ -77,7 +77,10 @@ public class CharacterBasic : Spawnable
 
 	private float[] abilityCooldownsCurrent = new float[] { 0 };
 
-	void Awake()
+    [Header("Sounds")]
+    [SerializeField] private string attackSoundName;
+
+    void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		//animator = GetComponent<Animator>();
@@ -321,6 +324,8 @@ public class CharacterBasic : Spawnable
         updateMousePos();
 
         SpawnerUtil.Instance.NetworkSpawnGameObject(projectileSpawnableName, weaponPos, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
+
+		AudioManager.Instance.PlaySound(attackSoundName, (Vector2) gameObject.transform.position, 1);
     }
 
 	void AttemptAbility(int abilityId)
