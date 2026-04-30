@@ -15,9 +15,17 @@ public class CharacterBasic : Spawnable
 
     [SerializeField] private Healthbar healthBar;
 
-    public NetworkVariable<float> health = new NetworkVariable<float>();
+    public NetworkVariable<float> health = new NetworkVariable<float>(
+        1,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+	);
 
-	public NetworkVariable<bool> alive = new NetworkVariable<bool>();
+	public NetworkVariable<bool> alive = new NetworkVariable<bool>(
+        true,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
 
 	public Vector2 mousePos = Vector2.zero;
     private Vector2 weaponPos = Vector2.zero;
@@ -90,7 +98,7 @@ public class CharacterBasic : Spawnable
 					$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
 					$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
 			);
-			if (IsServer)
+			if (IsOwner)
 			{
 					health.Value = maxHealth;
 					alive.Value = true;
@@ -214,30 +222,41 @@ public class CharacterBasic : Spawnable
 
     public void TakeDamage(float Damage)
     {
-		if (!alive.Value) return;
+		TakeDamageOwnerRpc(Damage);
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+	public void TakeDamageOwnerRpc(float Damage)
+	{
+        if (!alive.Value) return;
 
         health.Value -= Damage;
 
         if (health.Value <= 0)
         {
-			Die();
-		}
+            Die();
+        }
     }
 
     public void HealAmount(float heal)
     {
+        HealAmountOwnerRpc(heal);
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void HealAmountOwnerRpc(float heal)
+	{
         if (!alive.Value) return;
 
-		float newHealth = health.Value + heal;
-		if (newHealth <= maxHealth)
-		{
+        float newHealth = health.Value + heal;
+        if (newHealth <= maxHealth)
+        {
             health.Value = newHealth;
         }
-		else
-		{
-			health.Value = maxHealth;
-		}
-        
+        else
+        {
+            health.Value = maxHealth;
+        }
     }
 
     // update animator
