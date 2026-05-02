@@ -21,13 +21,15 @@ public class BasicProjectile : Spawnable
 
     [NonSerialized] public Rigidbody2D rb;
 
-    [NonSerialized] public Boolean despawnOnHit = true;
+    public Boolean despawnOnHit = true;
 
     // when this is false, the bullet will check objects it hits so that it can't damage the same one twice
     // irrelevant if despawnOnHit is set to true
-    [NonSerialized] public Boolean preventRepeatedHits = false;
+    public Boolean preventRepeatedHits = false;
 
     private List<EntityId> enemiesHit = new List<EntityId>();
+
+    public bool NonRotational = true;
 
     public void Start()
     {
@@ -45,12 +47,21 @@ public class BasicProjectile : Spawnable
 
         movementDir = fireDir;
 
+        if (!NonRotational)
+        {
+            float angle = FFUtilities.CounterClockwiseAngle(fireDir, new Vector2(1, 0));
+            gameObject.transform.rotation = Quaternion.Euler(0,0,angle);
+        }
+
         FireBehaviour();
     }
 
     public virtual void FireBehaviour()
     {
         rb.linearVelocity = movementDir.normalized * speed;
+
+    
+            
 
         if (!IsOwner) { return; }
         Invoke("NetworkDestroy", lifeTime);

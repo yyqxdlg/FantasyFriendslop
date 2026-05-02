@@ -214,13 +214,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3131817610897391878}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4616364500178349118}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2788364540171631020
 SpriteRenderer:
   serializedVersion: 2
@@ -270,7 +270,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 11
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 9193499568806405463, guid: f031ef3349c299644b527fed0b00ec3e, type: 3}
+  m_Sprite: {fileID: 2353571312451627304, guid: 7933271c963e52f4dbe8d68677919bca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -622,11 +622,14 @@ MonoBehaviour:
   summonPrefabName: 
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
-  - 10
+  - 5
+  attackSoundName: test audio clip
+  attackSoundRange: 20
   radiusObject: {fileID: 6058392212051303098}
-  auraCooldownMax: 2
-  auraHeal: 2
+  auraCooldownMax: 0.5
+  auraHeal: 1
   auraDamage: 1
+  selfHeal: 0.5
 --- !u!1 &5486628184577562929
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,6 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSprite
   ShowTopMostFoldoutHeaderGroup: 1
+  lockRot: 1
 --- !u!114 &113933801495077536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,7 +856,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.5557904, y: 5.5557904, z: 5.5557904}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4275550321903137566}

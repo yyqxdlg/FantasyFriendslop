@@ -1,6 +1,7 @@
-using UnityEngine;
-using Unity.Netcode;
 using System;
+using Unity.Netcode;
+using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemyBasic : Spawnable
 {
@@ -94,6 +95,26 @@ public class EnemyBasic : Spawnable
         if (health.Value <= 0)
         {
             Die();
+        }
+    }
+
+    public virtual void HealAmount(float heal)
+    {
+        HealAmountServerRpc(heal);
+    }
+
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    public void HealAmountServerRpc(float heal)
+    {
+
+        float newHealth = health.Value + heal;
+        if (newHealth <= maxHealth)
+        {
+            health.Value = newHealth;
+        }
+        else
+        {
+            health.Value = maxHealth;
         }
     }
 

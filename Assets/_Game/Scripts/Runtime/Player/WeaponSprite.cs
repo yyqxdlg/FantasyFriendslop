@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WeaponSprite : NetworkBehaviour
 {
-
+	public bool lockRot = false;
 	public override void OnNetworkSpawn()
 	{
 		
@@ -15,7 +15,10 @@ public class WeaponSprite : NetworkBehaviour
 
 		float angle = FFUtilities.CounterClockwiseAngle(dir, new Vector2(1, 0));
 
-		gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
+		if (!lockRot)
+		{
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
 	
 	}
 

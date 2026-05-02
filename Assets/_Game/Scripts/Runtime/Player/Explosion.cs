@@ -41,6 +41,8 @@ public class Explosion : Spawnable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!IsOwner) { return; }
+
         if (!collision.isTrigger)
         {
             CharacterBasic playerScript = collision.gameObject.GetComponent<CharacterBasic>();
