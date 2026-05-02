@@ -16,12 +16,12 @@ TagManager:
   - 
   - 
   - Entity
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Wall
+  - Pickup
+  - Trigger
+  - Projectile
   - 
   - 
   - 
@@ -42,6 +42,27 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 3716926539
+    locked: 0
+  - name: GroundDecoration
+    uniqueID: 2604369409
+    locked: 0
+  - name: WallBase
+    uniqueID: 190443339
+    locked: 0
+  - name: Props
+    uniqueID: 2524239225
+    locked: 0
+  - name: Characters
+    uniqueID: 1617749505
+    locked: 0
+  - name: Foreground
+    uniqueID: 3748311641
+    locked: 0
+  - name: UI
+    uniqueID: 953408991
     locked: 0
   m_RenderingLayers:
   - Default

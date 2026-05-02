@@ -212,17 +212,36 @@ public class CharacterBasic : Spawnable
         InGameUI.Instance.setText(abilityCooldownsCurrent[0].ToString("F2"));
     }
 
-    public void TakeDamage(float Damage)
-    {
-		if (!alive.Value) return;
-
-        health.Value -= Damage;
-
-        if (health.Value <= 0)
-        {
-			Die();
+    public void TakeDamage(float damage)
+		{
+				if (IsServer)
+				{
+						ApplyDamageServer(damage);
+				}
+				else
+				{
+						TakeDamageServerRpc(damage);
+				}
 		}
-    }
+
+		[Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+		private void TakeDamageServerRpc(float damage)
+		{
+				ApplyDamageServer(damage);
+		}
+
+		private void ApplyDamageServer(float damage)
+		{
+				if (!IsServer) return;
+				if (!alive.Value) return;
+
+				health.Value = Mathf.Max(0, health.Value - damage);
+
+				if (health.Value <= 0)
+				{
+						Die();
+				}
+		}
 
     public void HealAmount(float heal)
     {
@@ -252,8 +271,10 @@ public class CharacterBasic : Spawnable
 
 	public void Die()
 	{
-		alive.Value = false;
-		rb.linearVelocity = new Vector2 (0, 0);
+			if (!IsServer) return;
+
+			alive.Value = false;
+			rb.linearVelocity = Vector2.zero;
 	}
 
     void FixedUpdate()

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6588755804646566770}
   - component: {fileID: 8963290379132529078}
   - component: {fileID: 951356924983260439}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1617749505
+  m_SortingLayer: 5
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1808964706522467271, guid: bb8cd8d8e0f9fe54ba96f19e3709dead, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1875669234231573031}
   - component: {fileID: 118593349916545324}
   - component: {fileID: 6477899988291688430}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9053736841201417404}
   - component: {fileID: 2788364540171631020}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: WeaponSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,9 +266,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1617749505
+  m_SortingLayer: 5
+  m_SortingOrder: 11
   m_MaskInteraction: 0
   m_Sprite: {fileID: 9193499568806405463, guid: f031ef3349c299644b527fed0b00ec3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 7454814940076871888}
   - component: {fileID: 7909597469567298421}
   - component: {fileID: 2324847702727100515}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,8 +340,8 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1617749505
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &7909597469567298421
 MonoBehaviour:
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 2281014092804740205}
   - component: {fileID: -5725688224788454672}
   - component: {fileID: -3798260423952276214}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: CharacterArcher
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -460,7 +460,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiPlayerMovement
   ShowTopMostFoldoutHeaderGroup: 1
-  creator: {fileID: 0}
+  creatorNetworkId:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
   speed: 5
   attackCooldown: 0.5
   maxHealth: 20
@@ -496,7 +500,6 @@ MonoBehaviour:
     m_InternalValue: 0
   projectileSpawnableName: Bullet
   summonPrefabName: RangedEnemy
-  bulletOffset: 0.6
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
   - 10
@@ -630,7 +633,7 @@ GameObject:
   - component: {fileID: 630211247847164206}
   - component: {fileID: 1617860108917191964}
   - component: {fileID: 9198338880382930201}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +736,7 @@ GameObject:
   - component: {fileID: 4616364500178349118}
   - component: {fileID: 7889255609381936137}
   - component: {fileID: 113933801495077536}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: WeaponSpritePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +829,7 @@ GameObject:
   - component: {fileID: 3058116904386971822}
   - component: {fileID: 2939688299855755335}
   - component: {fileID: 5868430925851408237}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1011212667836819416}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

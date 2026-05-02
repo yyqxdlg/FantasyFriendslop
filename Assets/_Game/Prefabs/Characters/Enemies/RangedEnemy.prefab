@@ -218,8 +218,8 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1617749505
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &2244395354023418901
 MonoBehaviour:
@@ -503,6 +503,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
+  roomId: -1
   maxHealth: 10
   speed: 2
   health:
@@ -569,9 +570,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1617749505
+  m_SortingLayer: 5
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1915312784314879168, guid: dd157d358f0b9f34ebef9b672ea37cff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
