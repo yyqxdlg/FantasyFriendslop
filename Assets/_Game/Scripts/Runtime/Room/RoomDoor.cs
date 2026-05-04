@@ -15,6 +15,8 @@ public class RoomDoor : NetworkBehaviour
 
     [Header("Door Visual")]
     [SerializeField] private GameObject doorVisual;
+    [Header("Door Blocker")]
+    [SerializeField] private Collider2D[] doorBlockers;
 
     [Header("Enemy Spawning")]
     [SerializeField] private string[] enemySpawnableNames;
@@ -27,6 +29,9 @@ public class RoomDoor : NetworkBehaviour
     [Header("Player Detection")]
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private float proximityRadius = 8f;
+    // need teleport
+    [Header("Teleport")]
+    [SerializeField] private bool teleportPlayersOnTrigger = true;
 
     [Header("Player Entry Points (max 4)")]
     [SerializeField] private Transform[] playerEntryPoints;
@@ -107,30 +112,30 @@ public class RoomDoor : NetworkBehaviour
     {
         if (hasTriggered.Value) return;
 
-        // CharacterBasic player = GetPlayerFromCollider(col);
-        // if (player == null) return;
+        CharacterBasic player = GetPlayerFromCollider(col);
+        if (player == null) return;
 
-        CheckAndTryOpen(col.transform.position);
+        CheckAndTryOpen(player.transform.position);
     }
 
-    // private CharacterBasic GetPlayerFromCollider(Collider2D col)
-    // {
-    //     CharacterBasic player = col.GetComponent<CharacterBasic>();
+    private CharacterBasic GetPlayerFromCollider(Collider2D col)
+    {
+        CharacterBasic player = col.GetComponent<CharacterBasic>();
 
-    //     if (player == null)
-    //     {
-    //         player = col.GetComponentInParent<CharacterBasic>();
-    //     }
+        if (player == null)
+        {
+            player = col.GetComponentInParent<CharacterBasic>();
+        }
 
-    //     if (player == null) return null;
+        if (player == null) return null;
 
-    //     if (!player.CompareTag(playerTag) && !col.CompareTag(playerTag))
-    //     {
-    //         return null;
-    //     }
+        if (!player.CompareTag(playerTag) && !col.CompareTag(playerTag))
+        {
+            return null;
+        }
 
-    //     return player;
-    // }
+        return player;
+    }
 
     // ── Checks before opening room ─────────────────────────────────
 
@@ -182,7 +187,10 @@ public class RoomDoor : NetworkBehaviour
         keyHasSpawned = false;
 
         SpawnEnemiesForThisRoom();
-        TeleportAllPlayersToEntryPoints();
+        if (teleportPlayersOnTrigger)
+        {
+            TeleportAllPlayersToEntryPoints();
+        }
 
         // If this room has no enemies, immediately clear it.
         if (aliveEnemyCount <= 0)
@@ -415,8 +423,18 @@ public class RoomDoor : NetworkBehaviour
             doorVisual.SetActive(false);
         }
 
+        if (doorBlockers != null)
+        {
+            foreach (Collider2D col in doorBlockers)
+            {
+                if (col != null)
+                {
+                    col.enabled = false;
+                }
+            }
+        }
 
-        ShowHint("");
+        ShowHint("Room Strated");
     }
 
     // ── Hint UI ────────────────────────────────────────────────────

@@ -16,6 +16,7 @@ public class StatueEnemy : EnemyBasic
 
     protected override void ServerUpdate()
     {
+        if (!IsServer) return;
         if (!isActivated)
         {
             rb.linearVelocity = Vector2.zero;
