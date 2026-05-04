@@ -88,8 +88,7 @@ public class CharacterBasic : Spawnable
 		cam = Camera.main;
 
         healthBar = GetComponentInChildren<Healthbar>();
-
-		AudioManager.Instance.player = gameObject;
+		
     }
 
     public override void OnNetworkSpawn()
@@ -114,10 +113,11 @@ public class CharacterBasic : Spawnable
 
 			ApplyCharacterType(characterType.Value);
 
-			if (IsOwner)
-			{
-					SetCharacterTypeServerRpc(CharacterSelectData.SelectedCharacter);
-			}
+		if (IsOwner)
+		{
+			SetCharacterTypeServerRpc(CharacterSelectData.SelectedCharacter);
+            AudioManager.Instance.player = gameObject;
+        }
 	}
 
     public virtual void Update()
