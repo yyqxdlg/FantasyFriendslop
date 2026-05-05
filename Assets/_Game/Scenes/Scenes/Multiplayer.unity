@@ -2970,6 +2970,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   characterSpawnableName: CharacterArcher
   acceptedTag: Ghost
+  songToPlay: 8bit version
 --- !u!114 &492793560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3150,6 +3151,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   characterSpawnableName: CharacterPriest
   acceptedTag: Ghost
+  songToPlay: 8bit version
 --- !u!114 &501252827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6739,7 +6741,21 @@ MonoBehaviour:
   soundObject: {fileID: 5763644363560340009, guid: cdd24c0aa42cead41a2f17df19267594, type: 3}
   audioClips:
   - {fileID: 8300000, guid: edd1dc3928941e1488911297031fdece, type: 3}
+  - {fileID: 8300000, guid: 8e80b1c23e44ba0489582b870313996a, type: 3}
+  - {fileID: 8300000, guid: b412f5f843ab29b49a3075278beef7b2, type: 3}
+  - {fileID: 8300000, guid: 75b61659f6bf5b042af5181559838f5e, type: 3}
+  - {fileID: 8300000, guid: c791aa32231549f42b5d1a09a96345f9, type: 3}
+  - {fileID: 8300000, guid: fb92d2efaeccc7e4cabd5b9562dab2b1, type: 3}
+  - {fileID: 8300000, guid: a6055baef698699458acd055cc96c435, type: 3}
+  - {fileID: 8300000, guid: 8a8cf965637996b4ba23ab3ce79defb8, type: 3}
+  - {fileID: 8300000, guid: d7683baf1609821498c5249f70a37709, type: 3}
+  - {fileID: 8300000, guid: 3faf78ac58b7ff240915899852c1688d, type: 3}
+  - {fileID: 8300000, guid: 97f9f5cf8c582ce40a699c543e837edb, type: 3}
+  - {fileID: 8300000, guid: fd952969af05d7c449c04eca9afb86cf, type: 3}
+  - {fileID: 8300000, guid: 8a8cf965637996b4ba23ab3ce79defb8, type: 3}
+  - {fileID: 8300000, guid: d7683baf1609821498c5249f70a37709, type: 3}
   player: {fileID: 0}
+  masterVolume: 1
 --- !u!4 &899920083
 Transform:
   m_ObjectHideFlags: 0
@@ -6846,6 +6862,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   characterSpawnableName: CharacterMage
   acceptedTag: Ghost
+  songToPlay: 8bit version
 --- !u!114 &907115875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8510,6 +8527,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   characterSpawnableName: CharacterWarrior
   acceptedTag: Ghost
+  songToPlay: 8bit version
 --- !u!61 &1045530801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9710,6 +9728,7 @@ MonoBehaviour:
   - {fileID: 1224824542}
   - {fileID: 318556147}
   hintText: {fileID: 153165086}
+  roomSong: scary heartbeat
 --- !u!1 &1318013093
 GameObject:
   m_ObjectHideFlags: 0
@@ -10107,6 +10126,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   characterSpawnableName: Ghost
   acceptedTag: Player
+  songToPlay: 8bit version
 --- !u!114 &1373004280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11518,6 +11538,7 @@ MonoBehaviour:
   - {fileID: 710343834}
   - {fileID: 1576916294}
   hintText: {fileID: 0}
+  roomSong: suspense alone
 --- !u!114 &1569160404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14426,6 +14447,7 @@ MonoBehaviour:
   - {fileID: 288956554}
   - {fileID: 296506615}
   hintText: {fileID: 0}
+  roomSong: scary heartbeat
 --- !u!114 &2027560851
 MonoBehaviour:
   m_ObjectHideFlags: 0
