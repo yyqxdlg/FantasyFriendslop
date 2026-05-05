@@ -504,7 +504,7 @@ MonoBehaviour:
   abilityCooldownsMax:
   - 10
   attackSoundName: test audio clip
-  attackSoundVolume: 0.5
+  attackSoundVolume: 1
   attackSoundRange: 20
 --- !u!50 &2281014092804740205
 Rigidbody2D:

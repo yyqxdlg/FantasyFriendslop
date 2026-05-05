@@ -598,7 +598,7 @@ MonoBehaviour:
   abilityCooldownsMax:
   - 10
   attackSoundName: sword 2
-  attackSoundVolume: 0.5
+  attackSoundVolume: 1
   attackSoundRange: 20
 --- !u!50 &2281014092804740205
 Rigidbody2D:

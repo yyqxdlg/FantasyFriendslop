@@ -624,7 +624,7 @@ MonoBehaviour:
   abilityCooldownsMax:
   - 5
   attackSoundName: book
-  attackSoundVolume: 0.5
+  attackSoundVolume: 1
   attackSoundRange: 20
   radiusObject: {fileID: 6058392212051303098}
   auraCooldownMax: 0.5
