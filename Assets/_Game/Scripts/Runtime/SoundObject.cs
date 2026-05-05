@@ -4,7 +4,7 @@ public class SoundObject : MonoBehaviour
 {
     [SerializeField] private AudioSource source;
 
-    public void PlaySound(AudioClip clip, float volume)
+    public void PlaySound(AudioClip clip, float volume, bool repeat)
     {
         source.volume = volume;
 
@@ -12,9 +12,14 @@ public class SoundObject : MonoBehaviour
 
         source.Play();
 
+        source.loop = repeat;
+
         float clipLength = source.clip.length;
 
-        Invoke("DestroySelf", clipLength);
+        if (!repeat)
+        {
+            Invoke("DestroySelf", clipLength);
+        }
     }
 
     public void DestroySelf()

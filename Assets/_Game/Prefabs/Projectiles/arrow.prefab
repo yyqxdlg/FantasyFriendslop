@@ -84,7 +84,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -142,6 +142,8 @@ MonoBehaviour:
   speedFromProjectile: 10
   lifeTime: 2
   damage: 2
+  despawnOnHit: 1
+  preventRepeatedHits: 0
   NonRotational: 0
 --- !u!50 &-385471074312244252
 Rigidbody2D:

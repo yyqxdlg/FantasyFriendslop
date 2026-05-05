@@ -39,6 +39,9 @@ public class RoomDoor : NetworkBehaviour
     [Header("Hint Text")]
     [SerializeField] private TMP_Text hintText;
 
+    [Header("Music")]
+    [SerializeField] private string roomSong;
+
     // ── Network state ──────────────────────────────────────────────
 
     private NetworkVariable<bool> hasTriggered =
@@ -178,6 +181,8 @@ public class RoomDoor : NetworkBehaviour
     private void TriggerRoomServerRpc()
     {
         if (hasTriggered.Value) return;
+
+        AudioManager.Instance.PlayBackgroundSong(roomSong, 1);
 
         hasTriggered.Value = true;
         roomCleared.Value = false;

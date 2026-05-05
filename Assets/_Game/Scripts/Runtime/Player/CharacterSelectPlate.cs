@@ -6,12 +6,17 @@ public class CharacterSelectPlate : NetworkBehaviour
     public string characterSpawnableName;
 
     public string acceptedTag;
+
+    public string songToPlay;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!IsServer) { return; }
-
+      
         if (collision.gameObject.tag == acceptedTag)
         {
+            AudioManager.Instance.PlayBackgroundSong(songToPlay, 1);
+
+            if (!IsServer) { return; }
+
             collision.gameObject.GetComponent<NetworkObject>().Despawn(true);
 
             ulong playerId = collision.gameObject.GetComponent<NetworkObject>().OwnerClientId;
