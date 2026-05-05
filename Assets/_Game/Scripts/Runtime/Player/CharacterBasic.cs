@@ -228,35 +228,22 @@ public class CharacterBasic : Spawnable
     }
 
     public void TakeDamage(float damage)
-		{
-				if (IsServer)
-				{
-						ApplyDamageServer(damage);
-				}
-				else
-				{
-						TakeDamageServerRpc(damage);
-				}
-		}
+	{
+		TakeDamageOwnerRpc(damage);
+	}
 
-		[Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
-		private void TakeDamageServerRpc(float damage)
-		{
-				ApplyDamageServer(damage);
-		}
+	[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+	private void TakeDamageOwnerRpc(float damage)
+	{
+        if (!alive.Value) return;
 
-		private void ApplyDamageServer(float damage)
-		{
-				if (!IsServer) return;
-				if (!alive.Value) return;
+        health.Value = Mathf.Max(0, health.Value - damage);
 
-				health.Value = Mathf.Max(0, health.Value - damage);
-
-				if (health.Value <= 0)
-				{
-						Die();
-				}
-		}
+        if (health.Value <= 0)
+        {
+            Die();
+        }
+    }
 
     public void HealAmount(float heal)
     {
