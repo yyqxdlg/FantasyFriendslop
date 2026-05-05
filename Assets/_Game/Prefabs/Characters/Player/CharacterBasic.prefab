@@ -504,6 +504,7 @@ MonoBehaviour:
   abilityCooldownsMax:
   - 10
   attackSoundName: test audio clip
+  attackSoundVolume: 0.5
   attackSoundRange: 20
 --- !u!50 &2281014092804740205
 Rigidbody2D:
@@ -774,6 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSprite
   ShowTopMostFoldoutHeaderGroup: 1
+  lockRot: 0
 --- !u!114 &113933801495077536
 MonoBehaviour:
   m_ObjectHideFlags: 0

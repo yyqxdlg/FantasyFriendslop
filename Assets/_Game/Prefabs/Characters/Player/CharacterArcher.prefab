@@ -503,7 +503,8 @@ MonoBehaviour:
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
   - 10
-  attackSoundName: test audio clip
+  attackSoundName: bow trimmed
+  attackSoundVolume: 0.5
   attackSoundRange: 20
 --- !u!50 &2281014092804740205
 Rigidbody2D:

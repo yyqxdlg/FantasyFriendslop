@@ -623,7 +623,8 @@ MonoBehaviour:
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
   - 5
-  attackSoundName: test audio clip
+  attackSoundName: book
+  attackSoundVolume: 0.5
   attackSoundRange: 20
   radiusObject: {fileID: 6058392212051303098}
   auraCooldownMax: 0.5

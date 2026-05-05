@@ -79,6 +79,7 @@ public class CharacterBasic : Spawnable
 
     [Header("Sounds")]
     [SerializeField] private string attackSoundName;
+    [SerializeField] private float attackSoundVolume = 1f;
     [SerializeField] private float attackSoundRange = 20f;
 
     void Awake()
@@ -348,7 +349,7 @@ public class CharacterBasic : Spawnable
 
 	public void PlayAttackSound()
 	{
-        AudioManager.Instance.PlaySound(attackSoundName, (Vector2)gameObject.transform.position, 1, attackSoundRange);
+        AudioManager.Instance.PlaySound(attackSoundName, (Vector2)gameObject.transform.position, attackSoundVolume, attackSoundRange);
     }
 
 	void AttemptAbility(int abilityId)

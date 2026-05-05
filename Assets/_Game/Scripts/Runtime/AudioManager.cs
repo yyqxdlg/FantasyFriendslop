@@ -10,6 +10,8 @@ public class AudioManager : NetworkBehaviour
 
 	public GameObject player;
 
+	public float masterVolume = 1f;
+
     public static AudioManager Instance { get; private set; }
 	void Awake()
 	{
@@ -56,7 +58,7 @@ public class AudioManager : NetworkBehaviour
 
 		float distToPlayer = ((Vector2)player.transform.position - playPos).magnitude;
 
-        float playVolume = volume;
+        float playVolume = volume * masterVolume;
 
 
         if (range != float.MaxValue)
@@ -68,7 +70,7 @@ public class AudioManager : NetworkBehaviour
                 distT = 0;
             }
 
-            playVolume = distT * volume;
+            playVolume = distT * playVolume;
         }
 
 		source.GetComponent<SoundObject>().PlaySound(clip, playVolume);
