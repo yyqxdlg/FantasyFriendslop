@@ -11516,11 +11516,11 @@ MonoBehaviour:
   doorVisual: {fileID: 0}
   doorBlockers: []
   enemySpawnableNames:
-  - Slime
-  - Slime
-  - Slime
-  - Slime
-  - Slime
+  - RangedEnemy
+  - RangedEnemy
+  - RangedEnemy
+  - RangedEnemy
+  - RangedEnemy
   spawnPoints:
   - {fileID: 577399932}
   - {fileID: 732279547}
@@ -14425,11 +14425,11 @@ MonoBehaviour:
   doorVisual: {fileID: 0}
   doorBlockers: []
   enemySpawnableNames:
-  - Slime
-  - Slime
-  - Slime
-  - StatueEnemy
-  - StatueEnemy
+  - Jellyfish
+  - Jellyfish
+  - Jellyfish
+  - Jellyfish
+  - Jellyfish
   spawnPoints:
   - {fileID: 1660887187}
   - {fileID: 787628660}

@@ -46,7 +46,11 @@ public class EnemyReviving : EnemyBasic
     private void PermanentDie()
     {
         StopCoroutine(ReviveAfterDelay());
-        gameObject.GetComponent<NetworkObject>().Despawn(true);
+        
+        // gameObject.GetComponent<NetworkObject>().Despawn(true);
+        if (!IsServer) return;
+
+        base.Die();
     }
 
     private IEnumerator ReviveAfterDelay()
