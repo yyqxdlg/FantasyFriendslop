@@ -45,7 +45,7 @@ public class EnemyBullet : NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject != creator && !collision.isTrigger)
+        if (collision.gameObject.tag != "Enemy" && !collision.isTrigger)
         {
             if (IsServer)
             {

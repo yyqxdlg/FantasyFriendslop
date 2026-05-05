@@ -499,7 +499,7 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
   projectileSpawnableName: Arrow
-  summonPrefabName: ArrowPiercing
+  summonPrefabName: RangedEnemy
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
   - 10
