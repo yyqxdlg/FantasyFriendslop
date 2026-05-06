@@ -248,8 +248,11 @@ MonoBehaviour:
   speedFromProjectile: 1
   lifeTime: 2
   damage: 4
+  despawnOnHit: 1
+  preventRepeatedHits: 0
+  NonRotational: 1
   swingAngleWidth: 180
-  knockBack: 5
+  knockBack: 3
 --- !u!114 &-2335146657700308407
 MonoBehaviour:
   m_ObjectHideFlags: 0
