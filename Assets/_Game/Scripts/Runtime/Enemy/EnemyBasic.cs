@@ -34,6 +34,27 @@ public class EnemyBasic : Spawnable
     protected GameObject target;
 
 	protected Rigidbody2D rb;
+
+    // ADD ANIMATOR
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    // 如果你的 side 原图是朝LEFT，就保持 true。
+    // 如果你的 side 原图是朝右，后面 flip 逻辑要反过来。
+    [SerializeField] private bool sideSpriteFacesLeft = true;
+
+    private NetworkVariable<int> facing = new NetworkVariable<int>(
+        0,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    );
+
+    private NetworkVariable<bool> isMoving = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    );
 	
 	[Header("Movement")]
 	public float standingRange = 0f;
@@ -71,6 +92,12 @@ public class EnemyBasic : Spawnable
         healthBar = GetComponentInChildren<Healthbar>();
 
         rb = GetComponent<Rigidbody2D>();
+
+        if (animator == null)
+        animator = GetComponent<Animator>();
+
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
 
 		targetingRange = targetingRangeObject.GetComponent<EnemyTargetRange>();
 	}
@@ -206,7 +233,61 @@ void Update()
 {
     DecayKnockbackVector();
     healthBar.UpdateHealthBar(health.Value, maxHealth);
+    UpdateAnimatorVisuals();
     ServerUpdate();
+}
+
+private void UpdateAnimatorVisuals()
+{
+    if (animator != null)
+    {
+        animator.SetBool("IsMoving", isMoving.Value);
+        animator.SetInteger("Facing", facing.Value);
+    }
+
+    if (spriteRenderer == null) return;
+
+    // 只有左右方向需要镜像
+    if (sideSpriteFacesLeft)
+    {
+        // side 原图朝左
+        if (facing.Value == 1) // Left
+            spriteRenderer.flipX = false;
+        else if (facing.Value == 2) // Right
+            spriteRenderer.flipX = true;
+    }
+    else
+    {
+        // side 原图朝右
+        if (facing.Value == 1) // Left
+            spriteRenderer.flipX = true;
+        else if (facing.Value == 2) // Right
+            spriteRenderer.flipX = false;
+    }
+}
+
+private void UpdateFacingFromMove(Vector2 movementVector)
+{
+    if (!IsServer) return;
+
+    isMoving.Value = movementVector.sqrMagnitude > 0.01f;
+
+    if (!isMoving.Value) return;
+
+    if (Mathf.Abs(movementVector.x) > Mathf.Abs(movementVector.y))
+    {
+        if (movementVector.x < 0)
+            facing.Value = 1; // Left
+        else
+            facing.Value = 2; // Right
+    }
+    else
+    {
+        if (movementVector.y > 0)
+            facing.Value = 3; // Up
+        else
+            facing.Value = 0; // Down
+    }
 }
 
 protected virtual void ServerUpdate()
@@ -242,6 +323,7 @@ protected virtual void ServerUpdate()
     private void ApplyMoveVector(Vector2 movementVector)
     {
 		rb.linearVelocity = movementVector + knockbackVector;
+        UpdateFacingFromMove(movementVector);
     }
 
 	private void DecayKnockbackVector()

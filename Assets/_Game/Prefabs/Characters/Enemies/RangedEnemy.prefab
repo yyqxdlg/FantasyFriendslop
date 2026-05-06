@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 5138870263546532459}
   - component: {fileID: 958948960506395509}
   - component: {fileID: 2746838417402630490}
+  - component: {fileID: 4821361113439958556}
   m_Layer: 8
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -353,8 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3368921359
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 3479466768
+  InScenePlacedSourceGlobalObjectIdHash: 3368921359
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
@@ -513,6 +514,9 @@ MonoBehaviour:
     m_InternalValue: 10
   healthBar: {fileID: 0}
   targetingRangeObject: {fileID: 1652207903116041463}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  sideSpriteFacesLeft: 1
   standingRange: 5
   strafeSpeed: 1.5
   strafeChangeInterval: 2
@@ -765,6 +769,28 @@ MonoBehaviour:
   cutoffOneWall: 800
   cutoffManyWalls: 300
   updateInterval: 0.05
+--- !u!95 &4821361113439958556
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388104308899182308}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7eddcddd87b3d1a41834b0cc237c707b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3933910141992466616
 GameObject:
   m_ObjectHideFlags: 0
