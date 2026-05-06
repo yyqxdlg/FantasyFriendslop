@@ -278,7 +278,7 @@ public class CharacterBasic : Spawnable
 
 	public void Die()
 	{
-			if (!IsServer) return;
+			if (!IsServer && !IsOwner) return;
 
 			alive.Value = false;
 			rb.linearVelocity = Vector2.zero;
