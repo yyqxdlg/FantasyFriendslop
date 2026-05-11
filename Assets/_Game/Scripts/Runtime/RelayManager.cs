@@ -15,6 +15,8 @@ public class RelayManager : MonoBehaviour
     [SerializeField] Button joinBtn;
     [SerializeField] TMP_InputField joinInput;
 
+    [SerializeField] TMP_Text joinCodeDisplay;
+
     [SerializeField] CanvasGroup relayCanvasGroup;
 
     [SerializeField] CanvasGroup inGameCanvasGroup;
@@ -47,6 +49,8 @@ public class RelayManager : MonoBehaviour
         NetworkManager.Singleton.StartHost();
 
         InGameUIMode();
+
+        joinCodeDisplay.text = joinCode;
     }
 
     async void JoinRelay(string joinCode)
@@ -62,6 +66,8 @@ public class RelayManager : MonoBehaviour
         NetworkManager.Singleton.StartClient();
 
         InGameUIMode();
+
+        joinCodeDisplay.text = joinCode;
     }
 
     public void InGameUIMode()
