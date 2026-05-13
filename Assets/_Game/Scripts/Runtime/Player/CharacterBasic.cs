@@ -304,7 +304,7 @@ public class CharacterBasic : Spawnable
 		}
 	}
 
-	void updateMousePos()
+	public void updateMousePos()
 	{
         mousePos = cam.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
     }
@@ -325,7 +325,7 @@ public class CharacterBasic : Spawnable
     }
 
 
-    void Attack()
+    public virtual void Attack()
 	{
         updateMousePos();
 
