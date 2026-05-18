@@ -48,7 +48,6 @@ public class InGameUI : MonoBehaviour
 	{
 		coinValue = newCoinValue;
 		UpdateCoin();
-
     }
 
     public void SetHealthMax(float newHealthMax)
@@ -78,8 +77,8 @@ public class InGameUI : MonoBehaviour
 
 	private void UpdateCoin()
 	{
-
-	}
+        coinText.text = coinValue.ToString();
+    }
 
     private void UpdateHealth()
     {

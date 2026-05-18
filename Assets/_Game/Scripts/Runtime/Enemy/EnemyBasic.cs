@@ -86,6 +86,9 @@ public class EnemyBasic : Spawnable
 
     public float attackRange = 1f;
 
+    [Header("Loot")]
+    public int coinsToDrop = 1;
+
 
     protected void Awake()
     {
@@ -168,6 +171,8 @@ public class EnemyBasic : Spawnable
 
         NetworkObject netObj = GetComponent<NetworkObject>();
 
+        DropCoins(coinsToDrop);
+
         if (netObj != null && netObj.IsSpawned)
         {
             netObj.Despawn(true);
@@ -176,6 +181,22 @@ public class EnemyBasic : Spawnable
         {
             Destroy(gameObject);
         }
+    }
+
+    public void DropCoins(int coins)
+    {
+        for(int i = 0; i < coins; i++)
+        {
+            Vector2 pos = gameObject.transform.position;
+            
+            pos.x += UnityEngine.Random.Range(-1, 1);
+            pos.y += UnityEngine.Random.Range(-1, 1);
+
+            Debug.Log("Spawning coin");
+
+            SpawnerUtil.Instance.NetworkSpawnGameObject("Coin", pos, 0, ulong.MaxValue);
+        }
+        
     }
 
     protected float DistanceToSelf(GameObject obj)

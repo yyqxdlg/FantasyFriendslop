@@ -5808,6 +5808,7 @@ MonoBehaviour:
   - {fileID: 5781850604906514888, guid: a38acd5f51d42f54aa8e8381968f73e5, type: 3}
   - {fileID: 5781850604906514888, guid: 33628a088ef131f4c9e633f4bbe1d435, type: 3}
   - {fileID: 4058061203523029959, guid: 0bb1a17c924a1cb4f869ced70a890cdc, type: 3}
+  - {fileID: 4703824552739568099, guid: f1f67a730e38e6d47b8d815d53752e9e, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -5830,6 +5831,7 @@ MonoBehaviour:
   - EnemySwing
   - Arrow
   - ArrowPiercing
+  - Coin
 --- !u!4 &706246470
 Transform:
   m_ObjectHideFlags: 0

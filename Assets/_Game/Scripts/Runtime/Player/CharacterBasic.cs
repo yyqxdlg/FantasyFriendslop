@@ -15,6 +15,12 @@ public class CharacterBasic : Spawnable
 
     [SerializeField] private Healthbar healthBar;
 
+    public NetworkVariable<int> coinCount = new NetworkVariable<int>(
+        1,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
+
     public NetworkVariable<float> health = new NetworkVariable<float>(
         1,
         NetworkVariableReadPermission.Everyone,
@@ -87,23 +93,26 @@ public class CharacterBasic : Spawnable
 
     public override void OnNetworkSpawn()
 	{
-			NetworkObject netObj = GetComponent<NetworkObject>();
+		NetworkObject netObj = GetComponent<NetworkObject>();
 
-			Debug.Log(
-					$"CharacterBasic OnNetworkSpawn: {name}, " +
-					$"IsServer={IsServer}, " +
-					$"IsOwner={IsOwner}, " +
-					$"OwnerClientId={OwnerClientId}, " +
-					$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
-					$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
-			);
-			if (IsOwner)
-			{
-					health.Value = maxHealth;
-					alive.Value = true;
+		Debug.Log(
+				$"CharacterBasic OnNetworkSpawn: {name}, " +
+				$"IsServer={IsServer}, " +
+				$"IsOwner={IsOwner}, " +
+				$"OwnerClientId={OwnerClientId}, " +
+				$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
+				$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
+		);
+		if (IsOwner)
+		{
+			health.Value = maxHealth;
+			alive.Value = true;
 
-					healthBar.Hide();
-			}
+			healthBar.Hide();
+
+			coinCount.Value = 0;
+			UpdateCoinVisual();
+		}
 
         animator.runtimeAnimatorController = animController;
 
@@ -116,6 +125,7 @@ public class CharacterBasic : Spawnable
     public virtual void Update()
 	{
 		UpdateHealth();
+
 		UpdateAnimatorVisuals();
         if (!IsOwner) return;
 
@@ -231,6 +241,23 @@ public class CharacterBasic : Spawnable
         }
 
     }
+
+	public void AddCoin(int numCoin)
+	{
+		AddCoinOwnerRpc(numCoin);
+	}
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    private void AddCoinOwnerRpc(int numCoin)
+    {
+        coinCount.Value += numCoin;
+		UpdateCoinVisual();
+    }
+
+    private void UpdateCoinVisual()
+	{
+		InGameUI.Instance.SetCoins(coinCount.Value);
+	}
 
     public void TakeDamage(float damage)
 	{
