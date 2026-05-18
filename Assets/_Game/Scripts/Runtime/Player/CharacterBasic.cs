@@ -101,6 +101,8 @@ public class CharacterBasic : Spawnable
 			{
 					health.Value = maxHealth;
 					alive.Value = true;
+
+					healthBar.Hide();
 			}
 
         animator.runtimeAnimatorController = animController;
@@ -113,7 +115,7 @@ public class CharacterBasic : Spawnable
 
     public virtual void Update()
 	{
-        healthBar.UpdateHealthBar(health.Value, maxHealth);
+		UpdateHealth();
 		UpdateAnimatorVisuals();
         if (!IsOwner) return;
 
@@ -217,6 +219,19 @@ public class CharacterBasic : Spawnable
         InGameUI.Instance.setText(abilityCooldownsCurrent[0].ToString("F2"));
     }
 
+	private void UpdateHealth()
+	{
+		if (IsOwner)
+		{
+			InGameUI.Instance.SetHealthMax(maxHealth);
+            InGameUI.Instance.SetHealthValue(health.Value);
+        } else
+		{
+            healthBar.UpdateHealthBar(health.Value, maxHealth);
+        }
+
+    }
+
     public void TakeDamage(float damage)
 	{
 		TakeDamageOwnerRpc(damage);
@@ -268,7 +283,7 @@ public class CharacterBasic : Spawnable
 
 	public void Die()
 	{
-			if (!IsServer) return;
+			if (!IsOwner) return;
 
 			alive.Value = false;
 			rb.linearVelocity = Vector2.zero;
