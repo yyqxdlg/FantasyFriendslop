@@ -1,0 +1,7755 @@
+fileFormatVersion: 2
+guid: 6bb5d7e6f3aea34449ee8aec0c8f86e7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2566831830827590084
+    second: Dungeon_Elements_0
+  - first:
+      213: -7962541359387574642
+    second: Dungeon_Elements_1
+  - first:
+      213: 8621533668777786095
+    second: Dungeon_Elements_2
+  - first:
+      213: 9198510219262268551
+    second: Dungeon_Elements_3
+  - first:
+      213: -8272081577173446811
+    second: Dungeon_Elements_4
+  - first:
+      213: -6531129786020665349
+    second: Dungeon_Elements_5
+  - first:
+      213: 3389785497062071012
+    second: Dungeon_Elements_6
+  - first:
+      213: -7628450877913211509
+    second: Dungeon_Elements_7
+  - first:
+      213: 5425411502748572241
+    second: Dungeon_Elements_8
+  - first:
+      213: 3268977318723066673
+    second: Dungeon_Elements_9
+  - first:
+      213: 310901345935616886
+    second: Dungeon_Elements_10
+  - first:
+      213: 8607677121746017584
+    second: Dungeon_Elements_11
+  - first:
+      213: -7142777616879520853
+    second: Dungeon_Elements_12
+  - first:
+      213: -3086705229299406564
+    second: Dungeon_Elements_13
+  - first:
+      213: 8550325286845896862
+    second: Dungeon_Elements_14
+  - first:
+      213: 1989679029065196998
+    second: Dungeon_Elements_15
+  - first:
+      213: -6569541466494780013
+    second: Dungeon_Elements_16
+  - first:
+      213: 3335910543582552039
+    second: Dungeon_Elements_17
+  - first:
+      213: -3047639925413489895
+    second: Dungeon_Elements_18
+  - first:
+      213: -542412671299117482
+    second: Dungeon_Elements_19
+  - first:
+      213: -174567091102139320
+    second: Dungeon_Elements_20
+  - first:
+      213: -5026119829889000180
+    second: Dungeon_Elements_21
+  - first:
+      213: 8954040051689824464
+    second: Dungeon_Elements_22
+  - first:
+      213: 2675749626003466266
+    second: Dungeon_Elements_23
+  - first:
+      213: 1813809077995987547
+    second: Dungeon_Elements_24
+  - first:
+      213: -2335052261683050029
+    second: Dungeon_Elements_25
+  - first:
+      213: 8341550543885014261
+    second: Dungeon_Elements_26
+  - first:
+      213: 5690586115609083916
+    second: Dungeon_Elements_27
+  - first:
+      213: -1273931533141166620
+    second: Dungeon_Elements_28
+  - first:
+      213: -8271437909315852700
+    second: Dungeon_Elements_29
+  - first:
+      213: -4699118903868579129
+    second: Dungeon_Elements_30
+  - first:
+      213: -7065578440105083656
+    second: Dungeon_Elements_31
+  - first:
+      213: -9192788512994645480
+    second: Dungeon_Elements_32
+  - first:
+      213: -1669529582551606902
+    second: Dungeon_Elements_33
+  - first:
+      213: 5559287378024141286
+    second: Dungeon_Elements_34
+  - first:
+      213: 4284338531460512966
+    second: Dungeon_Elements_35
+  - first:
+      213: -6967840208588672655
+    second: Dungeon_Elements_36
+  - first:
+      213: 6585253669190595283
+    second: Dungeon_Elements_37
+  - first:
+      213: 2493965129485150243
+    second: Dungeon_Elements_38
+  - first:
+      213: -628894921081723453
+    second: Dungeon_Elements_39
+  - first:
+      213: -2450884337449541762
+    second: Dungeon_Elements_40
+  - first:
+      213: 1933949225821740284
+    second: Dungeon_Elements_41
+  - first:
+      213: -682417432881260730
+    second: Dungeon_Elements_42
+  - first:
+      213: -327896660452540548
+    second: Dungeon_Elements_43
+  - first:
+      213: -6062361356388386486
+    second: Dungeon_Elements_44
+  - first:
+      213: -9113346902937670245
+    second: Dungeon_Elements_45
+  - first:
+      213: 8915096163932965397
+    second: Dungeon_Elements_46
+  - first:
+      213: -6238751794082404310
+    second: Dungeon_Elements_47
+  - first:
+      213: 4699570693455263618
+    second: Dungeon_Elements_48
+  - first:
+      213: -4452043476546841689
+    second: Dungeon_Elements_49
+  - first:
+      213: 2999131017013508022
+    second: Dungeon_Elements_50
+  - first:
+      213: -5763694025847654870
+    second: Dungeon_Elements_51
+  - first:
+      213: -577949052872356432
+    second: Dungeon_Elements_52
+  - first:
+      213: -4949803794375891090
+    second: Dungeon_Elements_53
+  - first:
+      213: 4932397455768110752
+    second: Dungeon_Elements_54
+  - first:
+      213: -1974889518885479741
+    second: Dungeon_Elements_55
+  - first:
+      213: -1510995466174587114
+    second: Dungeon_Elements_56
+  - first:
+      213: 5769832209928790916
+    second: Dungeon_Elements_57
+  - first:
+      213: -736459222585564292
+    second: Dungeon_Elements_58
+  - first:
+      213: -1111722429428001308
+    second: Dungeon_Elements_59
+  - first:
+      213: 4126915795349565692
+    second: Dungeon_Elements_60
+  - first:
+      213: -5160786450012601772
+    second: Dungeon_Elements_61
+  - first:
+      213: 7125917593617736402
+    second: Dungeon_Elements_62
+  - first:
+      213: -1678635596425285504
+    second: Dungeon_Elements_63
+  - first:
+      213: 7997385241006673509
+    second: Dungeon_Elements_64
+  - first:
+      213: 5181307738706066866
+    second: Dungeon_Elements_65
+  - first:
+      213: 7643775282304548253
+    second: Dungeon_Elements_66
+  - first:
+      213: -5730935159981067839
+    second: Dungeon_Elements_67
+  - first:
+      213: -2150019723554124779
+    second: Dungeon_Elements_68
+  - first:
+      213: 9101533703387267161
+    second: Dungeon_Elements_69
+  - first:
+      213: 3726720742541979795
+    second: Dungeon_Elements_70
+  - first:
+      213: -74296296840553818
+    second: Dungeon_Elements_71
+  - first:
+      213: 632367741142144961
+    second: Dungeon_Elements_72
+  - first:
+      213: -3694863667241271730
+    second: Dungeon_Elements_73
+  - first:
+      213: 6308873242688149969
+    second: Dungeon_Elements_74
+  - first:
+      213: 2424834440818028116
+    second: Dungeon_Elements_75
+  - first:
+      213: -5050654584111703822
+    second: Dungeon_Elements_76
+  - first:
+      213: -8787940947421683460
+    second: Dungeon_Elements_77
+  - first:
+      213: 7052393777468600365
+    second: Dungeon_Elements_78
+  - first:
+      213: -5031502453383294166
+    second: Dungeon_Elements_79
+  - first:
+      213: -8415761579964944244
+    second: Dungeon_Elements_80
+  - first:
+      213: -317300627248750138
+    second: Dungeon_Elements_81
+  - first:
+      213: -996326210097913159
+    second: Dungeon_Elements_82
+  - first:
+      213: 8152519401961848201
+    second: Dungeon_Elements_83
+  - first:
+      213: -3030598156165024971
+    second: Dungeon_Elements_84
+  - first:
+      213: 8286440758867177001
+    second: Dungeon_Elements_85
+  - first:
+      213: -8358248481216044863
+    second: Dungeon_Elements_86
+  - first:
+      213: -1722265217922096462
+    second: Dungeon_Elements_87
+  - first:
+      213: -7396626818032682008
+    second: Dungeon_Elements_88
+  - first:
+      213: 6215254096881553779
+    second: Dungeon_Elements_89
+  - first:
+      213: 5561245690101180874
+    second: Dungeon_Elements_90
+  - first:
+      213: -3748453790435350665
+    second: Dungeon_Elements_91
+  - first:
+      213: -1206186755300435231
+    second: Dungeon_Elements_92
+  - first:
+      213: 3729767961506790117
+    second: Dungeon_Elements_93
+  - first:
+      213: 1146018608403996558
+    second: Dungeon_Elements_94
+  - first:
+      213: 3131535130767525544
+    second: Dungeon_Elements_95
+  - first:
+      213: -3139644998156299626
+    second: Dungeon_Elements_96
+  - first:
+      213: 6131261057114870412
+    second: Dungeon_Elements_97
+  - first:
+      213: 903962597802166185
+    second: Dungeon_Elements_98
+  - first:
+      213: -5890439693187706690
+    second: Dungeon_Elements_99
+  - first:
+      213: 8785980456801166085
+    second: Dungeon_Elements_100
+  - first:
+      213: -1900676684058603916
+    second: Dungeon_Elements_101
+  - first:
+      213: -7467364113208625149
+    second: Dungeon_Elements_102
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 952
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d818025415a86f24dba25c241af603e3
+      internalID: 1482584000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 952
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187772030e86c304dbe9e3d227d1d3c7
+      internalID: -1604510250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 952
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83acdc0738f6ef747870bd6f5e77ba9d
+      internalID: 1863059805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 952
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c5f716277563a469d02ab96a855c0b
+      internalID: 847526592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 952
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c029a8f4565d734180a7907c3e94ba3
+      internalID: 77615095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 936
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5028648691256f24ab470b58049bc525
+      internalID: 1140177434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 936
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5f1b03cd1693d42aaeea928afc72ea
+      internalID: -2092321800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_7
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 936
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11fcb82b8ce6f4a41834c9b5cf2fb05b
+      internalID: -1814082900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_8
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 936
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07a837b0aee89a45921b680c050feb6
+      internalID: 2004246511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_9
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4760890434981544780a094a9c0d9ef7
+      internalID: 753685125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537ddaa7a25f2fa41bcb14f11c8b0ed9
+      internalID: 962792279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_11
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36423793af30df9468bc59308dd21631
+      internalID: 1395872395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_12
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e7272784b29154f99b65e388dd3182
+      internalID: -141642138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_13
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7a413a1245eee4380c9f5cd1183476
+      internalID: -1685282837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_14
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b29eeb874d54d4c909bdce39a0ebea
+      internalID: 1437146521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_15
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39979cb77feea0418222a80f03d704f
+      internalID: -783249282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_16
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03f141ccffb999479a4b9aff2bfc500
+      internalID: -1392184834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_17
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779674009fd1ab340bde4d3edc93b96b
+      internalID: -190087169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_18
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837f6d48d0de55d4381d50b61d883d20
+      internalID: 199989371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_19
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe2b7da54a713840b4e4b8ac94b6bc2
+      internalID: -2072070252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1960bfa666803641baf32c1f9aab305
+      internalID: 678156418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6ff2debac11ea41b8cf061d6da2f4f
+      internalID: -276341216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d78b775f9553d44a3fb5c6b5abe52d
+      internalID: -728232827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_23
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488b0b563a825294296e29a7bd445198
+      internalID: 1045699006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_24
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a0cd972a4493f449e8aff3d3d4478c
+      internalID: 1950337411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf73056b1522ed48a6ffa7bea2a6109
+      internalID: 1676710856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb70f05e13696b4fb0cd50387a10f51
+      internalID: 772014470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_27
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec869ba604e42a74b90ecae46e26f5a9
+      internalID: 1002857351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_28
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f3e1ad9ab12584b83cfc120e20b668
+      internalID: -1313579167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d93716b6299a6d4397bd42864de0dd3
+      internalID: 253601353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_30
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3c3862b153c044bbf59f9493f0150d
+      internalID: -551194368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_31
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 812f102c63ae5364383cc13a6e7000d8
+      internalID: 995255511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1597755754cd8b64180a2d562bb51631
+      internalID: -1818008553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_33
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5a9ed65833f144eb873cfd52152863
+      internalID: 1746280588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_34
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6067f62fe1a56f43b299bb7672e1d02
+      internalID: 771682447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_35
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216c080798f85a4468530677bf89c281
+      internalID: -727641226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_36
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ba02de597e5184abb3fa7073e7a935
+      internalID: 1183701629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_37
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b04432a1ac3e54e8b3667b3a70b57b
+      internalID: -2121354302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_38
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8c1c6a751deae429ed7bcfa60b49c0
+      internalID: -295058884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_39
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 904
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32fe24afa8f2b645bd6a92ae6c3149e
+      internalID: 2003785380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbabc77ca221617448a10e7b8c86faad
+      internalID: -1622802427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_41
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb6238fbe445074aae0d18f10d26f16
+      internalID: 801737091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0652a546673bab144875c08be85b35df
+      internalID: -1745690404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7853ca41915f4af419b6afc54321c9a3
+      internalID: -1695441157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_44
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f226aa5587167d34aba229236f88cba7
+      internalID: -1394289449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_45
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04584bac29a16ec4d906c5b0a60e2594
+      internalID: 1647313953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_46
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b02dcde6d1834644b843b4d4f0539b1
+      internalID: -1648152986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_47
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490b6890d0187b54ca80756c8337dd13
+      internalID: 484135869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_48
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43ccf5019ac31f4091ebc05f568f387
+      internalID: 1400711991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_49
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d6219848df3194baf7fad5fb179653
+      internalID: -1609365764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_50
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c360f699de677894b93ab790db661947
+      internalID: 41390659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_51
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8bd2fc6ffcd1d4e9be8c933e472377
+      internalID: 548835554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_52
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8138f6db6d2fe2a4086152a4824e9705
+      internalID: 1754436022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_53
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7b7163315cf0947ae254919028814f
+      internalID: 355532278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_54
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3fe508ba3cabc46b01fa131bf3df9a
+      internalID: -1382385441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_55
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4657d9f80e0d9046986994c43bcab9d
+      internalID: -1079382115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_56
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 888
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69db0115666f35c419f46f5ea0342093
+      internalID: 1884898047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_57
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78eb2814a5fa4194ba40f42eb882d671
+      internalID: -1938441371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_58
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e04eead795b62334e942e0b82b780f6b
+      internalID: 1602101547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_59
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a3ea2ef3674db4192a45e4e1d0abf3
+      internalID: -1341181583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_60
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dade95c449a957d47a53a6926151f87c
+      internalID: 123469712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_61
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec456247f9d20d45b016277734fb996
+      internalID: -253621150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_62
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31ad26ab3cec784e86218ed8906df2d
+      internalID: 457313043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_63
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce62a60e4e531d5428490a672ab0b996
+      internalID: 1768425680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_64
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2da26be6a7afa04b99cb70e58941bb4
+      internalID: 1973112029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_65
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6138e3247786e4c9daa7122d646235
+      internalID: 1269160148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_66
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767082cdd4be47647966330b164d87d6
+      internalID: -414408396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_67
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528ce8b300a3ae54b9176f79dd43e3ba
+      internalID: -1941682781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_68
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f1181f66498bf4ab196d8bd0de052c
+      internalID: 328706439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_69
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d630065ac4e214da0c812979e31b76
+      internalID: -1236047109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_70
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b08fccf1b3aa345b78504afbcc1dd9
+      internalID: -1089766715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_71
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee663a790173e8b4cad22cdb8585c943
+      internalID: 1950790178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_72
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6857e3888499f774db646b956273ab8a
+      internalID: -314004623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_73
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc732bb7971456d4eaafe46b577d97d7
+      internalID: 8295461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_74
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 872
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017b2349a34db184f81619c3106d559c
+      internalID: 1460124424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_75
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7717b69e0af5a5b4bb7895ae16c31265
+      internalID: 1811061349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_76
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5a37422d56a204cb6ff492572c3aee
+      internalID: -1427344270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_77
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6543df554f0a74cab58a73f85ec0e1
+      internalID: 1805263766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_78
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e838bfc26e57af4e8524646b3156500
+      internalID: 2028531089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_79
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70d7f4054de02446bd1f6fc510f9e34
+      internalID: -903085791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_80
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b9525d7d5d552479a68288b0ba59c2
+      internalID: -412254084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_81
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac37573e9ba04944b2f6f2a5e748c7a
+      internalID: -1966486530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_82
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd7425c5a9a50c43982bf697fa085a2
+      internalID: -2053862803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_83
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912346f4f50e6814c9cf5460e51115ff
+      internalID: 1427932072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_84
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056f71b1e5bcba347b8fed14234ece46
+      internalID: 1825106431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_85
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42d03982a81933489a2c370852b31d1
+      internalID: 960726592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_86
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8f27539f921ca479728a6f8926024b
+      internalID: -906613606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_87
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 856
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2f78e7a6012b646b341b1bcc081b86
+      internalID: 695603473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_88
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 840
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98844d11cc47d54786b69f63856b05f
+      internalID: 1591950026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_89
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 840
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa3470f746aee3488a0cfd7635ef137
+      internalID: 1044300775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_90
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 840
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7059e6a733618384a9d66d87e756b309
+      internalID: -814498476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_91
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 840
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c596a34562972479b2259c6ad3378f
+      internalID: 1506484942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_92
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881d260773be18c45817690bc2de341d
+      internalID: -1073693582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_93
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0446d4f34810c0941ad86f7a23cea81c
+      internalID: -1386459165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_94
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19207c642a2da1f47a9b572d4d85e34f
+      internalID: 959359888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_95
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44b69d8801296546a6c75eb72997fd8
+      internalID: -1834766530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_96
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da5cb496528e4a41ac3a4db4fddbfce
+      internalID: -1978419909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_97
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cd08dcd88f68f4a92816673f1e9e70
+      internalID: -444170782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_98
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edec5e8c59b03a5458f322dcb25edd9c
+      internalID: 1460402721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_99
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4720eb8775f08134195bee2325907bb1
+      internalID: -1270312420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_100
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4003ea02ccba1f9438320fe68660576c
+      internalID: 572292535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_101
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e981bd27d087a4bb0f9a16904767c0
+      internalID: 1155539575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_102
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc182ddc0c88c62498fa9d033946b995
+      internalID: 700714495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_103
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 824
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4dde5c2602ba3349b3eb4e8611302be
+      internalID: 804005130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_104
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8705fac8bfb7bc947a670cfea9efca66
+      internalID: 1507449274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_105
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcc027f7459aac4195f3428f88d69a0
+      internalID: -2142914865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_106
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f528d5a00883284b8c10892339ed9f6
+      internalID: 107453958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_107
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970aa6582e2fc6a478898a1b2afcf0f4
+      internalID: 1665179470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_108
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274c48fbe9fe88146ad611c9e8d662ca
+      internalID: -1976072204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_109
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eabe44d62fb637d45a929b24507cba44
+      internalID: 1467267384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_110
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a535ab53b22591408331dd2b7e9e085
+      internalID: -735021282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_111
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bdc6e16e5f6b5e428e831d753662308
+      internalID: -1042104123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_112
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3cf8ba8fc5dba34d8a3a93244c49300
+      internalID: 1184558493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_113
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df14eb83a16f32340b10ec7884497b49
+      internalID: -450298461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_114
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc529a3ed08f9fe408278f52f8cf3b2c
+      internalID: -866483061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_115
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 808
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d72c76cb029ca4e913477979e4e3d7
+      internalID: 517806913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_116
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad53f0af874cc1944b904edbbb8139e7
+      internalID: 722243941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_117
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c11be3635f3c847a7fa4b70bde16b3
+      internalID: 1295578727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_118
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8fd4312963cae4baace81994ed1f28
+      internalID: 93160852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_119
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac985d1dc913cf945bfbff13633ac464
+      internalID: -1119019039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_120
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61948350afad6324c8b1bd0b37d9d24e
+      internalID: -1103945909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_121
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf6157adcc1f3f46a454dfa556f1efa
+      internalID: -582232215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_122
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e0cce1c7e7fb94794c3fa2ca76469e
+      internalID: 95740604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_123
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bf02ce89f64ad4c9d85c585b7027f4
+      internalID: -1331606116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_124
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edbecc56f071e3543867436272152251
+      internalID: -137759719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_125
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2d63034a1c9774abdffb8cfccde531
+      internalID: 1017163416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_126
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566b42f22b1026b42a45751540b6849d
+      internalID: -1911981739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_127
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac32abd9887bb494c986fcd4ba089b1c
+      internalID: 960222445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_128
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549ea62db2c3b6f419d773957b367c1c
+      internalID: 1043965472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_129
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f9d51735e4c8f469b7c3eb9af42e38
+      internalID: 1194726301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_130
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c4d0c0c3250bd45bb50d5521d2376f
+      internalID: -403978046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_131
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980cffc2969356047909950ffee8fefd
+      internalID: 290691024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_132
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05940235c9231db4391e9de0674da966
+      internalID: -2118902091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_133
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117f28167feb3ff46a565e03457d10d7
+      internalID: 482572896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_134
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc0a8d692f19c644babc68836deab3c
+      internalID: 1444496526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_135
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 792
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee0ccd7edc1f324fbc264abf4ebfa87
+      internalID: 676373259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_136
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c73c61eb9901145a28aaa79358aba2
+      internalID: 596571732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_137
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54af171dbcf48654da161e36f9dddfb5
+      internalID: 118837564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_138
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1acda48d3f5fce428e3e1cb1f3af0d7
+      internalID: -1453181214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_139
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6f9900255e84a48ac359837860887e
+      internalID: 516688754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_140
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efaf7a7bbcf742d4ebaae7fa7774d240
+      internalID: 2108188924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_141
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a654a8731b5284f93c1f46ba98bf86
+      internalID: 1530846280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_142
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519a0d0d51357bd42803d04400a8800f
+      internalID: -45146178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_143
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ffadf1b702b8ac41a880615f7cd0a97
+      internalID: 412683421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_144
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0094243558ba145a92211b0f1ea3f3
+      internalID: -974143875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_145
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8da6157aef6a84458a5e4f7fcb80d80
+      internalID: 1703404831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_146
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 776
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf6ba1e5c0f34043974f21ba1a1f4aa
+      internalID: 1844994610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_147
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 760
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f9cb1d3b311e24b9b500e7208ddaee
+      internalID: -104070024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_148
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 760
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4674e3995ca65e44bcda5ab5ec8a362
+      internalID: -1903779702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_149
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 760
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c24e01e1c322b94b81efa442ef3b39c
+      internalID: 19490855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_150
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 760
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd094717f3f2e244a0a1006f41e654d
+      internalID: 249177845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_151
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 760
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f15bb8b1fdef774ab414fede8ec2bf7
+      internalID: -1548924629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_152
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 760
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47f22181972690469c53be95c41fa8b
+      internalID: 1731655094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_153
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 760
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b0484c2187ae341ab70475adeb4b8f
+      internalID: -907459663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_154
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 760
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab15b6c2369b3f479a26b3add3eb882
+      internalID: -2139326460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_155
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 744
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ecebc6c02cef449af00260ee9b3147
+      internalID: -2093533260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_156
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 744
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295683be492d18f4fa3035832c7ea112
+      internalID: 1563637239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_157
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 744
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8986b295ce3fbf644b5783c0d172fc22
+      internalID: -1502242771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_158
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 744
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21efa2d132242b449ff6372b0716bed
+      internalID: -1888394601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_159
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 744
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a766f62e12b1645950febb8997a36b
+      internalID: 1238793431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_160
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 744
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442438b10c965394d885c8bc148606eb
+      internalID: 993631060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_161
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 728
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d98c790ab792540b6af1891df89288
+      internalID: -1282176989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_162
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 728
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bfbb54cab2f014196450e858e8304e
+      internalID: -2131710672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_163
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 728
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09a47ba9e66c7240bad318377991a89
+      internalID: 2012756538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_164
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 728
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2fe00d6b2e2c9146bead1aea0eaf9c6
+      internalID: 1125710573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_165
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 728
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3613a84b70038e3478ca5300f8cc99ae
+      internalID: 1282739796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_166
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 728
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a8471d016020047a9313ea5be1f174
+      internalID: -1864262899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_167
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 712
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8af4425ab5b7049a2a20a0903e8f83
+      internalID: -290225903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_168
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 712
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45c4796acfd47642ab779ee67f02944
+      internalID: -1943113478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_169
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 712
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 791c4cb422cc9e44487e361018aca6db
+      internalID: 2053379260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_170
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 712
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71856e3d6c094e4baf4113f637abe61
+      internalID: 2027970175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_171
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 712
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1c4aea78fa791448704ad2e5ca282a
+      internalID: 1699934569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_172
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 712
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae9cb5b15907024da6bee1c7a2b7321
+      internalID: -2014459401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_173
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 696
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df67e71dbf09ab4419f13eebc12f4812
+      internalID: 1930077491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_174
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 696
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aadf010f2cbd9c4c8c332347c80af8f
+      internalID: -767335569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_175
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 696
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff164c8abcd53594194e226d9180369a
+      internalID: -849837652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_176
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 696
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2606efd38037c5145b75e2fcb61ffb49
+      internalID: -1510234600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_177
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 680
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43a415bb79f2964bb50f4d2f9043f6d
+      internalID: -519212577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_178
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 680
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a59ad2fffb5e9340afd48e7cf8b7903
+      internalID: -754922478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_179
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 680
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183bd51e7147bc14ab96ac3932eff337
+      internalID: 688649195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_180
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 680
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de31b7019808e094ea5e895b8b03979d
+      internalID: -1159861138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_181
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 680
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5bb8c221f47924492586302ad68d98
+      internalID: 862937622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_182
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 680
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33c43b6353d50c43a4fc683d6d1266a
+      internalID: 608482247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_183
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166d3e2997a0db140867a413add6dc6a
+      internalID: -1715614098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_184
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6917d91d675a20498ae382a66ce766e
+      internalID: -1683339228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_185
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39003f072c3fc2448a4d64735dd9fad2
+      internalID: -1012140400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_186
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4e8856038a7bdb40aeb861ace98fc6b
+      internalID: -1467687754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_187
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978f11ea20330b34a8a0c85a2dabf571
+      internalID: -1019425297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_188
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99cc27311b57243419b18d29f254a62d
+      internalID: -148524578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_189
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19750555ecca3654485294c50f8f4ade
+      internalID: 1257187623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_190
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5fadd4a25d1264c9c6e155eb052729
+      internalID: 275470348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_191
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3987606d9d7a5dc43b4e08af285c4a45
+      internalID: -2056991837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_192
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12524e88b85a9842827c7ea6f73721a
+      internalID: -1372671085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_193
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c13918deb9522246b5a37f1a69534ce
+      internalID: 402716132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_194
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040e7190cacce314493fa53d79750a35
+      internalID: 631955423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_195
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31fe55b8feb29504f8dcc68436c6a3c9
+      internalID: 891022376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_196
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c321ac0f9002d0488d82c808904a0e7
+      internalID: 454604067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_197
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74d1ce9f1647d74796be566dc523b50
+      internalID: -387938298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_198
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30291f3e73c27c45baefbd2edd9bd73
+      internalID: -704188184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_199
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fdec6f3f0100da4da23a24c48bd62da
+      internalID: 322322759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_200
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 552
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343f8330475bee04f85b9ff1cf9f05a8
+      internalID: -718295836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_201
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 536
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7c3e400f2780641b16da10ab371050
+      internalID: 560735765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_202
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 536
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433d3d47047977a4a824d9219dafcd39
+      internalID: -1430225057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_203
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 536
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f03500220c0b86489addd61cb54dc59
+      internalID: -1712242285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_204
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 536
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69b7a2c1533aed46a465719e8d05225
+      internalID: -638069560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_205
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 536
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a9b4935a427c641a17c832dc700822
+      internalID: -48821664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_206
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 536
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf3566b48e8aae4e855edeeb50c8fc3
+      internalID: -1796637324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_207
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab23506464eea364788d609565beb0af
+      internalID: 186403089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_208
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d56d95083c84ca40b69c3de9899ceac
+      internalID: 884933177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_209
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48eef79885291ca4f8fdfcefb12b7b55
+      internalID: -1372111284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_210
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e27c96585d1dda429491dfa995ecf11
+      internalID: 146111240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_211
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e2477b62d46a24c99b5343a7b21848
+      internalID: -1420843028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_212
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbe05f73574ec948b68db4b7f16e3f5
+      internalID: -644096357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_213
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26096c11643f4048841feec7a203c60
+      internalID: 490229440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_214
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e2b50c21d9df844ae4113810564764
+      internalID: -1634623979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_215
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a1d1fcccccdbc43b439a5985fbb3cc
+      internalID: -229743983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_216
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505ef31d51472e841b3f87721ffac476
+      internalID: 2144747392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_217
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3258f2deca5ac4d9a90d2d39c6b375
+      internalID: -471722614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_218
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f39034efacf93544b27b7dd95ccce20
+      internalID: 823252552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_219
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93bfb1b1625138408b57fab7fedba33
+      internalID: -455656039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_220
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7098642bb4dce842a5b22c0ca2417bc
+      internalID: -1215585490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_221
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80718f61283bf3c44acf983a07759d8e
+      internalID: 2012951038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_222
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f067050ce36c0ea4ca9e0b033051061b
+      internalID: 243599218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_223
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb3b7bb9b19bf542a016d37c7179d8b
+      internalID: -497185273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_224
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 520
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4adb36686cf37c048a0c20338a23f11a
+      internalID: 795049074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_225
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623ea1b1166beb84b98696a7ec9d1126
+      internalID: 1702941110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_226
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f83e7fd720e02448302b7acbcd280a
+      internalID: -207082165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_227
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536f8b6632be95f4e9f6c63f81b99434
+      internalID: -1055768580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_228
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178dd9dbc2fc73e4cbdbc175a7583339
+      internalID: 1928374935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_229
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abb0c1d286de9644a48d4b5820badb1
+      internalID: 1840541747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_230
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa77a1416281e5479415e9ca43c827d
+      internalID: -1183444845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_231
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d01ee65aabf12d4d8213c7835ba6c31
+      internalID: 1425179782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_232
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2e2e623c4907c40bbfb6cb5464fd9d
+      internalID: 754658472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_233
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e2166a63479334183db70121deb6bb
+      internalID: 215714826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_234
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8d7e176e523d24a874a4f482eae246
+      internalID: -1513033979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_235
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4cc9ea8d070a6b46acd94d2b7009d39
+      internalID: -425377749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_236
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 488
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7d14447df883849b0513488dbd2d14
+      internalID: -279425844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_237
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7baeee3fb2f90f648bdab5f2bf0725ce
+      internalID: 2037945859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_238
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e1770572c77794b88bca2dd28b3660
+      internalID: -1219551243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_239
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30bbb35e2444034593a79e95e6850d0
+      internalID: -1944925178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_240
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5afbc20968693459023a7ccf798f4a
+      internalID: -1485988783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_241
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89bcfa1ea0bd84b47aa853cd6d5a366f
+      internalID: 926006943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_242
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d039dbd31f5f80746a35aa5380b8d039
+      internalID: -462174258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_243
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f331a27206aaff645a612871d880a114
+      internalID: 35763687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_244
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554ea0299a3cb964ea86e5ff039611c3
+      internalID: 1561088270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_245
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00fac385bc870164c8cef2be3dc6ce9e
+      internalID: -840879052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_246
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 440
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85d056d3c041884e9b6ef23e4f9439f
+      internalID: 1411678594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_247
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c6a8e56418588438db311934668abc
+      internalID: 1001192280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_248
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ff454d331483740a465dbe921ec352
+      internalID: 2081378939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_249
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e26a48e9c59b5b4ab90cd982807b745
+      internalID: -2019310628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_250
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d178b96866aff54f8eaa16f3d2f6d12
+      internalID: -231273571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_251
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14edc816d0b9b8a4e87b1d825416c48f
+      internalID: -9292621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_252
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b8fd095d186174e9a930d8e443f6d9
+      internalID: 1466338575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_253
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5c5bb4461b23543aa3f000b802b476
+      internalID: 1971384146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_254
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883c78722bbce494eb8ea47475427579
+      internalID: 2061302123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_255
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b291a040a6ea72b4aa6e666536e19d6d
+      internalID: -741442356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_256
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 424
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d419d7ee364e9b44cb6e84626f38f11a
+      internalID: 1468376784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_257
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e1751ba18ec9a4387a8154bfb9b5e9
+      internalID: -1333447782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_258
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9412a6df55c69a2439c2313a5c508e11
+      internalID: 2066741650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_259
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597aabaa5bfdc6e4c823f1bcfa63eebc
+      internalID: -261220009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_260
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf3a8dc437f6e948a7f2b011a87b206
+      internalID: 279981975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_261
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683570d0d0536374892cdb2583a80ae5
+      internalID: 1496181835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_262
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03a96bf080458e47bc079a1ab152f2d
+      internalID: -1310863835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_263
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b431d71cd9e5f74449e2dcaa8d547e15
+      internalID: 1406213630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_264
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168023391f7d2884ab5d033fa2eea222
+      internalID: 2119160436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_265
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb941c2d6841604a9d0fd7663ea0ae4
+      internalID: -2097836812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_266
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4536a428e195c154c968f5dd78e86292
+      internalID: 387088433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_267
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 392
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1c9ebf2d0322242b8d0ebcf0b78f1e
+      internalID: -1413263862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_268
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 392
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aadc8e2a0faa9d48a7d4bbd08441142
+      internalID: -2045926639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_269
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 392
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8320bbffbf6ec740bdeebfee058e889
+      internalID: 1928832901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_270
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bcae27a633329641a08900ab9b1233c
+      internalID: 1981252649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_271
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a18b05fa35510644a0bdc296fcb5591
+      internalID: -1560338195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_272
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23336966b4c0414684daeb9361481b8
+      internalID: 589399417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_273
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdac738f9d498c9439959ea80ffdcfac
+      internalID: -1569617654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_274
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 376
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e8ddcfcbeff044a9489285cf9239a5
+      internalID: -202121780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_275
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03aa18d4b23d0e34381c83c562bc19e4
+      internalID: -1220594230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_276
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7571c215539c849b824513fbf42f75
+      internalID: 1916420751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_277
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 972e9db93c356154685db1f13d626e53
+      internalID: 907603803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_278
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae7e2b6d87745846ba1fe099d7125f1
+      internalID: 1304698830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_279
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2482c37a4fd7ccd4cacff8a2e5c5abc8
+      internalID: -788821652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_280
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a25acbd1bb6964b8c934b389ca7540
+      internalID: 91816287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_281
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b759b93156ca58c4c969decadba39801
+      internalID: -1040292469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_282
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af48e775bfebce2499adcf97d36e48cb
+      internalID: 1263202433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_283
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efaea13e073185b43baa2d2662ab339a
+      internalID: 406150639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_284
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 344
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8e43196e84d8b45a9d369b7ab45c7f
+      internalID: 2049548077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_285
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e4573f505b47943ba8825565ae86a8
+      internalID: -130032365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_286
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5618ebc91260b4eb54b64041061b35
+      internalID: 1568728564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_287
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3a94bd76a09b14bba2116a7509b2e8
+      internalID: -1165459496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_288
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2acba3406f44fb4abeac3c7756049ab
+      internalID: 1606402738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_289
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 312
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8f3c6661a6e994fa6c5417f188d0d9
+      internalID: -1089102626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_290
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b60dfeaa332ab4b95f2bac5c330090
+      internalID: 1886740462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_291
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680bb9ad0601671498f077ec56e08977
+      internalID: -1782413258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_292
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd0de26155f93b438cb7de6b56b6e1f
+      internalID: 1941423624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_293
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb16123fbf0c1d4b9412c5e00e86b58
+      internalID: -1653263628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_294
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 296
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89688790421b85040831661f06034191
+      internalID: 1405507868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_295
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 280
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa585423b3123d408a3ea63a16dcbc5
+      internalID: 1719319952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_296
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 280
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3507e3d8ddbd414da7dc77c8ccb1b9a
+      internalID: 790738322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_297
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 280
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db77250d37a1a1947b349722d82f669e
+      internalID: 1881930204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_298
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 280
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a0b0239d6103f4ca32d128eca4b2bd
+      internalID: 2024555088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_299
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 280
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110a3e590ce821145b200c10f9e1187d
+      internalID: 1410323395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_300
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 232
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033f827c84e67734bbce99cb496b8a76
+      internalID: -1692959725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_301
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 232
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb6fae006e177214c8e149e5be83aefe
+      internalID: -1131998242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_302
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 232
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3129f6bd86c8bc4c9bffd78bb83afbf
+      internalID: -1287204919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_303
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 232
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cacc11ac66242e48b26dfdf6a164a22
+      internalID: -469015461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_304
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 232
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c555b6b85122a48a8d0cc2354e343e
+      internalID: 2135677621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_305
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 232
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc292ceee7d34894bab8548810fa322c
+      internalID: 328253057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_306
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 216
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8edf739ad502949ab05c74f0b9517f
+      internalID: -335572656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_307
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 216
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25d5643e29ad0a49a496efa307ac22a
+      internalID: -175112578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_308
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 216
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbfeffd10d7f6f48abd941701c8643e
+      internalID: -1304850422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_309
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 216
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca73e4aae8c98a4199e79fb4db796b0
+      internalID: -1287641166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_310
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 216
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3792b044b7c69414ca25972f8a440748
+      internalID: 692046072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_311
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 216
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ca546f92c254d448c916e2395c40b7
+      internalID: 1094681122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_312
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26edf19f60d232446a3d456ab4640f6a
+      internalID: 1814168361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_313
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757951988617c734c87f4424bcb47973
+      internalID: 1327046372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_314
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aec02a179396bf4dbfdd2b60cd9f234
+      internalID: 511947075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_315
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435165a5393edf54bafa03407598baa6
+      internalID: -1932094921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_316
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d09be14e36c8346b1fc42f0c782f20
+      internalID: -1073154939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon_Elements_ttiles_317
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 200
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb241d2060b60e54f9cadebcab383ee5
+      internalID: -1882462013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1af356c23817c7a4f9084ac216173536
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Dungeon_Elements_ttiles_0: 1482584000
+      Dungeon_Elements_ttiles_1: -1604510250
+      Dungeon_Elements_ttiles_10: 962792279
+      Dungeon_Elements_ttiles_100: 572292535
+      Dungeon_Elements_ttiles_101: 1155539575
+      Dungeon_Elements_ttiles_102: 700714495
+      Dungeon_Elements_ttiles_103: 804005130
+      Dungeon_Elements_ttiles_104: 1507449274
+      Dungeon_Elements_ttiles_105: -2142914865
+      Dungeon_Elements_ttiles_106: 107453958
+      Dungeon_Elements_ttiles_107: 1665179470
+      Dungeon_Elements_ttiles_108: -1976072204
+      Dungeon_Elements_ttiles_109: 1467267384
+      Dungeon_Elements_ttiles_11: 1395872395
+      Dungeon_Elements_ttiles_110: -735021282
+      Dungeon_Elements_ttiles_111: -1042104123
+      Dungeon_Elements_ttiles_112: 1184558493
+      Dungeon_Elements_ttiles_113: -450298461
+      Dungeon_Elements_ttiles_114: -866483061
+      Dungeon_Elements_ttiles_115: 517806913
+      Dungeon_Elements_ttiles_116: 722243941
+      Dungeon_Elements_ttiles_117: 1295578727
+      Dungeon_Elements_ttiles_118: 93160852
+      Dungeon_Elements_ttiles_119: -1119019039
+      Dungeon_Elements_ttiles_12: -141642138
+      Dungeon_Elements_ttiles_120: -1103945909
+      Dungeon_Elements_ttiles_121: -582232215
+      Dungeon_Elements_ttiles_122: 95740604
+      Dungeon_Elements_ttiles_123: -1331606116
+      Dungeon_Elements_ttiles_124: -137759719
+      Dungeon_Elements_ttiles_125: 1017163416
+      Dungeon_Elements_ttiles_126: -1911981739
+      Dungeon_Elements_ttiles_127: 960222445
+      Dungeon_Elements_ttiles_128: 1043965472
+      Dungeon_Elements_ttiles_129: 1194726301
+      Dungeon_Elements_ttiles_13: -1685282837
+      Dungeon_Elements_ttiles_130: -403978046
+      Dungeon_Elements_ttiles_131: 290691024
+      Dungeon_Elements_ttiles_132: -2118902091
+      Dungeon_Elements_ttiles_133: 482572896
+      Dungeon_Elements_ttiles_134: 1444496526
+      Dungeon_Elements_ttiles_135: 676373259
+      Dungeon_Elements_ttiles_136: 596571732
+      Dungeon_Elements_ttiles_137: 118837564
+      Dungeon_Elements_ttiles_138: -1453181214
+      Dungeon_Elements_ttiles_139: 516688754
+      Dungeon_Elements_ttiles_14: 1437146521
+      Dungeon_Elements_ttiles_140: 2108188924
+      Dungeon_Elements_ttiles_141: 1530846280
+      Dungeon_Elements_ttiles_142: -45146178
+      Dungeon_Elements_ttiles_143: 412683421
+      Dungeon_Elements_ttiles_144: -974143875
+      Dungeon_Elements_ttiles_145: 1703404831
+      Dungeon_Elements_ttiles_146: 1844994610
+      Dungeon_Elements_ttiles_147: -104070024
+      Dungeon_Elements_ttiles_148: -1903779702
+      Dungeon_Elements_ttiles_149: 19490855
+      Dungeon_Elements_ttiles_15: -783249282
+      Dungeon_Elements_ttiles_150: 249177845
+      Dungeon_Elements_ttiles_151: -1548924629
+      Dungeon_Elements_ttiles_152: 1731655094
+      Dungeon_Elements_ttiles_153: -907459663
+      Dungeon_Elements_ttiles_154: -2139326460
+      Dungeon_Elements_ttiles_155: -2093533260
+      Dungeon_Elements_ttiles_156: 1563637239
+      Dungeon_Elements_ttiles_157: -1502242771
+      Dungeon_Elements_ttiles_158: -1888394601
+      Dungeon_Elements_ttiles_159: 1238793431
+      Dungeon_Elements_ttiles_16: -1392184834
+      Dungeon_Elements_ttiles_160: 993631060
+      Dungeon_Elements_ttiles_161: -1282176989
+      Dungeon_Elements_ttiles_162: -2131710672
+      Dungeon_Elements_ttiles_163: 2012756538
+      Dungeon_Elements_ttiles_164: 1125710573
+      Dungeon_Elements_ttiles_165: 1282739796
+      Dungeon_Elements_ttiles_166: -1864262899
+      Dungeon_Elements_ttiles_167: -290225903
+      Dungeon_Elements_ttiles_168: -1943113478
+      Dungeon_Elements_ttiles_169: 2053379260
+      Dungeon_Elements_ttiles_17: -190087169
+      Dungeon_Elements_ttiles_170: 2027970175
+      Dungeon_Elements_ttiles_171: 1699934569
+      Dungeon_Elements_ttiles_172: -2014459401
+      Dungeon_Elements_ttiles_173: 1930077491
+      Dungeon_Elements_ttiles_174: -767335569
+      Dungeon_Elements_ttiles_175: -849837652
+      Dungeon_Elements_ttiles_176: -1510234600
+      Dungeon_Elements_ttiles_177: -519212577
+      Dungeon_Elements_ttiles_178: -754922478
+      Dungeon_Elements_ttiles_179: 688649195
+      Dungeon_Elements_ttiles_18: 199989371
+      Dungeon_Elements_ttiles_180: -1159861138
+      Dungeon_Elements_ttiles_181: 862937622
+      Dungeon_Elements_ttiles_182: 608482247
+      Dungeon_Elements_ttiles_183: -1715614098
+      Dungeon_Elements_ttiles_184: -1683339228
+      Dungeon_Elements_ttiles_185: -1012140400
+      Dungeon_Elements_ttiles_186: -1467687754
+      Dungeon_Elements_ttiles_187: -1019425297
+      Dungeon_Elements_ttiles_188: -148524578
+      Dungeon_Elements_ttiles_189: 1257187623
+      Dungeon_Elements_ttiles_19: -2072070252
+      Dungeon_Elements_ttiles_190: 275470348
+      Dungeon_Elements_ttiles_191: -2056991837
+      Dungeon_Elements_ttiles_192: -1372671085
+      Dungeon_Elements_ttiles_193: 402716132
+      Dungeon_Elements_ttiles_194: 631955423
+      Dungeon_Elements_ttiles_195: 891022376
+      Dungeon_Elements_ttiles_196: 454604067
+      Dungeon_Elements_ttiles_197: -387938298
+      Dungeon_Elements_ttiles_198: -704188184
+      Dungeon_Elements_ttiles_199: 322322759
+      Dungeon_Elements_ttiles_2: 1863059805
+      Dungeon_Elements_ttiles_20: 678156418
+      Dungeon_Elements_ttiles_200: -718295836
+      Dungeon_Elements_ttiles_201: 560735765
+      Dungeon_Elements_ttiles_202: -1430225057
+      Dungeon_Elements_ttiles_203: -1712242285
+      Dungeon_Elements_ttiles_204: -638069560
+      Dungeon_Elements_ttiles_205: -48821664
+      Dungeon_Elements_ttiles_206: -1796637324
+      Dungeon_Elements_ttiles_207: 186403089
+      Dungeon_Elements_ttiles_208: 884933177
+      Dungeon_Elements_ttiles_209: -1372111284
+      Dungeon_Elements_ttiles_21: -276341216
+      Dungeon_Elements_ttiles_210: 146111240
+      Dungeon_Elements_ttiles_211: -1420843028
+      Dungeon_Elements_ttiles_212: -644096357
+      Dungeon_Elements_ttiles_213: 490229440
+      Dungeon_Elements_ttiles_214: -1634623979
+      Dungeon_Elements_ttiles_215: -229743983
+      Dungeon_Elements_ttiles_216: 2144747392
+      Dungeon_Elements_ttiles_217: -471722614
+      Dungeon_Elements_ttiles_218: 823252552
+      Dungeon_Elements_ttiles_219: -455656039
+      Dungeon_Elements_ttiles_22: -728232827
+      Dungeon_Elements_ttiles_220: -1215585490
+      Dungeon_Elements_ttiles_221: 2012951038
+      Dungeon_Elements_ttiles_222: 243599218
+      Dungeon_Elements_ttiles_223: -497185273
+      Dungeon_Elements_ttiles_224: 795049074
+      Dungeon_Elements_ttiles_225: 1702941110
+      Dungeon_Elements_ttiles_226: -207082165
+      Dungeon_Elements_ttiles_227: -1055768580
+      Dungeon_Elements_ttiles_228: 1928374935
+      Dungeon_Elements_ttiles_229: 1840541747
+      Dungeon_Elements_ttiles_23: 1045699006
+      Dungeon_Elements_ttiles_230: -1183444845
+      Dungeon_Elements_ttiles_231: 1425179782
+      Dungeon_Elements_ttiles_232: 754658472
+      Dungeon_Elements_ttiles_233: 215714826
+      Dungeon_Elements_ttiles_234: -1513033979
+      Dungeon_Elements_ttiles_235: -425377749
+      Dungeon_Elements_ttiles_236: -279425844
+      Dungeon_Elements_ttiles_237: 2037945859
+      Dungeon_Elements_ttiles_238: -1219551243
+      Dungeon_Elements_ttiles_239: -1944925178
+      Dungeon_Elements_ttiles_24: 1950337411
+      Dungeon_Elements_ttiles_240: -1485988783
+      Dungeon_Elements_ttiles_241: 926006943
+      Dungeon_Elements_ttiles_242: -462174258
+      Dungeon_Elements_ttiles_243: 35763687
+      Dungeon_Elements_ttiles_244: 1561088270
+      Dungeon_Elements_ttiles_245: -840879052
+      Dungeon_Elements_ttiles_246: 1411678594
+      Dungeon_Elements_ttiles_247: 1001192280
+      Dungeon_Elements_ttiles_248: 2081378939
+      Dungeon_Elements_ttiles_249: -2019310628
+      Dungeon_Elements_ttiles_25: 1676710856
+      Dungeon_Elements_ttiles_250: -231273571
+      Dungeon_Elements_ttiles_251: -9292621
+      Dungeon_Elements_ttiles_252: 1466338575
+      Dungeon_Elements_ttiles_253: 1971384146
+      Dungeon_Elements_ttiles_254: 2061302123
+      Dungeon_Elements_ttiles_255: -741442356
+      Dungeon_Elements_ttiles_256: 1468376784
+      Dungeon_Elements_ttiles_257: -1333447782
+      Dungeon_Elements_ttiles_258: 2066741650
+      Dungeon_Elements_ttiles_259: -261220009
+      Dungeon_Elements_ttiles_26: 772014470
+      Dungeon_Elements_ttiles_260: 279981975
+      Dungeon_Elements_ttiles_261: 1496181835
+      Dungeon_Elements_ttiles_262: -1310863835
+      Dungeon_Elements_ttiles_263: 1406213630
+      Dungeon_Elements_ttiles_264: 2119160436
+      Dungeon_Elements_ttiles_265: -2097836812
+      Dungeon_Elements_ttiles_266: 387088433
+      Dungeon_Elements_ttiles_267: -1413263862
+      Dungeon_Elements_ttiles_268: -2045926639
+      Dungeon_Elements_ttiles_269: 1928832901
+      Dungeon_Elements_ttiles_27: 1002857351
+      Dungeon_Elements_ttiles_270: 1981252649
+      Dungeon_Elements_ttiles_271: -1560338195
+      Dungeon_Elements_ttiles_272: 589399417
+      Dungeon_Elements_ttiles_273: -1569617654
+      Dungeon_Elements_ttiles_274: -202121780
+      Dungeon_Elements_ttiles_275: -1220594230
+      Dungeon_Elements_ttiles_276: 1916420751
+      Dungeon_Elements_ttiles_277: 907603803
+      Dungeon_Elements_ttiles_278: 1304698830
+      Dungeon_Elements_ttiles_279: -788821652
+      Dungeon_Elements_ttiles_28: -1313579167
+      Dungeon_Elements_ttiles_280: 91816287
+      Dungeon_Elements_ttiles_281: -1040292469
+      Dungeon_Elements_ttiles_282: 1263202433
+      Dungeon_Elements_ttiles_283: 406150639
+      Dungeon_Elements_ttiles_284: 2049548077
+      Dungeon_Elements_ttiles_285: -130032365
+      Dungeon_Elements_ttiles_286: 1568728564
+      Dungeon_Elements_ttiles_287: -1165459496
+      Dungeon_Elements_ttiles_288: 1606402738
+      Dungeon_Elements_ttiles_289: -1089102626
+      Dungeon_Elements_ttiles_29: 253601353
+      Dungeon_Elements_ttiles_290: 1886740462
+      Dungeon_Elements_ttiles_291: -1782413258
+      Dungeon_Elements_ttiles_292: 1941423624
+      Dungeon_Elements_ttiles_293: -1653263628
+      Dungeon_Elements_ttiles_294: 1405507868
+      Dungeon_Elements_ttiles_295: 1719319952
+      Dungeon_Elements_ttiles_296: 790738322
+      Dungeon_Elements_ttiles_297: 1881930204
+      Dungeon_Elements_ttiles_298: 2024555088
+      Dungeon_Elements_ttiles_299: 1410323395
+      Dungeon_Elements_ttiles_3: 847526592
+      Dungeon_Elements_ttiles_30: -551194368
+      Dungeon_Elements_ttiles_300: -1692959725
+      Dungeon_Elements_ttiles_301: -1131998242
+      Dungeon_Elements_ttiles_302: -1287204919
+      Dungeon_Elements_ttiles_303: -469015461
+      Dungeon_Elements_ttiles_304: 2135677621
+      Dungeon_Elements_ttiles_305: 328253057
+      Dungeon_Elements_ttiles_306: -335572656
+      Dungeon_Elements_ttiles_307: -175112578
+      Dungeon_Elements_ttiles_308: -1304850422
+      Dungeon_Elements_ttiles_309: -1287641166
+      Dungeon_Elements_ttiles_31: 995255511
+      Dungeon_Elements_ttiles_310: 692046072
+      Dungeon_Elements_ttiles_311: 1094681122
+      Dungeon_Elements_ttiles_312: 1814168361
+      Dungeon_Elements_ttiles_313: 1327046372
+      Dungeon_Elements_ttiles_314: 511947075
+      Dungeon_Elements_ttiles_315: -1932094921
+      Dungeon_Elements_ttiles_316: -1073154939
+      Dungeon_Elements_ttiles_317: -1882462013
+      Dungeon_Elements_ttiles_32: -1818008553
+      Dungeon_Elements_ttiles_33: 1746280588
+      Dungeon_Elements_ttiles_34: 771682447
+      Dungeon_Elements_ttiles_35: -727641226
+      Dungeon_Elements_ttiles_36: 1183701629
+      Dungeon_Elements_ttiles_37: -2121354302
+      Dungeon_Elements_ttiles_38: -295058884
+      Dungeon_Elements_ttiles_39: 2003785380
+      Dungeon_Elements_ttiles_4: 77615095
+      Dungeon_Elements_ttiles_40: -1622802427
+      Dungeon_Elements_ttiles_41: 801737091
+      Dungeon_Elements_ttiles_42: -1745690404
+      Dungeon_Elements_ttiles_43: -1695441157
+      Dungeon_Elements_ttiles_44: -1394289449
+      Dungeon_Elements_ttiles_45: 1647313953
+      Dungeon_Elements_ttiles_46: -1648152986
+      Dungeon_Elements_ttiles_47: 484135869
+      Dungeon_Elements_ttiles_48: 1400711991
+      Dungeon_Elements_ttiles_49: -1609365764
+      Dungeon_Elements_ttiles_5: 1140177434
+      Dungeon_Elements_ttiles_50: 41390659
+      Dungeon_Elements_ttiles_51: 548835554
+      Dungeon_Elements_ttiles_52: 1754436022
+      Dungeon_Elements_ttiles_53: 355532278
+      Dungeon_Elements_ttiles_54: -1382385441
+      Dungeon_Elements_ttiles_55: -1079382115
+      Dungeon_Elements_ttiles_56: 1884898047
+      Dungeon_Elements_ttiles_57: -1938441371
+      Dungeon_Elements_ttiles_58: 1602101547
+      Dungeon_Elements_ttiles_59: -1341181583
+      Dungeon_Elements_ttiles_6: -2092321800
+      Dungeon_Elements_ttiles_60: 123469712
+      Dungeon_Elements_ttiles_61: -253621150
+      Dungeon_Elements_ttiles_62: 457313043
+      Dungeon_Elements_ttiles_63: 1768425680
+      Dungeon_Elements_ttiles_64: 1973112029
+      Dungeon_Elements_ttiles_65: 1269160148
+      Dungeon_Elements_ttiles_66: -414408396
+      Dungeon_Elements_ttiles_67: -1941682781
+      Dungeon_Elements_ttiles_68: 328706439
+      Dungeon_Elements_ttiles_69: -1236047109
+      Dungeon_Elements_ttiles_7: -1814082900
+      Dungeon_Elements_ttiles_70: -1089766715
+      Dungeon_Elements_ttiles_71: 1950790178
+      Dungeon_Elements_ttiles_72: -314004623
+      Dungeon_Elements_ttiles_73: 8295461
+      Dungeon_Elements_ttiles_74: 1460124424
+      Dungeon_Elements_ttiles_75: 1811061349
+      Dungeon_Elements_ttiles_76: -1427344270
+      Dungeon_Elements_ttiles_77: 1805263766
+      Dungeon_Elements_ttiles_78: 2028531089
+      Dungeon_Elements_ttiles_79: -903085791
+      Dungeon_Elements_ttiles_8: 2004246511
+      Dungeon_Elements_ttiles_80: -412254084
+      Dungeon_Elements_ttiles_81: -1966486530
+      Dungeon_Elements_ttiles_82: -2053862803
+      Dungeon_Elements_ttiles_83: 1427932072
+      Dungeon_Elements_ttiles_84: 1825106431
+      Dungeon_Elements_ttiles_85: 960726592
+      Dungeon_Elements_ttiles_86: -906613606
+      Dungeon_Elements_ttiles_87: 695603473
+      Dungeon_Elements_ttiles_88: 1591950026
+      Dungeon_Elements_ttiles_89: 1044300775
+      Dungeon_Elements_ttiles_9: 753685125
+      Dungeon_Elements_ttiles_90: -814498476
+      Dungeon_Elements_ttiles_91: 1506484942
+      Dungeon_Elements_ttiles_92: -1073693582
+      Dungeon_Elements_ttiles_93: -1386459165
+      Dungeon_Elements_ttiles_94: 959359888
+      Dungeon_Elements_ttiles_95: -1834766530
+      Dungeon_Elements_ttiles_96: -1978419909
+      Dungeon_Elements_ttiles_97: -444170782
+      Dungeon_Elements_ttiles_98: 1460402721
+      Dungeon_Elements_ttiles_99: -1270312420
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
