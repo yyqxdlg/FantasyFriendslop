@@ -92,6 +92,7 @@ public class NetworkUI : MonoBehaviour
 
         if (started)
         {
+            InGameUIMode();
             Debug.Log("Client trying to connect to " + ip + ":" + port);
         }
         else

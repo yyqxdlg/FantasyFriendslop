@@ -498,12 +498,16 @@ MonoBehaviour:
     m_InternalValue: 0
   healthBar: {fileID: 0}
   targetingRangeObject: {fileID: 2900984723075450811}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  sideSpriteFacesLeft: 1
   standingRange: 0
   strafeSpeed: 1.5
   strafeChangeInterval: 2
   attackCooldown: 2
   attackDamage: 2
   attackRange: 1.5
+  coinsToDrop: 3
 --- !u!212 &4832192965437554087
 SpriteRenderer:
   serializedVersion: 2

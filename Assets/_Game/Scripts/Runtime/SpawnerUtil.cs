@@ -19,12 +19,20 @@ public class SpawnerUtil : NetworkBehaviour
 		Instance = this;
 	}
 
-	public void NetworkSpawnGameObject(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, ulong creatorObjectNetworkId)
+
+	//use if spawning client authoritative object or something that needs to be aware of its creator
+    public void NetworkSpawnGameObject(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, ulong creatorObjectNetworkId)
 	{
 		SpawnObjectServerRpc(spawnableName, spawnPos, spawnerClientId, creatorObjectNetworkId);
 	}
 
-	public Transform GetGobByName(string name)
+	//use if spawning something server owned with no care for its creator
+    public void NetworkSpawnGameObject(string spawnableName, Vector2 spawnPos)
+    {
+        SpawnObjectServerRpc(spawnableName, spawnPos, 0, ulong.MaxValue);
+    }
+
+    public Transform GetGobByName(string name)
 	{
 		int index = Array.IndexOf(spawnablesNames, name);
 

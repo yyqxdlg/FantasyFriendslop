@@ -292,6 +292,7 @@ GameObject:
   - component: {fileID: 7454814940076871888}
   - component: {fileID: 7909597469567298421}
   - component: {fileID: 2324847702727100515}
+  - component: {fileID: 961293637839212130}
   m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
@@ -383,6 +384,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &961293637839212130
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442919890610582044}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4805312749659784564
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4204883692
+  GlobalObjectIdHash: 221911818
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -589,6 +602,11 @@ MonoBehaviour:
   attackCooldown: 1
   maxHealth: 10
   healthBar: {fileID: 9198338880382930201}
+  coinCount:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 1
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -613,11 +631,6 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
   animController: {fileID: 9100000, guid: 3ad44029bfa830344bb4ad194f556ce6, type: 2}
-  characterType:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
   projectileSpawnableName: Bullet
   summonPrefabName: 
   animator: {fileID: 951356924983260439}

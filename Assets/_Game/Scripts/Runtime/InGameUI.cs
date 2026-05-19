@@ -5,7 +5,17 @@ public class InGameUI : MonoBehaviour
 {
 	private CanvasGroup canvasGroup;
 
-	[SerializeField] private TMP_Text text;
+	[SerializeField] private TMP_Text cooldownText;
+    [SerializeField] private TMP_Text healthText;
+    [SerializeField] private TMP_Text coinText;
+
+	public int coinValue = 0;
+
+	private float healthMax = 0;
+	private float healthValue = 0;
+
+	private float cooldownMax = 0;
+    private float cooldownValue = 0;
 
 	public static InGameUI Instance { get; private set; }
 
@@ -24,14 +34,59 @@ public class InGameUI : MonoBehaviour
 		canvasGroup.alpha = 0;
 		canvasGroup.blocksRaycasts = true;
 
-		text.text = "Hello world";
+        cooldownText.text = "NaN";
 	}
 
-	// Update is called once per frame
 	public void setText(string newText)
 	{
-		text.text = newText;
+        cooldownText.text = newText;
 		 // Show when there's text, hide when empty
-    canvasGroup.alpha = string.IsNullOrEmpty(newText) ? 0 : 1;
+		canvasGroup.alpha = string.IsNullOrEmpty(newText) ? 0 : 1;
 	}
+
+	public void SetCoins(int newCoinValue)
+	{
+		coinValue = newCoinValue;
+		UpdateCoin();
+    }
+
+    public void SetHealthMax(float newHealthMax)
+    {
+        healthMax = newHealthMax;
+		UpdateHealth();
+    }
+
+    public void SetHealthValue(float newHealthValue)
+    {
+        healthValue = newHealthValue;
+		UpdateHealth();
+    }
+
+    public void SetCooldownMax(float newCooldownMax)
+    {
+        cooldownMax = newCooldownMax;
+		UpdateCooldown();
+
+    }
+
+    public void SetCooldownValue(float newCooldownValue)
+    {
+        cooldownValue = newCooldownValue;
+		UpdateCooldown();
+    }
+
+	private void UpdateCoin()
+	{
+        coinText.text = coinValue.ToString();
+    }
+
+    private void UpdateHealth()
+    {
+		healthText.text = healthValue.ToString() + " / " + healthMax.ToString();
+    }
+
+    private void UpdateCooldown()
+    {
+        cooldownText.text = cooldownValue.ToString() + " / " + cooldownMax.ToString();
+    }
 }

@@ -15,6 +15,12 @@ public class CharacterBasic : Spawnable
 
     [SerializeField] private Healthbar healthBar;
 
+    public NetworkVariable<int> coinCount = new NetworkVariable<int>(
+        1,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
+
     public NetworkVariable<float> health = new NetworkVariable<float>(
         1,
         NetworkVariableReadPermission.Everyone,
@@ -47,15 +53,8 @@ public class CharacterBasic : Spawnable
 
 	[SerializeField] private RuntimeAnimatorController animController;
 
-    // 0 = Yellow
-    // 1 = Green
-    // 2 = Blue
-    // 3 = Red
-    public NetworkVariable<int> characterType = new NetworkVariable<int>(
-    0,
-    NetworkVariableReadPermission.Everyone,
-    NetworkVariableWritePermission.Server
-	);
+    
+
     [Header("Attack")]
 
     [SerializeField] private string projectileSpawnableName;
@@ -94,36 +93,39 @@ public class CharacterBasic : Spawnable
 
     public override void OnNetworkSpawn()
 	{
-			NetworkObject netObj = GetComponent<NetworkObject>();
+		NetworkObject netObj = GetComponent<NetworkObject>();
 
-			Debug.Log(
-					$"CharacterBasic OnNetworkSpawn: {name}, " +
-					$"IsServer={IsServer}, " +
-					$"IsOwner={IsOwner}, " +
-					$"OwnerClientId={OwnerClientId}, " +
-					$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
-					$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
-			);
-			if (IsOwner)
-			{
-					health.Value = maxHealth;
-					alive.Value = true;
-			}
-
-			characterType.OnValueChanged += OnCharacterTypeChanged;
-
-			ApplyCharacterType(characterType.Value);
-
+		Debug.Log(
+				$"CharacterBasic OnNetworkSpawn: {name}, " +
+				$"IsServer={IsServer}, " +
+				$"IsOwner={IsOwner}, " +
+				$"OwnerClientId={OwnerClientId}, " +
+				$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
+				$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
+		);
 		if (IsOwner)
 		{
-			SetCharacterTypeServerRpc(CharacterSelectData.SelectedCharacter);
+			health.Value = maxHealth;
+			alive.Value = true;
+
+			healthBar.Hide();
+
+			coinCount.Value = 0;
+			UpdateCoinVisual();
+		}
+
+        animator.runtimeAnimatorController = animController;
+
+        if (IsOwner)
+		{
             AudioManager.Instance.player = gameObject;
         }
 	}
 
     public virtual void Update()
 	{
-        healthBar.UpdateHealthBar(health.Value, maxHealth);
+		UpdateHealth();
+
 		UpdateAnimatorVisuals();
         if (!IsOwner) return;
 
@@ -227,6 +229,36 @@ public class CharacterBasic : Spawnable
         InGameUI.Instance.setText(abilityCooldownsCurrent[0].ToString("F2"));
     }
 
+	private void UpdateHealth()
+	{
+		if (IsOwner)
+		{
+			InGameUI.Instance.SetHealthMax(maxHealth);
+            InGameUI.Instance.SetHealthValue(health.Value);
+        } else
+		{
+            healthBar.UpdateHealthBar(health.Value, maxHealth);
+        }
+
+    }
+
+	public void AddCoin(int numCoin)
+	{
+		AddCoinOwnerRpc(numCoin);
+	}
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    private void AddCoinOwnerRpc(int numCoin)
+    {
+        coinCount.Value += numCoin;
+		UpdateCoinVisual();
+    }
+
+    private void UpdateCoinVisual()
+	{
+		InGameUI.Instance.SetCoins(coinCount.Value);
+	}
+
     public void TakeDamage(float damage)
 	{
 		TakeDamageOwnerRpc(damage);
@@ -304,7 +336,7 @@ public class CharacterBasic : Spawnable
 		}
 	}
 
-	void updateMousePos()
+	public void updateMousePos()
 	{
         mousePos = cam.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
     }
@@ -325,7 +357,7 @@ public class CharacterBasic : Spawnable
     }
 
 
-    void Attack()
+    public virtual void Attack()
 	{
         updateMousePos();
 
@@ -356,27 +388,5 @@ public class CharacterBasic : Spawnable
 
             SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
 		}
-	}
-
-	// player choose 
-	private void ApplyCharacterType(int type)
-	{
-			if (animator == null)
-			{
-					animator = GetComponent<Animator>();
-			}
-
-			animator.runtimeAnimatorController = animController;
-	}
-	private void OnCharacterTypeChanged(int oldValue, int newValue)
-	{
-			ApplyCharacterType(newValue);
-	}
-
-	[ServerRpc]
-	private void SetCharacterTypeServerRpc(int type)
-	{
-			type = Mathf.Clamp(type, 0, 3);
-			characterType.Value = type;
 	}
 }
