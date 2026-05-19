@@ -851,7 +851,7 @@ MonoBehaviour:
   timerMax: 5
   spawnPos: {x: 7, y: 0}
   spawnPosRange: {x: 2, y: 2}
-  enemyPrefab: {fileID: 8497165169282153330, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
+  spawnName: 
 --- !u!114 &189789549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2590,7 +2590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Transports.UTP.UnityTransport
   m_ProtocolType: 1
-  m_UseWebSockets: 0
+  m_UseWebSockets: 1
   m_UseEncryption: 0
   m_MaxPacketQueueSize: 128
   m_MaxPayloadSize: 6144
@@ -3729,16 +3729,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613574664}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8182f28838ba4f14aa7bee9cd977cfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
   timerMax: 5
-  spawnPos: {x: 7, y: 0}
+  spawnPos: {x: -7, y: 0}
   spawnPosRange: {x: 2, y: 2}
-  enemyPrefab: {fileID: 8497165169282153330, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
+  spawnName: HiddenSkeleton
 --- !u!4 &613574666
 Transform:
   m_ObjectHideFlags: 0
@@ -5809,6 +5809,7 @@ MonoBehaviour:
   - {fileID: 5781850604906514888, guid: 33628a088ef131f4c9e633f4bbe1d435, type: 3}
   - {fileID: 4058061203523029959, guid: 0bb1a17c924a1cb4f869ced70a890cdc, type: 3}
   - {fileID: 4703824552739568099, guid: f1f67a730e38e6d47b8d815d53752e9e, type: 3}
+  - {fileID: 6887922644733331735, guid: aa562f57790cb234bb0e0e4a66669895, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -5832,6 +5833,7 @@ MonoBehaviour:
   - Arrow
   - ArrowPiercing
   - Coin
+  - HiddenSkeleton
 --- !u!4 &706246470
 Transform:
   m_ObjectHideFlags: 0
@@ -11976,11 +11978,11 @@ MonoBehaviour:
   doorVisual: {fileID: 0}
   doorBlockers: []
   enemySpawnableNames:
-  - RangedEnemy
-  - RangedEnemy
-  - RangedEnemy
-  - RangedEnemy
-  - RangedEnemy
+  - HiddenSkeleton
+  - HiddenSkeleton
+  - HiddenSkeleton
+  - HiddenSkeleton
+  - HiddenSkeleton
   spawnPoints:
   - {fileID: 577399932}
   - {fileID: 732279547}

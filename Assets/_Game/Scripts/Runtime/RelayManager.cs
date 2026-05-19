@@ -42,7 +42,7 @@ public class RelayManager : MonoBehaviour
 
         Debug.Log(joinCode);
 
-        var relayServerData = allocation.ToRelayServerData("dtls");
+        var relayServerData = allocation.ToRelayServerData("wss");
 
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
@@ -57,7 +57,7 @@ public class RelayManager : MonoBehaviour
     {
         var joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
 
-        var relayServerData = joinAllocation.ToRelayServerData("dtls");
+        var relayServerData = joinAllocation.ToRelayServerData("wss");
 
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 

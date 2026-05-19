@@ -9,7 +9,7 @@ public class SpawnEnemiesMP : NetworkBehaviour
 
     public Vector2 spawnPosRange;
 
-    public Transform enemyPrefab;
+    public string spawnName;
 
     private float timer;
 
@@ -32,8 +32,7 @@ public class SpawnEnemiesMP : NetworkBehaviour
 
             Vector2 randSpawnPos = new Vector2(spawnPos.x + Random.Range(-spawnPosRange.x / 2, spawnPosRange.x / 2), Random.Range(-spawnPosRange.x / 2, spawnPosRange.y / 2));
 
-            Transform spawnedObjectTransform = Instantiate(enemyPrefab, randSpawnPos, Quaternion.identity);
-            spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
+            SpawnerUtil.Instance.NetworkSpawnGameObject(spawnName, randSpawnPos);
         }
     }
 }

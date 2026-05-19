@@ -482,6 +482,11 @@ MonoBehaviour:
   attackCooldown: 0.5
   maxHealth: 20
   healthBar: {fileID: 0}
+  coinCount:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 1
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -736,7 +741,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 1617860108917191964}
-  SelfCanvasGroup: {fileID: 6067563909229945667}
 --- !u!1 &5881966125439417533
 GameObject:
   m_ObjectHideFlags: 0
