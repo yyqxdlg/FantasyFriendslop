@@ -16,7 +16,7 @@ public class SpawnEnemiesMP : NetworkBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timer = timerMax;
+        timer = 0;
     }
 
     // Update is called once per frame
