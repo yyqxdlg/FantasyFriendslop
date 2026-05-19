@@ -5,6 +5,7 @@ using Unity.Netcode;
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RoomDoor : NetworkBehaviour
 {
@@ -14,7 +15,9 @@ public class RoomDoor : NetworkBehaviour
     [SerializeField] private int roomId = 1;
 
     [Header("Door Visual")]
-    [SerializeField] private GameObject doorVisual;
+    [SerializeField] private GameObject doorVisual; // old fallback
+    [SerializeField] private GameObject closedDoorVisual;
+    [SerializeField] private GameObject openDoorVisual;
     [Header("Door Blocker")]
     [SerializeField] private Collider2D[] doorBlockers;
 
@@ -22,9 +25,21 @@ public class RoomDoor : NetworkBehaviour
     [SerializeField] private string[] enemySpawnableNames;
     [SerializeField] private Transform[] spawnPoints;
 
+    [Header("Random Enemy Spawning")]
+    [SerializeField] private bool useRandomEnemyPool = false;
+    [SerializeField] private string[] enemyPoolNames;
+    [SerializeField] private int minEnemyCount = 3;
+    [SerializeField] private int maxEnemyCount = 6;
+    [SerializeField] private bool useUniqueSpawnPoints = true;
+
     [Header("Key Drop")]
     [SerializeField] private bool dropKeyWhenCleared = true;
     [SerializeField] private string keySpawnableName = "RoomKey";
+
+    [Header("Optional Key Requirement Before Trigger")]
+    [SerializeField] private bool requireKeyBeforeTrigger = false;
+    [SerializeField] private int requiredKeyRoomIdBeforeTrigger = -1;
+    [SerializeField] private string lockedHintMessage = "Locked. Find the key first!";
 
     [Header("Player Detection")]
     [SerializeField] private string playerTag = "Player";
@@ -57,7 +72,7 @@ public class RoomDoor : NetworkBehaviour
 
     private int aliveEnemyCount = 0;
     private bool keyHasSpawned = false;
-
+    private static readonly HashSet<int> collectedRoomKeys = new HashSet<int>();
     // ── Lifecycle ──────────────────────────────────────────────────
 
     public override void OnNetworkSpawn()
@@ -95,9 +110,15 @@ public class RoomDoor : NetworkBehaviour
 
     private void OnRoomClearedChanged(bool oldValue, bool newValue)
     {
-        if (newValue)
+        if (!newValue) return;
+
+        if (dropKeyWhenCleared)
         {
             ShowHint("Room cleared! A key dropped.");
+        }
+        else
+        {
+            ShowHint("");
         }
     }
 
@@ -182,7 +203,17 @@ public class RoomDoor : NetworkBehaviour
     {
         if (hasTriggered.Value) return;
 
-        AudioManager.Instance.PlayBackgroundSong(roomSong, 1);
+        // Optional lock check for portals / doors that require a previous room key.
+        if (requireKeyBeforeTrigger && !collectedRoomKeys.Contains(requiredKeyRoomIdBeforeTrigger))
+        {
+            ShowHintClientRpc(lockedHintMessage);
+            return;
+        }
+
+        if (AudioManager.Instance != null && !string.IsNullOrWhiteSpace(roomSong))
+        {
+            AudioManager.Instance.PlayBackgroundSong(roomSong, 1);
+        }
 
         hasTriggered.Value = true;
         roomCleared.Value = false;
@@ -192,12 +223,14 @@ public class RoomDoor : NetworkBehaviour
         keyHasSpawned = false;
 
         SpawnEnemiesForThisRoom();
+
         if (teleportPlayersOnTrigger)
         {
             TeleportAllPlayersToEntryPoints();
         }
 
-        // If this room has no enemies, immediately clear it.
+        // If this trigger has no enemies, immediately clear it.
+        // For pure portals, dropKeyWhenCleared should be false, so it will not drop a key.
         if (aliveEnemyCount <= 0)
         {
             Server_ClearRoom(transform.position);
@@ -206,18 +239,105 @@ public class RoomDoor : NetworkBehaviour
 
     private void SpawnEnemiesForThisRoom()
     {
+        if (useRandomEnemyPool && enemyPoolNames != null && enemyPoolNames.Length > 0)
+        {
+            SpawnRandomEnemiesForThisRoom();
+            return;
+        }
+
+        SpawnFixedEnemiesForThisRoom();
+    }
+
+    private void SpawnFixedEnemiesForThisRoom()
+    {
+        if (enemySpawnableNames == null || enemySpawnableNames.Length == 0)
+        {
+            return;
+        }
+
         for (int i = 0; i < enemySpawnableNames.Length; i++)
         {
             if (string.IsNullOrWhiteSpace(enemySpawnableNames[i])) continue;
 
             Vector3 pos = transform.position;
 
-            if (i < spawnPoints.Length && spawnPoints[i] != null)
+            if (spawnPoints != null && i < spawnPoints.Length && spawnPoints[i] != null)
             {
                 pos = spawnPoints[i].position;
             }
 
             Server_SpawnEnemyForRoom(enemySpawnableNames[i], pos);
+        }
+    }
+
+    private void SpawnRandomEnemiesForThisRoom()
+    {
+        if (spawnPoints == null || spawnPoints.Length == 0)
+        {
+            Debug.LogWarning($"Room {roomId}: No spawn points assigned.");
+            return;
+        }
+
+        List<Transform> validSpawnPoints = new List<Transform>();
+
+        foreach (Transform point in spawnPoints)
+        {
+            if (point != null)
+            {
+                validSpawnPoints.Add(point);
+            }
+        }
+
+        if (validSpawnPoints.Count == 0)
+        {
+            Debug.LogWarning($"Room {roomId}: All spawn points are empty.");
+            return;
+        }
+
+        List<string> validEnemyNames = new List<string>();
+
+        foreach (string enemyName in enemyPoolNames)
+        {
+            if (!string.IsNullOrWhiteSpace(enemyName))
+            {
+                validEnemyNames.Add(enemyName);
+            }
+        }
+
+        if (validEnemyNames.Count == 0)
+        {
+            Debug.LogWarning($"Room {roomId}: Enemy pool is empty.");
+            return;
+        }
+
+        int maxAllowed = maxEnemyCount;
+
+        if (useUniqueSpawnPoints)
+        {
+            maxAllowed = Mathf.Min(maxEnemyCount, validSpawnPoints.Count);
+        }
+
+        int minAllowed = Mathf.Clamp(minEnemyCount, 0, maxAllowed);
+        int enemyCount = Random.Range(minAllowed, maxAllowed + 1);
+
+        for (int i = 0; i < enemyCount; i++)
+        {
+            string enemyName = validEnemyNames[Random.Range(0, validEnemyNames.Count)];
+
+            Transform chosenSpawnPoint;
+
+            if (useUniqueSpawnPoints)
+            {
+                int spawnIndex = Random.Range(0, validSpawnPoints.Count);
+                chosenSpawnPoint = validSpawnPoints[spawnIndex];
+                validSpawnPoints.RemoveAt(spawnIndex);
+            }
+            else
+            {
+                chosenSpawnPoint = validSpawnPoints[Random.Range(0, validSpawnPoints.Count)];
+            }
+
+            Server_SpawnEnemyForRoom(enemyName, chosenSpawnPoint.position);
         }
     }
 
@@ -358,19 +478,15 @@ public class RoomDoor : NetworkBehaviour
     {
         if (!IsServer) return;
 
+        // Record all picked keys globally so portals can check them.
+        collectedRoomKeys.Add(pickedKeyRoomId);
+
         if (pickedKeyRoomId != roomId) return;
         if (keyCollected.Value) return;
 
         keyCollected.Value = true;
 
         Debug.Log($"Room {roomId}: key picked up by client {pickerClientId}.");
-
-        // 后续扩展入口：
-        // 1. 解锁下一扇门
-        // 2. 给团队 inventory 加 key
-        // 3. 打开商店
-        // 4. 触发 boss room
-        // 5. 开启下一段地图
     }
 
     // ── Teleport players ───────────────────────────────────────────
@@ -428,6 +544,16 @@ public class RoomDoor : NetworkBehaviour
             doorVisual.SetActive(false);
         }
 
+        if (closedDoorVisual != null)
+        {
+            closedDoorVisual.SetActive(false);
+        }
+
+        if (openDoorVisual != null)
+        {
+            openDoorVisual.SetActive(true);
+        }
+
         if (doorBlockers != null)
         {
             foreach (Collider2D col in doorBlockers)
@@ -439,7 +565,7 @@ public class RoomDoor : NetworkBehaviour
             }
         }
 
-        ShowHint("Room Strated");
+        ShowHint("Room Started");
     }
 
     // ── Hint UI ────────────────────────────────────────────────────
@@ -465,7 +591,11 @@ public class RoomDoor : NetworkBehaviour
             hintCoroutine = StartCoroutine(HideHintAfterDelay(3f));
         }
     }
-
+    [ClientRpc]
+    private void ShowHintClientRpc(string msg)
+    {
+        ShowHint(msg);
+    }
     private IEnumerator HideHintAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
