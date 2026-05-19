@@ -263,7 +263,7 @@ private void UpdateAnimatorVisuals()
     if (animator != null)
     {
         animator.SetBool("IsMoving", isMoving.Value);
-        animator.SetInteger("Facing", facing.Value);
+        //animator.SetInteger("Facing", facing.Value);
     }
 
     if (spriteRenderer == null) return;

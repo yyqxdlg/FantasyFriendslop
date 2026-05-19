@@ -24,7 +24,6 @@ public class SoundObject : MonoBehaviour
 
     public void DestroySelf()
     {
-        Debug.Log("Trying to destroy");
         Destroy(gameObject);
     }
 }

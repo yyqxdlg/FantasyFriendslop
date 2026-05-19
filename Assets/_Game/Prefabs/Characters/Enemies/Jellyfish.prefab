@@ -558,14 +558,19 @@ MonoBehaviour:
     m_InternalValue: 0
   healthBar: {fileID: 0}
   targetingRangeObject: {fileID: 2900984723075450811}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  sideSpriteFacesLeft: 1
   standingRange: 0
   strafeSpeed: 1.5
   strafeChangeInterval: 2
   attackCooldown: 1
   attackDamage: 1
   attackRange: 1
+  coinsToDrop: 1
   respawnTime: 3
   bodyHp: 5
+  reviveParticleName: Jellyfish revive
 --- !u!95 &3460544872984202843
 Animator:
   serializedVersion: 7
@@ -599,6 +604,7 @@ GameObject:
   - component: {fileID: 6616514193127163003}
   - component: {fileID: 4208682253468377908}
   - component: {fileID: 5566468541944531818}
+  - component: {fileID: 5727224655174615429}
   m_Layer: 8
   m_Name: Healthbar
   m_TagString: Untagged
@@ -691,6 +697,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 4208682253468377908}
+--- !u!225 &5727224655174615429
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4069787323468268524}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8781379560090266654
 GameObject:
   m_ObjectHideFlags: 0
