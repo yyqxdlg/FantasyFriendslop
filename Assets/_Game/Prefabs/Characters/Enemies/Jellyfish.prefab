@@ -349,8 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 542994821
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 2721249466
+  InScenePlacedSourceGlobalObjectIdHash: 542994821
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
@@ -548,6 +548,14 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 18446744073709551615
+  hasSpawnAnimation: 0
+  hasAttackAnimation: 0
+  hasDeathAnimation: 1
+  spawnLockTime: 0.6
+  attackHitDelay: 0.25
+  deathDespawnDelay: 0.8
+  dropLootOnDeath: 1
+  dropSpawnableName: Jellyfish_Drop
   roomId: -1
   maxHealth: 10
   speed: 2
@@ -560,6 +568,9 @@ MonoBehaviour:
   targetingRangeObject: {fileID: 2900984723075450811}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  useAnimIndexBlendTree: 0
+  hasWalkAnimations: 0
+  useFlipForSideDirections: 0
   sideSpriteFacesLeft: 1
   standingRange: 0
   strafeSpeed: 1.5
@@ -568,6 +579,8 @@ MonoBehaviour:
   attackDamage: 1
   attackRange: 1
   coinsToDrop: 1
+  moveThreshold: 0.05
+  facingDeadZone: 0.15
   respawnTime: 3
   bodyHp: 5
   reviveParticleName: Jellyfish revive
@@ -581,7 +594,7 @@ Animator:
   m_GameObject: {fileID: 3388104308899182308}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0dbffc5dc81da1246becbeeb2460669a, type: 2}
+  m_Controller: {fileID: 9100000, guid: d4165e1767a8645458f8db2e4008e09a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

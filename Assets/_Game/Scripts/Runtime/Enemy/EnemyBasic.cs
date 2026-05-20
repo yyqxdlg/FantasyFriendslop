@@ -1,16 +1,30 @@
 using System;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.UIElements;
+using System.Collections;
 
 public class EnemyBasic : Spawnable
 {
+    [Header("Optional Animation Settings")]
+    [SerializeField] private bool hasSpawnAnimation = false;
+    [SerializeField] private bool hasAttackAnimation = false;
+    [SerializeField] private bool hasDeathAnimation = true;
+
+    [SerializeField] private float spawnLockTime = 0.6f;
+    [SerializeField] private float attackHitDelay = 0.25f;
+    [SerializeField] private float deathDespawnDelay = 0.8f;
+
+    [Header("Optional Loot Settings")]
+    [SerializeField] private bool dropLootOnDeath = true;
+    [SerializeField] private string dropSpawnableName = "Coin";
+    
     // add roomid, every own a roomid
     public static event Action<int, Vector3> OnEnemyDiedInRoom;
 
     [SerializeField] private int roomId = -1;
 
     private bool hasDied = false;
+    private bool canAct = true;
 
     public int RoomId => roomId;
 
@@ -40,8 +54,17 @@ public class EnemyBasic : Spawnable
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+
+    private NetworkVariable<bool> isDeadForAnimation = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    );
     // 如果你的 side 原图是朝LEFT，就保持 true。
     // 如果你的 side 原图是朝右，后面 flip 逻辑要反过来。
+    [SerializeField] private bool useAnimIndexBlendTree = false;
+    [SerializeField] private bool hasWalkAnimations = true;
+    [SerializeField] private bool useFlipForSideDirections = true;
     [SerializeField] private bool sideSpriteFacesLeft = true;
 
     private NetworkVariable<int> facing = new NetworkVariable<int>(
@@ -107,9 +130,26 @@ public class EnemyBasic : Spawnable
 
     public override void OnNetworkSpawn()
     {
+        base.OnNetworkSpawn();
+
         if (!IsServer) return;
 
         health.Value = maxHealth;
+        hasDied = false;
+        isDeadForAnimation.Value = false;
+
+        if (hasSpawnAnimation)
+        {
+            canAct = false;
+            isMoving.Value = false;
+
+            PlaySpawnAnimationClientRpc();
+            StartCoroutine(ServerUnlockAfterSpawnAnimation());
+        }
+        else
+        {
+            canAct = true;
+        }
     }
 
 	public virtual void TakeDamage(float Damage)
@@ -119,7 +159,9 @@ public class EnemyBasic : Spawnable
 
     [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
     public void TakeDamageServerRpc(float Damage)
-	{
+    {
+        if (hasDied) return;
+
         health.Value -= Damage;
 
         if (health.Value <= 0)
@@ -127,7 +169,20 @@ public class EnemyBasic : Spawnable
             Die();
         }
     }
+    [ClientRpc]
+    private void PlaySpawnAnimationClientRpc()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Spawn");
+        }
+    }
 
+    private IEnumerator ServerUnlockAfterSpawnAnimation()
+    {
+        yield return new WaitForSeconds(spawnLockTime);
+        canAct = true;
+    }
     public virtual void HealAmount(float heal)
     {
         HealAmountServerRpc(heal);
@@ -160,18 +215,52 @@ public class EnemyBasic : Spawnable
 	}
     // add more when ebemy die
 
-	public virtual void Die()
+public virtual void Die()
+{
+    if (!IsServer) return;
+    if (hasDied) return;
+
+    hasDied = true;
+    canAct = false;
+
+    if (rb != null)
     {
-        if (!IsServer) return;
-        if (hasDied) return;
+        rb.linearVelocity = Vector2.zero;
+    }
 
-        hasDied = true;
+    isMoving.Value = false;
 
-        OnEnemyDiedInRoom?.Invoke(roomId, transform.position);
+    OnEnemyDiedInRoom?.Invoke(roomId, transform.position);
 
+    if (hasDeathAnimation)
+    {
+        isDeadForAnimation.Value = true;
+        StartCoroutine(Server_DespawnAfterDeathAnimation());
+    }
+    else
+    {
+        DropLootIfNeeded();
+        DespawnSelf();
+    }
+}
+    private void DropLootIfNeeded()
+    {
+        if (dropLootOnDeath)
+        {
+            DropCoins(coinsToDrop);
+        }
+    }
+private IEnumerator Server_DespawnAfterDeathAnimation()
+{
+    yield return new WaitForSeconds(deathDespawnDelay);
+
+    DropLootIfNeeded();
+
+    DespawnSelf();
+}
+    private void DespawnSelf()
+    {
         NetworkObject netObj = GetComponent<NetworkObject>();
-
-        DropCoins(coinsToDrop);
 
         if (netObj != null && netObj.IsSpawned)
         {
@@ -185,18 +274,18 @@ public class EnemyBasic : Spawnable
 
     public void DropCoins(int coins)
     {
-        for(int i = 0; i < coins; i++)
+        if (coins <= 0) return;
+        if (string.IsNullOrEmpty(dropSpawnableName)) return;
+
+        for (int i = 0; i < coins; i++)
         {
-            Vector2 pos = gameObject.transform.position;
-            
-            pos.x += UnityEngine.Random.Range(-1, 1);
-            pos.y += UnityEngine.Random.Range(-1, 1);
+            Vector2 pos = transform.position;
 
-            Debug.Log("Spawning coin");
+            pos.x += UnityEngine.Random.Range(-1f, 1f);
+            pos.y += UnityEngine.Random.Range(-1f, 1f);
 
-            SpawnerUtil.Instance.NetworkSpawnGameObject("Coin", pos, 0, ulong.MaxValue);
+            SpawnerUtil.Instance.NetworkSpawnGameObject(dropSpawnableName, pos, 0, ulong.MaxValue);
         }
-        
     }
 
     protected float DistanceToSelf(GameObject obj)
@@ -236,27 +325,77 @@ public class EnemyBasic : Spawnable
 
 	}
 
-public void AttemptAttack()
-{
-    if (attackCooldownCurr <= 0)
+    public void AttemptAttack()
     {
-        attackCooldownCurr = attackCooldown;
-        Attack();
-    }
-}
+        if (attackCooldownCurr > 0) return;
+        if (hasDied) return;
+        if (!canAct) return;
 
+        attackCooldownCurr = attackCooldown;
+
+        if (hasAttackAnimation)
+        {
+            PlayAttackAnimationClientRpc();
+            StartCoroutine(ServerAttackAfterAnimationDelay());
+        }
+        else
+        {
+            Attack();
+        }
+    }
+    private IEnumerator ServerAttackAfterAnimationDelay()
+    {
+        canAct = false;
+
+        yield return new WaitForSeconds(attackHitDelay);
+
+        if (!hasDied && target != null)
+        {
+            Attack();
+        }
+
+        canAct = true;
+    }
+    [ClientRpc]
+    private void PlayAttackAnimationClientRpc()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Attack");
+        }
+    }
 public virtual void Attack()
 {
     target.GetComponent<CharacterBasic>().TakeDamage(attackDamage);
 }
 
-void Update()
-{
-    DecayKnockbackVector();
-    healthBar.UpdateHealthBar(health.Value, maxHealth);
-    UpdateAnimatorVisuals();
-    ServerUpdate();
-}
+    void Update()
+    {
+        UpdateAnimatorVisuals();
+
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar(health.Value, maxHealth);
+        }
+
+        if (!IsServer) return;
+
+        if (hasDied) return;
+
+        if (!canAct)
+        {
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+
+            isMoving.Value = false;
+            return;
+        }
+
+        DecayKnockbackVector();
+        ServerUpdate();
+    }
 
 private void UpdateAnimatorVisuals()
 {
@@ -264,50 +403,98 @@ private void UpdateAnimatorVisuals()
     {
         animator.SetBool("IsMoving", isMoving.Value);
         animator.SetInteger("Facing", facing.Value);
+        animator.SetBool("IsDead", isDeadForAnimation.Value);
+
+        if (useAnimIndexBlendTree)
+        {
+            animator.SetFloat("AnimIndex", GetAnimIndex());
+        }
     }
 
     if (spriteRenderer == null) return;
 
-    // 只有左右方向需要镜像
+    if (!useFlipForSideDirections)
+    {
+        spriteRenderer.flipX = false;
+        return;
+    }
+
     if (sideSpriteFacesLeft)
     {
-        // side 原图朝左
-        if (facing.Value == 1) // Left
+        if (facing.Value == 1)
             spriteRenderer.flipX = false;
-        else if (facing.Value == 2) // Right
+        else if (facing.Value == 2)
             spriteRenderer.flipX = true;
     }
     else
     {
-        // side 原图朝右
-        if (facing.Value == 1) // Left
+        if (facing.Value == 1)
             spriteRenderer.flipX = true;
-        else if (facing.Value == 2) // Right
+        else if (facing.Value == 2)
             spriteRenderer.flipX = false;
     }
 }
+private float GetAnimIndex()
+{
+    int dir = facing.Value;
+    bool moving = isMoving.Value;
+
+    // Facing:
+    // 0 = Down
+    // 1 = Left
+    // 2 = Right
+    // 3 = Up
+
+    // For enemies like Slime:
+    // They have directional idle animations, but no walk animations.
+    if (!hasWalkAnimations)
+    {
+        if (dir == 0) return 0f; // Idle_Down
+        if (dir == 1) return 1f; // Idle_Left
+        if (dir == 2) return 2f; // Idle_Right
+        if (dir == 3) return 3f; // Idle_Up
+
+        return 0f;
+    }
+
+    // For enemies like Skeleton:
+    // They have both idle and walk animations.
+    if (!moving)
+    {
+        if (dir == 0) return 0f;             // Idle_Down
+        if (dir == 1 || dir == 2) return 1f; // Idle_Side
+        if (dir == 3) return 2f;             // Idle_Up
+    }
+    else
+    {
+        if (dir == 0) return 3f;             // Walk_Down
+        if (dir == 1 || dir == 2) return 4f; // Walk_Side
+        if (dir == 3) return 5f;             // Walk_Up
+    }
+
+    return 0f;
+}
+[SerializeField] private float moveThreshold = 0.05f;
+[SerializeField] private float facingDeadZone = 0.15f;
 
 private void UpdateFacingFromMove(Vector2 movementVector)
 {
     if (!IsServer) return;
 
-    isMoving.Value = movementVector.sqrMagnitude > 0.01f;
+    isMoving.Value = movementVector.sqrMagnitude > moveThreshold * moveThreshold;
 
     if (!isMoving.Value) return;
 
-    if (Mathf.Abs(movementVector.x) > Mathf.Abs(movementVector.y))
+    float x = movementVector.x;
+    float y = movementVector.y;
+
+    if (Mathf.Abs(x) > Mathf.Abs(y) + facingDeadZone)
     {
-        if (movementVector.x < 0)
-            facing.Value = 1; // Left
-        else
-            facing.Value = 2; // Right
+        facing.Value = x < 0 ? 1 : 2; // Left / Right
     }
-    else
+    else if (Mathf.Abs(y) > Mathf.Abs(x) + facingDeadZone)
     {
-        if (movementVector.y > 0)
-            facing.Value = 3; // Up
-        else
-            facing.Value = 0; // Down
+        facing.Value = y > 0 ? 3 : 0; // Up / Down
     }
 }
 

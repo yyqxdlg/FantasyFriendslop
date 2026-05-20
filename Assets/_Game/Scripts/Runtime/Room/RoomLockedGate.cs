@@ -6,8 +6,12 @@ public class RoomLockedGate : NetworkBehaviour
     [Header("Unlock Rule")]
     [SerializeField] private int requiredKeyRoomId = 1;
 
-    [Header("Gate Objects")]
-    [SerializeField] private GameObject gateVisual;
+    [Header("Gate Visual States")]
+    [SerializeField] private GameObject lockedVisual;
+    [SerializeField] private GameObject closedVisual;
+    [SerializeField] private GameObject openVisual;
+
+    [Header("Gate Colliders")]
     [SerializeField] private Collider2D[] gateColliders;
 
     [Header("Initial State")]
@@ -60,9 +64,19 @@ public class RoomLockedGate : NetworkBehaviour
 
     private void ApplyGateState(bool unlocked)
     {
-        if (gateVisual != null)
+        if (lockedVisual != null)
         {
-            gateVisual.SetActive(!unlocked);
+            lockedVisual.SetActive(!unlocked);
+        }
+
+        if (closedVisual != null)
+        {
+            closedVisual.SetActive(false);
+        }
+
+        if (openVisual != null)
+        {
+            openVisual.SetActive(unlocked);
         }
 
         if (gateColliders == null) return;
