@@ -64,9 +64,9 @@ public class CharacterBasic : Spawnable
 
 	private Camera cam;
 
-	private bool shooting;
+	public bool shooting;
 
-	private bool[] attemptingAbilities = new bool[] { false };
+    public bool[] attemptingAbilities = new bool[] { false };
 
 	public float[] abilityCooldownsMax = new float[] { 10 };
 
@@ -77,7 +77,7 @@ public class CharacterBasic : Spawnable
     [SerializeField] private float attackSoundVolume = 1f;
     [SerializeField] private float attackSoundRange = 20f;
 
-    void Awake()
+    public virtual void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		//animator = GetComponent<Animator>();
@@ -434,6 +434,8 @@ public class CharacterBasic : Spawnable
             updateMousePos();
 
             SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
-		}
+
+            PlayAttackAnimation();
+        }
 	}
 }
