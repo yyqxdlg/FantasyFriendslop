@@ -1,109 +1,103 @@
 fileFormatVersion: 2
-guid: 8f74555ed020151479f0b38f4a785314
+guid: 90dc0d6aeda06864f9d3da2d175c0de0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1957952036789415982
-    second: Blue Mage_0
+      213: 5776647014771434127
+    second: Red Knight_0
   - first:
-      213: -7856947420155743027
-    second: Blue Mage_1
+      213: 4563402015757184945
+    second: Red Knight_1
   - first:
-      213: -3743379134445465864
-    second: Blue Mage_2
+      213: -3626554532961852009
+    second: Red Knight_2
   - first:
-      213: 1442969116007426240
-    second: Blue Mage_3
+      213: -8027363690349391726
+    second: Red Knight_3
   - first:
-      213: 3956173164496804157
-    second: Blue Mage_4
+      213: 6371634232813209990
+    second: Red Knight_4
   - first:
-      213: 8441981882921995507
-    second: Blue Mage_5
+      213: 3586021320669960900
+    second: Red Knight_5
   - first:
-      213: -5123497449459742324
-    second: Blue Mage_6
+      213: -7638871200967032868
+    second: Red Knight_6
   - first:
-      213: 6360838676644108358
-    second: Blue Mage_7
+      213: 3775845986527256552
+    second: Red Knight_7
   - first:
-      213: -7378278059874096329
-    second: Blue Mage_8
+      213: 6186335525670211253
+    second: Red Knight_8
   - first:
-      213: -7267234042231689181
-    second: Blue Mage_9
+      213: -7335259152428601269
+    second: Red Knight_9
   - first:
-      213: 7868797885564952061
-    second: Blue Mage_10
+      213: -1576026833176541705
+    second: Red Knight_10
   - first:
-      213: -5085795583991861596
-    second: Blue Mage_11
+      213: 6060319419584656865
+    second: Red Knight_11
   - first:
-      213: 1665506322851033562
-    second: Blue Mage_12
+      213: -2898171516917890579
+    second: Red Knight_12
   - first:
-      213: 1852971989954038804
-    second: Blue Mage_13
+      213: -7632478477192183919
+    second: Red Knight_13
   - first:
-      213: -1937331470195597227
-    second: Blue Mage_14
+      213: -5099516920649313573
+    second: Red Knight_14
   - first:
-      213: 6053591049356249144
-    second: Blue Mage_15
+      213: -383047839314349425
+    second: Red Knight_15
   - first:
-      213: -6126946518880009731
-    second: Blue Mage_16
+      213: -1557157702918090339
+    second: Red Knight_16
   - first:
-      213: 6457023274356596720
-    second: Blue Mage_17
+      213: 7688010320555949018
+    second: Red Knight_17
   - first:
-      213: -1106068188539777217
-    second: Blue Mage_18
+      213: -3177047738504537421
+    second: Red Knight_18
   - first:
-      213: -2457003888985336194
-    second: Blue Mage_19
+      213: -5730219060572903248
+    second: Red Knight_19
   - first:
-      213: -2063730092737523863
-    second: Blue Mage_20
+      213: 2877706613450543189
+    second: Red Knight_20
   - first:
-      213: -3928414282489448627
-    second: Blue Mage_21
+      213: -9062290734361741768
+    second: Red Knight_21
   - first:
-      213: 8736756088576973675
-    second: Blue Mage_22
+      213: 1181087197373168724
+    second: Red Knight_22
   - first:
-      213: -3477088756460286007
-    second: Blue Mage_23
+      213: 7175731078312584408
+    second: Red Knight_23
   - first:
-      213: -6810569459229008189
-    second: Blue Mage_24
+      213: -8399302920915303075
+    second: Red Knight_24
   - first:
-      213: 2295792246339820878
-    second: Blue Mage_25
+      213: -209718671411618134
+    second: Red Knight_25
   - first:
-      213: -8603283648237945866
-    second: Blue Mage_26
+      213: 8010869384007103405
+    second: Red Knight_26
   - first:
-      213: -7459011887538203184
-    second: Blue Mage_27
+      213: -4258085204182852138
+    second: Red Knight_27
   - first:
-      213: 5991747152484792738
-    second: Blue Mage_28
+      213: 2142554324155491039
+    second: Red Knight_28
   - first:
-      213: 4712187284146500571
-    second: Blue Mage_29
+      213: 5156371351303108264
+    second: Red Knight_29
   - first:
-      213: -8337342404654521043
-    second: Blue Mage_30
+      213: -6366352664737573582
+    second: Red Knight_30
   - first:
-      213: 3287292032317749519
-    second: Blue Mage_31
-  - first:
-      213: 8901957746632230298
-    second: Blue Mage_32
-  - first:
-      213: 3887545799337178685
-    second: Blue Mage_33
+      213: 1129415617639973043
+    second: Red Knight_31
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -212,771 +206,705 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blue Mage_0
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 480
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2df0ae70ff4f3d4e0800000000000000
-      internalID: -1957952036789415982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_1
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 480
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc4f1b203f386f290800000000000000
-      internalID: -7856947420155743027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_2
+      name: Red Knight_0
       rect:
         serializedVersion: 2
         x: 8
         y: 432
-        width: 18
+        width: 17
         height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8fec4cfa288dc0cc0800000000000000
-      internalID: -3743379134445465864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_3
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 432
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c86b7d04c4760410800000000000000
-      internalID: 1442969116007426240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_4
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 384
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d39d3cb488627e630800000000000000
-      internalID: 3956173164496804157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_5
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 384
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3fc49d38bc1f72570800000000000000
-      internalID: 8441981882921995507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_6
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 336
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c890555173ea5e8b0800000000000000
-      internalID: -5123497449459742324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_7
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 336
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 64810f2431d364850800000000000000
-      internalID: 6360838676644108358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_8
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 288
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73b652342371b9990800000000000000
-      internalID: -7378278059874096329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_9
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 288
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 320772d5429952b90800000000000000
-      internalID: -7267234042231689181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_10
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 288
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dfd917a7cf5933d60800000000000000
-      internalID: 7868797885564952061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_11
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 288
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ae2aefacdf9b69b0800000000000000
-      internalID: -5085795583991861596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_12
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 240
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ad1f3b82d211d1710800000000000000
-      internalID: 1665506322851033562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_13
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 240
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 41c85f7153417b910800000000000000
-      internalID: 1852971989954038804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_14
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 240
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5506ec2da473d15e0800000000000000
-      internalID: -1937331470195597227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_15
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 240
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8380d507cfca20450800000000000000
-      internalID: 6053591049356249144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_16
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 192
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: df147506a96b8faa0800000000000000
-      internalID: -6126946518880009731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_17
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 192
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0ff547e0574fb9950800000000000000
-      internalID: 6457023274356596720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_18
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 192
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3f0abcb7d476a0f0800000000000000
-      internalID: -1106068188539777217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_19
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 192
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e7696411bf7f6edd0800000000000000
-      internalID: -2457003888985336194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_20
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 144
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 96f881e2a682c53e0800000000000000
-      internalID: -2063730092737523863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_21
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 144
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4735a116087b79c0800000000000000
-      internalID: -3928414282489448627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_22
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 144
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6b9cdc8f513f3970800000000000000
-      internalID: 8736756088576973675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_23
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 144
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9cf0eaac236eebfc0800000000000000
-      internalID: -3477088756460286007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_24
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 47
-        width: 33
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ced788292ffb71a0800000000000000
-      internalID: -6810569459229008189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_25
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 95
-        width: 20
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e4d5e2962ea4cdf10800000000000000
-      internalID: 2295792246339820878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_26
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 47
-        width: 34
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6fbb9d4aa1ffa9880800000000000000
-      internalID: -8603283648237945866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_27
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 95
-        width: 21
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0d59ed335344c7890800000000000000
-      internalID: -7459011887538203184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_28
-      rect:
-        serializedVersion: 2
-        x: 95
-        y: 47
-        width: 34
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a970df1a46f62350800000000000000
-      internalID: 5991747152484792738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_29
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 52
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bd33aa26e5d056140800000000000000
-      internalID: 4712187284146500571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_30
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 95
-        width: 24
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d2524cf814fcb4c80800000000000000
-      internalID: -8337342404654521043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_31
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 95
-        width: 33
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f097543cfaece9d20800000000000000
-      internalID: 3287292032317749519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_32
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 21
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a950d8de76b1a8b70800000000000000
-      internalID: 8901957746632230298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_33
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 21
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d36fd81be4653f530800000000000000
-      internalID: 3887545799337178685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_34
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 45
-        width: 36
-        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6b839b4f862c5c745bf1560490ccc030
-      internalID: -840793498
+      spriteID: f82a54c9ad5ca2050800000000000000
+      internalID: 5776647014771434127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 432
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf228494f5745f30800000000000000
+      internalID: 4563402015757184945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 384
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795e938ddd3ebadc0800000000000000
+      internalID: -3626554532961852009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_3
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 384
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2901bd12143199090800000000000000
+      internalID: -8027363690349391726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 336
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689cc8d83979c6850800000000000000
+      internalID: 6371634232813209990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_5
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 336
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca928f346b14c130800000000000000
+      internalID: 3586021320669960900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 288
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdff56d7d174df590800000000000000
+      internalID: -7638871200967032868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 288
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef9a816bef766430800000000000000
+      internalID: 3775845986527256552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 240
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bec3fc42674ad550800000000000000
+      internalID: 6186335525670211253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_9
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 240
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b407f0c2aace33a90800000000000000
+      internalID: -7335259152428601269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_10
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 240
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f5470402f3d02ae0800000000000000
+      internalID: -1576026833176541705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_11
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 240
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5beb537649a1450800000000000000
+      internalID: 6060319419584656865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 192
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de144fb4c50a7c7d0800000000000000
+      internalID: -2898171516917890579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_13
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 192
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f352b734df31690800000000000000
+      internalID: -7632478477192183919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_14
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 192
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd29a9a0160ea39b0800000000000000
+      internalID: -5099516920649313573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_15
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 192
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f82ffa505042faaf0800000000000000
+      internalID: -383047839314349425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_16
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 144
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d91dd42c15dd36ae0800000000000000
+      internalID: -1557157702918090339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_17
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 144
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb364a57ac41ba60800000000000000
+      internalID: 7688010320555949018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_18
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 144
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba9aff1aebd8e3d0800000000000000
+      internalID: -3177047738504537421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_19
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 144
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b82169df1c2a70b0800000000000000
+      internalID: -5730219060572903248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 96
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550138e0beaafe720800000000000000
+      internalID: 2877706613450543189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_21
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 96
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 836fd0757964c3280800000000000000
+      internalID: -9062290734361741768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_22
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 96
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45c70306c80146010800000000000000
+      internalID: 1181087197373168724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_23
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 96
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d46d86a561559360800000000000000
+      internalID: 7175731078312584408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 48
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5541fdae7eaf6b80800000000000000
+      internalID: -8399302920915303075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_25
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 48
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae5ebfbafde61df0800000000000000
+      internalID: -209718671411618134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_26
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 48
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da3bbc7e2435c2f60800000000000000
+      internalID: 8010869384007103405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_27
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 48
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd955d211e38e4c0800000000000000
+      internalID: -4258085204182852138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_28
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2e34b5ec1ebbd10800000000000000
+      internalID: 2142554324155491039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_29
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a63c64ac6c1f8740800000000000000
+      internalID: 5156371351303108264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_30
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23594775bfb26a7a0800000000000000
+      internalID: -6366352664737573582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Knight_31
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b08535358d7caf00800000000000000
+      internalID: 1129415617639973043
       vertices: []
       indices: 
       edges: []
@@ -985,7 +913,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5fab94ac465d8b74ba272abd5e592eb6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -995,41 +923,38 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Blue Mage_0: -1957952036789415982
-      Blue Mage_1: -7856947420155743027
-      Blue Mage_10: 7868797885564952061
-      Blue Mage_11: -5085795583991861596
-      Blue Mage_12: 1665506322851033562
-      Blue Mage_13: 1852971989954038804
-      Blue Mage_14: -1937331470195597227
-      Blue Mage_15: 6053591049356249144
-      Blue Mage_16: -6126946518880009731
-      Blue Mage_17: 6457023274356596720
-      Blue Mage_18: -1106068188539777217
-      Blue Mage_19: -2457003888985336194
-      Blue Mage_2: -3743379134445465864
-      Blue Mage_20: -2063730092737523863
-      Blue Mage_21: -3928414282489448627
-      Blue Mage_22: 8736756088576973675
-      Blue Mage_23: -3477088756460286007
-      Blue Mage_24: -6810569459229008189
-      Blue Mage_25: 2295792246339820878
-      Blue Mage_26: -8603283648237945866
-      Blue Mage_27: -7459011887538203184
-      Blue Mage_28: 5991747152484792738
-      Blue Mage_29: 4712187284146500571
-      Blue Mage_3: 1442969116007426240
-      Blue Mage_30: -8337342404654521043
-      Blue Mage_31: 3287292032317749519
-      Blue Mage_32: 8901957746632230298
-      Blue Mage_33: 3887545799337178685
-      Blue Mage_34: -840793498
-      Blue Mage_4: 3956173164496804157
-      Blue Mage_5: 8441981882921995507
-      Blue Mage_6: -5123497449459742324
-      Blue Mage_7: 6360838676644108358
-      Blue Mage_8: -7378278059874096329
-      Blue Mage_9: -7267234042231689181
+      Red Knight_0: 5776647014771434127
+      Red Knight_1: 4563402015757184945
+      Red Knight_10: -1576026833176541705
+      Red Knight_11: 6060319419584656865
+      Red Knight_12: -2898171516917890579
+      Red Knight_13: -7632478477192183919
+      Red Knight_14: -5099516920649313573
+      Red Knight_15: -383047839314349425
+      Red Knight_16: -1557157702918090339
+      Red Knight_17: 7688010320555949018
+      Red Knight_18: -3177047738504537421
+      Red Knight_19: -5730219060572903248
+      Red Knight_2: -3626554532961852009
+      Red Knight_20: 2877706613450543189
+      Red Knight_21: -9062290734361741768
+      Red Knight_22: 1181087197373168724
+      Red Knight_23: 7175731078312584408
+      Red Knight_24: -8399302920915303075
+      Red Knight_25: -209718671411618134
+      Red Knight_26: 8010869384007103405
+      Red Knight_27: -4258085204182852138
+      Red Knight_28: 2142554324155491039
+      Red Knight_29: 5156371351303108264
+      Red Knight_3: -8027363690349391726
+      Red Knight_30: -6366352664737573582
+      Red Knight_31: 1129415617639973043
+      Red Knight_4: 6371634232813209990
+      Red Knight_5: 3586021320669960900
+      Red Knight_6: -7638871200967032868
+      Red Knight_7: 3775845986527256552
+      Red Knight_8: 6186335525670211253
+      Red Knight_9: -7335259152428601269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

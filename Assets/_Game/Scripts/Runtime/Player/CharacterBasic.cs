@@ -102,19 +102,48 @@ public class CharacterBasic : Spawnable
 		if (IsOwner)
 		{
 			health.Value = maxHealth;
-			alive.Value = true;
 
 			healthBar.Hide();
 
 			coinCount.Value = 0;
 			UpdateCoinVisual();
+
+
 		}
+
+		SpawnBehavior();
 
         if (IsOwner)
 		{
             AudioManager.Instance.player = gameObject;
         }
 	}
+
+	// start as dead, do animation, then become alive
+	private void SpawnBehavior()
+	{
+		if (IsOwner)
+		{
+            alive.Value = false;
+        }
+
+		animator.Play("Spawn");
+        //animator.Update(0f);
+
+        float spawnClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+
+		Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+
+        Invoke("BecomeAlive", spawnClipLength);
+    }
+
+	private void BecomeAlive()
+	{
+        if (IsOwner)
+        {
+            alive.Value = true;
+        }
+    }
 
     public virtual void Update()
 	{
@@ -304,13 +333,28 @@ public class CharacterBasic : Spawnable
 
 	public void Die()
 	{
-		animator.Play("Die");
+        if (!IsOwner) return;
 
-		if (!IsOwner) return;
+        alive.Value = false;
 
-		alive.Value = false;
+        animator.Play("Die");
+		animator.Update(0f);
+
+        float deathClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+
+        Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+
 		rb.linearVelocity = Vector2.zero;
+
+		Invoke("BecomeGhost", deathClipLength);
 	}
+
+	private void BecomeGhost()
+	{
+        SpawnerUtil.Instance.NetworkSpawnGameObject("Ghost", gameObject.transform.position, gameObject.GetComponent<NetworkObject>().OwnerClientId, ulong.MaxValue);
+
+		NetworkDestroy();
+    }
 
     void FixedUpdate()
     {

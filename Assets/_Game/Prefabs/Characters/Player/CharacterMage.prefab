@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1887746272
+  GlobalObjectIdHash: 2325388411
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -524,7 +524,7 @@ MonoBehaviour:
     m_InternalValue: 0
   speed: 5
   attackCooldown: 0.5
-  maxHealth: 1
+  maxHealth: 2
   healthBar: {fileID: 0}
   coinCount:
     UpdateTraits:
@@ -554,7 +554,6 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  animController: {fileID: 9100000, guid: 17aa44f0cf7511a498391c0975236981, type: 2}
   projectileSpawnableName: firebolt
   summonPrefabName: fireball
   animator: {fileID: 951356924983260439}

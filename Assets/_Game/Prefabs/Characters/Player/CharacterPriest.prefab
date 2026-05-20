@@ -644,7 +644,7 @@ MonoBehaviour:
     m_InternalValue: 0
   speed: 5
   attackCooldown: 1
-  maxHealth: 10
+  maxHealth: 2
   healthBar: {fileID: 9198338880382930201}
   coinCount:
     UpdateTraits:
@@ -674,7 +674,6 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  animController: {fileID: 9100000, guid: 3ad44029bfa830344bb4ad194f556ce6, type: 2}
   projectileSpawnableName: Bullet
   summonPrefabName: 
   animator: {fileID: 951356924983260439}

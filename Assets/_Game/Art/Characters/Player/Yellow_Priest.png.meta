@@ -1,0 +1,1280 @@
+fileFormatVersion: 2
+guid: 7e431af6023f4464a9565108e883501f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1623333227814910041
+    second: Yellow_Priest_0
+  - first:
+      213: -5580436694226771404
+    second: Yellow_Priest_1
+  - first:
+      213: 4810694286373474250
+    second: Yellow_Priest_2
+  - first:
+      213: -4761744523198750678
+    second: Yellow_Priest_3
+  - first:
+      213: -3617411445169795278
+    second: Yellow_Priest_4
+  - first:
+      213: 26794658881247647
+    second: Yellow_Priest_5
+  - first:
+      213: 6840696069969064518
+    second: Yellow_Priest_6
+  - first:
+      213: 152965405092806617
+    second: Yellow_Priest_7
+  - first:
+      213: 8042479067026874932
+    second: Yellow_Priest_8
+  - first:
+      213: 4129652016266302426
+    second: Yellow_Priest_9
+  - first:
+      213: -3857587583324242679
+    second: Yellow_Priest_10
+  - first:
+      213: -5219902281394594430
+    second: Yellow_Priest_11
+  - first:
+      213: -3123210489076498961
+    second: Yellow_Priest_12
+  - first:
+      213: 7252996957771257918
+    second: Yellow_Priest_13
+  - first:
+      213: -3912654235675959202
+    second: Yellow_Priest_14
+  - first:
+      213: 636527184242915614
+    second: Yellow_Priest_15
+  - first:
+      213: -8919390328562589631
+    second: Yellow_Priest_16
+  - first:
+      213: 6133288732899952609
+    second: Yellow_Priest_17
+  - first:
+      213: 1032297939358817280
+    second: Yellow_Priest_18
+  - first:
+      213: -8689447405986392592
+    second: Yellow_Priest_19
+  - first:
+      213: -5467809105627049352
+    second: Yellow_Priest_20
+  - first:
+      213: 4760340080118380837
+    second: Yellow_Priest_21
+  - first:
+      213: -7715454141044295223
+    second: Yellow_Priest_22
+  - first:
+      213: 238524992955927879
+    second: Yellow_Priest_23
+  - first:
+      213: -5207454512666218533
+    second: Yellow_Priest_24
+  - first:
+      213: 145726742668068534
+    second: Yellow_Priest_25
+  - first:
+      213: -8398775249513693542
+    second: Yellow_Priest_26
+  - first:
+      213: 409480019350987690
+    second: Yellow_Priest_27
+  - first:
+      213: 8495982833543599957
+    second: Yellow_Priest_28
+  - first:
+      213: 1112094300786262614
+    second: Yellow_Priest_29
+  - first:
+      213: -3375800040984839432
+    second: Yellow_Priest_30
+  - first:
+      213: 6189900983379640098
+    second: Yellow_Priest_31
+  - first:
+      213: 9067992908569835575
+    second: Yellow_Priest_32
+  - first:
+      213: -3637672373932173066
+    second: Yellow_Priest_33
+  - first:
+      213: 6993668009341616438
+    second: Yellow_Priest_34
+  - first:
+      213: -971326655671338525
+    second: Yellow_Priest_35
+  - first:
+      213: -208275265832387588
+    second: Yellow_Priest_36
+  - first:
+      213: 5606978272087462765
+    second: Yellow_Priest_37
+  - first:
+      213: 8854787344171293684
+    second: Yellow_Priest_38
+  - first:
+      213: 3044682875351413539
+    second: Yellow_Priest_39
+  - first:
+      213: -1954769824281610793
+    second: Yellow_Priest_40
+  - first:
+      213: -6093510069732737940
+    second: Yellow_Priest_41
+  - first:
+      213: -9043499098981585963
+    second: Yellow_Priest_42
+  - first:
+      213: -2347826429942350054
+    second: Yellow_Priest_43
+  - first:
+      213: -2987378093298693676
+    second: Yellow_Priest_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Yellow_Priest_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 480
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958fefb48fc378610800000000000000
+      internalID: 1623333227814910041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 480
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432ee0d946e4e82b0800000000000000
+      internalID: -5580436694226771404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 500
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acfca4e17f403c240800000000000000
+      internalID: 4810694286373474250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 432
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a20a39fb592eaedb0800000000000000
+      internalID: -4761744523198750678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_4
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 432
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23fc83cd47f5ccdc0800000000000000
+      internalID: -3617411445169795278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_5
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 452
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f999e7ca9913f5000800000000000000
+      internalID: 26794658881247647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 384
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 642bae205d80fee50800000000000000
+      internalID: 6840696069969064518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_7
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 384
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dffa79b9317f1200800000000000000
+      internalID: 152965405092806617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_8
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 404
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432e6afb910ac9f60800000000000000
+      internalID: 8042479067026874932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_9
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 336
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3578301a87f4930800000000000000
+      internalID: 4129652016266302426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_10
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 336
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90d30060888177ac0800000000000000
+      internalID: -3857587583324242679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_11
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 356
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d5933088e2f87b0800000000000000
+      internalID: -5219902281394594430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 288
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed32df8b9028a4d0800000000000000
+      internalID: -3123210489076498961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_13
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 288
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38d1f81e42d7a460800000000000000
+      internalID: 7252996957771257918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_14
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 308
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e506b99e3b573b9c0800000000000000
+      internalID: -3912654235675959202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_15
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 288
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19bda20a1665d800800000000000000
+      internalID: 636527184242915614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_16
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 288
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 140e8fcc0c5f73480800000000000000
+      internalID: -8919390328562589631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_17
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 308
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e748656b91dd1550800000000000000
+      internalID: 6133288732899952609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_18
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 240
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00c99d9a185735e00800000000000000
+      internalID: 1032297939358817280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_19
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 240
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5ddb77f91e86780800000000000000
+      internalID: -8689447405986392592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_20
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 260
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 872147f86907e14b0800000000000000
+      internalID: -5467809105627049352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_21
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 240
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 529b28dd410201240800000000000000
+      internalID: 4760340080118380837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_22
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 240
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9fc3246533de490800000000000000
+      internalID: -7715454141044295223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_23
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 260
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74dc033a7396f4300800000000000000
+      internalID: 238524992955927879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_24
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 192
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf668406b76bb7b0800000000000000
+      internalID: -5207454512666218533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_25
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 212
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b6410b43b9b50200800000000000000
+      internalID: 145726742668068534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_26
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 192
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9eb460c86e817b80800000000000000
+      internalID: -8398775249513693542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_27
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 192
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa3290878e3cea500800000000000000
+      internalID: 409480019350987690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_29
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 192
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6520a1bdfd3fe6f00800000000000000
+      internalID: 1112094300786262614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_30
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 144
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa795c9fbfb621d0800000000000000
+      internalID: -3375800040984839432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_31
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 144
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f3f2d1622f6e550800000000000000
+      internalID: 6189900983379640098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_33
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 144
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f85586cf34648dc0800000000000000
+      internalID: -3637672373932173066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_34
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 144
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63102dd10008e0160800000000000000
+      internalID: 6993668009341616438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_36
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 51
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb7f8ccfbe0c1df0800000000000000
+      internalID: -208275265832387588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_37
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 96
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d635b1b080dffcd40800000000000000
+      internalID: 5606978272087462765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_38
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 95
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb54f2cc2682ea70800000000000000
+      internalID: 8854787344171293684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_39
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 96
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323390791f2e04a20800000000000000
+      internalID: 3044682875351413539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_40
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 54
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5ba0e93334fd4e0800000000000000
+      internalID: -1954769824281610793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_41
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 55
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c705a50e08f6ba0800000000000000
+      internalID: -6093510069732737940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_42
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 56
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db23a6eb790f7280800000000000000
+      internalID: -9043499098981585963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_43
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 18
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f33012d48da6fd0800000000000000
+      internalID: -2347826429942350054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_44
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 18
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9c523b373ba86d0800000000000000
+      internalID: -2987378093298693676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_45
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 96
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e8499593e18134c932dd768ee79660
+      internalID: -473457428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Priest_46
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 97
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a2f83d1503e71498e11163b209a1aa
+      internalID: -736057726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6930efc3ce0a6d845ab1b81050b34de8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Yellow_Priest_0: 1623333227814910041
+      Yellow_Priest_1: -5580436694226771404
+      Yellow_Priest_10: -3857587583324242679
+      Yellow_Priest_11: -5219902281394594430
+      Yellow_Priest_12: -3123210489076498961
+      Yellow_Priest_13: 7252996957771257918
+      Yellow_Priest_14: -3912654235675959202
+      Yellow_Priest_15: 636527184242915614
+      Yellow_Priest_16: -8919390328562589631
+      Yellow_Priest_17: 6133288732899952609
+      Yellow_Priest_18: 1032297939358817280
+      Yellow_Priest_19: -8689447405986392592
+      Yellow_Priest_2: 4810694286373474250
+      Yellow_Priest_20: -5467809105627049352
+      Yellow_Priest_21: 4760340080118380837
+      Yellow_Priest_22: -7715454141044295223
+      Yellow_Priest_23: 238524992955927879
+      Yellow_Priest_24: -5207454512666218533
+      Yellow_Priest_25: 145726742668068534
+      Yellow_Priest_26: -8398775249513693542
+      Yellow_Priest_27: 409480019350987690
+      Yellow_Priest_28: 8495982833543599957
+      Yellow_Priest_29: 1112094300786262614
+      Yellow_Priest_3: -4761744523198750678
+      Yellow_Priest_30: -3375800040984839432
+      Yellow_Priest_31: 6189900983379640098
+      Yellow_Priest_32: 9067992908569835575
+      Yellow_Priest_33: -3637672373932173066
+      Yellow_Priest_34: 6993668009341616438
+      Yellow_Priest_35: -971326655671338525
+      Yellow_Priest_36: -208275265832387588
+      Yellow_Priest_37: 5606978272087462765
+      Yellow_Priest_38: 8854787344171293684
+      Yellow_Priest_39: 3044682875351413539
+      Yellow_Priest_4: -3617411445169795278
+      Yellow_Priest_40: -1954769824281610793
+      Yellow_Priest_41: -6093510069732737940
+      Yellow_Priest_42: -9043499098981585963
+      Yellow_Priest_43: -2347826429942350054
+      Yellow_Priest_44: -2987378093298693676
+      Yellow_Priest_45: -473457428
+      Yellow_Priest_46: -736057726
+      Yellow_Priest_5: 26794658881247647
+      Yellow_Priest_6: 6840696069969064518
+      Yellow_Priest_7: 152965405092806617
+      Yellow_Priest_8: 8042479067026874932
+      Yellow_Priest_9: 4129652016266302426
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
