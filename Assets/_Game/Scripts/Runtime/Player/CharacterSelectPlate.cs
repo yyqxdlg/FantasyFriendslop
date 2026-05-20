@@ -8,6 +8,8 @@ public class CharacterSelectPlate : NetworkBehaviour
     public string acceptedTag;
 
     public string songToPlay;
+
+    public float songVolume = 0.5f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
       
