@@ -4,87 +4,176 @@ using Unity.Netcode;
 
 public class EnemyReviving : EnemyBasic
 {
-	[Header("Revive")]
-	public float respawnTime = 3f;
-	public float bodyHp = 5f;
+    [Header("Revive")]
+    public float respawnTime = 3f;
+    public float bodyHp = 5f;
 
-	private bool isDead = false;
-	private float bodyHpCurr;
-	private Renderer[] renderers;
-	private Collider2D[] colliders;
+    [SerializeField] private string reviveParticleName;
 
-	[SerializeField] private string reviveParticleName;
+    private bool isDowned = false;
+    private bool permanentlyDead = false;
 
-	protected new void Awake()
-	{
-		base.Awake();
-		renderers = GetComponentsInChildren<Renderer>();
-		colliders = GetComponentsInChildren<Collider2D>();
-	}
+    private float bodyHpCurr;
+    private Renderer[] renderers;
+    private Collider2D[] colliders;
+    private Coroutine reviveCoroutine;
 
-	public override void TakeDamage(float damage)
-	{
-		if (isDead)
-		{
-			bodyHpCurr -= damage;
-			if (bodyHpCurr <= 0)
-				PermanentDie();
-			return;
-		}
+    protected override void Awake()
+    {
+        base.Awake();
 
-		base.TakeDamage(damage);
-	}
-
-	public override void Die()
-	{
-		if (isDead) return;
-		if (!IsServer) return;
-
-		isDead = true;
-		bodyHpCurr = bodyHp;
-		StartCoroutine(ReviveAfterDelay());
-	}
-
-	private void PermanentDie()
-	{
-		StopCoroutine(ReviveAfterDelay());
-		
-		// gameObject.GetComponent<NetworkObject>().Despawn(true);
-		if (!IsServer) return;
-
-		base.Die();
-	}
-
-	private IEnumerator ReviveAfterDelay()
-	{
-        PlayParticles();
-
-		healthBar.Hide();
-
-        SetDeadState(true);
-
-		yield return new WaitForSeconds(respawnTime);
-
-		health.Value = maxHealth;
-		isDead = false;
-		SetDeadState(false);
-
-        healthBar.UnHide();
+        renderers = GetComponentsInChildren<Renderer>();
+        colliders = GetComponentsInChildren<Collider2D>();
     }
 
-	private void SetDeadState(bool dead)
-	{
-		rb.linearVelocity = Vector2.zero;
-		this.enabled = !dead;
+    public override void TakeDamage(float damage)
+    {
+        TakeDamageRevivingServerRpc(damage);
+    }
 
-		foreach (Renderer r in renderers)
-			r.enabled = !dead;
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    private void TakeDamageRevivingServerRpc(float damage)
+    {
+        if (permanentlyDead) return;
 
-		// colliders stay ON so the body can be hit
-	}
+        if (isDowned)
+        {
+            bodyHpCurr -= damage;
 
-	private void PlayParticles()
-	{
-		ParticleManager.Instance.PlayParticle(reviveParticleName, gameObject.transform.position, respawnTime, gameObject);
-	}
+            if (bodyHpCurr <= 0f)
+            {
+                PermanentDie();
+            }
+
+            return;
+        }
+
+        health.Value -= damage;
+
+        if (health.Value <= 0f)
+        {
+            EnterDownedState();
+        }
+    }
+
+    private void EnterDownedState()
+    {
+        if (!IsServer) return;
+        if (isDowned) return;
+        if (permanentlyDead) return;
+
+        isDowned = true;
+        bodyHpCurr = bodyHp;
+        health.Value = 0f;
+
+        StopEnemyMovement();
+        SetCanAct(false);
+
+        // 注意：这里不要 SetDeadAnimationState(true)
+        // 第一次倒下不播放 death 动画，只显示粒子效果。
+        SetDownedVisualClientRpc(true);
+
+        if (!string.IsNullOrEmpty(reviveParticleName))
+        {
+            ParticleManager.Instance.PlayParticle(
+                reviveParticleName,
+                transform.position,
+                respawnTime,
+                gameObject
+            );
+        }
+
+        reviveCoroutine = StartCoroutine(ReviveAfterDelay());
+    }
+
+    private IEnumerator ReviveAfterDelay()
+    {
+        yield return new WaitForSeconds(respawnTime);
+
+        if (!IsServer) yield break;
+        if (!isDowned) yield break;
+        if (permanentlyDead) yield break;
+
+        isDowned = false;
+        bodyHpCurr = bodyHp;
+        health.Value = maxHealth;
+
+        SetCanAct(true);
+        SetDownedVisualClientRpc(false);
+    }
+
+    private void PermanentDie()
+    {
+        if (!IsServer) return;
+        if (permanentlyDead) return;
+
+        permanentlyDead = true;
+        isDowned = false;
+
+        if (reviveCoroutine != null)
+        {
+            StopCoroutine(reviveCoroutine);
+            reviveCoroutine = null;
+        }
+
+        // 永久死亡前显示回 sprite。
+        // 不然 base.Die() 播 death 动画时你会看不到。
+        SetDownedVisualClientRpc(false);
+
+        StopEnemyMovement();
+        SetCanAct(false);
+
+        // 这里才是真正死亡：
+        // base.Die() 会设置 IsDead = true，
+        // 播 death 动画，
+        // deathDespawnDelay 后掉落并 Despawn。
+        base.Die();
+    }
+
+    public override void Die()
+    {
+        if (!IsServer) return;
+        if (permanentlyDead) return;
+
+        if (!isDowned)
+        {
+            EnterDownedState();
+        }
+    }
+
+    protected override void ServerUpdate()
+    {
+        if (!IsServer) return;
+
+        if (isDowned || permanentlyDead)
+        {
+            StopEnemyMovement();
+            return;
+        }
+
+        base.ServerUpdate();
+    }
+
+    [ClientRpc]
+    private void SetDownedVisualClientRpc(bool downed)
+    {
+        foreach (Renderer r in renderers)
+        {
+            if (r != null)
+            {
+                r.enabled = !downed;
+            }
+        }
+
+        // colliders 不关，身体还要能被打。
+        // 所以这里不要 disable collider。
+
+        if (healthBar != null)
+        {
+            if (downed)
+                healthBar.Hide();
+            else
+                healthBar.UnHide();
+        }
+    }
 }

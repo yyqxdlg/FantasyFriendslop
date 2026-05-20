@@ -2,6 +2,15 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 using System.Collections;
+public enum EnemyAnimProfile
+{
+    SingleIdle,              // 只有一个 idle，比如 Jellyfish
+    FourDirIdle,             // 4方向 idle，没有 walk，比如 Slime / Flower Slime
+    ThreeDirMirrorIdleWalk,  // Down / Side / Up + walk，左右镜像，比如 Skeleton
+    FrontBackIdleWalk,       // Front / Back idle + walk，比如 Nice Guy
+    SideIdleWalk,            // 单侧 idle/walk，左右用 flip，比如 Rat / RedJellyfish
+    FrontOnlyIdleWalk        // 只有正面 idle/walk，比如 Pig Boss
+}
 
 public class EnemyBasic : Spawnable
 {
@@ -60,10 +69,11 @@ public class EnemyBasic : Spawnable
         NetworkVariableReadPermission.Everyone,
         NetworkVariableWritePermission.Server
     );
-    // 如果你的 side 原图是朝LEFT，就保持 true。
-    // 如果你的 side 原图是朝右，后面 flip 逻辑要反过来。
+    [SerializeField] private EnemyAnimProfile animProfile = EnemyAnimProfile.SingleIdle;
+
     [SerializeField] private bool useAnimIndexBlendTree = false;
-    [SerializeField] private bool hasWalkAnimations = true;
+    [SerializeField] private bool useAttackIndexBlendTree = false;
+
     [SerializeField] private bool useFlipForSideDirections = true;
     [SerializeField] private bool sideSpriteFacesLeft = true;
 
@@ -113,7 +123,7 @@ public class EnemyBasic : Spawnable
     public int coinsToDrop = 1;
 
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         healthBar = GetComponentInChildren<Healthbar>();
 
@@ -369,6 +379,60 @@ public virtual void Attack()
     target.GetComponent<CharacterBasic>().TakeDamage(attackDamage);
 }
 
+protected void SetCanAct(bool value)
+{
+    canAct = value;
+}
+
+protected void SetDeadAnimationState(bool value)
+{
+    if (!IsServer) return;
+    isDeadForAnimation.Value = value;
+}
+
+protected void SetMovingAnimationState(bool value)
+{
+    if (!IsServer) return;
+    isMoving.Value = value;
+}
+
+protected void StopEnemyMovement()
+{
+    if (rb != null)
+    {
+        rb.linearVelocity = Vector2.zero;
+    }
+
+    if (IsServer)
+    {
+        isMoving.Value = false;
+    }
+}
+
+protected void PlayAttackVisual()
+{
+    if (!IsServer) return;
+    PlayAttackAnimationClientRpc();
+}
+
+protected void UpdateFacingOnly(Vector2 direction)
+{
+    if (!IsServer) return;
+    if (direction.sqrMagnitude <= 0.001f) return;
+
+    float x = direction.x;
+    float y = direction.y;
+
+    if (Mathf.Abs(x) > Mathf.Abs(y) + facingDeadZone)
+    {
+        facing.Value = x < 0 ? 1 : 2;
+    }
+    else if (Mathf.Abs(y) > Mathf.Abs(x) + facingDeadZone)
+    {
+        facing.Value = y > 0 ? 3 : 0;
+    }
+}
+
     void Update()
     {
         UpdateAnimatorVisuals();
@@ -409,6 +473,11 @@ private void UpdateAnimatorVisuals()
         {
             animator.SetFloat("AnimIndex", GetAnimIndex());
         }
+
+        if (useAttackIndexBlendTree)
+        {
+            animator.SetFloat("AttackIndex", GetAttackIndex());
+        }
     }
 
     if (spriteRenderer == null) return;
@@ -434,50 +503,87 @@ private void UpdateAnimatorVisuals()
             spriteRenderer.flipX = false;
     }
 }
+
 private float GetAnimIndex()
 {
     int dir = facing.Value;
     bool moving = isMoving.Value;
 
     // Facing:
-    // 0 = Down
+    // 0 = Down / Front
     // 1 = Left
     // 2 = Right
-    // 3 = Up
+    // 3 = Up / Back
 
-    // For enemies like Slime:
-    // They have directional idle animations, but no walk animations.
-    if (!hasWalkAnimations)
+    switch (animProfile)
     {
-        if (dir == 0) return 0f; // Idle_Down
-        if (dir == 1) return 1f; // Idle_Left
-        if (dir == 2) return 2f; // Idle_Right
-        if (dir == 3) return 3f; // Idle_Up
+        case EnemyAnimProfile.SingleIdle:
+            return 0f;
 
-        return 0f;
-    }
+        case EnemyAnimProfile.FourDirIdle:
+            if (dir == 0) return 0f; // Idle_Down / Front
+            if (dir == 1) return 1f; // Idle_Left
+            if (dir == 2) return 2f; // Idle_Right
+            if (dir == 3) return 3f; // Idle_Up / Back
+            return 0f;
 
-    // For enemies like Skeleton:
-    // They have both idle and walk animations.
-    if (!moving)
-    {
-        if (dir == 0) return 0f;             // Idle_Down
-        if (dir == 1 || dir == 2) return 1f; // Idle_Side
-        if (dir == 3) return 2f;             // Idle_Up
-    }
-    else
-    {
-        if (dir == 0) return 3f;             // Walk_Down
-        if (dir == 1 || dir == 2) return 4f; // Walk_Side
-        if (dir == 3) return 5f;             // Walk_Up
+        case EnemyAnimProfile.ThreeDirMirrorIdleWalk:
+            if (!moving)
+            {
+                if (dir == 0) return 0f;             // Idle_Down
+                if (dir == 1 || dir == 2) return 1f; // Idle_Side
+                if (dir == 3) return 2f;             // Idle_Up
+            }
+            else
+            {
+                if (dir == 0) return 3f;             // Walk_Down
+                if (dir == 1 || dir == 2) return 4f; // Walk_Side
+                if (dir == 3) return 5f;             // Walk_Up
+            }
+            return 0f;
+
+        case EnemyAnimProfile.FrontBackIdleWalk:
+            bool back = dir == 3;
+
+            if (!moving)
+                return back ? 1f : 0f; // 0 Idle_Front, 1 Idle_Back
+
+            return back ? 3f : 2f;     // 2 Walk_Front, 3 Walk_Back
+
+        case EnemyAnimProfile.SideIdleWalk:
+            return moving ? 1f : 0f;   // 0 Idle, 1 Walk
+
+        case EnemyAnimProfile.FrontOnlyIdleWalk:
+            return moving ? 1f : 0f;   // 0 Idle_Front, 1 Walk_Front
     }
 
     return 0f;
 }
+
+private float GetAttackIndex()
+{
+    int dir = facing.Value;
+
+    switch (animProfile)
+    {
+        case EnemyAnimProfile.FrontBackIdleWalk:
+            return dir == 3 ? 1f : 0f; 
+            // 0 Attack_Front
+            // 1 Attack_Back
+
+        default:
+            if (dir == 0) return 0f; // Attack_Down / Front
+            if (dir == 1) return 1f; // Attack_Left
+            if (dir == 2) return 2f; // Attack_Right
+            if (dir == 3) return 3f; // Attack_Up / Back
+            return 0f;
+    }
+}
+
 [SerializeField] private float moveThreshold = 0.05f;
 [SerializeField] private float facingDeadZone = 0.15f;
 
-private void UpdateFacingFromMove(Vector2 movementVector)
+protected void UpdateFacingFromMove(Vector2 movementVector)
 {
     if (!IsServer) return;
 
@@ -487,6 +593,30 @@ private void UpdateFacingFromMove(Vector2 movementVector)
 
     float x = movementVector.x;
     float y = movementVector.y;
+
+    if (animProfile == EnemyAnimProfile.FrontOnlyIdleWalk)
+    {
+        facing.Value = 0;
+        return;
+    }
+
+    if (animProfile == EnemyAnimProfile.FrontBackIdleWalk)
+    {
+        if (y > facingDeadZone)
+            facing.Value = 3; // Back
+        else if (y < -facingDeadZone)
+            facing.Value = 0; // Front
+
+        return;
+    }
+
+    if (animProfile == EnemyAnimProfile.SideIdleWalk)
+    {
+        if (Mathf.Abs(x) > facingDeadZone)
+            facing.Value = x < 0 ? 1 : 2;
+
+        return;
+    }
 
     if (Mathf.Abs(x) > Mathf.Abs(y) + facingDeadZone)
     {
@@ -528,7 +658,7 @@ protected virtual void ServerUpdate()
 }
 
 	//applies the desired movement vector to motion, but takes into account knockback
-    private void ApplyMoveVector(Vector2 movementVector)
+    protected void ApplyMoveVector(Vector2 movementVector)
     {
 		rb.linearVelocity = movementVector + knockbackVector;
         UpdateFacingFromMove(movementVector);

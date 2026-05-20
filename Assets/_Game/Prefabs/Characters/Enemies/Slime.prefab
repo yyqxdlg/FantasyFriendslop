@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3700416399
+  GlobalObjectIdHash: 3323613943
   InScenePlacedSourceGlobalObjectIdHash: 533012489
   DeferredDespawnTick: 0
   Ownership: 1
@@ -509,8 +509,9 @@ MonoBehaviour:
   targetingRangeObject: {fileID: 2900984723075450811}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  animProfile: 1
   useAnimIndexBlendTree: 1
-  hasWalkAnimations: 0
+  useAttackIndexBlendTree: 0
   useFlipForSideDirections: 0
   sideSpriteFacesLeft: 1
   standingRange: 0
