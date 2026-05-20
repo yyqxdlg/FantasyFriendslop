@@ -27,9 +27,11 @@ public class BasicProjectile : Spawnable
     // irrelevant if despawnOnHit is set to true
     public Boolean preventRepeatedHits = false;
 
-    private List<EntityId> enemiesHit = new List<EntityId>();
+    private List<EntityId> objectsHit = new List<EntityId>();
 
     public bool NonRotational = true;
+
+    public bool friendlyFire = false;
 
     public void Start()
     {
@@ -91,28 +93,44 @@ public class BasicProjectile : Spawnable
     {
         GameObject objectHit = collision.gameObject;
 
+        if (preventRepeatedHits)
+        {
+            if (objectsHit.Contains(objectHit.GetEntityId()))
+            {
+                return;
+            }
+            else
+            {
+                objectsHit.Add(objectHit.GetEntityId());
+            }
+        }
+
         EnemyBasic enemyHitScript = objectHit.GetComponent<EnemyBasic>();
+
         if (enemyHitScript != null)
         {
-            if (preventRepeatedHits)
-            {
-                if (enemiesHit.Contains(objectHit.GetEntityId()))
-                {
-                    return;
-                }
-                else
-                {
-                    enemiesHit.Add(objectHit.GetEntityId());
-                }
-            }
-
             OnEnemyHitEffect(enemyHitScript);
+        }
+
+        if (friendlyFire)
+        {
+            CharacterBasic allyHitScript = objectHit.GetComponent<CharacterBasic>();
+
+            if (allyHitScript != null)
+            {
+                OnAllyHitEffect(allyHitScript);
+            }
         }
     }
 
     public virtual void OnEnemyHitEffect(EnemyBasic enemyHitScript)
     {
         enemyHitScript.TakeDamage(damage);
+    }
+
+    public virtual void OnAllyHitEffect(CharacterBasic allyHitScript)
+    {
+        allyHitScript.TakeDamage(damage);
     }
 
 }

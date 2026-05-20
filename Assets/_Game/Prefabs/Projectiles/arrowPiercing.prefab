@@ -264,3 +264,4 @@ MonoBehaviour:
   despawnOnHit: 0
   preventRepeatedHits: 1
   NonRotational: 0
+  friendlyFire: 1
