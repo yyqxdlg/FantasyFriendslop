@@ -51,10 +51,6 @@ public class CharacterBasic : Spawnable
 			NetworkVariableWritePermission.Owner
 	);
 
-	[SerializeField] private RuntimeAnimatorController animController;
-
-    
-
     [Header("Attack")]
 
     [SerializeField] private string projectileSpawnableName;
@@ -113,8 +109,6 @@ public class CharacterBasic : Spawnable
 			coinCount.Value = 0;
 			UpdateCoinVisual();
 		}
-
-        animator.runtimeAnimatorController = animController;
 
         if (IsOwner)
 		{
@@ -310,10 +304,12 @@ public class CharacterBasic : Spawnable
 
 	public void Die()
 	{
-			if (!IsOwner) return;
+		animator.Play("Die");
 
-			alive.Value = false;
-			rb.linearVelocity = Vector2.zero;
+		if (!IsOwner) return;
+
+		alive.Value = false;
+		rb.linearVelocity = Vector2.zero;
 	}
 
     void FixedUpdate()

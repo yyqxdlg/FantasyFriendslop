@@ -102,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 303137970496594861}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1665adfa041b09041919e2ed97b996f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -469,6 +469,11 @@ MonoBehaviour:
   attackCooldown: 0.5
   maxHealth: 20
   healthBar: {fileID: 0}
+  coinCount:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 1
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -493,11 +498,6 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
   animController: {fileID: 9100000, guid: 1665adfa041b09041919e2ed97b996f3, type: 2}
-  characterType:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
   projectileSpawnableName: Bullet
   summonPrefabName: 
   animator: {fileID: 951356924983260439}
@@ -776,6 +776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSprite
   ShowTopMostFoldoutHeaderGroup: 1
   lockRot: 0
+  animator: {fileID: 0}
 --- !u!114 &113933801495077536
 MonoBehaviour:
   m_ObjectHideFlags: 0
