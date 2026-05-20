@@ -72,6 +72,8 @@ public class CharacterBasic : Spawnable
 
 	private float[] abilityCooldownsCurrent = new float[] { 0 };
 
+	public int ghostType = 0;
+
     [Header("Sounds")]
     [SerializeField] private string attackSoundName;
     [SerializeField] private float attackSoundVolume = 1f;
@@ -351,7 +353,7 @@ public class CharacterBasic : Spawnable
 
 	private void BecomeGhost()
 	{
-        SpawnerUtil.Instance.NetworkSpawnGameObject("Ghost", gameObject.transform.position, gameObject.GetComponent<NetworkObject>().OwnerClientId, ulong.MaxValue);
+        SpawnerUtil.Instance.NetworkSpawnGameObject("Ghost_" + ghostType.ToString(), gameObject.transform.position, gameObject.GetComponent<NetworkObject>().OwnerClientId, ulong.MaxValue);
 
 		NetworkDestroy();
     }

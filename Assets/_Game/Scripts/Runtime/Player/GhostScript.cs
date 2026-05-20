@@ -1,5 +1,6 @@
 using System.Globalization;
 using Unity.Netcode;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
@@ -19,13 +20,19 @@ public class GhostScript : Spawnable
 
     public float speed = 1f;
 
+    [SerializeField] private int type = 0;
+
     private Camera cam;
+
+    public Animator animator; 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
         cam = Camera.main;
+
+        animator.SetInteger("Type", type);
     }
 
     // Update is called once per frame
