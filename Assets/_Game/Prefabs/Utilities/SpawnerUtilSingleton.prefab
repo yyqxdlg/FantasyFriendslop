@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3254133860
+  GlobalObjectIdHash: 2576361301
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -95,6 +95,11 @@ MonoBehaviour:
   - {fileID: 4058061203523029959, guid: 0bb1a17c924a1cb4f869ced70a890cdc, type: 3}
   - {fileID: 4703824552739568099, guid: f1f67a730e38e6d47b8d815d53752e9e, type: 3}
   - {fileID: 6887922644733331735, guid: aa562f57790cb234bb0e0e4a66669895, type: 3}
+  - {fileID: 4275550321903137566, guid: 5c15fd9e6ffd0704aa5c645a13efbc58, type: 3}
+  - {fileID: 4275550321903137566, guid: fd7a8257ddb2d5d43875eadb5102f9d7, type: 3}
+  - {fileID: 4275550321903137566, guid: 0e02503f85fb1e248b923b1964f77273, type: 3}
+  - {fileID: 4275550321903137566, guid: 7237edcfa0e2caa4e86e48dafd70e106, type: 3}
+  - {fileID: 4275550321903137566, guid: aa0793b771a8add41b53001e41ffa247, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -119,3 +124,8 @@ MonoBehaviour:
   - ArrowPiercing
   - Coin
   - HiddenSkeleton
+  - Ghost_0
+  - Ghost_1
+  - Ghost_2
+  - Ghost_3
+  - Ghost_4

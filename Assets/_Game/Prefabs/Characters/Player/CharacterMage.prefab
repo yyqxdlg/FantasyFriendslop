@@ -557,8 +557,11 @@ MonoBehaviour:
   projectileSpawnableName: firebolt
   summonPrefabName: fireball
   animator: {fileID: 951356924983260439}
+  shooting: 0
+  attemptingAbilities: 00
   abilityCooldownsMax:
   - 10
+  ghostType: 2
   attackSoundName: wand
   attackSoundVolume: 1
   attackSoundRange: 20
