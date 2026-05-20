@@ -4,6 +4,8 @@ using UnityEngine;
 public class WeaponSprite : NetworkBehaviour
 {
 	public bool lockRot = false;
+
+	[SerializeField] Animator animator;
 	public override void OnNetworkSpawn()
 	{
 		
@@ -20,6 +22,11 @@ public class WeaponSprite : NetworkBehaviour
             gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 	
+	}
+
+	public void PlayAnimation()
+	{
+		animator.Play("attack");
 	}
 
 }

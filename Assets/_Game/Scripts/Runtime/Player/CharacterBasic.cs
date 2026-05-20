@@ -364,12 +364,19 @@ public class CharacterBasic : Spawnable
         SpawnerUtil.Instance.NetworkSpawnGameObject(projectileSpawnableName, weaponPos, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
 
 		PlayAttackSound();
+
+		PlayAttackAnimation();
     }
 
 	public void PlayAttackSound()
 	{
         AudioManager.Instance.PlaySound(attackSoundName, (Vector2)gameObject.transform.position, attackSoundVolume, attackSoundRange);
     }
+
+	public void PlayAttackAnimation()
+	{
+        weaponScript.PlayAnimation();
+	}
 
 	void AttemptAbility(int abilityId)
 	{

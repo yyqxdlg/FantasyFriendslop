@@ -199,6 +199,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9053736841201417404}
   - component: {fileID: 2788364540171631020}
+  - component: {fileID: 4476429286091090435}
+  - component: {fileID: 4703310764159440593}
   m_Layer: 9
   m_Name: WeaponSprite
   m_TagString: Untagged
@@ -270,7 +272,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 11
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7856493677412862020, guid: 703f36751397ddf42a29ef3d922b804c, type: 3}
+  m_Sprite: {fileID: 4806463276367451825, guid: 7913e8ff76ad6dd4fa9c3bda36c2d183, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -280,6 +282,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &4476429286091090435
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131817610897391878}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5becf28c20785aa4e995ab1a97b7ca49, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4703310764159440593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131817610897391878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.NetworkAnimator
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkAnimatorExpanded: 0
+  AuthorityMode: 1
+  m_Animator: {fileID: 4476429286091090435}
+  TransitionStateInfoList: []
+  AnimatorParameterEntries:
+    ParameterEntries: []
+  AnimatorParametersExpanded: 0
 --- !u!1 &4442919890610582044
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3550565078
+  GlobalObjectIdHash: 445282563
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -482,6 +526,11 @@ MonoBehaviour:
   attackCooldown: 0.5
   maxHealth: 20
   healthBar: {fileID: 0}
+  coinCount:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 1
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -784,6 +833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSprite
   ShowTopMostFoldoutHeaderGroup: 1
   lockRot: 0
+  animator: {fileID: 4476429286091090435}
 --- !u!114 &113933801495077536
 MonoBehaviour:
   m_ObjectHideFlags: 0

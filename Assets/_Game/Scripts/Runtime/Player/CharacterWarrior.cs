@@ -21,6 +21,8 @@ public class CharacterWarrior : CharacterBasic
         HitAllInCone(swingBoxSmall, swingKnockback, swingDamage);
 
         PlayAttackSound();
+
+        PlayAttackAnimation();
     }
 
     public override void DoAbility(int abilityId)
