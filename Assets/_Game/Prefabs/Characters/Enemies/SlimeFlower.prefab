@@ -310,11 +310,11 @@ GameObject:
   - component: {fileID: 6666094081906648241}
   - component: {fileID: -4100512339941352848}
   - component: {fileID: 3531163685520308510}
+  - component: {fileID: 232659275722252281}
   - component: {fileID: 4832192965437554087}
-  - component: {fileID: -9005822555875934523}
-  - component: {fileID: 3460544872984202843}
+  - component: {fileID: 6660361883723201244}
   m_Layer: 8
-  m_Name: Jellyfish
+  m_Name: SlimeFlower
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,8 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2721249466
-  InScenePlacedSourceGlobalObjectIdHash: 542994821
+  GlobalObjectIdHash: 2264417730
+  InScenePlacedSourceGlobalObjectIdHash: 568715749
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
@@ -471,6 +471,57 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &232659275722252281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388104308899182308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf91c96a765137545af5306911613e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySlime
+  ShowTopMostFoldoutHeaderGroup: 1
+  creatorNetworkId:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  hasSpawnAnimation: 0
+  hasAttackAnimation: 0
+  hasDeathAnimation: 1
+  spawnLockTime: 0.6
+  attackHitDelay: 0.25
+  deathDespawnDelay: 0.7
+  dropLootOnDeath: 1
+  dropSpawnableName: SlimeFlower_Drop
+  roomId: -1
+  maxHealth: 5
+  speed: 2
+  health:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  healthBar: {fileID: 0}
+  targetingRangeObject: {fileID: 2900984723075450811}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  useAnimIndexBlendTree: 1
+  hasWalkAnimations: 0
+  useFlipForSideDirections: 0
+  sideSpriteFacesLeft: 1
+  standingRange: 0
+  strafeSpeed: 1.5
+  strafeChangeInterval: 2
+  attackCooldown: 2
+  attackDamage: 2
+  attackRange: 1.5
+  coinsToDrop: 3
+  moveThreshold: 0.05
+  facingDeadZone: 0.15
 --- !u!212 &4832192965437554087
 SpriteRenderer:
   serializedVersion: 2
@@ -520,7 +571,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -898592603617202788, guid: da27f3e6e4653984ab5501bfc627a29e, type: 3}
+  m_Sprite: {fileID: 4326287474489854147, guid: a2b02828059334644b5355afd0a8879b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -530,61 +581,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &-9005822555875934523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3388104308899182308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06362953f0a4cf247a9c5b7ad7c14627, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyReviving
-  ShowTopMostFoldoutHeaderGroup: 1
-  creatorNetworkId:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 18446744073709551615
-  hasSpawnAnimation: 0
-  hasAttackAnimation: 0
-  hasDeathAnimation: 1
-  spawnLockTime: 0.6
-  attackHitDelay: 0.25
-  deathDespawnDelay: 0.8
-  dropLootOnDeath: 1
-  dropSpawnableName: Jellyfish_Drop
-  roomId: -1
-  maxHealth: 10
-  speed: 2
-  health:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
-  healthBar: {fileID: 0}
-  targetingRangeObject: {fileID: 2900984723075450811}
-  animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  useAnimIndexBlendTree: 0
-  hasWalkAnimations: 0
-  useFlipForSideDirections: 0
-  sideSpriteFacesLeft: 1
-  standingRange: 0
-  strafeSpeed: 1.5
-  strafeChangeInterval: 2
-  attackCooldown: 1
-  attackDamage: 1
-  attackRange: 1
-  coinsToDrop: 1
-  moveThreshold: 0.05
-  facingDeadZone: 0.15
-  respawnTime: 3
-  bodyHp: 5
-  reviveParticleName: Jellyfish revive
---- !u!95 &3460544872984202843
+--- !u!95 &6660361883723201244
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -594,7 +591,7 @@ Animator:
   m_GameObject: {fileID: 3388104308899182308}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d4165e1767a8645458f8db2e4008e09a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 662ea7aba894b6c4b8153912e66f4069, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -617,7 +614,6 @@ GameObject:
   - component: {fileID: 6616514193127163003}
   - component: {fileID: 4208682253468377908}
   - component: {fileID: 5566468541944531818}
-  - component: {fileID: 5727224655174615429}
   m_Layer: 8
   m_Name: Healthbar
   m_TagString: Untagged
@@ -710,18 +706,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 4208682253468377908}
---- !u!225 &5727224655174615429
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4069787323468268524}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &8781379560090266654
 GameObject:
   m_ObjectHideFlags: 0

@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 3531163685520308510}
   - component: {fileID: 232659275722252281}
   - component: {fileID: 4832192965437554087}
+  - component: {fileID: 6660361883723201244}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Enemy
@@ -348,8 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 533012489
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 3700416399
+  InScenePlacedSourceGlobalObjectIdHash: 533012489
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
@@ -488,6 +489,14 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
+  hasSpawnAnimation: 0
+  hasAttackAnimation: 0
+  hasDeathAnimation: 1
+  spawnLockTime: 0.6
+  attackHitDelay: 0.25
+  deathDespawnDelay: 0.7
+  dropLootOnDeath: 1
+  dropSpawnableName: Slime_Drop
   roomId: -1
   maxHealth: 5
   speed: 2
@@ -500,6 +509,9 @@ MonoBehaviour:
   targetingRangeObject: {fileID: 2900984723075450811}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  useAnimIndexBlendTree: 1
+  hasWalkAnimations: 0
+  useFlipForSideDirections: 0
   sideSpriteFacesLeft: 1
   standingRange: 0
   strafeSpeed: 1.5
@@ -508,6 +520,8 @@ MonoBehaviour:
   attackDamage: 2
   attackRange: 1.5
   coinsToDrop: 3
+  moveThreshold: 0.05
+  facingDeadZone: 0.15
 --- !u!212 &4832192965437554087
 SpriteRenderer:
   serializedVersion: 2
@@ -567,6 +581,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &6660361883723201244
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388104308899182308}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d39cd682e4faa8449d35b24ffbd4791, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4069787323468268524
 GameObject:
   m_ObjectHideFlags: 0
