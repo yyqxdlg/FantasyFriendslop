@@ -9,7 +9,8 @@ public enum EnemyAnimProfile
     ThreeDirMirrorIdleWalk,  // Down / Side / Up + walk，左右镜像，比如 Skeleton
     FrontBackIdleWalk,       // Front / Back idle + walk，比如 Nice Guy
     SideIdleWalk,            // 单侧 idle/walk，左右用 flip，比如 Rat / RedJellyfish
-    FrontOnlyIdleWalk        // 只有正面 idle/walk，比如 Pig Boss
+    FrontOnlyIdleWalk,        // 只有正面 idle/walk，比如 Pig Boss
+    UpDownMirrorIdleWalk,   // 新增：Down/Up 两套动画，每套都可以左右镜像
 }
 
 public class EnemyBasic : Spawnable
@@ -82,7 +83,11 @@ public class EnemyBasic : Spawnable
         NetworkVariableReadPermission.Everyone,
         NetworkVariableWritePermission.Server
     );
-
+    private NetworkVariable<int> horizontalFacing = new NetworkVariable<int>(
+        1,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    );
     private NetworkVariable<bool> isMoving = new NetworkVariable<bool>(
         false,
         NetworkVariableReadPermission.Everyone,
@@ -423,6 +428,43 @@ protected void UpdateFacingOnly(Vector2 direction)
     float x = direction.x;
     float y = direction.y;
 
+    if (animProfile == EnemyAnimProfile.UpDownMirrorIdleWalk)
+    {
+        if (Mathf.Abs(x) > facingDeadZone)
+            horizontalFacing.Value = x < 0 ? 1 : 2;
+
+        if (y > facingDeadZone)
+            facing.Value = 3; // UpSet
+        else if (y < -facingDeadZone)
+            facing.Value = 0; // DownSet
+
+        return;
+    }
+
+    if (animProfile == EnemyAnimProfile.FrontOnlyIdleWalk)
+    {
+        facing.Value = 0;
+        return;
+    }
+
+    if (animProfile == EnemyAnimProfile.FrontBackIdleWalk)
+    {
+        if (y > facingDeadZone)
+            facing.Value = 3;
+        else if (y < -facingDeadZone)
+            facing.Value = 0;
+
+        return;
+    }
+
+    if (animProfile == EnemyAnimProfile.SideIdleWalk)
+    {
+        if (Mathf.Abs(x) > facingDeadZone)
+            facing.Value = x < 0 ? 1 : 2;
+
+        return;
+    }
+
     if (Mathf.Abs(x) > Mathf.Abs(y) + facingDeadZone)
     {
         facing.Value = x < 0 ? 1 : 2;
@@ -488,6 +530,36 @@ private void UpdateAnimatorVisuals()
         return;
     }
 
+    // Not-so Nice Guy：Down/Up 两套动画，每套都支持左右镜像。
+    // 现在的素材特点：
+    // DownSet 的左右镜像方向是正常的。
+    // UpSet 的左右镜像方向刚好相反，所以 UpSet 要反转一次 flip 逻辑。
+    if (animProfile == EnemyAnimProfile.UpDownMirrorIdleWalk)
+    {
+        bool shouldFlip;
+
+        if (sideSpriteFacesLeft)
+        {
+            // 默认规则：右边翻转，左边不翻转
+            shouldFlip = horizontalFacing.Value == 2;
+        }
+        else
+        {
+            // 如果原图默认朝右，则左边翻转，右边不翻转
+            shouldFlip = horizontalFacing.Value == 1;
+        }
+
+        // 关键：UpSet 的镜像方向和 DownSet 相反
+        if (facing.Value == 3) // UpSet
+        {
+            shouldFlip = !shouldFlip;
+        }
+
+        spriteRenderer.flipX = shouldFlip;
+        return;
+    }
+
+    // 原来的普通左右镜像逻辑
     if (sideSpriteFacesLeft)
     {
         if (facing.Value == 1)
@@ -502,7 +574,7 @@ private void UpdateAnimatorVisuals()
         else if (facing.Value == 2)
             spriteRenderer.flipX = false;
     }
-}
+    }
 
 private float GetAnimIndex()
 {
@@ -555,6 +627,15 @@ private float GetAnimIndex()
 
         case EnemyAnimProfile.FrontOnlyIdleWalk:
             return moving ? 1f : 0f;   // 0 Idle_Front, 1 Walk_Front
+        case EnemyAnimProfile.UpDownMirrorIdleWalk:
+            {
+                bool upSet = dir == 3;
+
+                if (!moving)
+                    return upSet ? 1f : 0f; // 0 Idle_DownSet, 1 Idle_UpSet
+
+                return upSet ? 3f : 2f;     // 2 Walk_DownSet, 3 Walk_UpSet
+            }
     }
 
     return 0f;
@@ -570,7 +651,10 @@ private float GetAttackIndex()
             return dir == 3 ? 1f : 0f; 
             // 0 Attack_Front
             // 1 Attack_Back
-
+        case EnemyAnimProfile.UpDownMirrorIdleWalk:
+            return dir == 3 ? 1f : 0f;
+            // 0 Attack_DownSet
+            // 1 Attack_UpSet
         default:
             if (dir == 0) return 0f; // Attack_Down / Front
             if (dir == 1) return 1f; // Attack_Left
@@ -586,7 +670,8 @@ private float GetAttackIndex()
 protected void UpdateFacingFromMove(Vector2 movementVector)
 {
     if (!IsServer) return;
-
+    // facing = DownSet / UpSet;
+    // horizontalFacing = Left / Right;
     isMoving.Value = movementVector.sqrMagnitude > moveThreshold * moveThreshold;
 
     if (!isMoving.Value) return;
@@ -617,7 +702,20 @@ protected void UpdateFacingFromMove(Vector2 movementVector)
 
         return;
     }
+    if (animProfile == EnemyAnimProfile.UpDownMirrorIdleWalk)
+    {
+        // 左右只控制 flip
+        if (Mathf.Abs(x) > facingDeadZone)
+            horizontalFacing.Value = x < 0 ? 1 : 2;
 
+        // 上下控制用哪一套动画：DownSet / UpSet
+        if (y > facingDeadZone)
+            facing.Value = 3; // UpSet
+        else if (y < -facingDeadZone)
+            facing.Value = 0; // DownSet
+
+        return;
+    }
     if (Mathf.Abs(x) > Mathf.Abs(y) + facingDeadZone)
     {
         facing.Value = x < 0 ? 1 : 2; // Left / Right
@@ -648,8 +746,11 @@ protected virtual void ServerUpdate()
         else
             ApplyMoveVector(strafeDir * strafeSpeed);
 
-        if (distance <= attackRange)
+        if (distance <= attackRange){
+            UpdateFacingOnly(dir);
             AttemptAttack();
+        }
+            
     }
     else
     {
