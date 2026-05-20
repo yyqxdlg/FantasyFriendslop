@@ -674,7 +674,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  projectileSpawnableName: Bullet
+  projectileSpawnableName: PriestProjectile
   summonPrefabName: 
   animator: {fileID: 951356924983260439}
   abilityCooldownsMax:
