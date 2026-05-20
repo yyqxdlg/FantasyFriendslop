@@ -202,7 +202,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 150
-        y: 649
+        y: 651
         width: 83
         height: 75
       alignment: 0
@@ -312,9 +312,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 22
-        y: 393
+        y: 394
         width: 83
-        height: 77
+        height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,7 +336,7 @@ TextureImporter:
         x: 150
         y: 393
         width: 83
-        height: 73
+        height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,7 +358,7 @@ TextureImporter:
         x: 278
         y: 393
         width: 78
-        height: 105
+        height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,10 +377,10 @@ TextureImporter:
       name: Pig Boss_9
       rect:
         serializedVersion: 2
-        x: 401
-        y: 447
+        x: 403
+        y: 393
         width: 90
-        height: 65
+        height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -402,7 +402,7 @@ TextureImporter:
         x: 535
         y: 390
         width: 82
-        height: 111
+        height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -422,9 +422,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 22
-        y: 265
+        y: 266
         width: 83
-        height: 73
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,7 +446,7 @@ TextureImporter:
         x: 150
         y: 263
         width: 78
-        height: 93
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -465,10 +465,10 @@ TextureImporter:
       name: Pig Boss_13
       rect:
         serializedVersion: 2
-        x: 275
-        y: 286
+        x: 284
+        y: 262
         width: 86
-        height: 68
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -575,7 +575,7 @@ TextureImporter:
       name: Pig Boss_18
       rect:
         serializedVersion: 2
-        x: 138
+        x: 137
         y: 5
         width: 97
         height: 78

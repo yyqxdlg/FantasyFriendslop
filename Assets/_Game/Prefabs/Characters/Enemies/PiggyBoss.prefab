@@ -246,7 +246,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 6
+  m_Radius: 8
 --- !u!114 &7693928846909319922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,11 +310,12 @@ GameObject:
   - component: {fileID: 6666094081906648241}
   - component: {fileID: -4100512339941352848}
   - component: {fileID: 3531163685520308510}
-  - component: {fileID: 232659275722252281}
   - component: {fileID: 4832192965437554087}
-  - component: {fileID: 5183945306564482645}
+  - component: {fileID: 6229095081750533289}
+  - component: {fileID: 8321586398969480235}
+  - component: {fileID: 6381401451582621276}
   m_Layer: 8
-  m_Name: NiceGuy
+  m_Name: PiggyBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,7 +331,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5846077885388133093}
@@ -349,8 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2717611714
-  InScenePlacedSourceGlobalObjectIdHash: 3813244027
+  GlobalObjectIdHash: 3768070163
+  InScenePlacedSourceGlobalObjectIdHash: 3951085029
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
@@ -469,60 +470,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &232659275722252281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3388104308899182308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf91c96a765137545af5306911613e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySlime
-  ShowTopMostFoldoutHeaderGroup: 1
-  creatorNetworkId:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
-  hasSpawnAnimation: 0
-  hasAttackAnimation: 0
-  hasDeathAnimation: 0
-  spawnLockTime: 0.6
-  attackHitDelay: 0.25
-  deathDespawnDelay: 0.7
-  dropLootOnDeath: 1
-  dropSpawnableName: 
-  roomId: -1
-  maxHealth: 5
-  speed: 2
-  health:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
-  healthBar: {fileID: 0}
-  targetingRangeObject: {fileID: 2900984723075450811}
-  animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  animProfile: 6
-  useAnimIndexBlendTree: 1
-  useAttackIndexBlendTree: 0
-  useFlipForSideDirections: 1
-  sideSpriteFacesLeft: 1
-  standingRange: 0
-  strafeSpeed: 1.5
-  strafeChangeInterval: 2
-  attackCooldown: 2
-  attackDamage: 0
-  attackRange: 0
-  coinsToDrop: 3
-  moveThreshold: 0.05
-  facingDeadZone: 0.15
+  m_Offset: {x: -0.06517506, y: 0.4579444}
+  m_Radius: 2.106429
 --- !u!212 &4832192965437554087
 SpriteRenderer:
   serializedVersion: 2
@@ -572,7 +521,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4848331050840224607, guid: 3e6002f813a0cf944aa77cf1d779fc21, type: 3}
+  m_Sprite: {fileID: 6648019274320994331, guid: 464e648bc27c79a4ebe1055d74509b3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -582,7 +531,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!95 &5183945306564482645
+--- !u!95 &6229095081750533289
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -592,7 +541,7 @@ Animator:
   m_GameObject: {fileID: 3388104308899182308}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0940eca89a13a3f44a6d55c02ebafd28, type: 2}
+  m_Controller: {fileID: 9100000, guid: 34b63522f2a42154b92f9b5a589a5b46, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -604,6 +553,101 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8321586398969480235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388104308899182308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17a3ba6478473b40b6ca377bbb05ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossHealthBar
+  rootGroup: {fileID: 0}
+  healthSlider: {fileID: 0}
+  bossIcon: {fileID: 0}
+  bossNameText: {fileID: 0}
+--- !u!114 &6381401451582621276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388104308899182308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2531eb0b685ad42913bd0985074a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PigBoss
+  ShowTopMostFoldoutHeaderGroup: 1
+  creatorNetworkId:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 18446744073709551615
+  hasSpawnAnimation: 0
+  hasAttackAnimation: 0
+  hasDeathAnimation: 1
+  spawnLockTime: 0.6
+  attackHitDelay: 0.25
+  deathDespawnDelay: 0.8
+  dropLootOnDeath: 1
+  dropSpawnableName: Coin
+  roomId: -1
+  maxHealth: 100
+  speed: 4
+  health:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  healthBar: {fileID: 0}
+  targetingRangeObject: {fileID: 2900984723075450811}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  animProfile: 4
+  useAnimIndexBlendTree: 0
+  useAttackIndexBlendTree: 0
+  useFlipForSideDirections: 1
+  sideSpriteFacesLeft: 1
+  standingRange: 0
+  strafeSpeed: 1.5
+  strafeChangeInterval: 2
+  attackCooldown: 3
+  attackDamage: 2
+  attackRange: 2.5
+  coinsToDrop: 30
+  moveThreshold: 0.05
+  facingDeadZone: 0.15
+  bossDisplayName: Piggy Boss
+  bossIcon: {fileID: 0}
+  stompHitDelay: 0.25
+  stompLockTime: 0.6
+  stompRadius: 2.5
+  stompDamage: 2
+  firstUltHealthPercent: 0.95
+  secondUltHealthPercent: 0.8
+  ultHealPercent: 0.1
+  ultCastDelay: 0.4
+  ultCoinInterval: 0.08
+  smallJumpForce: 6
+  smallJumpDuration: 0.4
+  smallJumpStompRadius: 1.5
+  smallJumpDamage: 1
+  bigJumpForce: 10
+  bigJumpDuration: 0.8
+  bigJumpStompRadius: 3
+  bigJumpStompDamage: 3
+  bigJumpKnockbackForce: 8
+  ultCoinCount: 10
+  ultCoinRadius: 8
+  bossCoinSpawnableName: BossCoin
+  ultHealthThreshold: 20
+  ultChance: 0.4
+  phaseDelay: 0.6
+  smallJumpsBeforeBig: 2
 --- !u!1 &4069787323468268524
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +675,7 @@ RectTransform:
   m_GameObject: {fileID: 4069787323468268524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.03, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 194953803571781780}
@@ -640,7 +684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.02, y: 0.4}
+  m_AnchoredPosition: {x: -0.19, y: 2.17}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4208682253468377908
