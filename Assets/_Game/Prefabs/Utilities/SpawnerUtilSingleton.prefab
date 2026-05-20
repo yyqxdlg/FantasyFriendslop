@@ -100,6 +100,7 @@ MonoBehaviour:
   - {fileID: 4275550321903137566, guid: 0e02503f85fb1e248b923b1964f77273, type: 3}
   - {fileID: 4275550321903137566, guid: 7237edcfa0e2caa4e86e48dafd70e106, type: 3}
   - {fileID: 4275550321903137566, guid: aa0793b771a8add41b53001e41ffa247, type: 3}
+  - {fileID: 5781850604906514888, guid: 91ae4776774ba2b40a329faa3bb5fb38, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -129,3 +130,4 @@ MonoBehaviour:
   - Ghost_2
   - Ghost_3
   - Ghost_4
+  - Large Blackhole
