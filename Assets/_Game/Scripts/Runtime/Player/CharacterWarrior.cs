@@ -58,7 +58,7 @@ public class CharacterWarrior : CharacterBasic
 	public void ShowRendererTransparent(SpriteRenderer renderer)
 	{
 		Color tempColor = renderer.color;
-		tempColor.a = 0.5f;
+		tempColor.a = 0.2f;
 		renderer.color = tempColor;
 	}
 
