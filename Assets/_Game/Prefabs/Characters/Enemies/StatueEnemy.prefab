@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 4832192965437554087}
   - component: {fileID: -8233159499780061606}
   - component: {fileID: 6229095081750533289}
+  - component: {fileID: 4528911800073453451}
   m_Layer: 8
   m_Name: StatueEnemy
   m_TagString: Enemy
@@ -582,10 +583,21 @@ MonoBehaviour:
   coinsToDrop: 10
   moveThreshold: 0.05
   facingDeadZone: 0.15
-  statueHitDelay: 0.25
+  startDormant: 1
+  activationRange: 6
+  activationRequiresAllLivingPlayers: 1
+  hideHealthBarWhileDormant: 1
+  disableBodyCollisionWhileDormant: 0
+  faceNearestPlayerWhileDormant: 0
+  statueHitDelay: 0.8
   comboCount: 3
-  timeBetweenHits: 0.35
-  extraHitRange: 0.25
+  timeBetweenHits: 1.5
+  attackLength: 3
+  attackWidth: 3
+  rightBoxOffset: {x: 1.6, y: -0.6}
+  leftBoxOffset: {x: -1.6, y: -0.6}
+  upBoxOffset: {x: 0, y: 0}
+  downBoxOffset: {x: 0, y: -1.5}
 --- !u!95 &6229095081750533289
 Animator:
   serializedVersion: 7
@@ -608,6 +620,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4528911800073453451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388104308899182308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9c2b11774757346aba5c57f5336d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackTelegraph
+  ShowTopMostFoldoutHeaderGroup: 1
+  circleWarningPrefab: {fileID: 2743564366644831567, guid: fea18b3dda92a5d49ad45ea5592c70e7, type: 3}
+  boxWarningPrefab: {fileID: 8061428173451731250, guid: 9c589075f9bff894387a62a80cb29881, type: 3}
+  sortingLayerName: AttackWarning
+  sortingOrder: 100
 --- !u!1 &4069787323468268524
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 4208682253468377908}
+  barGroup: {fileID: 0}
 --- !u!1 &8781379560090266654
 GameObject:
   m_ObjectHideFlags: 0

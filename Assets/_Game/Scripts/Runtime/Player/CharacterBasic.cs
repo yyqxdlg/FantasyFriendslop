@@ -91,47 +91,64 @@ public class CharacterBasic : Spawnable
     [Header("Inventory")]
     public NetworkList<FixedString64Bytes> inventory = new NetworkList<FixedString64Bytes>();
 
-    public virtual void Awake()
-	{
-		rb = GetComponent<Rigidbody2D>();
-		//animator = GetComponent<Animator>();
-		cam = Camera.main;
+	[Header("Hit Feedback")]
+    [SerializeField] private string hurtParticleName = "Player Hurt";
+    [SerializeField] private float hurtParticleDuration = 0.35f;
+	
+    [Header("Knockdown")]
+    [SerializeField] private float knockdownVelocityDecay = 10f;
 
-        healthBar = GetComponentInChildren<Healthbar>();
-		
+private float knockdownTimer = 0f;
+private Vector2 knockdownVelocity = Vector2.zero;
+public virtual void Awake()
+{
+    rb = GetComponent<Rigidbody2D>();
+
+    if (animator == null)
+        animator = GetComponent<Animator>();
+
+    cam = Camera.main;
+
+    if (healthBar == null)
+        healthBar = GetComponentInChildren<Healthbar>(true);
+}
+
+public override void OnNetworkSpawn()
+{
+    base.OnNetworkSpawn();
+
+    NetworkObject netObj = GetComponent<NetworkObject>();
+
+    Debug.Log(
+        $"CharacterBasic OnNetworkSpawn: {name}, " +
+        $"IsServer={IsServer}, " +
+        $"IsOwner={IsOwner}, " +
+        $"OwnerClientId={OwnerClientId}, " +
+        $"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
+        $"IsSpawned={(netObj != null && netObj.IsSpawned)}"
+    );
+
+    if (IsOwner)
+    {
+        health.Value = maxHealth;
+
+        // 玩家自己的世界血条不一定存在，所以必须判空
+        if (healthBar != null)
+        {
+            healthBar.Hide();
+        }
+
+        coinCount.Value = 0;
+        UpdateCoinVisual();
     }
 
-    public override void OnNetworkSpawn()
-	{
-		NetworkObject netObj = GetComponent<NetworkObject>();
+    SpawnBehavior();
 
-		Debug.Log(
-				$"CharacterBasic OnNetworkSpawn: {name}, " +
-				$"IsServer={IsServer}, " +
-				$"IsOwner={IsOwner}, " +
-				$"OwnerClientId={OwnerClientId}, " +
-				$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
-				$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
-		);
-		if (IsOwner)
-		{
-			health.Value = maxHealth;
-
-			healthBar.Hide();
-
-			coinCount.Value = 0;
-			UpdateCoinVisual();
-
-			GameplayManager.Instance.AddPlayerCharacter(netObj.NetworkObjectId);
-		}
-
-		SpawnBehavior();
-
-        if (IsOwner)
-		{
-            AudioManager.Instance.player = gameObject;
-        }
-	}
+    if (IsOwner && AudioManager.Instance != null)
+    {
+        AudioManager.Instance.player = gameObject;
+    }
+}
 
     public override void OnNetworkDespawn()
     {
@@ -197,7 +214,16 @@ public class CharacterBasic : Spawnable
 			isMoving.Value = false;
 			return;
 		}
+		if (knockdownTimer > 0f)
+		{
+				knockdownTimer -= Time.deltaTime;
 
+				movement = Vector2.zero;
+				isMoving.Value = false;
+				shooting = false;
+
+				return;
+		}
 		movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");
 		// update direction
@@ -324,18 +350,38 @@ public class CharacterBasic : Spawnable
 	}
 
 	[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
-	private void TakeDamageOwnerRpc(float damage)
-	{
-        if (!alive.Value) return;
-        if (invincibleTimer > 0f) return;
+private void TakeDamageOwnerRpc(float damage)
+{
+    if (!alive.Value) return;
+    if (invincibleTimer > 0f) return;
 
-        health.Value = Mathf.Max(0, health.Value - damage);
+    float oldHealth = health.Value;
 
-        if (health.Value <= 0)
-        {
-            Die();
-        }
+    health.Value = Mathf.Max(0, health.Value - damage);
+
+    if (health.Value < oldHealth)
+    {
+        PlayHurtFeedback();
     }
+
+    if (health.Value <= 0)
+    {
+        Die();
+    }
+}
+
+private void PlayHurtFeedback()
+{
+    if (string.IsNullOrEmpty(hurtParticleName)) return;
+    if (ParticleManager.Instance == null) return;
+
+    ParticleManager.Instance.PlayParticle(
+        hurtParticleName,
+        transform.position,
+        hurtParticleDuration,
+        gameObject
+    );
+}
 
     public void HealAmount(float heal)
     {
@@ -394,16 +440,45 @@ public class CharacterBasic : Spawnable
     }
 
     void FixedUpdate()
+{
+    if (!IsOwner) return;
+
+    if (!alive.Value)
     {
-      if (!IsOwner) return;
-		if (!alive.Value)
-		{
-			rb.linearVelocity = new Vector2(0, 0);
-			return;
-		}
-		rb.linearVelocity = movement.normalized * speed;
+        rb.linearVelocity = Vector2.zero;
+        return;
     }
 
+    if (knockdownTimer > 0f)
+    {
+        rb.linearVelocity = knockdownVelocity;
+        knockdownVelocity = Vector2.Lerp(
+            knockdownVelocity,
+            Vector2.zero,
+            knockdownVelocityDecay * Time.fixedDeltaTime
+        );
+        return;
+    }
+
+    rb.linearVelocity = movement.normalized * speed;
+}
+public void ApplyKnockdown(Vector2 velocity, float duration)
+{
+    ApplyKnockdownOwnerRpc(velocity, duration);
+}
+
+[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+private void ApplyKnockdownOwnerRpc(Vector2 velocity, float duration)
+{
+    if (!alive.Value) return;
+
+    knockdownVelocity = velocity;
+    knockdownTimer = Mathf.Max(knockdownTimer, duration);
+
+    movement = Vector2.zero;
+    isMoving.Value = false;
+    shooting = false;
+}
 	void AttemptAttack()
 	{
 		if (attackCooldownCurr <= 0)
