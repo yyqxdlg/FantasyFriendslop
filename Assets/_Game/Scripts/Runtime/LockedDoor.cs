@@ -1,8 +1,14 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class LockedDoor : MonoBehaviour
+public class LockedDoor : NetworkBehaviour
 {
+
+    public NetworkVariable<bool> doorOpen = new NetworkVariable<bool>(
+            false,
+            NetworkVariableReadPermission.Everyone,
+            NetworkVariableWritePermission.Server
+    );
 
     public SpriteRenderer lockRenderer;
 
@@ -10,6 +16,13 @@ public class LockedDoor : MonoBehaviour
     public SpriteRenderer openVis;
 
     public Collider2D blocker;
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        doorOpen.OnValueChanged += OnDoorChange;
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -33,11 +46,20 @@ public class LockedDoor : MonoBehaviour
     [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
     public void OpenDoorServerRpc()
     {
-        lockRenderer.enabled = false;
-        closedVis.enabled = false;
+        doorOpen.Value = true;
+        Debug.Log("Opening door?");
+    }
 
-        openVis.enabled = true;
+    public void OnDoorChange(bool prev, bool next)
+    {
+        lockRenderer.enabled = !next;
+        closedVis.enabled = !next;
 
-        blocker.enabled = false;
+        openVis.enabled = next;
+
+        if(blocker != null)
+        {
+            blocker.enabled = !next;
+        }
     }
 }

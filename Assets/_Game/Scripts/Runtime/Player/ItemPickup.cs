@@ -9,6 +9,7 @@ public class ItemPickup : Spawnable
 		if (!collision.isTrigger)
 		{
 			CharacterBasic player = collision.gameObject.GetComponent<CharacterBasic>();
+			EnemyBasic enemy = collision.gameObject.GetComponent<EnemyBasic>();
 
 			if(player != null)
 			{
@@ -16,6 +17,16 @@ public class ItemPickup : Spawnable
 
 				NetworkDestroy();
 			}
+
+			if (enemy != null)
+			{
+				if (enemy.hasInventory)
+				{
+                    enemy.AddToInventory(prefabName);
+
+                    NetworkDestroy();
+                }
+            }
 		}
 	}
 }

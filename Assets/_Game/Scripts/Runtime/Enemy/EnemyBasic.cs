@@ -1,7 +1,8 @@
 using System;
+using System.Collections;
+using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
-using System.Collections;
 public enum EnemyAnimProfile
 {
     SingleIdle,              // 只有一个 idle，比如 Jellyfish
@@ -78,6 +79,7 @@ public class EnemyBasic : Spawnable
     [SerializeField] private bool useFlipForSideDirections = true;
     [SerializeField] private bool sideSpriteFacesLeft = true;
 
+
     private NetworkVariable<int> facing = new NetworkVariable<int>(
         0,
         NetworkVariableReadPermission.Everyone,
@@ -128,6 +130,14 @@ public class EnemyBasic : Spawnable
     public int coinsToDrop = 1;
 
 
+    [Header("Inventory")]
+    public bool hasInventory = true;
+
+    public NetworkList<FixedString64Bytes> inventory = new NetworkList<FixedString64Bytes>(
+       null,
+       NetworkVariableReadPermission.Everyone,
+       NetworkVariableWritePermission.Owner
+   );
     protected virtual void Awake()
     {
         healthBar = GetComponentInChildren<Healthbar>();
@@ -167,7 +177,15 @@ public class EnemyBasic : Spawnable
         }
     }
 
-	public virtual void TakeDamage(float Damage)
+    public override void OnNetworkDespawn()
+    {
+        DropInventory();
+
+        base.OnNetworkDespawn();
+    }
+
+
+    public virtual void TakeDamage(float Damage)
 	{
 		TakeDamageServerRpc(Damage);
 	}
@@ -784,6 +802,39 @@ protected virtual void ServerUpdate()
         else
         {
 			knockbackVector = Vector2.zero;
+        }
+    }
+
+    public void AddToInventory(string itemName)
+    {
+        AddToInventoryOwnerRpc(itemName);
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void AddToInventoryOwnerRpc(string itemName)
+    {
+        inventory.Add(itemName);
+    }
+
+    public void RemoveFromInventory(string itemName)
+    {
+        RemoveFromInventoryOwnerRpc(itemName);
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void RemoveFromInventoryOwnerRpc(string itemName)
+    {
+        inventory.Remove(itemName);
+    }
+
+    public void DropInventory()
+    {
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            string toDrop = inventory[i].ToString();
+
+            Debug.Log("Trying to drop: " + toDrop);
+            SpawnerUtil.Instance.NetworkSpawnGameObject(toDrop, transform.position);
         }
     }
 }

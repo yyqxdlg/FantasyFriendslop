@@ -14,43 +14,43 @@ public class CharacterBasic : Spawnable
 
 	public float maxHealth = 10f;
 
-    [SerializeField] private Healthbar healthBar;
+	[SerializeField] private Healthbar healthBar;
 
-    public NetworkVariable<int> coinCount = new NetworkVariable<int>(
-        1,
-        NetworkVariableReadPermission.Everyone,
-        NetworkVariableWritePermission.Owner
-    );
+	public NetworkVariable<int> coinCount = new NetworkVariable<int>(
+		1,
+		NetworkVariableReadPermission.Everyone,
+		NetworkVariableWritePermission.Owner
+	);
 
-    public NetworkVariable<float> health = new NetworkVariable<float>(
-        1,
-        NetworkVariableReadPermission.Everyone,
-        NetworkVariableWritePermission.Owner
+	public NetworkVariable<float> health = new NetworkVariable<float>(
+		1,
+		NetworkVariableReadPermission.Everyone,
+		NetworkVariableWritePermission.Owner
 	);
 
 	public NetworkVariable<bool> alive = new NetworkVariable<bool>(
-        true,
-        NetworkVariableReadPermission.Everyone,
-        NetworkVariableWritePermission.Owner
-    );
+		true,
+		NetworkVariableReadPermission.Everyone,
+		NetworkVariableWritePermission.Owner
+	);
 
-    [Header("Spawn Invincibility")]
-    [SerializeField] private float spawnInvincibleDuration = 3f;
-    private float invincibleTimer = 0f;
+	[Header("Spawn Invincibility")]
+	[SerializeField] private float spawnInvincibleDuration = 3f;
+	private float invincibleTimer = 0f;
 
-    public bool IsInvincible => invincibleTimer > 0f;
+	public bool IsInvincible => invincibleTimer > 0f;
 
 	public Vector2 mousePos = Vector2.zero;
-    private Vector2 weaponPos = Vector2.zero;
+	private Vector2 weaponPos = Vector2.zero;
 	[SerializeField] private float weaponDistFromCenter = 1;
-    [SerializeField] private WeaponSprite weaponScript;
+	[SerializeField] private WeaponSprite weaponScript;
 
 	//for animation
 	public NetworkVariable<int> facing = new NetworkVariable<int>(
-        0,
-        NetworkVariableReadPermission.Everyone,
-        NetworkVariableWritePermission.Owner
-    );
+		0,
+		NetworkVariableReadPermission.Everyone,
+		NetworkVariableWritePermission.Owner
+	);
 
 	public NetworkVariable<bool> isMoving = new NetworkVariable<bool>(
 			false,
@@ -58,11 +58,11 @@ public class CharacterBasic : Spawnable
 			NetworkVariableWritePermission.Owner
 	);
 
-    [Header("Attack")]
+	[Header("Attack")]
 
-    [SerializeField] private string projectileSpawnableName;
+	[SerializeField] private string projectileSpawnableName;
 
-    [SerializeField] private string summonPrefabName;
+	[SerializeField] private string summonPrefabName;
 
 	private Rigidbody2D rb;
 	private Vector2 movement;
@@ -73,7 +73,7 @@ public class CharacterBasic : Spawnable
 
 	public bool shooting;
 
-    public bool[] attemptingAbilities = new bool[] { false };
+	public bool[] attemptingAbilities = new bool[] { false };
 
 	public float[] abilityCooldownsMax = new float[] { 10 };
 
@@ -83,127 +83,131 @@ public class CharacterBasic : Spawnable
 
 
 
-    [Header("Sounds")]
-    [SerializeField] private string attackSoundName;
-    [SerializeField] private float attackSoundVolume = 1f;
-    [SerializeField] private float attackSoundRange = 20f;
+	[Header("Sounds")]
+	[SerializeField] private string attackSoundName;
+	[SerializeField] private float attackSoundVolume = 1f;
+	[SerializeField] private float attackSoundRange = 20f;
 
-    [Header("Inventory")]
-    public NetworkList<FixedString64Bytes> inventory = new NetworkList<FixedString64Bytes>();
+	[Header("Inventory")]
+	public NetworkList<FixedString64Bytes> inventory = new NetworkList<FixedString64Bytes>(
+		null,
+		NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+	);
 
 	[Header("Hit Feedback")]
-    [SerializeField] private string hurtParticleName = "Player Hurt";
-    [SerializeField] private float hurtParticleDuration = 0.35f;
+	[SerializeField] private string hurtParticleName = "Player Hurt";
+	[SerializeField] private float hurtParticleDuration = 0.35f;
 	
-    [Header("Knockdown")]
-    [SerializeField] private float knockdownVelocityDecay = 10f;
+	[Header("Knockdown")]
+	[SerializeField] private float knockdownVelocityDecay = 10f;
 
 private float knockdownTimer = 0f;
 private Vector2 knockdownVelocity = Vector2.zero;
 public virtual void Awake()
 {
-    rb = GetComponent<Rigidbody2D>();
+	rb = GetComponent<Rigidbody2D>();
 
-    if (animator == null)
-        animator = GetComponent<Animator>();
+	if (animator == null)
+		animator = GetComponent<Animator>();
 
-    cam = Camera.main;
+	cam = Camera.main;
 
-    if (healthBar == null)
-        healthBar = GetComponentInChildren<Healthbar>(true);
+	if (healthBar == null)
+		healthBar = GetComponentInChildren<Healthbar>(true);
 }
 
 public override void OnNetworkSpawn()
 {
-    base.OnNetworkSpawn();
+	base.OnNetworkSpawn();
 
-    NetworkObject netObj = GetComponent<NetworkObject>();
+	NetworkObject netObj = GetComponent<NetworkObject>();
 
-    Debug.Log(
-        $"CharacterBasic OnNetworkSpawn: {name}, " +
-        $"IsServer={IsServer}, " +
-        $"IsOwner={IsOwner}, " +
-        $"OwnerClientId={OwnerClientId}, " +
-        $"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
-        $"IsSpawned={(netObj != null && netObj.IsSpawned)}"
-    );
+	Debug.Log(
+		$"CharacterBasic OnNetworkSpawn: {name}, " +
+		$"IsServer={IsServer}, " +
+		$"IsOwner={IsOwner}, " +
+		$"OwnerClientId={OwnerClientId}, " +
+		$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
+		$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
+	);
 
-    if (IsOwner)
-    {
-        health.Value = maxHealth;
+	if (IsOwner)
+	{
+		health.Value = maxHealth;
 
-        // 玩家自己的世界血条不一定存在，所以必须判空
-        if (healthBar != null)
-        {
-            healthBar.Hide();
-        }
+		// 玩家自己的世界血条不一定存在，所以必须判空
+		if (healthBar != null)
+		{
+			healthBar.Hide();
+		}
 
-        coinCount.Value = 0;
-        UpdateCoinVisual();
-    }
+		coinCount.Value = 0;
+		UpdateCoinVisual();
+	}
 
-    SpawnBehavior();
+	SpawnBehavior();
 
-    if (IsOwner && AudioManager.Instance != null)
-    {
-        AudioManager.Instance.player = gameObject;
-    }
+	if (IsOwner && AudioManager.Instance != null)
+	{
+		AudioManager.Instance.player = gameObject;
+	}
 }
 
-    public override void OnNetworkDespawn()
-    {
-        base.OnNetworkDespawn();
+	public override void OnNetworkDespawn()
+	{
+		base.OnNetworkDespawn();
 
-        GameplayManager.Instance.RemovePlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
+		GameplayManager.Instance.RemovePlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
 
 		DropInventory();
-    }
+	}
 
 	// start as dead, do animation, then become alive
 	private void SpawnBehavior()
 	{
 		if (IsOwner)
 		{
-            alive.Value = false;
-        }
+			alive.Value = false;
+		}
 
 		animator.Play("Spawn");
-        //animator.Update(0f);
+		//animator.Update(0f);
 
-        float spawnClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+		float spawnClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
 
 		Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
 
-        Invoke("BecomeAlive", spawnClipLength);
-    }
+		Invoke("BecomeAlive", spawnClipLength);
+	}
 
 	private void BecomeAlive()
 	{
-        if (IsOwner)
-        {
-            alive.Value = true;
-            StartInvincibility(spawnInvincibleDuration);
-        }
-    }
+		if (IsOwner)
+		{
+			alive.Value = true;
+			StartInvincibility(spawnInvincibleDuration);
+		}
+	}
 
-    public void StartInvincibility(float duration)
-    {
-        if (!IsOwner) return;
+	public void StartInvincibility(float duration)
+	{
+		if (!IsOwner) return;
 
-        invincibleTimer = Mathf.Max(invincibleTimer, duration);
-    }
+		invincibleTimer = Mathf.Max(invincibleTimer, duration);
+	}
 
-    public virtual void Update()
+	public virtual void Update()
 	{
 		UpdateHealth();
 
 		UpdateAnimatorVisuals();
-        if (!IsOwner) return;
+		if (!IsOwner) return;
 
-        if (invincibleTimer > 0f)
-        {
-            invincibleTimer -= Time.deltaTime;
-        }
+		if (invincibleTimer > 0f)
+		{
+			invincibleTimer -= Time.deltaTime;
+		}
 
 		cam.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10) ;
 
@@ -265,13 +269,13 @@ public override void OnNetworkSpawn()
 
 		if (Input.GetMouseButtonDown(0))
 		{
-            shooting = true;
-        }
+			shooting = true;
+		}
 
-        if (Input.GetMouseButtonUp(0))
-        {
+		if (Input.GetMouseButtonUp(0))
+		{
 			shooting = false;
-        }
+		}
 
 		if (shooting)
 		{
@@ -281,24 +285,24 @@ public override void OnNetworkSpawn()
 		if (Input.GetKeyDown(KeyCode.E))
 		{
 			attemptingAbilities[0] = true;
-        }
+		}
 
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            attemptingAbilities[0] = false;
-        }
+		if (Input.GetKeyUp(KeyCode.E))
+		{
+			attemptingAbilities[0] = false;
+		}
 
 		if (shooting)
 		{
 			AttemptAttack();
 		}
 
-        if (attemptingAbilities[0])
-        {
+		if (attemptingAbilities[0])
+		{
 			AttemptAbility(0);
-        }
+		}
 
-        if (attackCooldownCurr > 0f)
+		if (attackCooldownCurr > 0f)
 		{
 			attackCooldownCurr -= Time.deltaTime;
 		}
@@ -311,40 +315,40 @@ public override void OnNetworkSpawn()
 			}
 		}
 
-        InGameUI.Instance.setText(abilityCooldownsCurrent[0].ToString("F2"));
-    }
+		InGameUI.Instance.setText(abilityCooldownsCurrent[0].ToString("F2"));
+	}
 
 	private void UpdateHealth()
 	{
 		if (IsOwner)
 		{
 			InGameUI.Instance.SetHealthMax(maxHealth);
-            InGameUI.Instance.SetHealthValue(health.Value);
-        } else
+			InGameUI.Instance.SetHealthValue(health.Value);
+		} else
 		{
-            healthBar.UpdateHealthBar(health.Value, maxHealth);
-        }
+			healthBar.UpdateHealthBar(health.Value, maxHealth);
+		}
 
-    }
+	}
 
 	public void AddCoin(int numCoin)
 	{
 		AddCoinOwnerRpc(numCoin);
 	}
 
-    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
-    private void AddCoinOwnerRpc(int numCoin)
-    {
-        coinCount.Value += numCoin;
+	[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+	private void AddCoinOwnerRpc(int numCoin)
+	{
+		coinCount.Value += numCoin;
 		UpdateCoinVisual();
-    }
+	}
 
-    private void UpdateCoinVisual()
+	private void UpdateCoinVisual()
 	{
 		InGameUI.Instance.SetCoins(coinCount.Value);
 	}
 
-    public void TakeDamage(float damage)
+	public void TakeDamage(float damage)
 	{
 		TakeDamageOwnerRpc(damage);
 	}
@@ -352,60 +356,60 @@ public override void OnNetworkSpawn()
 	[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
 private void TakeDamageOwnerRpc(float damage)
 {
-    if (!alive.Value) return;
-    if (invincibleTimer > 0f) return;
+	if (!alive.Value) return;
+	if (invincibleTimer > 0f) return;
 
-    float oldHealth = health.Value;
+	float oldHealth = health.Value;
 
-    health.Value = Mathf.Max(0, health.Value - damage);
+	health.Value = Mathf.Max(0, health.Value - damage);
 
-    if (health.Value < oldHealth)
-    {
-        PlayHurtFeedback();
-    }
+	if (health.Value < oldHealth)
+	{
+		PlayHurtFeedback();
+	}
 
-    if (health.Value <= 0)
-    {
-        Die();
-    }
+	if (health.Value <= 0)
+	{
+		Die();
+	}
 }
 
 private void PlayHurtFeedback()
 {
-    if (string.IsNullOrEmpty(hurtParticleName)) return;
-    if (ParticleManager.Instance == null) return;
+	if (string.IsNullOrEmpty(hurtParticleName)) return;
+	if (ParticleManager.Instance == null) return;
 
-    ParticleManager.Instance.PlayParticle(
-        hurtParticleName,
-        transform.position,
-        hurtParticleDuration,
-        gameObject
-    );
+	ParticleManager.Instance.PlayParticle(
+		hurtParticleName,
+		transform.position,
+		hurtParticleDuration,
+		gameObject
+	);
 }
 
-    public void HealAmount(float heal)
-    {
-        HealAmountOwnerRpc(heal);
-    }
-
-    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
-    public void HealAmountOwnerRpc(float heal)
+	public void HealAmount(float heal)
 	{
-        if (!alive.Value) return;
+		HealAmountOwnerRpc(heal);
+	}
 
-        float newHealth = health.Value + heal;
-        if (newHealth <= maxHealth)
-        {
-            health.Value = newHealth;
-        }
-        else
-        {
-            health.Value = maxHealth;
-        }
-    }
+	[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+	public void HealAmountOwnerRpc(float heal)
+	{
+		if (!alive.Value) return;
 
-    // update animator
-    void UpdateAnimatorVisuals()
+		float newHealth = health.Value + heal;
+		if (newHealth <= maxHealth)
+		{
+			health.Value = newHealth;
+		}
+		else
+		{
+			health.Value = maxHealth;
+		}
+	}
+
+	// update animator
+	void UpdateAnimatorVisuals()
 	{
 			if (animator == null) return;
 
@@ -416,16 +420,16 @@ private void PlayHurtFeedback()
 
 	public void Die()
 	{
-        if (!IsOwner) return;
+		if (!IsOwner) return;
 
-        alive.Value = false;
+		alive.Value = false;
 
-        animator.Play("Die");
+		animator.Play("Die");
 		animator.Update(0f);
 
-        float deathClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+		float deathClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
 
-        Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+		Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
 
 		rb.linearVelocity = Vector2.zero;
 
@@ -434,159 +438,159 @@ private void PlayHurtFeedback()
 
 	private void BecomeGhost()
 	{
-        SpawnerUtil.Instance.NetworkSpawnGameObject("Ghost_" + ghostType.ToString(), gameObject.transform.position, gameObject.GetComponent<NetworkObject>().OwnerClientId, ulong.MaxValue);
+		SpawnerUtil.Instance.NetworkSpawnGameObject("Ghost_" + ghostType.ToString(), gameObject.transform.position, gameObject.GetComponent<NetworkObject>().OwnerClientId, ulong.MaxValue);
 
 		NetworkDestroy();
-    }
+	}
 
-    void FixedUpdate()
+	void FixedUpdate()
 {
-    if (!IsOwner) return;
+	if (!IsOwner) return;
 
-    if (!alive.Value)
-    {
-        rb.linearVelocity = Vector2.zero;
-        return;
-    }
+	if (!alive.Value)
+	{
+		rb.linearVelocity = Vector2.zero;
+		return;
+	}
 
-    if (knockdownTimer > 0f)
-    {
-        rb.linearVelocity = knockdownVelocity;
-        knockdownVelocity = Vector2.Lerp(
-            knockdownVelocity,
-            Vector2.zero,
-            knockdownVelocityDecay * Time.fixedDeltaTime
-        );
-        return;
-    }
+	if (knockdownTimer > 0f)
+	{
+		rb.linearVelocity = knockdownVelocity;
+		knockdownVelocity = Vector2.Lerp(
+			knockdownVelocity,
+			Vector2.zero,
+			knockdownVelocityDecay * Time.fixedDeltaTime
+		);
+		return;
+	}
 
-    rb.linearVelocity = movement.normalized * speed;
+	rb.linearVelocity = movement.normalized * speed;
 }
 public void ApplyKnockdown(Vector2 velocity, float duration)
 {
-    ApplyKnockdownOwnerRpc(velocity, duration);
+	ApplyKnockdownOwnerRpc(velocity, duration);
 }
 
 [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
 private void ApplyKnockdownOwnerRpc(Vector2 velocity, float duration)
 {
-    if (!alive.Value) return;
+	if (!alive.Value) return;
 
-    knockdownVelocity = velocity;
-    knockdownTimer = Mathf.Max(knockdownTimer, duration);
+	knockdownVelocity = velocity;
+	knockdownTimer = Mathf.Max(knockdownTimer, duration);
 
-    movement = Vector2.zero;
-    isMoving.Value = false;
-    shooting = false;
+	movement = Vector2.zero;
+	isMoving.Value = false;
+	shooting = false;
 }
 	void AttemptAttack()
 	{
 		if (attackCooldownCurr <= 0)
 		{
-            Attack();
+			Attack();
 			attackCooldownCurr = attackCooldown;
 		}
 	}
 
 	public void updateMousePos()
 	{
-        mousePos = cam.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-    }
+		mousePos = cam.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+	}
 
-    void updateWeaponPos()
+	void updateWeaponPos()
 	{
-        if (!IsOwner) { return; }
+		if (!IsOwner) { return; }
 
 		if(weaponScript == null) { return; }
 
-        Vector2 playerPos2D = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+		Vector2 playerPos2D = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 
-        Vector2 dirVector = (mousePos - playerPos2D).normalized * weaponDistFromCenter;
+		Vector2 dirVector = (mousePos - playerPos2D).normalized * weaponDistFromCenter;
 
-        weaponPos = playerPos2D + dirVector;
+		weaponPos = playerPos2D + dirVector;
 
 		weaponScript.updatePosAndRot(weaponPos, dirVector);
-    }
+	}
 
 
-    public virtual void Attack()
+	public virtual void Attack()
 	{
-        updateMousePos();
+		updateMousePos();
 
-        SpawnerUtil.Instance.NetworkSpawnGameObject(projectileSpawnableName, weaponPos, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
+		SpawnerUtil.Instance.NetworkSpawnGameObject(projectileSpawnableName, weaponPos, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
 
 		PlayAttackSound();
 
 		PlayAttackAnimation();
-    }
+	}
 
 	public void PlayAttackSound()
 	{
-        AudioManager.Instance.PlaySound(attackSoundName, (Vector2)gameObject.transform.position, attackSoundVolume, attackSoundRange);
-    }
+		AudioManager.Instance.PlaySound(attackSoundName, (Vector2)gameObject.transform.position, attackSoundVolume, attackSoundRange);
+	}
 
 	public void PlayAttackAnimation()
 	{
-        weaponScript.PlayAnimation();
+		weaponScript.PlayAnimation();
 	}
 
 	void AttemptAbility(int abilityId)
 	{
-        if (abilityCooldownsCurrent[abilityId] <= 0)
-        {
-            DoAbility(abilityId);
+		if (abilityCooldownsCurrent[abilityId] <= 0)
+		{
+			DoAbility(abilityId);
 			abilityCooldownsCurrent[abilityId] = abilityCooldownsMax[abilityId];
-        }
-    }
+		}
+	}
 
 	public virtual void DoAbility(int abilityId)
 	{
 		if(abilityId == 0)
 		{
-            updateMousePos();
+			updateMousePos();
 
-            SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
+			SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
 
-            PlayAttackAnimation();
-        }
+			PlayAttackAnimation();
+		}
 	}
 
 	public bool CheckIfInInventory(string itemName)
 	{
-        for (int i = 0; i < inventory.Count; i++)
-        {
-            string currItem = inventory[i].ToString();
+		for (int i = 0; i < inventory.Count; i++)
+		{
+			string currItem = inventory[i].ToString();
 
-            if(currItem.Equals(itemName))
+			if(currItem.Equals(itemName))
 			{
 				return true;
 			}
-        }
+		}
 
 		return false;
-    }
+	}
 
 	public void AddToInventory(string itemName)
 	{
 		AddToInventoryOwnerRpc(itemName);
-    }
+	}
 
-    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
-    public void AddToInventoryOwnerRpc(string itemName)
+	[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+	public void AddToInventoryOwnerRpc(string itemName)
 	{
-        inventory.Add(itemName);
-    }
+		inventory.Add(itemName);
+	}
 
 	public void RemoveFromInventory(string itemName)
 	{
-        RemoveFromInventoryOwnerRpc(itemName);
-    }
+		RemoveFromInventoryOwnerRpc(itemName);
+	}
 
-    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
-    public void RemoveFromInventoryOwnerRpc(string itemName)
+	[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+	public void RemoveFromInventoryOwnerRpc(string itemName)
 	{
-        inventory.Remove(itemName);
-    }
+		inventory.Remove(itemName);
+	}
 
 	public void DropInventory()
 	{

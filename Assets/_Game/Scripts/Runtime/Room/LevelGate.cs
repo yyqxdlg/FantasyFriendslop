@@ -50,6 +50,8 @@ public class LevelGate : ClickReceiver
         doorOpen.Value = true;
 
         spawnPointController.SpawnAll();
+
+        buttons[0].ChangeVisibility(false);
     }
 
     public void OnDoorOpen(bool prevVal, bool newVal)
@@ -57,5 +59,6 @@ public class LevelGate : ClickReceiver
         blocker.enabled = false;
         closedVis.enabled = false;
         openVis.enabled = true;
+
     }
 }
