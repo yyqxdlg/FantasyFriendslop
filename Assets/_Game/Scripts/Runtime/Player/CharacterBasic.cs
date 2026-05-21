@@ -116,7 +116,7 @@ public class CharacterBasic : Spawnable
 			coinCount.Value = 0;
 			UpdateCoinVisual();
 
-
+			GameplayManager.Instance.AddPlayerCharacter(netObj.NetworkObjectId);
 		}
 
 		SpawnBehavior();
@@ -126,6 +126,13 @@ public class CharacterBasic : Spawnable
             AudioManager.Instance.player = gameObject;
         }
 	}
+
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+
+        GameplayManager.Instance.RemovePlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
+    }
 
 	// start as dead, do animation, then become alive
 	private void SpawnBehavior()

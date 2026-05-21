@@ -10,20 +10,37 @@ public class CharacterSelectPlate : NetworkBehaviour
     public string songToPlay;
 
     public float songVolume = 0.5f;
+
+    private bool plateEnabled = true;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      
-        if (collision.gameObject.tag == acceptedTag)
+
+        if (plateEnabled)
         {
-            AudioManager.Instance.PlayBackgroundSong(songToPlay, 1);
+            if (collision.gameObject.tag == acceptedTag)
+            {
+                AudioManager.Instance.PlayBackgroundSong(songToPlay, 1);
 
-            if (!IsServer) { return; }
+                if (!IsServer) { return; }
 
-            collision.gameObject.GetComponent<NetworkObject>().Despawn(true);
+                collision.gameObject.GetComponent<NetworkObject>().Despawn(true);
 
-            ulong playerId = collision.gameObject.GetComponent<NetworkObject>().OwnerClientId;
+                ulong playerId = collision.gameObject.GetComponent<NetworkObject>().OwnerClientId;
 
-            SpawnerUtil.Instance.NetworkSpawnGameObject(characterSpawnableName, gameObject.transform.position, playerId, ulong.MaxValue);
+                SpawnerUtil.Instance.NetworkSpawnGameObject(characterSpawnableName, gameObject.transform.position, playerId, ulong.MaxValue);
+            }
         }
+        
     }
+
+    public void DisablePlate()
+    {
+        plateEnabled = false;
+
+        SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
+
+        renderer.color = Color.gray;
+    }
+
 }

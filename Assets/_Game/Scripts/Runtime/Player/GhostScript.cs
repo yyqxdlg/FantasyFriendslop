@@ -56,4 +56,18 @@ public class GhostScript : Spawnable
 
         rb.linearVelocity = movement.normalized * speed;
     }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        GameplayManager.Instance.AddGhost(GetComponent<NetworkObject>().NetworkObjectId);
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+
+        GameplayManager.Instance.RemoveGhost(GetComponent<NetworkObject>().NetworkObjectId);
+    }
 }
