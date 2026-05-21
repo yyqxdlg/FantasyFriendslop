@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3821090225
+  GlobalObjectIdHash: 594839181
   InScenePlacedSourceGlobalObjectIdHash: 594839181
   DeferredDespawnTick: 0
   Ownership: 1
@@ -584,7 +584,7 @@ MonoBehaviour:
   facingDeadZone: 0.15
   respawnTime: 3
   bodyHp: 5
-  reviveParticleName: Jellyfish revive
+  reviveParticleName: RedJellyfish revive
 --- !u!95 &3460544872984202843
 Animator:
   serializedVersion: 7

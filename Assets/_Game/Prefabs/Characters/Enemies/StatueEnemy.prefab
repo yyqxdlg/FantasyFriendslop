@@ -470,7 +470,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.90788996
 --- !u!212 &4832192965437554087
 SpriteRenderer:
   serializedVersion: 2
@@ -579,7 +579,7 @@ MonoBehaviour:
   attackCooldown: 3
   attackDamage: 1
   attackRange: 5
-  coinsToDrop: 1
+  coinsToDrop: 10
   moveThreshold: 0.05
   facingDeadZone: 0.15
   statueHitDelay: 0.25

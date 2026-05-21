@@ -621,14 +621,12 @@ MonoBehaviour:
   coinsToDrop: 30
   moveThreshold: 0.05
   facingDeadZone: 0.15
-  bossDisplayName: Piggy Boss
-  bossIcon: {fileID: 0}
   stompHitDelay: 0.25
   stompLockTime: 0.6
   stompRadius: 2.5
   stompDamage: 2
-  firstUltHealthPercent: 0.95
-  secondUltHealthPercent: 0.8
+  firstUltHealthPercent: 0.25
+  secondUltHealthPercent: 0.1
   ultHealPercent: 0.1
   ultCastDelay: 0.4
   ultCoinInterval: 0.08
@@ -641,8 +639,8 @@ MonoBehaviour:
   bigJumpStompRadius: 3
   bigJumpStompDamage: 3
   bigJumpKnockbackForce: 8
-  ultCoinCount: 10
-  ultCoinRadius: 8
+  ultCoinCount: 12
+  ultCoinRadius: 10
   bossCoinSpawnableName: BossCoin
   ultHealthThreshold: 20
   ultChance: 0.4

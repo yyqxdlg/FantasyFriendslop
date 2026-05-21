@@ -9,7 +9,7 @@ public class BossCoin : Spawnable
 
     [Header("Timing")]
     [SerializeField] private float fallTime = 0.8f;
-    [SerializeField] private float explodeDestroyDelay = 0.35f;
+    [SerializeField] private float explodeDestroyDelay = 0.45f;
 
     [Header("Damage")]
     [SerializeField] private float explosionRadius = 1.2f;
@@ -27,6 +27,8 @@ public class BossCoin : Spawnable
     {
         base.OnNetworkSpawn();
 
+        PlayFallClientRpc();
+
         if (IsServer)
         {
             StartCoroutine(ServerFallThenExplode());
@@ -41,8 +43,12 @@ public class BossCoin : Spawnable
 
     private void Explode()
     {
+        if (!IsServer) return;
         if (exploded) return;
+
         exploded = true;
+
+        PlayExplodeClientRpc();
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 
@@ -56,16 +62,24 @@ public class BossCoin : Spawnable
             }
         }
 
-        PlayExplodeClientRpc();
-
         StartCoroutine(ServerDestroyAfterExplode());
+    }
+
+    [ClientRpc]
+    private void PlayFallClientRpc()
+    {
+        if (animator == null) return;
+
+        animator.ResetTrigger("Explode");
+        animator.Play("BossCoin_Fall", 0, 0f);
     }
 
     [ClientRpc]
     private void PlayExplodeClientRpc()
     {
-        if (animator != null)
-            animator.SetTrigger("Explode");
+        if (animator == null) return;
+
+        animator.SetTrigger("Explode");
     }
 
     private IEnumerator ServerDestroyAfterExplode()

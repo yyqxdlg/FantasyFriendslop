@@ -523,6 +523,8 @@ MonoBehaviour:
   coinsToDrop: 3
   moveThreshold: 0.05
   facingDeadZone: 0.15
+  deathParticleName: SlimeDeath
+  attackParticleName: SlimeAttack
 --- !u!212 &4832192965437554087
 SpriteRenderer:
   serializedVersion: 2
