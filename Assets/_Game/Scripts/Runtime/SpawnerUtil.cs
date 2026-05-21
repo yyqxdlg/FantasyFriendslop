@@ -47,11 +47,7 @@ public class SpawnerUtil : NetworkBehaviour
     [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
 	void SpawnObjectServerRpc(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, ulong creatorObjectNetworkId)
 	{
-        Debug.Log("SPAWN " + spawnableName);
-
         Transform spawnedObjectTransform = Instantiate(GetGobByName(spawnableName), spawnPos, Quaternion.identity);
-
-        Debug.Log("SPAWN RESULT " + spawnedObjectTransform.name);
 
         ulong ownerId = spawnerClientId;
 
