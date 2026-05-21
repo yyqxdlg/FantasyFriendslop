@@ -200,7 +200,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   fallTime: 0.8
   explodeDestroyDelay: 1
-  explosionRadius: 1.3
+  explosionRadius: 1
   damage: 2
 --- !u!114 &3887849568206962962
 MonoBehaviour:

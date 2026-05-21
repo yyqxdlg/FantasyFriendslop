@@ -583,6 +583,12 @@ MonoBehaviour:
   coinsToDrop: 10
   moveThreshold: 0.05
   facingDeadZone: 0.15
+  startDormant: 1
+  activationRange: 6
+  activationRequiresAllLivingPlayers: 1
+  hideHealthBarWhileDormant: 1
+  disableBodyCollisionWhileDormant: 0
+  faceNearestPlayerWhileDormant: 0
   statueHitDelay: 0.8
   comboCount: 3
   timeBetweenHits: 1.5

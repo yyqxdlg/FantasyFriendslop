@@ -607,6 +607,8 @@ MonoBehaviour:
   facingDeadZone: 0.15
   disguiseBreakRange: 4
   bloomAnimDuration: 0.8
+  hideHealthBarWhileDisguised: 1
+  disableBodyCollisionWhileDisguised: 1
 --- !u!1 &4069787323468268524
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,6 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 4208682253468377908}
+  barGroup: {fileID: 0}
 --- !u!1 &7365012453043232281
 GameObject:
   m_ObjectHideFlags: 0

@@ -47489,6 +47489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatueEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6723656245486251396, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3284621577
+      objectReference: {fileID: 0}
     - target: {fileID: 8497165169282153330, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.68
@@ -47527,6 +47531,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497165169282153330, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086390196001624954, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086390196001624954, guid: 6fb080e8201193e4587e851019b6e839, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
