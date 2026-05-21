@@ -14,6 +14,8 @@ public class EnemyBullet : NetworkBehaviour
     [SerializeField] private AudioClip hitSound;
     [SerializeField][Range(0f, 1f)] private float hitVolume = 1f;
 
+    public bool nonRotational = false;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,6 +41,12 @@ public class EnemyBullet : NetworkBehaviour
 
         if (rb != null && IsServer)
         {
+            if (!nonRotational)
+            {
+                float angle = FFUtilities.CounterClockwiseAngle(direction, new Vector2(1, 0));
+                gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
+
             rb.linearVelocity = direction * speed;
         }
     }

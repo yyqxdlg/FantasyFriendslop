@@ -1,6 +1,7 @@
-using UnityEngine;
-using Unity.Netcode;
 using System;
+using Unity.Collections;
+using Unity.Netcode;
+using UnityEngine;
 using UnityEngine.Rendering;
 
 public class CharacterBasic : Spawnable
@@ -80,10 +81,15 @@ public class CharacterBasic : Spawnable
 
 	public int ghostType = 0;
 
+
+
     [Header("Sounds")]
     [SerializeField] private string attackSoundName;
     [SerializeField] private float attackSoundVolume = 1f;
     [SerializeField] private float attackSoundRange = 20f;
+
+    [Header("Inventory")]
+    public NetworkList<FixedString64Bytes> inventory = new NetworkList<FixedString64Bytes>();
 
     public virtual void Awake()
 	{
@@ -466,5 +472,53 @@ public class CharacterBasic : Spawnable
 
             PlayAttackAnimation();
         }
+	}
+
+	public bool CheckIfInInventory(string itemName)
+	{
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            string currItem = inventory[i].ToString();
+
+            if(currItem.Equals(itemName))
+			{
+				return true;
+			}
+        }
+
+		return false;
+    }
+
+	public void AddToInventory(string itemName)
+	{
+		AddToInventoryOwnerRpc(itemName);
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void AddToInventoryOwnerRpc(string itemName)
+	{
+        inventory.Add(itemName);
+    }
+
+	public void RemoveFromInventory(string itemName)
+	{
+        RemoveFromInventoryOwnerRpc(itemName);
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void RemoveFromInventoryOwnerRpc(string itemName)
+	{
+        inventory.Remove(itemName);
+    }
+
+	public void DropInventory()
+	{
+		for (int i = 0; i < inventory.Count; i++)
+		{
+			string toDrop = inventory[i].ToString();
+
+			Debug.Log("Trying to drop: " + toDrop);
+			SpawnerUtil.Instance.NetworkSpawnGameObject(toDrop, transform.position);
+		}
 	}
 }

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3501070656
+  GlobalObjectIdHash: 2576361301
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -113,6 +113,7 @@ MonoBehaviour:
   - {fileID: 8497165169282153330, guid: df84fd5872fcde648aef0f1dff845332, type: 3}
   - {fileID: 8497165169282153330, guid: 4a8e690713b8bf24490be1fa32c05031, type: 3}
   - {fileID: 8497165169282153330, guid: d3161d092f0c5e74fbbcef225fdd3e1b, type: 3}
+  - {fileID: 5530713002241143246, guid: be3671b8bbdf006499cd9a57e47d26c5, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -154,4 +155,4 @@ MonoBehaviour:
   - NotNiceGuy
   - PiggyBoss
   - RedJellyfish
-  - SlimeFlower
+  - DoorKey

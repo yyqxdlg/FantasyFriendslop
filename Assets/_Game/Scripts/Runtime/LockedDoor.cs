@@ -19,7 +19,12 @@ public class LockedDoor : MonoBehaviour
 
             if (player != null)
             {
-                OpenDoorServerRpc();
+                if (player.CheckIfInInventory("DoorKey"))
+                {
+                    player.RemoveFromInventory("DoorKey");
+                    OpenDoorServerRpc();
+                }
+                
             }
         }
     }

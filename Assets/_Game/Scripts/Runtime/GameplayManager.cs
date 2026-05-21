@@ -148,6 +148,7 @@ public class GameplayManager : MonoBehaviour
         Debug.Log("Living players: " + characters.Count);
 
         Debug.Log("Ghosts: " + ghosts.Count);
-
     }
+
+
 }
