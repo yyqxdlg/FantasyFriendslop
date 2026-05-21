@@ -138,6 +138,8 @@ public class CharacterBasic : Spawnable
         base.OnNetworkDespawn();
 
         GameplayManager.Instance.RemovePlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
+
+		DropInventory();
     }
 
 	// start as dead, do animation, then become alive
