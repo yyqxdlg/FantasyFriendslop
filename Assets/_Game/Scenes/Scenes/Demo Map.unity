@@ -44686,7 +44686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  spawnableName: Slime
+  spawnableName: RangedEnemy
   controller: {fileID: 875546856}
 --- !u!114 &1164792237
 MonoBehaviour:
