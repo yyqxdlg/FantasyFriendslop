@@ -87,5 +87,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fd952969af05d7c449c04eca9afb86cf, type: 3}
   - {fileID: 8300000, guid: 8a8cf965637996b4ba23ab3ce79defb8, type: 3}
   - {fileID: 8300000, guid: d7683baf1609821498c5249f70a37709, type: 3}
+  - {fileID: 8300000, guid: d7683baf1609821498c5249f70a37709, type: 3}
   player: {fileID: 0}
   masterVolume: 0.5

@@ -11,12 +11,27 @@ public class CharacterSelectPlate : NetworkBehaviour
 
     public float songVolume = 0.5f;
 
-    private bool plateEnabled = true;
+    private Color enabledColor;
+
+    public NetworkVariable<bool> plateEnabled = new NetworkVariable<bool>(
+            true,
+            NetworkVariableReadPermission.Everyone,
+            NetworkVariableWritePermission.Server
+    );
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        plateEnabled.OnValueChanged += OnEnablingChanged;
+
+        enabledColor = gameObject.GetComponent<SpriteRenderer>().color;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (plateEnabled)
+        if (plateEnabled.Value)
         {
             if (collision.gameObject.tag == acceptedTag)
             {
@@ -34,13 +49,26 @@ public class CharacterSelectPlate : NetworkBehaviour
         
     }
 
-    public void DisablePlate()
+    public void PlateEnabled(bool enabled)
     {
-        plateEnabled = false;
+        PlateEnabledServerRpc(enabled);
+    }
 
-        SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    public void PlateEnabledServerRpc(bool enabled)
+    {
+        plateEnabled.Value = enabled;
+    }
 
-        renderer.color = Color.gray;
+    public void OnEnablingChanged(bool prev, bool curr)
+    {
+        if (curr)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = enabledColor;
+        } else
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
+        }
     }
 
 }

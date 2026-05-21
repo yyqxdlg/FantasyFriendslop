@@ -12,15 +12,6 @@ public class ClickButton : MonoBehaviour
         this.code = code;
     }
 
-    // Update is called once per frame
-    void Update()
-	{
-        if (receiver == null)
-        {
-            Debug.Log("Clickbutton without receiver!");
-        }
-	}
-
     public void OnMouseDown()
     {
         receiver.ReceiveClick(code);

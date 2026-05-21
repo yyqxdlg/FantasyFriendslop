@@ -23,7 +23,7 @@ public class SpawnerUtil : NetworkBehaviour
 	//use if spawning client authoritative object or something that needs to be aware of its creator
     public void NetworkSpawnGameObject(string spawnableName, Vector2 spawnPos, ulong spawnerClientId, ulong creatorObjectNetworkId)
 	{
-		SpawnObjectServerRpc(spawnableName, spawnPos, spawnerClientId, creatorObjectNetworkId);
+        SpawnObjectServerRpc(spawnableName, spawnPos, spawnerClientId, creatorObjectNetworkId);
 	}
 
 	//use if spawning something server owned with no care for its creator

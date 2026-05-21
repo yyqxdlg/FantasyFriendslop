@@ -524,7 +524,7 @@ MonoBehaviour:
     m_InternalValue: 0
   speed: 5
   attackCooldown: 0.5
-  maxHealth: 2
+  maxHealth: 10
   healthBar: {fileID: 0}
   coinCount:
     UpdateTraits:
@@ -541,6 +541,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
+  spawnInvincibleDuration: 3
   mousePos: {x: 0, y: 0}
   weaponDistFromCenter: 1
   weaponScript: {fileID: 7889255609381936137}

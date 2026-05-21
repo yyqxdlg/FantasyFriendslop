@@ -157,7 +157,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.8}
-  m_Radius: 100
+  m_Radius: 40
 --- !u!1 &1965627753770482086
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2911172191
+  GlobalObjectIdHash: 3368921359
   InScenePlacedSourceGlobalObjectIdHash: 3368921359
   DeferredDespawnTick: 0
   Ownership: 1

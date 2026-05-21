@@ -1,4 +1,3 @@
-using Mono.Cecil.Cil;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -14,7 +13,18 @@ public class LevelGate : ClickReceiver
 
     [SerializeField] private SpawnPointController spawnPointController;
 
+    public NetworkVariable<bool> doorOpen = new NetworkVariable<bool>(
+            false,
+            NetworkVariableReadPermission.Everyone,
+            NetworkVariableWritePermission.Server
+    );
 
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        doorOpen.OnValueChanged += OnDoorOpen;
+    }
 
     public override void ReceiveClick(int code)
     {
@@ -35,14 +45,17 @@ public class LevelGate : ClickReceiver
     public void StartLevelServerRpc()
     {
         Debug.Log("STARTING LEVEL");
-        plateControl.DisablePlates();
+        //plateControl.DisablePlates();
 
-        blocker.enabled = false;
-        closedVis.enabled = false;
-        openVis.enabled = true;
+        doorOpen.Value = true;
 
         spawnPointController.SpawnAll();
     }
 
-
+    public void OnDoorOpen(bool prevVal, bool newVal)
+    {
+        blocker.enabled = false;
+        closedVis.enabled = false;
+        openVis.enabled = true;
+    }
 }
