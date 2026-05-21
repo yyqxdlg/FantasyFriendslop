@@ -320,17 +320,27 @@ private IEnumerator Server_DespawnAfterDeathAnimation()
 
 			if (currentTarget.GetComponent<CharacterBasic>().alive.Value)
 			{
-				float currentDistance = DistanceToSelf(currentTarget);
+                LayerMask obstacleMask = LayerMask.GetMask("Wall");
+                if (CheckLineOfSight(currentTarget.transform, obstacleMask))
+                {
+                    float currentDistance = DistanceToSelf(currentTarget);
 
-				if (DistanceToSelf(currentTarget) < targetOutDistance)
-				{
-					targetOut = currentTarget;
-					targetOutDistance = currentDistance;
-				}
+                    if (DistanceToSelf(currentTarget) < targetOutDistance)
+                    {
+                        targetOut = currentTarget;
+                        targetOutDistance = currentDistance;
+                    }
+                }
 			}
 		}
 
         return targetOut;
+    }
+
+    private bool CheckLineOfSight(Transform target, LayerMask layerMask)
+    {
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, target.position, layerMask);
+        return hit.collider == null || hit.transform == target;
     }
 
     public Vector2 DirToTarget()
