@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 5138870263546532459}
   - component: {fileID: 958948960506395509}
   - component: {fileID: 2746838417402630490}
-  - component: {fileID: 4821361113439958556}
+  - component: {fileID: 2870319767584309630}
   m_Layer: 8
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 600528177
+  GlobalObjectIdHash: 2911172191
   InScenePlacedSourceGlobalObjectIdHash: 3368921359
   DeferredDespawnTick: 0
   Ownership: 1
@@ -524,8 +524,9 @@ MonoBehaviour:
   targetingRangeObject: {fileID: 1652207903116041463}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  animProfile: 2
   useAnimIndexBlendTree: 1
-  hasWalkAnimations: 1
+  useAttackIndexBlendTree: 0
   useFlipForSideDirections: 1
   sideSpriteFacesLeft: 1
   standingRange: 5
@@ -783,7 +784,7 @@ MonoBehaviour:
   cutoffOneWall: 800
   cutoffManyWalls: 300
   updateInterval: 0.05
---- !u!95 &4821361113439958556
+--- !u!95 &2870319767584309630
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

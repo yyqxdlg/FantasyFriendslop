@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 3531163685520308510}
   - component: {fileID: 4832192965437554087}
   - component: {fileID: -8233159499780061606}
+  - component: {fileID: 6229095081750533289}
   m_Layer: 8
   m_Name: StatueEnemy
   m_TagString: Enemy
@@ -348,8 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4265842523
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 3284621577
+  InScenePlacedSourceGlobalObjectIdHash: 4265842523
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
@@ -469,7 +470,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.90788996
 --- !u!212 &4832192965437554087
 SpriteRenderer:
   serializedVersion: 2
@@ -519,7 +520,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5073124085265016209, guid: 965d81b32fed76c49a1df2ad330ed71b, type: 3}
+  m_Sprite: {fileID: -2830071645898275730, guid: 7da345a49b090a249950c738da2c003e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -547,6 +548,14 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 18446744073709551615
+  hasSpawnAnimation: 0
+  hasAttackAnimation: 0
+  hasDeathAnimation: 1
+  spawnLockTime: 0.6
+  attackHitDelay: 0.25
+  deathDespawnDelay: 0.8
+  dropLootOnDeath: 1
+  dropSpawnableName: Coin
   roomId: -1
   maxHealth: 10
   speed: 2
@@ -557,17 +566,48 @@ MonoBehaviour:
     m_InternalValue: 0
   healthBar: {fileID: 0}
   targetingRangeObject: {fileID: 2900984723075450811}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  animProfile: 0
+  useAnimIndexBlendTree: 0
+  useAttackIndexBlendTree: 1
+  useFlipForSideDirections: 0
+  sideSpriteFacesLeft: 0
   standingRange: 0
   strafeSpeed: 1.5
   strafeChangeInterval: 2
-  attackCooldown: 1
+  attackCooldown: 3
   attackDamage: 1
   attackRange: 5
-  swingPrefab: {fileID: 4604796085051570476, guid: a38acd5f51d42f54aa8e8381968f73e5, type: 3}
-  swingFireSpeed: 3
-  dashForce: 50
-  timeBetweenSwings: 0.45
-  postComboCooldown: 1.5
+  coinsToDrop: 10
+  moveThreshold: 0.05
+  facingDeadZone: 0.15
+  statueHitDelay: 0.25
+  comboCount: 3
+  timeBetweenHits: 0.35
+  extraHitRange: 0.25
+--- !u!95 &6229095081750533289
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388104308899182308}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9dc113a2cb3aa84fb7f9a475919c546, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4069787323468268524
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +635,7 @@ RectTransform:
   m_GameObject: {fileID: 4069787323468268524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.015, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 194953803571781780}
@@ -604,7 +644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.16, y: 1.59}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4208682253468377908

@@ -1,0 +1,704 @@
+fileFormatVersion: 2
+guid: 464e648bc27c79a4ebe1055d74509b3b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6648019274320994331
+    second: Pig Boss_0
+  - first:
+      213: 1069051769983490942
+    second: Pig Boss_1
+  - first:
+      213: -2640246463161471980
+    second: Pig Boss_2
+  - first:
+      213: 4080285497871826347
+    second: Pig Boss_3
+  - first:
+      213: -8074452180486688531
+    second: Pig Boss_4
+  - first:
+      213: -4590201607640507410
+    second: Pig Boss_5
+  - first:
+      213: -4375802397559982822
+    second: Pig Boss_6
+  - first:
+      213: -7060606000698846639
+    second: Pig Boss_7
+  - first:
+      213: -261731213289991715
+    second: Pig Boss_8
+  - first:
+      213: 683351466188657701
+    second: Pig Boss_9
+  - first:
+      213: 9077952561424918147
+    second: Pig Boss_10
+  - first:
+      213: 206198526664140474
+    second: Pig Boss_11
+  - first:
+      213: -5083090624716239499
+    second: Pig Boss_12
+  - first:
+      213: -3664544857621528715
+    second: Pig Boss_13
+  - first:
+      213: -8491617061621385692
+    second: Pig Boss_14
+  - first:
+      213: 8310844772666830530
+    second: Pig Boss_15
+  - first:
+      213: -7055438300828284888
+    second: Pig Boss_16
+  - first:
+      213: -3982519845995384043
+    second: Pig Boss_17
+  - first:
+      213: 8464910704867653388
+    second: Pig Boss_18
+  - first:
+      213: 567317373536920542
+    second: Pig Boss_19
+  - first:
+      213: -5690736424484518843
+    second: Pig Boss_20
+  - first:
+      213: 6779039638637959196
+    second: Pig Boss_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pig Boss_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 649
+        width: 83
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b106ad9ae42824c50800000000000000
+      internalID: 6648019274320994331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 651
+        width: 83
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b5e54bbe806de00800000000000000
+      internalID: 1069051769983490942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 523
+        width: 81
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41c67c394d5fb5bd0800000000000000
+      internalID: -2640246463161471980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 521
+        width: 83
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: badf3d2ca0610a830800000000000000
+      internalID: 4080285497871826347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_4
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 526
+        width: 78
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0763aa588c1ff80800000000000000
+      internalID: -8074452180486688531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_5
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 521
+        width: 83
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb192135f35c40c0800000000000000
+      internalID: -4590201607640507410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_6
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 394
+        width: 83
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a15722647e60643c0800000000000000
+      internalID: -4375802397559982822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 393
+        width: 83
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1529a554040b30e90800000000000000
+      internalID: -7060606000698846639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_8
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 393
+        width: 78
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd1d73529d42e5cf0800000000000000
+      internalID: -261731213289991715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_9
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 393
+        width: 90
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 524dae6b980cb7900800000000000000
+      internalID: 683351466188657701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_10
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 390
+        width: 82
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 386649fe1cd5bfd70800000000000000
+      internalID: 9077952561424918147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_11
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 266
+        width: 83
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab6660fa7709cd200800000000000000
+      internalID: 206198526664140474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_12
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 263
+        width: 78
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d8ba8120c3579b0800000000000000
+      internalID: -5083090624716239499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_13
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 262
+        width: 86
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ffbf91edbe42dc0800000000000000
+      internalID: -3664544857621528715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_14
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 262
+        width: 82
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4263961e547b72a80800000000000000
+      internalID: -8491617061621385692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_15
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 137
+        width: 78
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cee73ab94d065370800000000000000
+      internalID: 8310844772666830530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_16
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 141
+        width: 89
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828c1782f3c061e90800000000000000
+      internalID: -7055438300828284888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_17
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 9
+        width: 83
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5137084ec4f3bb8c0800000000000000
+      internalID: -3982519845995384043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_18
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 5
+        width: 97
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c07b903ef67697570800000000000000
+      internalID: 8464910704867653388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_19
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 26
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3639c35248fd700800000000000000
+      internalID: 567317373536920542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_20
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 5
+        width: 95
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 544493c6f517601b0800000000000000
+      internalID: -5690736424484518843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig Boss_21
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 9
+        width: 93
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18de4b62acf31e50800000000000000
+      internalID: 6779039638637959196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e26cbc23a7de46145a7f4b2d12aa8b51
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Pig Boss_0: 6648019274320994331
+      Pig Boss_1: 1069051769983490942
+      Pig Boss_10: 9077952561424918147
+      Pig Boss_11: 206198526664140474
+      Pig Boss_12: -5083090624716239499
+      Pig Boss_13: -3664544857621528715
+      Pig Boss_14: -8491617061621385692
+      Pig Boss_15: 8310844772666830530
+      Pig Boss_16: -7055438300828284888
+      Pig Boss_17: -3982519845995384043
+      Pig Boss_18: 8464910704867653388
+      Pig Boss_19: 567317373536920542
+      Pig Boss_2: -2640246463161471980
+      Pig Boss_20: -5690736424484518843
+      Pig Boss_21: 6779039638637959196
+      Pig Boss_3: 4080285497871826347
+      Pig Boss_4: -8074452180486688531
+      Pig Boss_5: -4590201607640507410
+      Pig Boss_6: -4375802397559982822
+      Pig Boss_7: -7060606000698846639
+      Pig Boss_8: -261731213289991715
+      Pig Boss_9: 683351466188657701
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

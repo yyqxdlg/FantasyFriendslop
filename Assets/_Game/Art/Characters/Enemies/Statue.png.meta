@@ -1,0 +1,656 @@
+fileFormatVersion: 2
+guid: 7da345a49b090a249950c738da2c003e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2830071645898275730
+    second: Statue_0
+  - first:
+      213: 130561695280464317
+    second: Statue_1
+  - first:
+      213: -3202242373155783504
+    second: Statue_2
+  - first:
+      213: 3097904708608295069
+    second: Statue_3
+  - first:
+      213: -6210820937634677405
+    second: Statue_4
+  - first:
+      213: 3745443115517346739
+    second: Statue_5
+  - first:
+      213: 4309319453413299902
+    second: Statue_6
+  - first:
+      213: -7601154090182083770
+    second: Statue_7
+  - first:
+      213: 4453763675091117254
+    second: Statue_8
+  - first:
+      213: -5424469666760122395
+    second: Statue_9
+  - first:
+      213: -2294751561127400083
+    second: Statue_10
+  - first:
+      213: 6188889777518832123
+    second: Statue_11
+  - first:
+      213: -4235052524766355643
+    second: Statue_12
+  - first:
+      213: -3251032662930190862
+    second: Statue_13
+  - first:
+      213: 5829953191501963550
+    second: Statue_14
+  - first:
+      213: 5471616617004250634
+    second: Statue_15
+  - first:
+      213: 6775955756295537989
+    second: Statue_16
+  - first:
+      213: -2642637293790700686
+    second: Statue_17
+  - first:
+      213: 7724829336148616556
+    second: Statue_18
+  - first:
+      213: -5431070558960656424
+    second: Statue_19
+  - first:
+      213: -486521371488969729
+    second: Statue_20
+  - first:
+      213: 6245281716320732094
+    second: Statue_21
+  - first:
+      213: -5455101393165841945
+    second: Statue_22
+  - first:
+      213: -8250803666290009532
+    second: Statue_23
+  - first:
+      213: 8831357428588559715
+    second: Statue_24
+  - first:
+      213: 1937745294314326491
+    second: Statue_25
+  - first:
+      213: 8788182407617412154
+    second: Statue_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Statue_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 495
+        width: 41
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64045915d099b8d0800000000000000
+      internalID: -2830071645898275730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 415
+        width: 41
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1077c8b29dfc100800000000000000
+      internalID: 130561695280464317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_2
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 404
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc785f17895f83d0800000000000000
+      internalID: -3202242373155783504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_3
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 335
+        width: 38
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d908b984be7fdfa20800000000000000
+      internalID: 3097904708608295069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 330
+        width: 60
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36df9b8734bbec9a0800000000000000
+      internalID: -6210820937634677405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_5
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 255
+        width: 38
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b308da5bac7af330800000000000000
+      internalID: 3745443115517346739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_6
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 250
+        width: 60
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb6516c0637cdcb30800000000000000
+      internalID: 4309319453413299902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_7
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 175
+        width: 41
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b70bba0a6438690800000000000000
+      internalID: -7601154090182083770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_8
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 176
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c428572772fecd30800000000000000
+      internalID: 4453763675091117254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_11
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 95
+        width: 51
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf96e07667a53e550800000000000000
+      internalID: 6188889777518832123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_14
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 95
+        width: 50
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1121ac0a8728e050800000000000000
+      internalID: 5829953191501963550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_16
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 95
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54542cb1cd7090e50800000000000000
+      internalID: 6775955756295537989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_20
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 95
+        width: 46
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffb93cce3678f39f0800000000000000
+      internalID: -486521371488969729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_21
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 92
+        width: 49
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb30a8fc1a2bba650800000000000000
+      internalID: 6245281716320732094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_22
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 31
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e98c9e6f269b44b0800000000000000
+      internalID: -5455101393165841945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 31
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44a1b47b7c14f7d80800000000000000
+      internalID: -8250803666290009532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 31
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d378f6ac84f8a70800000000000000
+      internalID: 8831357428588559715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_25
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 50
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd94acc141144ea10800000000000000
+      internalID: 1937745294314326491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue_26
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 31
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c7f538655e5f970800000000000000
+      internalID: 8788182407617412154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fdfa904dd27ac7a4fabcab3743836159
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Statue_0: -2830071645898275730
+      Statue_1: 130561695280464317
+      Statue_10: -2294751561127400083
+      Statue_11: 6188889777518832123
+      Statue_12: -4235052524766355643
+      Statue_13: -3251032662930190862
+      Statue_14: 5829953191501963550
+      Statue_15: 5471616617004250634
+      Statue_16: 6775955756295537989
+      Statue_17: -2642637293790700686
+      Statue_18: 7724829336148616556
+      Statue_19: -5431070558960656424
+      Statue_2: -3202242373155783504
+      Statue_20: -486521371488969729
+      Statue_21: 6245281716320732094
+      Statue_22: -5455101393165841945
+      Statue_23: -8250803666290009532
+      Statue_24: 8831357428588559715
+      Statue_25: 1937745294314326491
+      Statue_26: 8788182407617412154
+      Statue_3: 3097904708608295069
+      Statue_4: -6210820937634677405
+      Statue_5: 3745443115517346739
+      Statue_6: 4309319453413299902
+      Statue_7: -7601154090182083770
+      Statue_8: 4453763675091117254
+      Statue_9: -5424469666760122395
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

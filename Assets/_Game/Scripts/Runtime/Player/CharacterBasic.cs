@@ -33,6 +33,12 @@ public class CharacterBasic : Spawnable
         NetworkVariableWritePermission.Owner
     );
 
+    [Header("Spawn Invincibility")]
+    [SerializeField] private float spawnInvincibleDuration = 3f;
+    private float invincibleTimer = 0f;
+
+    public bool IsInvincible => invincibleTimer > 0f;
+
 	public Vector2 mousePos = Vector2.zero;
     private Vector2 weaponPos = Vector2.zero;
 	[SerializeField] private float weaponDistFromCenter = 1;
@@ -144,7 +150,15 @@ public class CharacterBasic : Spawnable
         if (IsOwner)
         {
             alive.Value = true;
+            StartInvincibility(spawnInvincibleDuration);
         }
+    }
+
+    public void StartInvincibility(float duration)
+    {
+        if (!IsOwner) return;
+
+        invincibleTimer = Mathf.Max(invincibleTimer, duration);
     }
 
     public virtual void Update()
@@ -153,6 +167,11 @@ public class CharacterBasic : Spawnable
 
 		UpdateAnimatorVisuals();
         if (!IsOwner) return;
+
+        if (invincibleTimer > 0f)
+        {
+            invincibleTimer -= Time.deltaTime;
+        }
 
 		cam.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10) ;
 
@@ -293,6 +312,7 @@ public class CharacterBasic : Spawnable
 	private void TakeDamageOwnerRpc(float damage)
 	{
         if (!alive.Value) return;
+        if (invincibleTimer > 0f) return;
 
         health.Value = Mathf.Max(0, health.Value - damage);
 
