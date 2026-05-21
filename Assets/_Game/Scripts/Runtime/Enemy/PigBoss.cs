@@ -1,34 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-// ═══════════════════════════════════════════════════════
-//  PigBoss — 完整 Boss 脚本
-// ═══════════════════════════════════════════════════════
-//
-// 攻击循环（状态机）：
-//   Idle → SmallJump → Idle → SmallJump → Idle → BigJump → Stomp → [重复]
-//   每 2 次小跳后执行一次大跳+踩踏
-//   当血量 < 50% 时：频率加快，有几率触发 Coin Ult（空中掉硬币+爆炸）
-//
-// Animator 参数（FrontOnlyIdleWalk profile）：
-//   AnimIndex  (Float)  0=Idle_Front  1=Walk_Front
-//   SmallJump  (Trigger)
-//   BigJump    (Trigger)
-//   Stomp      (Trigger)
-//   IsDead     (Bool)
-//
-// ★ Prefab 上的 EnemyBasic 设置：
-//   Anim Profile        = FrontOnlyIdleWalk
-//   Has Death Animation = true
-//   Has Attack Animation= false  ← Boss 自己管攻击
-//   Drop Loot On Death  = true
-//   Coins To Drop       = 20
-//   Max Health          = 100
-//   Speed               = 2.5
-//
-// ★ 需要在 SpawnerUtil 的 Spawnables 列表里添加：
-//   "BossCoin"（掉落后爆炸的特殊硬币，见下方 BossCoin.cs 说明）
+
 
 public class PigBoss : EnemyBasic
 {
@@ -80,6 +55,24 @@ public class PigBoss : EnemyBasic
     [Header("Boss - beat")]
     [SerializeField] private float phaseDelay = 0.6f;         // 每个动作之间的停顿
     [SerializeField] private int smallJumpsBeforeBig = 2;     // 多少次小跳后大跳
+    [Header("Boss - Attack Warning")]
+[SerializeField] private float smallJumpLandingWarningTime = 0.15f;
+[SerializeField] private float bigJumpLandingWarningTime = 0.25f;
+
+[Header("Boss - Path Hit")]
+[SerializeField] private float smallJumpPathWidth = 1.2f;
+[SerializeField] private float smallJumpPathDamage = 1f;
+[SerializeField] private float smallJumpPathKnockbackForce = 3f;
+[SerializeField] private float smallJumpPathKnockdownDuration = 0.2f;
+
+[SerializeField] private float bigJumpPathWidth = 1.6f;
+[SerializeField] private float bigJumpPathDamage = 2f;
+[SerializeField] private float bigJumpPathKnockbackForce = 7f;
+[SerializeField] private float bigJumpPathKnockdownDuration = 0.45f;
+
+[SerializeField] private float stompKnockdownDuration = 0.35f;
+[SerializeField] private float landingKnockdownDuration = 0.45f;
+
 
     // ── 运行时状态 ────────────────────────────────────
     private bool isBossActing = false;
@@ -87,14 +80,18 @@ public class PigBoss : EnemyBasic
 
     // ── Animator ──────────────────────────────────────
     private Animator _anim;
+    private AttackTelegraph telegraph;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        _anim = GetComponent<Animator>();
-        if (_anim == null)
-            _anim = GetComponentInChildren<Animator>();
-    }
+protected override void Awake()
+{
+    base.Awake();
+
+    _anim = GetComponent<Animator>();
+    if (_anim == null)
+        _anim = GetComponentInChildren<Animator>();
+
+    telegraph = GetComponent<AttackTelegraph>();
+}
 
     // ── 覆盖父类 ServerUpdate ─────────────────────────
     protected override void ServerUpdate()
@@ -218,13 +215,23 @@ private IEnumerator DoStomp()
 
     TriggerAnimClientRpc("Stomp");
 
+    if (telegraph != null)
+    {
+        telegraph.ShowCircleClientRpc(
+            transform.position,
+            stompRadius,
+            stompHitDelay
+        );
+    }
+
     yield return new WaitForSeconds(stompHitDelay);
 
-    DoStompDamage(
+    DoCircleDamage(
         transform.position,
         stompRadius,
         stompDamage,
-        bigJumpKnockbackForce
+        bigJumpKnockbackForce,
+        stompKnockdownDuration
     );
 
     yield return new WaitForSeconds(Mathf.Max(0f, stompLockTime - stompHitDelay));
@@ -239,16 +246,62 @@ private IEnumerator DoSmallJump()
     UpdateFacingOnly(dir);
     SetMovingAnimationState(false);
 
+    Vector2 startPos = transform.position;
+    Vector2 predictedEndPos = startPos + dir * smallJumpForce * smallJumpDuration;
+
+    ShowPathWarning(
+        startPos,
+        predictedEndPos,
+        smallJumpPathWidth,
+        smallJumpDuration
+    );
+
     TriggerAnimClientRpc("SmallJump");
+
+    HashSet<CharacterBasic> hitPlayers = new HashSet<CharacterBasic>();
 
     rb.linearVelocity = dir * smallJumpForce;
 
-    yield return new WaitForSeconds(smallJumpDuration);
+    float timer = 0f;
+
+    while (timer < smallJumpDuration)
+    {
+        timer += Time.deltaTime;
+
+        DamagePlayersOnPath(
+            startPos,
+            transform.position,
+            smallJumpPathWidth,
+            smallJumpPathDamage,
+            smallJumpPathKnockbackForce,
+            smallJumpPathKnockdownDuration,
+            hitPlayers
+        );
+
+        yield return null;
+    }
 
     rb.linearVelocity = Vector2.zero;
     SetMovingAnimationState(false);
 
-    DoStompDamage(transform.position, smallJumpStompRadius, smallJumpDamage, 0f);
+    if (telegraph != null)
+    {
+        telegraph.ShowCircleClientRpc(
+            transform.position,
+            smallJumpStompRadius,
+            smallJumpLandingWarningTime
+        );
+    }
+
+    yield return new WaitForSeconds(smallJumpLandingWarningTime);
+
+    DoCircleDamage(
+        transform.position,
+        smallJumpStompRadius,
+        smallJumpDamage,
+        smallJumpPathKnockbackForce,
+        smallJumpPathKnockdownDuration
+    );
 }
 
     // ── 大跳实现 ──────────────────────────────────────
@@ -261,23 +314,173 @@ private IEnumerator DoBigJump()
     UpdateFacingOnly(dir);
     SetMovingAnimationState(false);
 
+    Vector2 startPos = transform.position;
+    Vector2 predictedEndPos = startPos + dir * bigJumpForce * bigJumpDuration;
+
+    ShowPathWarning(
+        startPos,
+        predictedEndPos,
+        bigJumpPathWidth,
+        bigJumpDuration
+    );
+
     TriggerAnimClientRpc("BigJump");
+
+    HashSet<CharacterBasic> hitPlayers = new HashSet<CharacterBasic>();
 
     rb.linearVelocity = dir * bigJumpForce;
 
-    yield return new WaitForSeconds(bigJumpDuration);
+    float timer = 0f;
+
+    while (timer < bigJumpDuration)
+    {
+        timer += Time.deltaTime;
+
+        DamagePlayersOnPath(
+            startPos,
+            transform.position,
+            bigJumpPathWidth,
+            bigJumpPathDamage,
+            bigJumpPathKnockbackForce,
+            bigJumpPathKnockdownDuration,
+            hitPlayers
+        );
+
+        yield return null;
+    }
 
     rb.linearVelocity = Vector2.zero;
     SetMovingAnimationState(false);
 
-    DoStompDamage(
+    if (telegraph != null)
+    {
+        telegraph.ShowCircleClientRpc(
+            transform.position,
+            bigJumpStompRadius,
+            bigJumpLandingWarningTime
+        );
+    }
+
+    yield return new WaitForSeconds(bigJumpLandingWarningTime);
+
+    DoCircleDamage(
         transform.position,
         bigJumpStompRadius,
         bigJumpStompDamage,
-        bigJumpKnockbackForce
+        bigJumpKnockbackForce,
+        landingKnockdownDuration
+    );
+}
+private void ShowPathWarning(Vector2 start, Vector2 end, float width, float duration)
+{
+    if (telegraph == null) return;
+
+    Vector2 diff = end - start;
+    float length = diff.magnitude;
+
+    if (length <= 0.01f) return;
+
+    Vector2 center = start + diff * 0.5f;
+    float angle = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+
+    telegraph.ShowBoxClientRpc(
+        center,
+        new Vector2(length, width),
+        angle,
+        duration
     );
 }
 
+private void DamagePlayersOnPath(
+    Vector2 start,
+    Vector2 end,
+    float width,
+    float damage,
+    float knockbackForce,
+    float knockdownDuration,
+    HashSet<CharacterBasic> hitPlayers
+)
+{
+    if (!IsServer) return;
+
+    Vector2 diff = end - start;
+    float length = diff.magnitude;
+
+    if (length <= 0.01f) return;
+
+    Vector2 center = start + diff * 0.5f;
+    float angle = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+
+    Collider2D[] hits = Physics2D.OverlapBoxAll(
+        center,
+        new Vector2(length, width),
+        angle
+    );
+
+    foreach (Collider2D hit in hits)
+    {
+        CharacterBasic player = hit.GetComponentInParent<CharacterBasic>();
+
+        if (player == null) continue;
+        if (!player.alive.Value) continue;
+        if (hitPlayers.Contains(player)) continue;
+
+        hitPlayers.Add(player);
+
+        player.TakeDamage(damage);
+
+        Vector2 knockDir = ((Vector2)player.transform.position - (Vector2)transform.position).normalized;
+
+        if (knockDir.sqrMagnitude <= 0.01f)
+            knockDir = diff.normalized;
+
+        player.ApplyKnockdown(
+            knockDir * knockbackForce,
+            knockdownDuration
+        );
+    }
+}
+
+private void DoCircleDamage(
+    Vector2 center,
+    float radius,
+    float damage,
+    float knockbackForce,
+    float knockdownDuration
+)
+{
+    if (!IsServer) return;
+
+    Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius);
+
+    HashSet<CharacterBasic> damagedPlayers = new HashSet<CharacterBasic>();
+
+    foreach (Collider2D hit in hits)
+    {
+        CharacterBasic player = hit.GetComponentInParent<CharacterBasic>();
+
+        if (player == null) continue;
+        if (!player.alive.Value) continue;
+        if (damagedPlayers.Contains(player)) continue;
+
+        damagedPlayers.Add(player);
+
+        player.TakeDamage(damage);
+
+        if (knockbackForce > 0f || knockdownDuration > 0f)
+        {
+            Vector2 knockDir = ((Vector2)player.transform.position - center).normalized;
+
+            if (knockDir.sqrMagnitude <= 0.01f)
+                knockDir = Vector2.down;
+
+            player.ApplyKnockdown(
+                knockDir * knockbackForce,
+                knockdownDuration
+            );
+        }
+    }
+}
     // ── Coin Ult 实现 ─────────────────────────────────
     private IEnumerator DoCoinUlt()
     {

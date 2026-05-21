@@ -16,9 +16,10 @@ public class BossCoin : Spawnable
     [SerializeField] private float damage = 2f;
 
     private bool exploded = false;
-
+    private AttackTelegraph telegraph;
     private void Awake()
     {
+        telegraph = GetComponent<AttackTelegraph>();
         if (animator == null)
             animator = GetComponent<Animator>();
     }
@@ -31,6 +32,15 @@ public class BossCoin : Spawnable
 
         if (IsServer)
         {
+            if (telegraph != null)
+            {
+                telegraph.ShowCircleClientRpc(
+                    transform.position,
+                    explosionRadius,
+                    fallTime
+                );
+            }
+
             StartCoroutine(ServerFallThenExplode());
         }
     }

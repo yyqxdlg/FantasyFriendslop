@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8932710221901824314}
   - component: {fileID: -8733194729389698155}
   - component: {fileID: 6910055509534815162}
+  - component: {fileID: 3887849568206962962}
   m_Layer: 0
   m_Name: BossCoin
   m_TagString: Untagged
@@ -201,3 +202,20 @@ MonoBehaviour:
   explodeDestroyDelay: 1
   explosionRadius: 1.3
   damage: 2
+--- !u!114 &3887849568206962962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153212176990293174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9c2b11774757346aba5c57f5336d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackTelegraph
+  ShowTopMostFoldoutHeaderGroup: 1
+  circleWarningPrefab: {fileID: 2743564366644831567, guid: fea18b3dda92a5d49ad45ea5592c70e7, type: 3}
+  boxWarningPrefab: {fileID: 8061428173451731250, guid: 9c589075f9bff894387a62a80cb29881, type: 3}
+  sortingLayerName: AttackWarning
+  sortingOrder: 100
