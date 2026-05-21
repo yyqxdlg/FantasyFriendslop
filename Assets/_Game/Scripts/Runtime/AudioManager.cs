@@ -90,17 +90,23 @@ public class AudioManager : NetworkBehaviour
 
         float playVolume = volume * masterVolume;
 
-
         if (range != float.MaxValue)
         {
-            float distT = 1 - (distToPlayer / range);
+			if(distToPlayer > 0.5)
+			{
+                float distT = 1 - (distToPlayer / range);
 
-            if (distT < 0)
-            {
-                distT = 0;
-            }
+                if (distT < 0)
+                {
+                    distT = 0;
+                }
 
-            playVolume = distT * playVolume;
+                playVolume = distT * playVolume;
+            } else
+			{
+				playVolume = playVolume * 0.5f;
+			}
+				
         }
 
 		source.GetComponent<SoundObject>().PlaySound(clip, playVolume, false);
