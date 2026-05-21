@@ -644,7 +644,7 @@ MonoBehaviour:
     m_InternalValue: 0
   speed: 5
   attackCooldown: 1
-  maxHealth: 2
+  maxHealth: 15
   healthBar: {fileID: 9198338880382930201}
   coinCount:
     UpdateTraits:
@@ -661,6 +661,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 1
+  spawnInvincibleDuration: 3
   mousePos: {x: 0, y: 0}
   weaponDistFromCenter: 1
   weaponScript: {fileID: 7889255609381936137}
@@ -685,11 +686,18 @@ MonoBehaviour:
   attackSoundName: book
   attackSoundVolume: 1
   attackSoundRange: 20
+  inventory:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+  hurtParticleName: Player Hurt
+  hurtParticleDuration: 0.35
+  knockdownVelocityDecay: 10
   radiusObject: {fileID: 6058392212051303098}
-  auraCooldownMax: 0.5
-  auraHeal: 1
-  auraDamage: 1
-  selfHeal: 0.5
+  auraCooldownMax: 0.1
+  auraHeal: 0.2
+  auraDamage: 0.2
+  selfApplyPart: 0.2
 --- !u!1 &5486628184577562929
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 1617860108917191964}
+  barGroup: {fileID: 0}
 --- !u!1 &5881966125439417533
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +926,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4275550321903137566}
@@ -930,7 +939,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6058392212051303098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

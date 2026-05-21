@@ -114,6 +114,7 @@ MonoBehaviour:
   - {fileID: 8497165169282153330, guid: 4a8e690713b8bf24490be1fa32c05031, type: 3}
   - {fileID: 8497165169282153330, guid: d3161d092f0c5e74fbbcef225fdd3e1b, type: 3}
   - {fileID: 5530713002241143246, guid: be3671b8bbdf006499cd9a57e47d26c5, type: 3}
+  - {fileID: 5781850604906514888, guid: 41c59848723f6684f888ad2eff4d2bfc, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -155,4 +156,6 @@ MonoBehaviour:
   - NotNiceGuy
   - PiggyBoss
   - RedJellyfish
+  - SlimeFlower
   - DoorKey
+  - PriestProjectile

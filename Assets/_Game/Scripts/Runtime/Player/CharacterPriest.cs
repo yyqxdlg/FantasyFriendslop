@@ -18,7 +18,7 @@ public class CharacterPriest : CharacterBasic
 
 	public float auraDamage = 1f;
 
-	public float selfHeal = 1f;
+	public float selfApplyPart = 0.2f;
 
 	private bool healAura = true;
 	public override void Update()
@@ -41,7 +41,9 @@ public class CharacterPriest : CharacterBasic
 	{
 		base.OnNetworkSpawn();
 
-		if (!IsOwner){return;}
+		if (!IsOwner){
+			return;
+		}
 
 		objectsInAura = radiusObject.GetComponent<ObjectListCollider>();
 
@@ -51,13 +53,18 @@ public class CharacterPriest : CharacterBasic
 		newColor.a = 0.5f;
 
 		auraRenderer.color = newColor;
-	}
+
+        auraRenderer.enabled = true;
+    }
 
 	private void ApplyAura()
 	{
+		if (!IsOwner) { return; }
 		if (healAura)
 		{
-			for (int i = 0; i < objectsInAura.GetNumberOfTargets(); i++)
+            HealAmount(auraHeal*selfApplyPart);
+
+            for (int i = 0; i < objectsInAura.GetNumberOfTargets(); i++)
 			{
 				CharacterBasic currPlayerScript = objectsInAura.GetTarget(i).GetComponent<CharacterBasic>();
                 EnemyBasic currEnemyScript = objectsInAura.GetTarget(i).GetComponent<EnemyBasic>();
@@ -75,7 +82,7 @@ public class CharacterPriest : CharacterBasic
 		}
 		else
 		{
-			HealAmount(selfHeal);
+			TakeDamage(auraDamage*selfApplyPart);
 
 			for (int i = 0; i < objectsInAura.GetNumberOfTargets(); i++)
 			{
