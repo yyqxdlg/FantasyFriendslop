@@ -123,7 +123,7 @@ private Vector2 knockdownVelocity = Vector2.zero;
 			coinCount.Value = 0;
 			UpdateCoinVisual();
 
-
+			GameplayManager.Instance.AddPlayerCharacter(netObj.NetworkObjectId);
 		}
 
 		SpawnBehavior();
@@ -133,6 +133,13 @@ private Vector2 knockdownVelocity = Vector2.zero;
             AudioManager.Instance.player = gameObject;
         }
 	}
+
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+
+        GameplayManager.Instance.RemovePlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
+    }
 
 	// start as dead, do animation, then become alive
 	private void SpawnBehavior()
