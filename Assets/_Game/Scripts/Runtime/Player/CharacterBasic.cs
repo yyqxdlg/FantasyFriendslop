@@ -92,47 +92,55 @@ public class CharacterBasic : Spawnable
 
 private float knockdownTimer = 0f;
 private Vector2 knockdownVelocity = Vector2.zero;
-    public virtual void Awake()
-	{
-		rb = GetComponent<Rigidbody2D>();
-		//animator = GetComponent<Animator>();
-		cam = Camera.main;
+public virtual void Awake()
+{
+    rb = GetComponent<Rigidbody2D>();
 
-        healthBar = GetComponentInChildren<Healthbar>();
-		
+    if (animator == null)
+        animator = GetComponent<Animator>();
+
+    cam = Camera.main;
+
+    if (healthBar == null)
+        healthBar = GetComponentInChildren<Healthbar>(true);
+}
+
+public override void OnNetworkSpawn()
+{
+    base.OnNetworkSpawn();
+
+    NetworkObject netObj = GetComponent<NetworkObject>();
+
+    Debug.Log(
+        $"CharacterBasic OnNetworkSpawn: {name}, " +
+        $"IsServer={IsServer}, " +
+        $"IsOwner={IsOwner}, " +
+        $"OwnerClientId={OwnerClientId}, " +
+        $"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
+        $"IsSpawned={(netObj != null && netObj.IsSpawned)}"
+    );
+
+    if (IsOwner)
+    {
+        health.Value = maxHealth;
+
+        // 玩家自己的世界血条不一定存在，所以必须判空
+        if (healthBar != null)
+        {
+            healthBar.Hide();
+        }
+
+        coinCount.Value = 0;
+        UpdateCoinVisual();
     }
 
-    public override void OnNetworkSpawn()
-	{
-		NetworkObject netObj = GetComponent<NetworkObject>();
+    SpawnBehavior();
 
-		Debug.Log(
-				$"CharacterBasic OnNetworkSpawn: {name}, " +
-				$"IsServer={IsServer}, " +
-				$"IsOwner={IsOwner}, " +
-				$"OwnerClientId={OwnerClientId}, " +
-				$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
-				$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
-		);
-		if (IsOwner)
-		{
-			health.Value = maxHealth;
-
-			healthBar.Hide();
-
-			coinCount.Value = 0;
-			UpdateCoinVisual();
-
-			GameplayManager.Instance.AddPlayerCharacter(netObj.NetworkObjectId);
-		}
-
-		SpawnBehavior();
-
-        if (IsOwner)
-		{
-            AudioManager.Instance.player = gameObject;
-        }
-	}
+    if (IsOwner && AudioManager.Instance != null)
+    {
+        AudioManager.Instance.player = gameObject;
+    }
+}
 
     public override void OnNetworkDespawn()
     {
