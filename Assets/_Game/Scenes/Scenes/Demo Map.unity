@@ -28054,7 +28054,7 @@ MonoBehaviour:
   characterSpawnableName: CharacterArcher
   acceptedTag: Ghost
   songToPlay: 8bit version
-  songVolume: 0.5
+  songVolume: 0.25
   plateEnabled:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -28366,7 +28366,7 @@ MonoBehaviour:
   characterSpawnableName: CharacterPriest
   acceptedTag: Ghost
   songToPlay: 8bit version
-  songVolume: 0.5
+  songVolume: 0.25
   plateEnabled:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -42801,7 +42801,7 @@ MonoBehaviour:
   characterSpawnableName: CharacterMage
   acceptedTag: Ghost
   songToPlay: 8bit version
-  songVolume: 0.5
+  songVolume: 0.25
   plateEnabled:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -48798,7 +48798,7 @@ MonoBehaviour:
   characterSpawnableName: CharacterWarrior
   acceptedTag: Ghost
   songToPlay: 8bit version
-  songVolume: 0.5
+  songVolume: 0.25
   plateEnabled:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -61160,7 +61160,7 @@ MonoBehaviour:
   characterSpawnableName: Ghost
   acceptedTag: Player
   songToPlay: 8bit version
-  songVolume: 0.5
+  songVolume: 0.25
   plateEnabled:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -98402,7 +98402,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fd952969af05d7c449c04eca9afb86cf, type: 3}
   - {fileID: 8300000, guid: 8a8cf965637996b4ba23ab3ce79defb8, type: 3}
   - {fileID: 8300000, guid: d7683baf1609821498c5249f70a37709, type: 3}
-  - {fileID: 8300000, guid: d7683baf1609821498c5249f70a37709, type: 3}
+  - {fileID: 8300000, guid: 78d4e5e7c2ec06046a22a6a69a6afa3e, type: 3}
+  - {fileID: 8300000, guid: 2889b54e601466747a3b31f59ba910d7, type: 3}
+  - {fileID: 8300000, guid: f837374955013ea4084dd5c9968a9777, type: 3}
+  - {fileID: 8300000, guid: 530d1c17405cae94d852b74100c14a9e, type: 3}
+  - {fileID: 8300000, guid: 09b5145a582972043934ea753540d607, type: 3}
+  - {fileID: 8300000, guid: fd89be1befd95e84382b61cea7841189, type: 3}
+  - {fileID: 8300000, guid: 8007b7ae70ba11945a4edbe91e1fa4f2, type: 3}
+  - {fileID: 8300000, guid: 21192f644a6226549a87f9743de2a60e, type: 3}
+  - {fileID: 8300000, guid: 46078c29dafe26c4383f026a7a291ab7, type: 3}
+  - {fileID: 8300000, guid: 103a4272b7de39b4bb24671986d0b663, type: 3}
+  - {fileID: 8300000, guid: 80efb64efc9930b4e86e7bd824c1e2b8, type: 3}
+  - {fileID: 8300000, guid: 11b6d162cb5fbce43a57f240fa4e4c0b, type: 3}
   player: {fileID: 0}
   masterVolume: 0.5
 --- !u!114 &4639549995097021289

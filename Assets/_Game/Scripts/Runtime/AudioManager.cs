@@ -39,7 +39,17 @@ public class AudioManager : NetworkBehaviour
         PlaySoundEveryoneRpc(clipName, playPos, volume, range);
 	}
 
-	private AudioClip GetSoundClip(string clipName)
+    public void PlaySound(string clipName, Vector2 playPos, float volume)
+    {
+        PlaySoundEveryoneRpc(clipName, playPos, volume, 10);
+    }
+
+    public void PlaySound(string clipName, Vector2 playPos)
+    {
+        PlaySoundEveryoneRpc(clipName, playPos, 1, 10);
+    }
+
+    private AudioClip GetSoundClip(string clipName)
 	{
 		foreach (var clip in audioClips)
 		{
@@ -49,7 +59,7 @@ public class AudioManager : NetworkBehaviour
 			}
 		}
 
-		throw new Exception("No such clip");
+		throw new Exception("No such clip: " + clipName);
 	}
 
 	//there is one background song going on at a time (max). Use this to change what song is being played

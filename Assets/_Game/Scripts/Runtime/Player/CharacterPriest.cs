@@ -21,7 +21,11 @@ public class CharacterPriest : CharacterBasic
 	public float selfApplyPart = 0.2f;
 
 	private bool healAura = true;
-	public override void Update()
+
+	[SerializeField] private string healSoundName = null;
+
+    [SerializeField] private string harmSoundName = null;
+    public override void Update()
 	{
 		base.Update();
 
@@ -55,6 +59,8 @@ public class CharacterPriest : CharacterBasic
 		auraRenderer.color = newColor;
 
         auraRenderer.enabled = true;
+
+		PlayAbilitySound();
     }
 
 	private void ApplyAura()
@@ -108,7 +114,10 @@ public class CharacterPriest : CharacterBasic
 		{
 			healAura = !healAura;
 
-			if (healAura)
+			PlayAbilitySound();
+
+
+            if (healAura)
 			{
                 Color newColor = Color.green;
                 newColor.a = 0.5f;
@@ -124,4 +133,15 @@ public class CharacterPriest : CharacterBasic
             }
         }
 	}
+
+    public override void PlayAbilitySound()
+    {
+        if(healAura)
+		{
+			AudioManager.Instance.PlaySound(healSoundName, transform.position);
+		} else
+		{
+            AudioManager.Instance.PlaySound(harmSoundName, transform.position);
+        }
+    }
 }

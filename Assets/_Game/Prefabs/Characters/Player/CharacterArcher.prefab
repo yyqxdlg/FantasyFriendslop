@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3550565078
+  GlobalObjectIdHash: 445282563
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -566,10 +566,14 @@ MonoBehaviour:
   attackSoundName: bow trimmed
   attackSoundVolume: 1
   attackSoundRange: 20
+  abilitySoundName: arrow big
   inventory:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
+  hurtParticleName: Player Hurt
+  hurtParticleDuration: 0.35
+  knockdownVelocityDecay: 10
 --- !u!50 &2281014092804740205
 Rigidbody2D:
   serializedVersion: 5
@@ -792,6 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 1617860108917191964}
+  barGroup: {fileID: 0}
 --- !u!1 &5881966125439417533
 GameObject:
   m_ObjectHideFlags: 0

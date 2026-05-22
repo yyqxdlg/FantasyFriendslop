@@ -87,8 +87,9 @@ public class CharacterBasic : Spawnable
 	[SerializeField] private string attackSoundName;
 	[SerializeField] private float attackSoundVolume = 1f;
 	[SerializeField] private float attackSoundRange = 20f;
+    [SerializeField] private string abilitySoundName = null;
 
-	[Header("Inventory")]
+    [Header("Inventory")]
 	public NetworkList<FixedString64Bytes> inventory = new NetworkList<FixedString64Bytes>(
 		null,
 		NetworkVariableReadPermission.Everyone,
@@ -146,12 +147,12 @@ public virtual void Awake()
 			UpdateCoinVisual();
 		}
 
-		SpawnBehavior();
+        if (IsOwner && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.player = gameObject;
+        }
 
-		if (IsOwner && AudioManager.Instance != null)
-		{
-			AudioManager.Instance.player = gameObject;
-		}
+        SpawnBehavior();
 
 		if (IsServer)
 		{
@@ -180,6 +181,9 @@ public virtual void Awake()
 		}
 
 		animator.Play("Spawn");
+
+		AudioManager.Instance.PlaySound("birth", transform.position);
+
 		//animator.Update(0f);
 
 		float spawnClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
@@ -385,6 +389,8 @@ public virtual void Awake()
 
 private void PlayHurtFeedback()
 {
+	AudioManager.Instance.PlaySound("hit", transform.position);
+
 	if (string.IsNullOrEmpty(hurtParticleName)) return;
 	if (ParticleManager.Instance == null) return;
 
@@ -438,9 +444,11 @@ private void PlayHurtFeedback()
 
 		float deathClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
 
-		Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+        AudioManager.Instance.PlaySound("death", transform.position, 0.5f);
 
-		rb.linearVelocity = Vector2.zero;
+        //Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+
+        rb.linearVelocity = Vector2.zero;
 
 		Invoke("BecomeGhost", deathClipLength);
 	}
@@ -561,6 +569,16 @@ private void ApplyKnockdownOwnerRpc(Vector2 velocity, float duration)
 			SpawnerUtil.Instance.NetworkSpawnGameObject(summonPrefabName, gameObject.transform.position, OwnerClientId, gameObject.GetComponent<NetworkObject>().NetworkObjectId);
 
 			PlayAttackAnimation();
+
+			PlayAbilitySound();
+		}
+	}
+
+	public virtual void PlayAbilitySound()
+	{
+		if (abilitySoundName != null)
+		{
+			AudioManager.Instance.PlaySound(abilitySoundName, transform.position);
 		}
 	}
 
