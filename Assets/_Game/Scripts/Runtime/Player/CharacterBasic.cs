@@ -92,7 +92,7 @@ public class CharacterBasic : Spawnable
 	public NetworkList<FixedString64Bytes> inventory = new NetworkList<FixedString64Bytes>(
 		null,
 		NetworkVariableReadPermission.Everyone,
-        NetworkVariableWritePermission.Owner
+		NetworkVariableWritePermission.Owner
 	);
 
 	[Header("Hit Feedback")]
@@ -117,50 +117,58 @@ public virtual void Awake()
 		healthBar = GetComponentInChildren<Healthbar>(true);
 }
 
-public override void OnNetworkSpawn()
-{
-	base.OnNetworkSpawn();
-
-	NetworkObject netObj = GetComponent<NetworkObject>();
-
-	Debug.Log(
-		$"CharacterBasic OnNetworkSpawn: {name}, " +
-		$"IsServer={IsServer}, " +
-		$"IsOwner={IsOwner}, " +
-		$"OwnerClientId={OwnerClientId}, " +
-		$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
-		$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
-	);
-
-	if (IsOwner)
+	public override void OnNetworkSpawn()
 	{
-		health.Value = maxHealth;
+		base.OnNetworkSpawn();
 
-		// 玩家自己的世界血条不一定存在，所以必须判空
-		if (healthBar != null)
+		NetworkObject netObj = GetComponent<NetworkObject>();
+
+		Debug.Log(
+			$"CharacterBasic OnNetworkSpawn: {name}, " +
+			$"IsServer={IsServer}, " +
+			$"IsOwner={IsOwner}, " +
+			$"OwnerClientId={OwnerClientId}, " +
+			$"IsPlayerObject={(netObj != null && netObj.IsPlayerObject)}, " +
+			$"IsSpawned={(netObj != null && netObj.IsSpawned)}"
+		);
+
+		if (IsOwner)
 		{
-			healthBar.Hide();
+			health.Value = maxHealth;
+
+			// 玩家自己的世界血条不一定存在，所以必须判空
+			if (healthBar != null)
+			{
+				healthBar.Hide();
+			}
+
+			coinCount.Value = 0;
+			UpdateCoinVisual();
 		}
 
-		coinCount.Value = 0;
-		UpdateCoinVisual();
-	}
+		SpawnBehavior();
 
-	SpawnBehavior();
+		if (IsOwner && AudioManager.Instance != null)
+		{
+			AudioManager.Instance.player = gameObject;
+		}
 
-	if (IsOwner && AudioManager.Instance != null)
-	{
-		AudioManager.Instance.player = gameObject;
+		if (IsServer)
+		{
+			GameplayManager.Instance.AddPlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
+		}
 	}
-}
 
 	public override void OnNetworkDespawn()
 	{
+		if (IsServer)
+		{
+			GameplayManager.Instance.RemovePlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
+
+			DropInventory();
+		}
+
 		base.OnNetworkDespawn();
-
-		GameplayManager.Instance.RemovePlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
-
-		DropInventory();
 	}
 
 	// start as dead, do animation, then become alive
@@ -354,25 +362,26 @@ public override void OnNetworkSpawn()
 	}
 
 	[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
-private void TakeDamageOwnerRpc(float damage)
-{
-	if (!alive.Value) return;
-	if (invincibleTimer > 0f) return;
-
-	float oldHealth = health.Value;
-
-	health.Value = Mathf.Max(0, health.Value - damage);
-
-	if (health.Value < oldHealth)
+	private void TakeDamageOwnerRpc(float damage)
 	{
-		PlayHurtFeedback();
-	}
+		Debug.Log("TAKE DAMAGE " + damage);
+		if (!alive.Value) return;
+		if (invincibleTimer > 0f) return;
 
-	if (health.Value <= 0)
-	{
-		Die();
+		float oldHealth = health.Value;
+
+		health.Value = Mathf.Max(0, health.Value - damage);
+
+		if (health.Value < oldHealth)
+		{
+			PlayHurtFeedback();
+		}
+
+		if (health.Value <= 0)
+		{
+			Die();
+		}
 	}
-}
 
 private void PlayHurtFeedback()
 {
@@ -592,14 +601,54 @@ private void ApplyKnockdownOwnerRpc(Vector2 velocity, float duration)
 		inventory.Remove(itemName);
 	}
 
-	public void DropInventory()
+	private void DropInventory()
 	{
 		for (int i = 0; i < inventory.Count; i++)
 		{
 			string toDrop = inventory[i].ToString();
 
-			Debug.Log("Trying to drop: " + toDrop);
 			SpawnerUtil.Instance.NetworkSpawnGameObject(toDrop, transform.position);
 		}
+
+		DropCoins();
 	}
+
+	private void DropCoins()
+	{
+		int coinsLeft = coinCount.Value;
+
+		int hundreds = (int) Math.Floor( (double) coinsLeft / 100);
+
+		coinsLeft -= hundreds * 100;
+
+		int tens = (int)Math.Floor((double)coinsLeft / 10); ;
+
+		coinsLeft -= tens * 10;
+
+		for (int i = 0; i < hundreds; i++)
+		{
+			SpawnerUtil.Instance.NetworkSpawnGameObject("Coin x100", transform.position);
+		}
+
+		for (int i = 0; i < tens; i++)
+		{
+			SpawnerUtil.Instance.NetworkSpawnGameObject("Coin x10", transform.position);
+		}
+
+		for (int i = 0; i < coinsLeft; i++)
+		{
+			SpawnerUtil.Instance.NetworkSpawnGameObject("Coin", transform.position);
+		}
+	}
+
+	public void Teleport(Vector3 posTo)
+	{
+		TeleportOwnerRpc(posTo);
+	}
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void TeleportOwnerRpc(Vector3 posTo)
+    {
+		gameObject.transform.position = posTo;
+    }
 }

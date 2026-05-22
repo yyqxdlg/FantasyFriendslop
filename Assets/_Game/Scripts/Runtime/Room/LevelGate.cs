@@ -1,64 +1,61 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class LevelGate : ClickReceiver
+public class LevelGate : NetworkBehaviour
 {
 
-    [SerializeField] private SelectPlateController plateControl;
+	[SerializeField] private SelectPlateController plateControl;
 
-    [SerializeField] private Collider2D blocker;
+	[SerializeField] private Collider2D blocker;
 
-    [SerializeField] private SpriteRenderer closedVis;
-    [SerializeField] private SpriteRenderer openVis;
+	[SerializeField] private SpriteRenderer closedVis;
+	[SerializeField] private SpriteRenderer openVis;
 
-    [SerializeField] private SpawnPointController spawnPointController;
+	[SerializeField] private SpawnPointController spawnPointController;
 
-    public NetworkVariable<bool> doorOpen = new NetworkVariable<bool>(
-            false,
-            NetworkVariableReadPermission.Everyone,
-            NetworkVariableWritePermission.Server
-    );
+	public override void OnNetworkSpawn()
+	{
+		base.OnNetworkSpawn();
 
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
+		GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStateChanged;
 
-        doorOpen.OnValueChanged += OnDoorOpen;
-    }
+		OnLevelStateChanged(false, GameplayManager.Instance.levelStarted.Value);
+	}
 
-    public override void ReceiveClick(int code)
-    {
-        base.ReceiveClick(code);
+	public void OnLevelStateChanged(bool prev, bool next)
+	{
+		if (next)
+		{
+			OpenDoor();
 
-        if(code == 0)
-        {
-            StartLevel();
-        }
-    }
+			if (IsServer)
+			{
+                StartLevelServer();
+            }
+		}
+		else {
+			CloseDoor();
+		}
+	}
 
-    private void StartLevel()
-    {
-        StartLevelServerRpc();
-    }
+	public void OpenDoor()
+	{
+		blocker.enabled = false;
+		closedVis.enabled = false;
+		openVis.enabled = true;
+	}
 
-    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
-    public void StartLevelServerRpc()
-    {
+	public void CloseDoor()
+	{
+		blocker.enabled = true;
+		closedVis.enabled = true;
+		openVis.enabled = false;
+	}
+
+	private void StartLevelServer()
+	{
         Debug.Log("STARTING LEVEL");
-        //plateControl.DisablePlates();
-
-        doorOpen.Value = true;
 
         spawnPointController.SpawnAll();
-
-        buttons[0].ChangeVisibility(false);
-    }
-
-    public void OnDoorOpen(bool prevVal, bool newVal)
-    {
-        blocker.enabled = false;
-        closedVis.enabled = false;
-        openVis.enabled = true;
-
     }
 }

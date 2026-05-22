@@ -9,6 +9,8 @@ public class Coin : Spawnable
 
     private bool pickedUp = false;
 
+    [SerializeField] private int value = 1;
+
     private void Update()
     {
         if (!IsServer) return;
@@ -58,7 +60,7 @@ public class Coin : Spawnable
         }
 
         pickedUp = true;
-        playerScript.AddCoin(1);
+        playerScript.AddCoin(value);
         DespawnCoin();
         return true;
     }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8932710221901824314}
   - component: {fileID: 4200112832942598252}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Coin x100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.62621, y: -3.65748, z: 0}
-  m_LocalScale: {x: 0.23596299, y: 0.33709, z: 0.33709}
+  m_LocalScale: {x: 0.471926, y: 0.67418, z: 0.67418}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2228545330
+  GlobalObjectIdHash: 2708378807
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -140,6 +140,7 @@ MonoBehaviour:
     m_InternalValue: 18446744073709551615
   pickupRadius: 0.9
   playerTag: Player
+  value: 100
 --- !u!58 &8932710221901824314
 CircleCollider2D:
   m_ObjectHideFlags: 0

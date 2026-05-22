@@ -42,19 +42,30 @@ public class GhostScript : Spawnable
 
         NetworkObject netObj = GetComponent<NetworkObject>();
 
-        if (GameplayManager.Instance != null && netObj != null)
+        Debug.Log("TRYING TO ADD SELF ");
+        Debug.Log(netObj != null);
+
+        if (IsServer)
         {
-            GameplayManager.Instance.AddGhost(netObj.NetworkObjectId);
+            if (GameplayManager.Instance != null && netObj != null)
+            {
+                Debug.Log("YES WE ADD SELF?");
+
+                GameplayManager.Instance.AddGhost(netObj.NetworkObjectId);
+            }
         }
     }
 
     public override void OnNetworkDespawn()
     {
-        NetworkObject netObj = GetComponent<NetworkObject>();
-
-        if (GameplayManager.Instance != null && netObj != null)
+        if (IsServer)
         {
-            GameplayManager.Instance.RemoveGhost(netObj.NetworkObjectId);
+            NetworkObject netObj = GetComponent<NetworkObject>();
+
+            if (GameplayManager.Instance != null && netObj != null)
+            {
+                GameplayManager.Instance.RemoveGhost(netObj.NetworkObjectId);
+            }
         }
 
         base.OnNetworkDespawn();
@@ -88,5 +99,16 @@ public class GhostScript : Spawnable
         if (rb == null) return;
 
         rb.linearVelocity = movement.normalized * speed;
+    }
+
+    public void Teleport(Vector3 posTo)
+    {
+        TeleportOwnerRpc(posTo);
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void TeleportOwnerRpc(Vector3 posTo)
+    {
+        gameObject.transform.position = posTo;
     }
 }
