@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -12,6 +13,10 @@ public class GameplayManager : MonoBehaviour
 	public static GameplayManager Instance { get; private set; }
 
     public bool GameStarted = false;
+
+    public int level;
+
+    public int[] levelMinInterest;
 
 	void Awake()
 	{
@@ -150,5 +155,45 @@ public class GameplayManager : MonoBehaviour
         Debug.Log("Ghosts: " + ghosts.Count);
     }
 
+    public void GameOver()
+    {
+        GameOverServerRpc();
+    }
+
+    public void GameOverServerRpc()
+    {
+        GuildSmite();
+    }
+
+    public void GuildSmite()
+    {
+        for (int i = 0; i < characters.Count; i++)
+        {
+            characters[i].TakeDamage(1000);
+        }
+    }
+
+    public void EndLevel()
+    {
+        int goldSum = 0;
+
+        for (int i = 0; i < characters.Count; i++)
+        {
+            goldSum += characters[i].coinCount.Value;
+        }
+
+        if(goldSum > levelMinInterest[level])
+        {
+            NextLevel();
+        } else
+        {
+            GameOver();
+        }
+    }
+
+    public void NextLevel()
+    {
+        Debug.Log("YAY next level!");
+    }
 
 }

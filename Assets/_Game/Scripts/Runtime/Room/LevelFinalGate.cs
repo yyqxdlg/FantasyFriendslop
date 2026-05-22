@@ -1,7 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class EndOfLevelDoor : NetworkBehaviour
+public class LevelFinalGate : NetworkBehaviour
 {
 
     public LockedDoor door;
