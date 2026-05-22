@@ -107,6 +107,6 @@ public class NetworkUI : MonoBehaviour
         networkCanvasGroup.blocksRaycasts = false;
 
         inGameCanvasGroup.alpha = 1;
-        inGameCanvasGroup.blocksRaycasts = true;
+        inGameCanvasGroup.blocksRaycasts = false;
     }
 }

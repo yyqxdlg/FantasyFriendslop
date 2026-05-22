@@ -76,6 +76,6 @@ public class RelayManager : MonoBehaviour
         relayCanvasGroup.blocksRaycasts = false;
 
         inGameCanvasGroup.alpha = 1;
-        inGameCanvasGroup.blocksRaycasts = true;
+        inGameCanvasGroup.blocksRaycasts = false;
     }
 }
