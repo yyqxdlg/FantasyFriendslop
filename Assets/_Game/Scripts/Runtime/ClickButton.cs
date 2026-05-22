@@ -31,12 +31,14 @@ public class ClickButton : NetworkBehaviour
 
 	public void OnMouseDown()
 	{
+		Debug.Log("CLICK");
+
 		receiver.ReceiveClick(code);
 	}
 
 	public void ChangeVisibility(bool newVal)
 	{
-		if (!IsServer) throw new System.Exception("Should be called from server");
+		//if (!IsServer) { throw new System.Exception("Should be called from server"); }
 
         visible.Value = newVal;
 	}
