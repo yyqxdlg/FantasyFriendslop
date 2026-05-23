@@ -9925,6 +9925,11 @@ MonoBehaviour:
   acceptedTag: Ghost
   songToPlay: 8bit version
   songVolume: 0.5
+  plateEnabled:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 1
 --- !u!114 &492793560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10232,6 +10237,11 @@ MonoBehaviour:
   acceptedTag: Ghost
   songToPlay: 8bit version
   songVolume: 0.5
+  plateEnabled:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 1
 --- !u!114 &501252827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22362,6 +22372,11 @@ MonoBehaviour:
   acceptedTag: Ghost
   songToPlay: 8bit version
   songVolume: 0.5
+  plateEnabled:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 1
 --- !u!114 &907115875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27197,6 +27212,11 @@ MonoBehaviour:
   acceptedTag: Ghost
   songToPlay: 8bit version
   songVolume: 0.5
+  plateEnabled:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 1
 --- !u!61 &1045530801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32033,6 +32053,11 @@ MonoBehaviour:
   acceptedTag: Player
   songToPlay: 8bit version
   songVolume: 0.5
+  plateEnabled:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 1
 --- !u!114 &1373004280
 MonoBehaviour:
   m_ObjectHideFlags: 0
