@@ -557,7 +557,7 @@ MonoBehaviour:
   dropLootOnDeath: 1
   dropSpawnableName: RedJellyfish_Drop
   roomId: -1
-  maxHealth: 10
+  maxHealth: 5
   speed: 2
   health:
     UpdateTraits:
@@ -580,10 +580,15 @@ MonoBehaviour:
   attackDamage: 1
   attackRange: 1
   coinsToDrop: 1
+  hasInventory: 1
+  inventory:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
   moveThreshold: 0.05
   facingDeadZone: 0.15
   respawnTime: 3
-  bodyHp: 5
+  bodyHp: 1
   reviveParticleName: RedJellyfish revive
 --- !u!95 &3460544872984202843
 Animator:
@@ -711,6 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 4208682253468377908}
+  barGroup: {fileID: 0}
 --- !u!225 &5727224655174615429
 CanvasGroup:
   m_ObjectHideFlags: 0
