@@ -7,11 +7,13 @@ public class SpawnPoint : NetworkBehaviour
 
     public string spawnableName;
 
-    public SpawnPointController controller;
+    private SpawnPointController controller;
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+
+        controller = GetComponentInParent<SpawnPointController>();
 
         if (controller == null)
         {
