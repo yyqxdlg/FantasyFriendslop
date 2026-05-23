@@ -112,7 +112,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.78}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5058986524659981913
 Canvas:
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2647812604
+  GlobalObjectIdHash: 1237446326
   InScenePlacedSourceGlobalObjectIdHash: 1237446326
   DeferredDespawnTick: 0
   Ownership: 1
@@ -602,6 +602,11 @@ MonoBehaviour:
   attackDamage: 2
   attackRange: 2
   coinsToDrop: 5
+  hasInventory: 1
+  inventory:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
   moveThreshold: 0.05
   facingDeadZone: 0.15
 --- !u!1 &4069787323468268524
@@ -707,6 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 4208682253468377908}
+  barGroup: {fileID: 0}
 --- !u!1 &8781379560090266654
 GameObject:
   m_ObjectHideFlags: 0

@@ -87,6 +87,7 @@ MonoBehaviour:
   preventRepeatedHits: 0
   NonRotational: 0
   friendlyFire: 0
+  onHitSound: 
 --- !u!50 &-385471074312244252
 Rigidbody2D:
   serializedVersion: 5
@@ -149,7 +150,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!114 &-7853537249491693519
 MonoBehaviour:
   m_ObjectHideFlags: 0
