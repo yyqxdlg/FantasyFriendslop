@@ -12827,7 +12827,7 @@ Transform:
   m_GameObject: {fileID: 209914581}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.64, y: 14.4, z: 0}
+  m_LocalPosition: {x: -7.03, y: 13.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12873,7 +12873,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnableName: Mouse
   controller: {fileID: 875546856}
-  playerCounts: 000000000000000000000000
+  playerCounts: 00000000000000000000000000000000
   spawnRange: {x: 1, y: 1}
 --- !u!1 &223468002
 GameObject:
@@ -29403,6 +29403,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   ghosts: []
   characters: []
+  enemies: []
   levelStarted:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
