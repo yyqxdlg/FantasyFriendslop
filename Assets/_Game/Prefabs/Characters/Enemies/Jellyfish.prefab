@@ -557,7 +557,7 @@ MonoBehaviour:
   dropLootOnDeath: 1
   dropSpawnableName: Jellyfish_Drop
   roomId: -1
-  maxHealth: 10
+  maxHealth: 5
   speed: 2
   health:
     UpdateTraits:
@@ -579,7 +579,7 @@ MonoBehaviour:
   attackCooldown: 1
   attackDamage: 1
   attackRange: 1
-  coinsToDrop: 1
+  coinsToDrop: 3
   hasInventory: 1
   inventory:
     UpdateTraits:

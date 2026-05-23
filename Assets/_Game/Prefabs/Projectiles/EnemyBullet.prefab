@@ -148,9 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
   ShowTopMostFoldoutHeaderGroup: 1
-  speed: 8
+  speed: 15
   lifeTime: 2
-  damage: 1
+  damage: 2
   creator: {fileID: 3388104308899182308, guid: c241db0772d98b047a40303b25e9b99b, type: 3}
   hitSound: {fileID: 8300000, guid: edd1dc3928941e1488911297031fdece, type: 3}
   hitVolume: 1

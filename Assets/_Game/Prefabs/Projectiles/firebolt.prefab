@@ -250,7 +250,7 @@ MonoBehaviour:
     m_InternalValue: 0
   speedFromProjectile: 10
   lifeTime: 2
-  damage: 1
+  damage: 0
   despawnOnHit: 1
   preventRepeatedHits: 0
   NonRotational: 0

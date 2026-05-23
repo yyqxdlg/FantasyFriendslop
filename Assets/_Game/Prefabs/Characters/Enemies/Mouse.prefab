@@ -498,8 +498,8 @@ MonoBehaviour:
   dropLootOnDeath: 1
   dropSpawnableName: Coin
   roomId: -1
-  maxHealth: 5
-  speed: 2
+  maxHealth: 1
+  speed: 4
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -518,9 +518,9 @@ MonoBehaviour:
   strafeSpeed: 1.5
   strafeChangeInterval: 2
   attackCooldown: 2
-  attackDamage: 2
+  attackDamage: 1
   attackRange: 1.5
-  coinsToDrop: 3
+  coinsToDrop: 1
   hasInventory: 1
   inventory:
     UpdateTraits:

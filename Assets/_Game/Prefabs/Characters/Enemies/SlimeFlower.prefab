@@ -580,8 +580,8 @@ MonoBehaviour:
   dropLootOnDeath: 1
   dropSpawnableName: SlimeFlower_Drop
   roomId: -1
-  maxHealth: 10
-  speed: 2
+  maxHealth: 5
+  speed: 3
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0

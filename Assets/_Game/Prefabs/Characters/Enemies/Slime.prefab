@@ -521,7 +521,7 @@ MonoBehaviour:
   attackCooldown: 2
   attackDamage: 2
   attackRange: 1.5
-  coinsToDrop: 3
+  coinsToDrop: 2
   hasInventory: 1
   inventory:
     UpdateTraits:

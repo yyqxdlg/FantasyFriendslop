@@ -249,7 +249,7 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
   speedFromProjectile: 5
-  lifeTime: 2
+  lifeTime: 4
   damage: 1
   despawnOnHit: 1
   preventRepeatedHits: 0
