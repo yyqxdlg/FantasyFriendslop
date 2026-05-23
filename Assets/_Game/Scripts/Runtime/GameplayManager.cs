@@ -7,9 +7,13 @@ using UnityEngine.Assemblies;
 
 public class GameplayManager : NetworkBehaviour
 {
-	List<GhostScript> ghosts = new List<GhostScript>();
+	public List<GhostScript> ghosts = new List<GhostScript>();
 
-	List<CharacterBasic> characters = new List<CharacterBasic>();
+	public List<CharacterBasic> characters = new List<CharacterBasic>();
+
+
+	public List<EnemyBasic> enemies = new List<EnemyBasic>();
+
 	public static GameplayManager Instance { get; private set; }
 
 	public NetworkVariable<bool> levelStarted = new NetworkVariable<bool>(
@@ -49,7 +53,15 @@ public class GameplayManager : NetworkBehaviour
 
 	public void AddPlayerCharacter(ulong objectNetworkId)
 	{
-        if (!IsServer) { throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY"); }
+        if (!IsServer) {
+			if (IsSpawned)
+			{
+				throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY");
+			} else
+			{
+                throw new System.Exception("ADDING CHARACTER BEFORE GAMEPLAYMANAGER HAS NETWORK OBJECT");
+            }
+		}
 
         bool found = NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(
 			objectNetworkId,
@@ -103,7 +115,17 @@ public class GameplayManager : NetworkBehaviour
 
     public void AddGhost(ulong objectNetworkId)
     {
-        if (!IsServer) { throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY"); }
+        if (!IsServer)
+        {
+            if (IsSpawned)
+            {
+                throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY");
+            }
+            else
+            {
+                throw new System.Exception("ADDING GHOST BEFORE GAMEPLAYMANAGER HAS NETWORK OBJECT");
+            }
+        }
 
         //Debug.Log(NetworkManager.Singleton == null);
 
@@ -157,7 +179,67 @@ public class GameplayManager : NetworkBehaviour
 		throw new System.Exception("No such player character found");
 	}
 
-	public void GameStateCheck()
+    public void AddEnemy(ulong objectNetworkId)
+    {
+        if (!IsServer)
+        {
+            if (IsSpawned)
+            {
+                throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY");
+            }
+            else
+            {
+                throw new System.Exception("ADDING ENEMY BEFORE GAMEPLAYMANAGER HAS NETWORK OBJECT");
+            }
+        }
+
+        //Debug.Log(NetworkManager.Singleton == null);
+
+        bool found = NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(
+            objectNetworkId,
+            out NetworkObject netObj
+        );
+
+        if (found)
+        {
+            EnemyBasic enemy = netObj.gameObject.GetComponent<EnemyBasic>();
+
+            if (enemy != null)
+            {
+                enemies.Add(enemy);
+            }
+            else
+            {
+                Debug.Log("Object is not an enemy");
+            }
+
+        }
+        else
+        {
+            throw new System.Exception("Network object does not exist");
+        }
+    }
+
+
+    public void RemoveEnemy(ulong objectNetworkId)
+    {
+        if (!IsServer) { throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY"); }
+
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            EnemyBasic enemy = enemies[i];
+            if (enemy.gameObject.GetComponent<NetworkObject>().NetworkObjectId == objectNetworkId)
+            {
+                enemies.RemoveAt(i);
+
+                return;
+            }
+        }
+
+        throw new System.Exception("No such enemy found");
+    }
+
+    public void GameStateCheck()
 	{
 		Debug.Log("Living players: " + characters.Count);
 
@@ -233,6 +315,8 @@ public class GameplayManager : NetworkBehaviour
 
 		TeleportPlayersToLevel();
 
+		EnemyWipe();
+
         RespawnPlayers();
     }
 
@@ -248,6 +332,14 @@ public class GameplayManager : NetworkBehaviour
             ghosts[i].Teleport(levelSpawnPoints[level].position);
         }
     }
+
+	public void EnemyWipe()
+	{
+		foreach(EnemyBasic enemy in enemies)
+		{
+			enemy.TakeDamage(1000);
+		}
+	}
 
 	public void RespawnPlayers()
 	{

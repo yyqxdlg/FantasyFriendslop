@@ -42,17 +42,23 @@ public class GhostScript : Spawnable
 
         NetworkObject netObj = GetComponent<NetworkObject>();
 
-        Debug.Log("TRYING TO ADD SELF ");
-        Debug.Log(netObj != null);
-
         if (IsServer)
         {
-            if (GameplayManager.Instance != null && netObj != null)
-            {
-                Debug.Log("YES WE ADD SELF?");
+            AddSelfToGhostList();
+        }
+    }
 
-                GameplayManager.Instance.AddGhost(netObj.NetworkObjectId);
-            }
+    private void AddSelfToGhostList()
+    {
+        if (GameplayManager.Instance.GetComponent<NetworkObject>().IsSpawned)
+        {
+            NetworkObject netObj = GetComponent<NetworkObject>();
+
+            GameplayManager.Instance.AddGhost(netObj.NetworkObjectId);
+        } else
+        {
+            Debug.Log("WAIT WITH ADD FOR GAMEPLAYMANAGER SPAWN");
+            Invoke("AddSelfToGhostList", 0.1f);
         }
     }
 

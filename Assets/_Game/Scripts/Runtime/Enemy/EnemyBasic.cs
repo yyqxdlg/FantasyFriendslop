@@ -175,11 +175,28 @@ public class EnemyBasic : Spawnable
         {
             canAct = true;
         }
+
+        AddSelfToEnemyList();
+    }
+
+    private void AddSelfToEnemyList()
+    {
+        if (GameplayManager.Instance.GetComponent<NetworkObject>().IsSpawned)
+        {
+            GameplayManager.Instance.AddEnemy(GetComponent<NetworkObject>().NetworkObjectId);
+        }
+        else
+        {
+            Debug.Log("WAIT WITH ADD FOR GAMEPLAYMANAGER SPAWN");
+            Invoke("AddSelfToCharacterList", 0.1f);
+        }
     }
 
     public override void OnNetworkDespawn()
     {
         DropInventory();
+
+        GameplayManager.Instance.RemoveEnemy(GetComponent<NetworkObject>().NetworkObjectId);
 
         base.OnNetworkDespawn();
     }

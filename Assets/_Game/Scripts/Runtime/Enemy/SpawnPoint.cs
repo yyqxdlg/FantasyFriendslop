@@ -21,7 +21,7 @@ public class SpawnPoint : NetworkBehaviour
         controller.AddPointToList(this);
     }
 
-    public void Spawn()
+    public virtual void Spawn()
     {
         SpawnerUtil.Instance.NetworkSpawnGameObject(spawnableName, transform.position);
     }

@@ -87,9 +87,9 @@ public class CharacterBasic : Spawnable
 	[SerializeField] private string attackSoundName;
 	[SerializeField] private float attackSoundVolume = 1f;
 	[SerializeField] private float attackSoundRange = 20f;
-    [SerializeField] private string abilitySoundName = null;
+	[SerializeField] private string abilitySoundName = null;
 
-    [Header("Inventory")]
+	[Header("Inventory")]
 	public NetworkList<FixedString64Bytes> inventory = new NetworkList<FixedString64Bytes>(
 		null,
 		NetworkVariableReadPermission.Everyone,
@@ -147,19 +147,30 @@ public virtual void Awake()
 			UpdateCoinVisual();
 		}
 
-        if (IsOwner && AudioManager.Instance != null)
-        {
-            AudioManager.Instance.player = gameObject;
-        }
+		if (IsOwner && AudioManager.Instance != null)
+		{
+			AudioManager.Instance.player = gameObject;
+		}
 
-        SpawnBehavior();
+		SpawnBehavior();
 
 		if (IsServer)
 		{
-			GameplayManager.Instance.AddPlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
+			AddSelfToCharacterList();
 		}
 	}
 
+	private void AddSelfToCharacterList()
+	{
+		if (GameplayManager.Instance.GetComponent<NetworkObject>().IsSpawned)
+		{
+            GameplayManager.Instance.AddPlayerCharacter(GetComponent<NetworkObject>().NetworkObjectId);
+        } else
+		{
+			Debug.Log("WAIT WITH ADD FOR GAMEPLAYMANAGER SPAWN");
+			Invoke("AddSelfToCharacterList", 0.1f);
+		}
+	}
 	public override void OnNetworkDespawn()
 	{
 		if (IsServer)
@@ -444,11 +455,11 @@ private void PlayHurtFeedback()
 
 		float deathClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
 
-        AudioManager.Instance.PlaySound("death", transform.position, 0.5f);
+		AudioManager.Instance.PlaySound("death", transform.position, 0.5f);
 
-        //Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+		//Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
 
-        rb.linearVelocity = Vector2.zero;
+		rb.linearVelocity = Vector2.zero;
 
 		Invoke("BecomeGhost", deathClipLength);
 	}
@@ -664,9 +675,9 @@ private void ApplyKnockdownOwnerRpc(Vector2 velocity, float duration)
 		TeleportOwnerRpc(posTo);
 	}
 
-    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
-    public void TeleportOwnerRpc(Vector3 posTo)
-    {
+	[Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+	public void TeleportOwnerRpc(Vector3 posTo)
+	{
 		gameObject.transform.position = posTo;
-    }
+	}
 }
