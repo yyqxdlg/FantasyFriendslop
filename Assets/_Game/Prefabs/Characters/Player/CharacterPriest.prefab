@@ -683,9 +683,10 @@ MonoBehaviour:
   abilityCooldownsMax:
   - 5
   ghostType: 3
-  attackSoundName: book
+  attackSoundName: yellow butterfly attack
   attackSoundVolume: 1
   attackSoundRange: 20
+  abilitySoundName: 
   inventory:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -698,6 +699,8 @@ MonoBehaviour:
   auraHeal: 0.2
   auraDamage: 0.2
   selfApplyPart: 0.2
+  healSoundName: positive aura
+  harmSoundName: negative aura
 --- !u!1 &5486628184577562929
 GameObject:
   m_ObjectHideFlags: 0

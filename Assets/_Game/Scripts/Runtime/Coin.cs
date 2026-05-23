@@ -60,6 +60,9 @@ public class Coin : Spawnable
         }
 
         pickedUp = true;
+
+        AudioManager.Instance.PlaySound("coin collect", transform.position, 0.5f);
+
         playerScript.AddCoin(value);
         DespawnCoin();
         return true;

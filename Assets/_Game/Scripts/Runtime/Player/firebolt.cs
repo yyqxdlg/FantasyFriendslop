@@ -10,6 +10,8 @@ public class firebolt : BasicProjectile
 
         if (!collision.isTrigger)
         {
+            PlayHitSound();
+
             SpawnerUtil.Instance.NetworkSpawnGameObject(spawnableName, gameObject.transform.position, OwnerClientId, creatorNetworkId.Value);
         }
     }

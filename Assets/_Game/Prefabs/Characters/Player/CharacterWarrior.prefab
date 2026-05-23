@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 290618656
+  GlobalObjectIdHash: 659989294
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -817,9 +817,17 @@ MonoBehaviour:
   abilityCooldownsMax:
   - 10
   ghostType: 4
-  attackSoundName: sword 2
+  attackSoundName: sword 4
   attackSoundVolume: 1
   attackSoundRange: 20
+  abilitySoundName: ult sword
+  inventory:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+  hurtParticleName: Player Hurt
+  hurtParticleDuration: 0.35
+  knockdownVelocityDecay: 10
   swingBoxSmall: {fileID: 136337344215209726}
   swingBoxLarge: {fileID: 8831898011176116681}
   swingKnockback: 1
@@ -1048,6 +1056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 1617860108917191964}
+  barGroup: {fileID: 0}
 --- !u!1 &6231071954751119769
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,6 +33,8 @@ public class BasicProjectile : Spawnable
 
     public bool friendlyFire = false;
 
+    public string onHitSound = null;
+
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -107,6 +109,8 @@ public class BasicProjectile : Spawnable
 
         EnemyBasic enemyHitScript = objectHit.GetComponent<EnemyBasic>();
 
+        PlayHitSound();
+
         if (enemyHitScript != null)
         {
             OnEnemyHitEffect(enemyHitScript);
@@ -120,6 +124,14 @@ public class BasicProjectile : Spawnable
             {
                 OnAllyHitEffect(allyHitScript);
             }
+        }
+    }
+
+    public void PlayHitSound()
+    {
+        if(onHitSound != null)
+        {
+            AudioManager.Instance.PlaySound(onHitSound, transform.position);
         }
     }
 

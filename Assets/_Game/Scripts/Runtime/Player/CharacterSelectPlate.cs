@@ -35,7 +35,7 @@ public class CharacterSelectPlate : NetworkBehaviour
         {
             if (collision.gameObject.tag == acceptedTag)
             {
-                AudioManager.Instance.PlayBackgroundSong(songToPlay, 1);
+                AudioManager.Instance.PlayBackgroundSong(songToPlay, songVolume);
 
                 if (!IsServer) { return; }
 

@@ -566,6 +566,7 @@ MonoBehaviour:
   attackSoundName: wand
   attackSoundVolume: 1
   attackSoundRange: 20
+  abilitySoundName: blue ult start
   inventory:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0

@@ -83,6 +83,8 @@ public class CharacterWarrior : CharacterBasic
 			HitAllInCone(swingBoxLarge, largeSwingDamage, largeSwingKnockback);
 
             PlayAttackAnimation();
+
+			PlayAbilitySound();
         }
 	}
 
