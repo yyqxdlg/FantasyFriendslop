@@ -117,4 +117,40 @@ public class GhostScript : Spawnable
     {
         gameObject.transform.position = posTo;
     }
+
+    public void Respawn()
+    {
+        RespawnOwnerRpc();
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void RespawnOwnerRpc()
+    {
+        string prefabName = null;
+
+        switch (type)
+        {
+            case 1:
+                prefabName = "CharacterArcher";
+                break;
+
+            case 2:
+                prefabName = "CharacterMage";
+                break;
+
+            case 3:
+                prefabName = "CharacterPriest";
+                break;
+
+            case 4:
+                prefabName = "CharacterWarrior";
+                break;
+
+            default:
+                prefabName = null;
+                break;
+        }
+
+        SpawnerUtil.Instance.NetworkSpawnGameObject(prefabName, transform.position, OwnerClientId, ulong.MaxValue);
+    }
 }

@@ -14,6 +14,8 @@ public class SpawnPointController : NetworkBehaviour
 
     public void SpawnAll()
     {
+        Debug.Log("CALL?");
+
         for (int i = 0; i < points.Count; i++)
         {
             points[i].Spawn();

@@ -7,7 +7,7 @@ public class SpawnPoint : NetworkBehaviour
 
     public string spawnableName;
 
-    private SpawnPointController controller;
+    public SpawnPointController controller;
 
     public override void OnNetworkSpawn()
     {

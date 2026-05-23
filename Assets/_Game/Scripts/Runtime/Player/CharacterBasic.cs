@@ -6,6 +6,8 @@ using UnityEngine.Rendering;
 
 public class CharacterBasic : Spawnable
 {
+	public bool isMe = false;
+
 	public float speed = 5f;
 
 	public float attackCooldown = 1f;
@@ -150,6 +152,8 @@ public virtual void Awake()
 		if (IsOwner && AudioManager.Instance != null)
 		{
 			AudioManager.Instance.player = gameObject;
+
+			isMe = true;
 		}
 
 		SpawnBehavior();

@@ -17,6 +17,8 @@ public class LockedDoor : NetworkBehaviour
 
     public Collider2D blocker;
 
+    public FogOfWar fow;
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
@@ -60,6 +62,11 @@ public class LockedDoor : NetworkBehaviour
         if(blocker != null)
         {
             blocker.enabled = !next;
+        }
+
+        if(fow != null)
+        {
+            fow.Reveal();
         }
     }
 }

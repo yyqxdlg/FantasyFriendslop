@@ -40,6 +40,10 @@ public class GameplayManager : NetworkBehaviour
         NetworkVariableWritePermission.Owner
     );
 
+	public SpawnPointController[] spawnControllers;
+
+	public Wiper wiper;
+
     void Awake()
 	{
 		if (Instance != null && Instance != this)
@@ -283,6 +287,11 @@ public class GameplayManager : NetworkBehaviour
 	public void ChangeLevelStartedRpc(bool newVal)
 	{
 		levelStarted.Value = newVal;
+
+		if (newVal)
+		{
+			spawnControllers[level].SpawnAll();
+		}
 	}
 
 	public void UpdateInterestReached(List<CharacterBasic> exitZoneCharacters)
@@ -317,7 +326,9 @@ public class GameplayManager : NetworkBehaviour
 
 		EnemyWipe();
 
-        RespawnPlayers();
+		FullWipe();
+
+        RespawnAndRestorePlayers();
     }
 
 	public void TeleportPlayersToLevel()
@@ -341,8 +352,21 @@ public class GameplayManager : NetworkBehaviour
 		}
 	}
 
-	public void RespawnPlayers()
+	public void FullWipe()
 	{
+		wiper.Wipe(level-1);
+	}
 
+	public void RespawnAndRestorePlayers()
+	{
+		foreach(GhostScript ghost in ghosts)
+		{
+			ghost.Respawn();	
+		}
+
+		foreach(CharacterBasic character in characters)
+		{
+			character.HealAmount(1000);
+		}
 	}
 }
