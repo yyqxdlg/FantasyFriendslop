@@ -50,6 +50,9 @@ public class StatueEnemy : EnemyBasic
         NetworkVariableWritePermission.Server
     );
 
+    [Header("Dash")]
+    public float dashCooldown = 5f;
+
     protected override void Awake()
     {
         base.Awake();
@@ -158,6 +161,8 @@ public class StatueEnemy : EnemyBasic
 
         ApplyDormantStateLocal(false);
         SetDormantStateClientRpc(false);
+        Invoke("DashToTarget", dashCooldown);
+        SetPlayerDependentStats();
     }
 
     private bool ShouldWakeUp()
@@ -408,6 +413,32 @@ public class StatueEnemy : EnemyBasic
                 col.enabled = !dormant;
             }
         }
+    }
+
+    private void DashToTarget()
+    {
+        if (!IsServer) return;
+
+        GameObject target = NearestLivingTarget();
+
+        if(target != null)
+        {
+            transform.position = target.transform.position;
+        }
+
+        Invoke("DashToTarget", dashCooldown);
+
+    }
+
+    private void SetPlayerDependentStats()
+    {
+        if (!IsServer) return;
+
+        int playerCount = GameplayManager.Instance.characters.Count;
+
+        maxHealth = maxHealth * playerCount;
+
+        attackDamage = attackDamage * playerCount;
     }
 
     private void CacheBodyColliders()
