@@ -32,7 +32,6 @@ public class InGameUI : MonoBehaviour
 		canvasGroup = GetComponent<CanvasGroup>();
 
 		canvasGroup.alpha = 0;
-		canvasGroup.blocksRaycasts = true;
 
         cooldownText.text = "NaN";
 	}

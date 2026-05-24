@@ -30619,8 +30619,12 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  level: 0
-  levelMinInterest: 0a000000640000002c010000
+  level:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  levelMinInterest: 0a0000000f0000002c010000
   levelSpawnPoints:
   - {fileID: 2137900078}
   - {fileID: 1079484985}
@@ -79057,7 +79061,7 @@ CanvasGroup:
   m_GameObject: {fileID: 1376762668}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1397900769

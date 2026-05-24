@@ -22,9 +22,13 @@ public class GameplayManager : NetworkBehaviour
 		NetworkVariableWritePermission.Owner
 	);
 
-	public int level;
+    public NetworkVariable<int> level = new NetworkVariable<int>(
+        0,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
 
-	public int[] levelMinInterest;
+    public int[] levelMinInterest;
 
 	public Transform[] levelSpawnPoints;
 
@@ -99,9 +103,19 @@ public class GameplayManager : NetworkBehaviour
 
 	public void RemovePlayerCharacter(ulong objectNetworkId)
 	{
-		if (!IsServer) { throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY"); }
+        if (!IsServer)
+        {
+            if (IsSpawned)
+            {
+                throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY");
+            }
+            else
+            {
+                throw new System.Exception("REMOVING CHARACTER BEFORE GAMEPLAYMANAGER HAS NETWORK OBJECT");
+            }
+        }
 
-		for (int i = 0; i < characters.Count; i++)
+        for (int i = 0; i < characters.Count; i++)
 		{
 			CharacterBasic curr = characters[i];
 			if (curr.gameObject.GetComponent<NetworkObject>().NetworkObjectId == objectNetworkId)
@@ -165,7 +179,17 @@ public class GameplayManager : NetworkBehaviour
 
 	public void RemoveGhost(ulong objectNetworkId)
 	{
-        if (!IsServer) { throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY"); }
+        if (!IsServer)
+        {
+            if (IsSpawned)
+            {
+                throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY");
+            }
+            else
+            {
+                throw new System.Exception("REMOVING GHOST BEFORE GAMEPLAYMANAGER HAS NETWORK OBJECT");
+            }
+        }
 
         for (int i = 0; i < ghosts.Count; i++)
 		{
@@ -227,7 +251,17 @@ public class GameplayManager : NetworkBehaviour
 
     public void RemoveEnemy(ulong objectNetworkId)
     {
-        if (!IsServer) { throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY"); }
+        if (!IsServer)
+        {
+            if (IsSpawned)
+            {
+                throw new System.Exception("SHOULD BE CALLED FROM SERVER ONLY");
+            }
+            else
+            {
+                throw new System.Exception("REMOVING ENEMY BEFORE GAMEPLAYMANAGER HAS NETWORK OBJECT");
+            }
+        }
 
         for (int i = 0; i < enemies.Count; i++)
         {
@@ -290,7 +324,7 @@ public class GameplayManager : NetworkBehaviour
 
 		if (newVal)
 		{
-			spawnControllers[level].SpawnAll();
+			spawnControllers[level.Value].SpawnAll();
 		}
 	}
 
@@ -306,12 +340,12 @@ public class GameplayManager : NetworkBehaviour
 		}
 
 
-		minInterestReached.Value = goldSum >= levelMinInterest[level];
+		minInterestReached.Value = goldSum >= levelMinInterest[level.Value];
 	}
 
 	public int GetCurrentMinInterest()
 	{
-		return levelMinInterest[level];
+		return levelMinInterest[level.Value];
 	}
 
 	public void NextLevel()
@@ -320,7 +354,7 @@ public class GameplayManager : NetworkBehaviour
 
 		levelStarted.Value = false;
 
-		level += 1;
+        level.Value += 1;
 
 		TeleportPlayersToLevel();
 
@@ -335,12 +369,12 @@ public class GameplayManager : NetworkBehaviour
 	{
 		for (int i = 0; i < characters.Count; i++)
 		{
-			characters[i].Teleport(levelSpawnPoints[level].position);
+			characters[i].Teleport(levelSpawnPoints[level.Value].position);
 		}
 
         for (int i = 0; i < ghosts.Count; i++)
         {
-            ghosts[i].Teleport(levelSpawnPoints[level].position);
+            ghosts[i].Teleport(levelSpawnPoints[level.Value].position);
         }
     }
 private void DespawnAllGhosts()
@@ -366,7 +400,7 @@ private void DespawnAllGhosts()
 
 	public void FullWipe()
 	{
-		wiper.Wipe(level-1);
+		wiper.Wipe(level.Value-1);
 	}
 
 	public void RespawnAndRestorePlayers()
@@ -402,7 +436,7 @@ private void DespawnAllGhosts()
             LobbyNetworkState.Instance.SpawnHeroForPlayer(
                 data.ClientId,
                 data.HeroId,
-                levelSpawnPoints[level].position
+                levelSpawnPoints[level.Value].position
             );
         }
     }

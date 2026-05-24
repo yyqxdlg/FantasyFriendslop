@@ -194,9 +194,12 @@ public class EnemyBasic : Spawnable
 
     public override void OnNetworkDespawn()
     {
-        DropInventory();
+        if (IsServer)
+        {
+            DropInventory();
 
-        GameplayManager.Instance.RemoveEnemy(GetComponent<NetworkObject>().NetworkObjectId);
+            GameplayManager.Instance.RemoveEnemy(GetComponent<NetworkObject>().NetworkObjectId);
+        }
 
         base.OnNetworkDespawn();
     }
