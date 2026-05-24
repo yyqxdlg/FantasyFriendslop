@@ -222,5 +222,5 @@ MonoBehaviour:
     m_InternalValue: 0
   initialScale: 1
   finalScale: 2.5
-  damage: 2
+  damage: 3
   timeToFullScale: 0.25
