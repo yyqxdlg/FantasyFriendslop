@@ -46,7 +46,13 @@ public class GameplayManager : NetworkBehaviour
 
 	public SpawnPointController[] spawnControllers;
 
-	public Wiper wiper;
+    public NetworkVariable<bool> gameOver = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
+
+    public Wiper wiper;
 
     void Awake()
 	{
@@ -282,18 +288,28 @@ public class GameplayManager : NetworkBehaviour
 		Debug.Log("Living players: " + characters.Count);
 
 		Debug.Log("Ghosts: " + ghosts.Count);
+
+        if (characters.Count == 0 && levelStarted.Value)
+        {
+            GameOver();
+        }
 	}
 
 	public void GameOver()
 	{
-		GameOverServerRpc();
+		gameOver.Value = true;
 	}
 
-	[Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
-	public void GameOverServerRpc()
-	{
-		GuildSmite();
-	}
+    public void Restart()
+    {
+        RestartServerRpc();
+    }
+
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    public void RestartServerRpc()
+    {
+        Debug.Log("Restart not implemented");
+    }
 
 	public void GuildSmite()
 	{
