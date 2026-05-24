@@ -89,7 +89,7 @@ public class CharacterPriest : CharacterBasic
 		}
 		else
 		{
-			TakeDamage(auraDamage*selfApplyPart);
+			//TakeDamage(auraDamage*selfApplyPart);
 
 			for (int i = 0; i < objectsInAura.GetNumberOfTargets(); i++)
 			{
