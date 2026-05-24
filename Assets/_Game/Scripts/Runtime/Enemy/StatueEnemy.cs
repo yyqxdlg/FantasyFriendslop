@@ -436,9 +436,20 @@ public class StatueEnemy : EnemyBasic
 
         int playerCount = GameplayManager.Instance.characters.Count;
 
-        maxHealth = maxHealth * playerCount;
+        float newMaxHealth = maxHealth * playerCount;
+
+        ChangeMaxHealthRpc(newMaxHealth);
+
+        health.Value = newMaxHealth;
 
         attackDamage = attackDamage * playerCount;
+    }
+
+
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
+    private void ChangeMaxHealthRpc(float newMaxHealth)
+    {
+        maxHealth = newMaxHealth;
     }
 
     private void CacheBodyColliders()

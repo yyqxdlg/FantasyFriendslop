@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4265842523
+  GlobalObjectIdHash: 847191138
   InScenePlacedSourceGlobalObjectIdHash: 4265842523
   DeferredDespawnTick: 0
   Ownership: 1
@@ -597,12 +597,12 @@ MonoBehaviour:
   statueHitDelay: 0.8
   comboCount: 3
   timeBetweenHits: 1.5
-  attackLength: 3
-  attackWidth: 3
-  rightBoxOffset: {x: 1.6, y: -0.6}
-  leftBoxOffset: {x: -1.6, y: -0.6}
+  attackLength: 4
+  attackWidth: 4
+  rightBoxOffset: {x: 0, y: 0}
+  leftBoxOffset: {x: 0, y: 0}
   upBoxOffset: {x: 0, y: 0}
-  downBoxOffset: {x: 0, y: -1.5}
+  downBoxOffset: {x: 0, y: 0}
   dashCooldown: 5
 --- !u!95 &6229095081750533289
 Animator:
