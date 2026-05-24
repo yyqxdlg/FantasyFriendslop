@@ -817,7 +817,7 @@ protected virtual void ServerUpdate()
 	{
         if (knockbackVector.magnitude > 0.01)
 		{
-			knockbackVector -= knockbackVector.normalized * knockbackDecayMultiplier * Time.deltaTime;
+			knockbackVector -= knockbackVector.normalized * knockbackDecayMultiplier * Time.deltaTime * 10;
 		}
         else
         {
