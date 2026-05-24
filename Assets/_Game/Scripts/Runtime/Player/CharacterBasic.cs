@@ -643,7 +643,20 @@ private void ApplyKnockdownOwnerRpc(Vector2 velocity, float duration)
         InGameUI.Instance.SetHasKey(CheckIfInInventory("DoorKey"));
     }
 
-	private void DropInventory()
+	public void ClearInventory()
+	{
+		ClearInventoryInventoryOwnerRpc();
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void ClearInventoryInventoryOwnerRpc()
+    {
+		inventory.Clear();
+
+        InGameUI.Instance.SetHasKey(CheckIfInInventory("DoorKey"));
+    }
+
+    private void DropInventory()
 	{
 		for (int i = 0; i < inventory.Count; i++)
 		{

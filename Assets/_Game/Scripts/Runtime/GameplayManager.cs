@@ -384,6 +384,8 @@ public class GameplayManager : NetworkBehaviour
 
 		FullWipe();
 		DespawnAllGhosts(); //clear all ghosts
+        ClearInventories();
+
         RespawnAndRestorePlayers();
     }
 
@@ -463,4 +465,12 @@ private void DespawnAllGhosts()
         }
     }
 }
+
+    public void ClearInventories()
+    {
+        foreach (CharacterBasic character in characters)
+        {
+            character.ClearInventory();
+        }
+    }
 }
