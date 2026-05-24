@@ -292,6 +292,12 @@ public class GameplayManager : NetworkBehaviour
         if (characters.Count == 0 && levelStarted.Value)
         {
             GameOver();
+        } else
+        {
+            if (gameOver.Value)
+            {
+                gameOver.Value = false;
+            }
         }
 	}
 

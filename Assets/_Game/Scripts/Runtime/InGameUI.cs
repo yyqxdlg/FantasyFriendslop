@@ -6,8 +6,6 @@ public class InGameUI : MonoBehaviour
 	private CanvasGroup canvasGroup;
 
 	[SerializeField] private TMP_Text cooldownText;
-    [SerializeField] private TMP_Text healthText;
-    [SerializeField] private TMP_Text coinText;
 
 	public int coinValue = 0;
 
@@ -16,6 +14,8 @@ public class InGameUI : MonoBehaviour
 
 	private float cooldownMax = 0;
     private float cooldownValue = 0;
+
+	public PersonalStatusbar statusBar;
 
 	public static InGameUI Instance { get; private set; }
 
@@ -74,14 +74,24 @@ public class InGameUI : MonoBehaviour
 		UpdateCooldown();
     }
 
+	public void SetHasKey(bool hasKey)
+	{
+		statusBar.SetHasKey(hasKey);
+	}
+
+	public void SetType(int type)
+	{
+		statusBar.SetType(type);
+	}
+
 	private void UpdateCoin()
 	{
-        coinText.text = coinValue.ToString();
+		statusBar.UpdateCoin(coinValue);
     }
 
     private void UpdateHealth()
     {
-		healthText.text = healthValue.ToString() + " / " + healthMax.ToString();
+		statusBar.UpdateHealth(healthValue, healthMax);
     }
 
     private void UpdateCooldown()

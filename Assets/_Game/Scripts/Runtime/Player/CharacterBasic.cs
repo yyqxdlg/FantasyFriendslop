@@ -149,11 +149,16 @@ public virtual void Awake()
 			UpdateCoinVisual();
 		}
 
-		if (IsOwner && AudioManager.Instance != null)
+		if (IsOwner)
 		{
-			AudioManager.Instance.player = gameObject;
+			if(AudioManager.Instance != null)
+			{
+                AudioManager.Instance.player = gameObject;
+            }
 
-			isMe = true;
+            isMe = true;
+
+            InGameUI.Instance.SetType(ghostType);
 		}
 
 		SpawnBehavior();
@@ -621,7 +626,9 @@ private void ApplyKnockdownOwnerRpc(Vector2 velocity, float duration)
 	public void AddToInventoryOwnerRpc(string itemName)
 	{
 		inventory.Add(itemName);
-	}
+
+        InGameUI.Instance.SetHasKey(CheckIfInInventory("DoorKey"));
+    }
 
 	public void RemoveFromInventory(string itemName)
 	{
@@ -632,7 +639,9 @@ private void ApplyKnockdownOwnerRpc(Vector2 velocity, float duration)
 	public void RemoveFromInventoryOwnerRpc(string itemName)
 	{
 		inventory.Remove(itemName);
-	}
+
+        InGameUI.Instance.SetHasKey(CheckIfInInventory("DoorKey"));
+    }
 
 	private void DropInventory()
 	{
