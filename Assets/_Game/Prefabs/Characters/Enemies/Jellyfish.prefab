@@ -588,7 +588,7 @@ MonoBehaviour:
   moveThreshold: 0.05
   facingDeadZone: 0.15
   respawnTime: 3
-  bodyHp: 5
+  bodyHp: 3
   reviveParticleName: Jellyfish revive
 --- !u!95 &3460544872984202843
 Animator:
