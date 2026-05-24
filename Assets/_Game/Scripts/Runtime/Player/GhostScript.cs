@@ -36,15 +36,17 @@ public class GhostScript : Spawnable
         base.OnNetworkSpawn();
 
         if (IsOwner)
-        {
             cam = Camera.main;
-        }
-
-        NetworkObject netObj = GetComponent<NetworkObject>();
 
         if (IsServer)
-        {
             AddSelfToGhostList();
+
+        // Ghost 生成时启用 Plates
+        if (IsServer)
+        {
+            SelectPlateController plateController = FindObjectOfType<SelectPlateController>();
+            if (plateController != null)
+                plateController.EnablePlates();
         }
     }
 
@@ -53,9 +55,9 @@ public class GhostScript : Spawnable
         if (GameplayManager.Instance.GetComponent<NetworkObject>().IsSpawned)
         {
             NetworkObject netObj = GetComponent<NetworkObject>();
-
             GameplayManager.Instance.AddGhost(netObj.NetworkObjectId);
-        } else
+        }
+        else
         {
             Debug.Log("WAIT WITH ADD FOR GAMEPLAYMANAGER SPAWN");
             Invoke("AddSelfToGhostList", 0.1f);
@@ -67,11 +69,8 @@ public class GhostScript : Spawnable
         if (IsServer)
         {
             NetworkObject netObj = GetComponent<NetworkObject>();
-
             if (GameplayManager.Instance != null && netObj != null)
-            {
                 GameplayManager.Instance.RemoveGhost(netObj.NetworkObjectId);
-            }
         }
 
         base.OnNetworkDespawn();
@@ -120,37 +119,44 @@ public class GhostScript : Spawnable
 
     public void Respawn()
     {
-        RespawnOwnerRpc();
+        RespawnServerRpc();
     }
 
-    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
-    public void RespawnOwnerRpc()
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    private void RespawnServerRpc()
     {
-        string prefabName = null;
+        ulong clientId = OwnerClientId;
 
-        switch (type)
+        if (LobbyNetworkState.Instance == null)
         {
-            case 1:
-                prefabName = "CharacterArcher";
-                break;
-
-            case 2:
-                prefabName = "CharacterMage";
-                break;
-
-            case 3:
-                prefabName = "CharacterPriest";
-                break;
-
-            case 4:
-                prefabName = "CharacterWarrior";
-                break;
-
-            default:
-                prefabName = null;
-                break;
+            Debug.LogError("LobbyNetworkState missing!");
+            return;
         }
 
-        SpawnerUtil.Instance.NetworkSpawnGameObject(prefabName, transform.position, OwnerClientId, ulong.MaxValue);
+        int heroId = -1;
+        for (int i = 0; i < LobbyNetworkState.Instance.Players.Count; i++)
+        {
+            if (LobbyNetworkState.Instance.Players[i].ClientId == clientId)
+            {
+                heroId = LobbyNetworkState.Instance.Players[i].HeroId;
+                break;
+            }
+        }
+
+        if (heroId < 0)
+        {
+            Debug.LogError("No hero found for client " + clientId);
+            return;
+        }
+
+        Vector3 spawnPos = transform.position;
+
+        // 先 Despawn Ghost
+        NetworkObject netObj = GetComponent<NetworkObject>();
+        if (netObj != null && netObj.IsSpawned)
+            netObj.Despawn(true);
+
+        // 生成对应英雄
+        LobbyNetworkState.Instance.SpawnHeroForPlayer(clientId, heroId, spawnPos);
     }
 }

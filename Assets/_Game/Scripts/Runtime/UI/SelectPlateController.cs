@@ -13,4 +13,12 @@ public class SelectPlateController : NetworkBehaviour
             plates[i].PlateEnabled(false);
         }
     }
+
+    public void EnablePlates()
+    {
+        for (int i = 0; i < plates.Length; i++)
+        {
+            plates[i].PlateEnabled(true);
+        }
+    }
 }

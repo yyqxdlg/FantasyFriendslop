@@ -5,18 +5,22 @@ using System.Collections;
 public class GameSpawner : MonoBehaviour
 {
     [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private SelectPlateController selectPlateController; // ← 加这行
 
     private void Start()
-{
-    if (!NetworkManager.Singleton.IsServer) return;
-    StartCoroutine(SpawnNextFrame());
-}
+    {
+        if (!NetworkManager.Singleton.IsServer) return;
+        StartCoroutine(SpawnNextFrame());
+    }
 
-private IEnumerator SpawnNextFrame()
-{
-    yield return null; // 等一帧让网络就绪
-    SpawnAllPlayers();
-}
+    private IEnumerator SpawnNextFrame()
+    {
+        yield return null;
+        SpawnAllPlayers();
+
+        if (selectPlateController != null)
+            selectPlateController.DisablePlates();
+    }
 
     private void SpawnAllPlayers()
     {

@@ -327,7 +327,7 @@ public class GameplayManager : NetworkBehaviour
 		EnemyWipe();
 
 		FullWipe();
-
+		DespawnAllGhosts(); //clear all ghosts
         RespawnAndRestorePlayers();
     }
 
@@ -343,7 +343,19 @@ public class GameplayManager : NetworkBehaviour
             ghosts[i].Teleport(levelSpawnPoints[level].position);
         }
     }
+private void DespawnAllGhosts()
+{
+    for (int i = ghosts.Count - 1; i >= 0; i--)
+    {
+        GhostScript ghost = ghosts[i];
+        if (ghost == null) continue;
 
+        NetworkObject netObj = ghost.GetComponent<NetworkObject>();
+        if (netObj != null && netObj.IsSpawned)
+            netObj.Despawn(true);
+    }
+    ghosts.Clear();
+}
 	public void EnemyWipe()
 	{
 		foreach(EnemyBasic enemy in enemies)
@@ -358,15 +370,41 @@ public class GameplayManager : NetworkBehaviour
 	}
 
 	public void RespawnAndRestorePlayers()
-	{
-		foreach(GhostScript ghost in ghosts)
-		{
-			ghost.Respawn();	
-		}
+{
+    // 治愈现有存活角色
+    foreach (CharacterBasic character in characters)
+    {
+        character.HealAmount(1000);
+    }
 
-		foreach(CharacterBasic character in characters)
-		{
-			character.HealAmount(1000);
-		}
-	}
+    // 给死亡玩家（原来的Ghost）重新生成角色
+    if (LobbyNetworkState.Instance == null) return;
+
+    for (int i = 0; i < LobbyNetworkState.Instance.Players.Count; i++)
+    {
+        PlayerLobbyData data = LobbyNetworkState.Instance.Players[i];
+
+        // 检查这个玩家是否已经有存活角色
+        bool hasAliveCharacter = false;
+        foreach (CharacterBasic character in characters)
+        {
+            NetworkObject netObj = character.GetComponent<NetworkObject>();
+            if (netObj != null && netObj.OwnerClientId == data.ClientId)
+            {
+                hasAliveCharacter = true;
+                break;
+            }
+        }
+
+        // 没有存活角色的玩家重新生成
+        if (!hasAliveCharacter)
+        {
+            LobbyNetworkState.Instance.SpawnHeroForPlayer(
+                data.ClientId,
+                data.HeroId,
+                levelSpawnPoints[level].position
+            );
+        }
+    }
+}
 }
