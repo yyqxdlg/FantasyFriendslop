@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8961223299136237614}
   - component: {fileID: 206579634329782360}
   - component: {fileID: -385471074312244252}
-  - component: {fileID: 7988763564459326189}
   - component: {fileID: 5885670511633913946}
+  - component: {fileID: 7685925234524697039}
   m_Layer: 0
-  m_Name: EnemyBullet
+  m_Name: EnemyArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,26 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7988763564459326189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4604796085051570476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c513688c63b90a49abe67dbd1bb1cb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
-  ShowTopMostFoldoutHeaderGroup: 1
-  speed: 15
-  lifeTime: 2
-  damage: 2
-  creator: {fileID: 3388104308899182308, guid: c241db0772d98b047a40303b25e9b99b, type: 3}
-  hitSound: {fileID: 8300000, guid: edd1dc3928941e1488911297031fdece, type: 3}
-  hitVolume: 1
-  nonRotational: 0
 --- !u!61 &5885670511633913946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -201,6 +181,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &7685925234524697039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604796085051570476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cc3396faacb34488b04d3ce6d04897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyArrow
+  ShowTopMostFoldoutHeaderGroup: 1
+  creatorNetworkId:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 18446744073709551615
+  speed: 15
+  lifeTime: 2
+  damage: 2
+  hitSoundName: test audio clip
+  hitVolume: 1
+  nonRotational: 0
 --- !u!1 &7260944334344646620
 GameObject:
   m_ObjectHideFlags: 0

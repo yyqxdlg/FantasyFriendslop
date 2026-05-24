@@ -137743,6 +137743,7 @@ MonoBehaviour:
   - {fileID: 5781850604906514888, guid: 41c59848723f6684f888ad2eff4d2bfc, type: 3}
   - {fileID: 4703824552739568099, guid: 4b76e7c503efddf4794dd98fe6de72d1, type: 3}
   - {fileID: 4703824552739568099, guid: 5833812eee03f3640bb0844f61d49565, type: 3}
+  - {fileID: 5781850604906514888, guid: fa7d678ac96e6044bb8d8e899e13e64f, type: 3}
   spawnablesNames:
   - Ghost
   - CharacterBasic
@@ -137789,6 +137790,7 @@ MonoBehaviour:
   - PriestProjectile
   - Coin x10
   - Coin x100
+  - EnemyArrow
 --- !u!1 &2831673929180380282
 GameObject:
   m_ObjectHideFlags: 0

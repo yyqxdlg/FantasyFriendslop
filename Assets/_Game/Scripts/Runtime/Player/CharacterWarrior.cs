@@ -67,7 +67,7 @@ public class CharacterWarrior : CharacterBasic
 	{
 		updateMousePos();
 
-		HitAllInCone(swingBoxSmall, swingKnockback, swingDamage);
+		HitAllInCone(swingBoxSmall, swingDamage, swingKnockback);
 
 		PlayAttackSound();
 

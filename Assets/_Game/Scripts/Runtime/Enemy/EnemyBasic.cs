@@ -523,7 +523,7 @@ protected void UpdateFacingOnly(Vector2 direction)
     }
 }
 
-    void Update()
+    public virtual void Update()
     {
         UpdateAnimatorVisuals();
 
