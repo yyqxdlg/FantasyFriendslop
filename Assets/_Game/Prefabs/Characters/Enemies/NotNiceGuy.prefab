@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 194953803571781780}
   - component: {fileID: 7637840475430784620}
   - component: {fileID: 2584596412214117649}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 5058986524659981913}
   - component: {fileID: 2244395354023418901}
   - component: {fileID: 813989656027771425}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 8404027137708847387}
   - component: {fileID: 8716520731040186961}
   - component: {fileID: 7693928846909319922}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Target Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4617170319376880623}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 4832192965437554087}
   - component: {fileID: 5183945306564482645}
   - component: {fileID: 7066584757097647284}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: NotNiceGuy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 6616514193127163003}
   - component: {fileID: 4208682253468377908}
   - component: {fileID: 5566468541944531818}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 9086390196001624954}
   - component: {fileID: 5141993668787629462}
   - component: {fileID: 2735062354002586751}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

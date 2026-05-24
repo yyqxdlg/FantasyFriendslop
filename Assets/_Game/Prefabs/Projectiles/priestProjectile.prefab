@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -385471074312244252}
   - component: {fileID: -1595808054938939409}
   - component: {fileID: -7853537249491693519}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: priestProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7639036535481574535}
   - component: {fileID: 7826532860333483275}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

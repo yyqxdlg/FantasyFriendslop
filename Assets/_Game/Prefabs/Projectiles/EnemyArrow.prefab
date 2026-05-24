@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -385471074312244252}
   - component: {fileID: 5885670511633913946}
   - component: {fileID: 7685925234524697039}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: EnemyArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5987287954070884325}
   - component: {fileID: 5957493157014913136}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

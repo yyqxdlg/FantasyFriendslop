@@ -1,34 +1,24 @@
 using UnityEngine;
 using Unity.Netcode;
+using System.Linq;
+using UnityEngine.UIElements;
 
 public class RangedEnemy : EnemyBasic
 {
     [Header("Ranged Attack")]
 
     [SerializeField] private string bulletPrefabName;
-    [SerializeField] private float bulletSpeed = 10f;
+    //[SerializeField] private float bulletSpeed = 10f;
     [SerializeField] private float stopDistance = 8f; // Distance to stop and attack
     [SerializeField] private Transform crossHair;
     [SerializeField] private float crossHairDistance;
 
     public NetworkVariable<Vector3> crossHairLocation = new NetworkVariable<Vector3>();
+    public NetworkVariable<float> crossHairAngle = new NetworkVariable<float>();
 
     [Header("Audio")]
-    [SerializeField] private AudioClip shootSound;
-    [SerializeField][Range(0f, 1f)] private float shootVolume = 1f;
-
-    private AudioSource _audioSource;
-
-
-    void Start()
-    {
-        _audioSource = GetComponent<AudioSource>();
-        if (_audioSource == null)
-            _audioSource = gameObject.AddComponent<AudioSource>();
-
-        _audioSource.spatialBlend = 0f;
-        _audioSource.playOnAwake = false;
-    }
+    [SerializeField] private string shootSoundName;
+    //[SerializeField][Range(0f, 1f)] private float shootVolume = 1f;
 
     /*
     public override void Attack()
@@ -65,6 +55,7 @@ public class RangedEnemy : EnemyBasic
 
         if (IsServer)
         {
+            Debug.Log("MOVE?");
             UpdateCrosshairPosition();
         }
 
@@ -81,12 +72,17 @@ public class RangedEnemy : EnemyBasic
 
             crossHairLocation.Value = transform.position + dirVector;
 
+            crossHairAngle.Value = FFUtilities.CounterClockwiseAngle(dirVector, new Vector2(1, 0));
         }
     }
 
     private void RenderCrosshair()
     {
+        Debug.Log("RENDER?");
+
         crossHair.transform.position = crossHairLocation.Value;
+
+        crossHair.transform.rotation = Quaternion.Euler(0, 0, crossHairAngle.Value);
     }
 
     /*
@@ -122,8 +118,8 @@ public class RangedEnemy : EnemyBasic
     public override void Attack()
     {
         if (target == null) return;
-        if (shootSound != null)
-            _audioSource.PlayOneShot(shootSound, shootVolume);
+        if (shootSoundName != null)
+            AudioManager.Instance.PlaySound(shootSoundName, transform.position);
 
         SpawnerUtil.Instance.NetworkSpawnGameObject(bulletPrefabName, crossHair.transform.position, 0, GetComponent<NetworkObject>().NetworkObjectId);
     }

@@ -22,12 +22,12 @@ TagManager:
   - Wall
   - Pickup
   - Trigger
-  - Projectile
+  - PlayerProjectile
   - 
   - 
   - WorldspaceUI
   - 
-  - 
+  - EnemyProjectile
   - 
   - 
   - 

@@ -10980,7 +10980,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnableName: RangedEnemy
   controller: {fileID: 0}
-  playerCounts: 01000000010000000100000001000000020000000200000003000000030000000400000004000000
+  playerCounts: 0100000001000000010000000200000002000000030000000300000004000000
   spawnRange: {x: 3, y: 5}
 --- !u!114 &130441174
 MonoBehaviour:
@@ -91985,7 +91985,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnableName: SlimeFlower
   controller: {fileID: 0}
-  playerCounts: 01000000020000000300000004000000
+  playerCounts: 010000000100000001000000020000000200000003000000030000000400000004000000
   spawnRange: {x: 8, y: 6}
 --- !u!114 &1429372274
 MonoBehaviour:
@@ -110074,7 +110074,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnableName: RangedEnemy
   controller: {fileID: 0}
-  playerCounts: 0100000001000000010000000200000002000000030000000300000004000000
+  playerCounts: 010000000100000002000000020000000300000004000000
   spawnRange: {x: 12, y: 1.5}
 --- !u!114 &1609028330
 MonoBehaviour:
@@ -140958,7 +140958,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnableName: RangedEnemy
   controller: {fileID: 0}
-  playerCounts: 0100000001000000010000000200000002000000030000000300000004000000
+  playerCounts: 010000000100000002000000020000000300000004000000
   spawnRange: {x: 1.5, y: 12}
 --- !u!114 &1938862964
 MonoBehaviour:
@@ -145893,7 +145893,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint (32)
   m_TagString: SpawnPoint
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

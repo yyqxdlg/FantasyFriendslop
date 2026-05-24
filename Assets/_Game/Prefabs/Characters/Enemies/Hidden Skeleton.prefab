@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4754456259917946237}
   - component: {fileID: 4301924910362330974}
   - component: {fileID: 2577150109502923142}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DetectorCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4718706719988233648}
   - component: {fileID: 8648718210304720581}
   - component: {fileID: -7413833013522099627}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Hidden Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -465,6 +465,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 18446744073709551615
+  isMe: 0
   speed: 5
   attackCooldown: 0.5
   maxHealth: 20
@@ -484,6 +485,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
+  spawnInvincibleDuration: 3
   mousePos: {x: 0, y: 0}
   weaponDistFromCenter: 1
   weaponScript: {fileID: 7889255609381936137}
@@ -497,15 +499,25 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  animController: {fileID: 9100000, guid: 1665adfa041b09041919e2ed97b996f3, type: 2}
   projectileSpawnableName: Bullet
   summonPrefabName: 
   animator: {fileID: 951356924983260439}
+  shooting: 0
+  attemptingAbilities: 00
   abilityCooldownsMax:
   - 10
+  ghostType: 0
   attackSoundName: test audio clip
   attackSoundVolume: 1
   attackSoundRange: 20
+  abilitySoundName: 
+  inventory:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+  hurtParticleName: Player Hurt
+  hurtParticleDuration: 0.35
+  knockdownVelocityDecay: 10
 --- !u!50 &2281014092804740205
 Rigidbody2D:
   serializedVersion: 5
@@ -728,6 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 1617860108917191964}
+  barGroup: {fileID: 0}
 --- !u!1 &5881966125439417533
 GameObject:
   m_ObjectHideFlags: 0

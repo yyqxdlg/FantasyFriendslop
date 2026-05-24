@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6588755804646566770}
   - component: {fileID: 8963290379132529078}
   - component: {fileID: 951356924983260439}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1875669234231573031}
   - component: {fileID: 118593349916545324}
   - component: {fileID: 6477899988291688430}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 2788364540171631020}
   - component: {fileID: 4476429286091090435}
   - component: {fileID: 4703310764159440593}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: WeaponSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 7909597469567298421}
   - component: {fileID: 2324847702727100515}
   - component: {fileID: 7292432516553249674}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 2281014092804740205}
   - component: {fileID: -5725688224788454672}
   - component: {fileID: -3798260423952276214}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: CharacterArcher
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -522,6 +522,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 18446744073709551615
+  isMe: 0
   speed: 5
   attackCooldown: 0.5
   maxHealth: 15
@@ -704,7 +705,7 @@ GameObject:
   - component: {fileID: 630211247847164206}
   - component: {fileID: 1617860108917191964}
   - component: {fileID: 9198338880382930201}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +809,7 @@ GameObject:
   - component: {fileID: 4616364500178349118}
   - component: {fileID: 7889255609381936137}
   - component: {fileID: 113933801495077536}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: WeaponSpritePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +904,7 @@ GameObject:
   - component: {fileID: 3058116904386971822}
   - component: {fileID: 2939688299855755335}
   - component: {fileID: 5868430925851408237}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +977,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1011212667836819416}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

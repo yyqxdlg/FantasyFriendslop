@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 136337344215209726}
   - component: {fileID: 9142103521345730157}
   - component: {fileID: 8817082514073785405}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Attack cone small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 659989294
+  GlobalObjectIdHash: 290618656
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 8831898011176116681}
   - component: {fileID: 8761662264608440824}
   - component: {fileID: 5157965989123838928}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Attack cone large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
