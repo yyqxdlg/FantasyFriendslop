@@ -42,17 +42,23 @@ public class GhostScript : Spawnable
 
         NetworkObject netObj = GetComponent<NetworkObject>();
 
-        Debug.Log("TRYING TO ADD SELF ");
-        Debug.Log(netObj != null);
-
         if (IsServer)
         {
-            if (GameplayManager.Instance != null && netObj != null)
-            {
-                Debug.Log("YES WE ADD SELF?");
+            AddSelfToGhostList();
+        }
+    }
 
-                GameplayManager.Instance.AddGhost(netObj.NetworkObjectId);
-            }
+    private void AddSelfToGhostList()
+    {
+        if (GameplayManager.Instance.GetComponent<NetworkObject>().IsSpawned)
+        {
+            NetworkObject netObj = GetComponent<NetworkObject>();
+
+            GameplayManager.Instance.AddGhost(netObj.NetworkObjectId);
+        } else
+        {
+            Debug.Log("WAIT WITH ADD FOR GAMEPLAYMANAGER SPAWN");
+            Invoke("AddSelfToGhostList", 0.1f);
         }
     }
 
@@ -110,5 +116,41 @@ public class GhostScript : Spawnable
     public void TeleportOwnerRpc(Vector3 posTo)
     {
         gameObject.transform.position = posTo;
+    }
+
+    public void Respawn()
+    {
+        RespawnOwnerRpc();
+    }
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    public void RespawnOwnerRpc()
+    {
+        string prefabName = null;
+
+        switch (type)
+        {
+            case 1:
+                prefabName = "CharacterArcher";
+                break;
+
+            case 2:
+                prefabName = "CharacterMage";
+                break;
+
+            case 3:
+                prefabName = "CharacterPriest";
+                break;
+
+            case 4:
+                prefabName = "CharacterWarrior";
+                break;
+
+            default:
+                prefabName = null;
+                break;
+        }
+
+        SpawnerUtil.Instance.NetworkSpawnGameObject(prefabName, transform.position, OwnerClientId, ulong.MaxValue);
     }
 }

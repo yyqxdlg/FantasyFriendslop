@@ -258,10 +258,11 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 18446744073709551615
-  speedFromProjectile: 10
+  speedFromProjectile: 15
   lifeTime: 2
   damage: 5
   despawnOnHit: 0
   preventRepeatedHits: 1
   NonRotational: 0
   friendlyFire: 1
+  onHitSound: 

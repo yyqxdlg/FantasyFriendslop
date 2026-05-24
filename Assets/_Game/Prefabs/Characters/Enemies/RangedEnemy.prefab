@@ -195,7 +195,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.12, y: 1.69}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5058986524659981913
 Canvas:
@@ -535,7 +535,12 @@ MonoBehaviour:
   attackCooldown: 1
   attackDamage: 1
   attackRange: 12
-  coinsToDrop: 1
+  coinsToDrop: 5
+  hasInventory: 1
+  inventory:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
   moveThreshold: 0.05
   facingDeadZone: 0.15
   bulletPrefab: {fileID: 4604796085051570476, guid: fa7d678ac96e6044bb8d8e899e13e64f, type: 3}
@@ -940,6 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 4208682253468377908}
+  barGroup: {fileID: 0}
 --- !u!1 &8781379560090266654
 GameObject:
   m_ObjectHideFlags: 0

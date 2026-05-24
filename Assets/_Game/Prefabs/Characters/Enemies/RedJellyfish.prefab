@@ -112,7 +112,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.78}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5058986524659981913
 Canvas:
@@ -557,8 +557,8 @@ MonoBehaviour:
   dropLootOnDeath: 1
   dropSpawnableName: RedJellyfish_Drop
   roomId: -1
-  maxHealth: 10
-  speed: 2
+  maxHealth: 5
+  speed: 3
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -580,10 +580,15 @@ MonoBehaviour:
   attackDamage: 1
   attackRange: 1
   coinsToDrop: 1
+  hasInventory: 1
+  inventory:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
   moveThreshold: 0.05
   facingDeadZone: 0.15
   respawnTime: 3
-  bodyHp: 5
+  bodyHp: 1
   reviveParticleName: RedJellyfish revive
 --- !u!95 &3460544872984202843
 Animator:
@@ -711,6 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 4208682253468377908}
+  barGroup: {fileID: 0}
 --- !u!225 &5727224655174615429
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -112,7 +112,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.78}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5058986524659981913
 Canvas:
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3768070163
+  GlobalObjectIdHash: 3951085029
   InScenePlacedSourceGlobalObjectIdHash: 3951085029
   DeferredDespawnTick: 0
   Ownership: 1
@@ -620,12 +620,19 @@ MonoBehaviour:
   attackDamage: 2
   attackRange: 2.5
   coinsToDrop: 30
+  hasInventory: 1
+  inventory:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
   moveThreshold: 0.05
   facingDeadZone: 0.15
   stompHitDelay: 0.25
   stompLockTime: 0.6
   stompRadius: 2.5
   stompDamage: 2
+  stompCenterOffset: {x: 0, y: 0}
+  stompKnockdownDuration: 0.35
   firstUltHealthPercent: 0.25
   secondUltHealthPercent: 0.1
   ultHealPercent: 0.1
@@ -635,18 +642,32 @@ MonoBehaviour:
   smallJumpDuration: 0.4
   smallJumpStompRadius: 1.5
   smallJumpDamage: 1
+  smallJumpLandingWarningTime: 0.15
+  smallJumpLandingOffset: {x: 0, y: 0}
+  smallJumpPathWidth: 1.2
+  smallJumpPathDamage: 1
+  smallJumpPathKnockbackForce: 3
+  smallJumpPathKnockdownDuration: 0.2
+  smallJumpPathOffset: {x: 0, y: 0}
   bigJumpForce: 10
   bigJumpDuration: 0.8
   bigJumpStompRadius: 3
   bigJumpStompDamage: 3
   bigJumpKnockbackForce: 8
+  bigJumpLandingWarningTime: 0.25
+  landingKnockdownDuration: 0.45
+  bigJumpLandingOffset: {x: 0, y: 0}
+  bigJumpPathWidth: 1.6
+  bigJumpPathDamage: 2
+  bigJumpPathKnockbackForce: 7
+  bigJumpPathKnockdownDuration: 0.45
+  bigJumpPathOffset: {x: 0, y: 0}
   ultCoinCount: 12
   ultCoinRadius: 10
   bossCoinSpawnableName: BossCoin
-  ultHealthThreshold: 20
-  ultChance: 0.4
+  coinUltCenterOffset: {x: 0, y: 0}
+  showCoinRainAreaWarning: 1
   phaseDelay: 0.6
-  smallJumpsBeforeBig: 2
 --- !u!114 &129647186168232180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   mainSlider: {fileID: 4208682253468377908}
+  barGroup: {fileID: 0}
 --- !u!1 &8781379560090266654
 GameObject:
   m_ObjectHideFlags: 0

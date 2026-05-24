@@ -11,8 +11,6 @@ public class LevelGate : NetworkBehaviour
 	[SerializeField] private SpriteRenderer closedVis;
 	[SerializeField] private SpriteRenderer openVis;
 
-	[SerializeField] private SpawnPointController spawnPointController;
-
 	public override void OnNetworkSpawn()
 	{
 		base.OnNetworkSpawn();
@@ -27,11 +25,6 @@ public class LevelGate : NetworkBehaviour
 		if (next)
 		{
 			OpenDoor();
-
-			if (IsServer)
-			{
-                StartLevelServer();
-            }
 		}
 		else {
 			CloseDoor();
@@ -51,11 +44,4 @@ public class LevelGate : NetworkBehaviour
 		closedVis.enabled = true;
 		openVis.enabled = false;
 	}
-
-	private void StartLevelServer()
-	{
-        Debug.Log("STARTING LEVEL");
-
-        spawnPointController.SpawnAll();
-    }
 }

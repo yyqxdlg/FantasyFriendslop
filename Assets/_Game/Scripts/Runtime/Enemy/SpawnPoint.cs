@@ -13,6 +13,8 @@ public class SpawnPoint : NetworkBehaviour
     {
         base.OnNetworkSpawn();
 
+        controller = GetComponentInParent<SpawnPointController>();
+
         if (controller == null)
         {
             throw new Exception("Spawn point without a controller!");
@@ -21,7 +23,7 @@ public class SpawnPoint : NetworkBehaviour
         controller.AddPointToList(this);
     }
 
-    public void Spawn()
+    public virtual void Spawn()
     {
         SpawnerUtil.Instance.NetworkSpawnGameObject(spawnableName, transform.position);
     }
