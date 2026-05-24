@@ -66,6 +66,7 @@ public class CharacterPriest : CharacterBasic
 	private void ApplyAura()
 	{
 		if (!IsOwner) { return; }
+		 if (objectsInAura == null) { return; } // ← 加这行
 		if (healAura)
 		{
             HealAmount(auraHeal*selfApplyPart);
@@ -116,7 +117,7 @@ public class CharacterPriest : CharacterBasic
 
 			PlayAbilitySound();
 
-
+			if (auraRenderer == null) return; // ← 加这行
             if (healAura)
 			{
                 Color newColor = Color.green;

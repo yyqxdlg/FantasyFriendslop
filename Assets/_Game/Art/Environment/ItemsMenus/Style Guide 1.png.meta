@@ -1,109 +1,64 @@
 fileFormatVersion: 2
-guid: 8f74555ed020151479f0b38f4a785314
+guid: 8d5e03db3ffeafe4fa816c77891861c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1957952036789415982
-    second: Blue Mage_0
+      213: -1179427015558373370
+    second: Style Guide_0
   - first:
-      213: -7856947420155743027
-    second: Blue Mage_1
+      213: -839447386825097487
+    second: Style Guide_1
   - first:
-      213: -3743379134445465864
-    second: Blue Mage_2
+      213: -5329009514446279778
+    second: Style Guide_2
   - first:
-      213: 1442969116007426240
-    second: Blue Mage_3
+      213: -5110926331715861760
+    second: Style Guide_3
   - first:
-      213: 3956173164496804157
-    second: Blue Mage_4
+      213: -3525226447777637242
+    second: Style Guide_4
   - first:
-      213: 8441981882921995507
-    second: Blue Mage_5
+      213: 4590586759347249248
+    second: Style Guide_5
   - first:
-      213: -5123497449459742324
-    second: Blue Mage_6
+      213: 6112836137587584946
+    second: Style Guide_6
   - first:
-      213: 6360838676644108358
-    second: Blue Mage_7
+      213: 7592403129931883994
+    second: Style Guide_7
   - first:
-      213: -7378278059874096329
-    second: Blue Mage_8
+      213: 8584257043932913919
+    second: Style Guide_8
   - first:
-      213: -7267234042231689181
-    second: Blue Mage_9
+      213: -7428762826944767230
+    second: Style Guide_9
   - first:
-      213: 7868797885564952061
-    second: Blue Mage_10
+      213: -6812874248152987451
+    second: Style Guide_10
   - first:
-      213: -5085795583991861596
-    second: Blue Mage_11
+      213: -6027306592744951696
+    second: Style Guide_11
   - first:
-      213: 1665506322851033562
-    second: Blue Mage_12
+      213: -3064862783029108632
+    second: Style Guide_12
   - first:
-      213: 1852971989954038804
-    second: Blue Mage_13
+      213: -2443395156887179749
+    second: Style Guide_13
   - first:
-      213: -1937331470195597227
-    second: Blue Mage_14
+      213: 8281458609104347845
+    second: Style Guide_14
   - first:
-      213: 6053591049356249144
-    second: Blue Mage_15
+      213: -8030486232946571747
+    second: Style Guide_15
   - first:
-      213: -6126946518880009731
-    second: Blue Mage_16
+      213: 4015857718599506116
+    second: Style Guide_16
   - first:
-      213: 6457023274356596720
-    second: Blue Mage_17
+      213: -3028421508084556984
+    second: Style Guide_17
   - first:
-      213: -1106068188539777217
-    second: Blue Mage_18
-  - first:
-      213: -2457003888985336194
-    second: Blue Mage_19
-  - first:
-      213: -2063730092737523863
-    second: Blue Mage_20
-  - first:
-      213: -3928414282489448627
-    second: Blue Mage_21
-  - first:
-      213: 8736756088576973675
-    second: Blue Mage_22
-  - first:
-      213: -3477088756460286007
-    second: Blue Mage_23
-  - first:
-      213: -6810569459229008189
-    second: Blue Mage_24
-  - first:
-      213: 2295792246339820878
-    second: Blue Mage_25
-  - first:
-      213: -8603283648237945866
-    second: Blue Mage_26
-  - first:
-      213: -7459011887538203184
-    second: Blue Mage_27
-  - first:
-      213: 5991747152484792738
-    second: Blue Mage_28
-  - first:
-      213: 4712187284146500571
-    second: Blue Mage_29
-  - first:
-      213: -8337342404654521043
-    second: Blue Mage_30
-  - first:
-      213: 3287292032317749519
-    second: Blue Mage_31
-  - first:
-      213: 8901957746632230298
-    second: Blue Mage_32
-  - first:
-      213: 3887545799337178685
-    second: Blue Mage_33
+      213: 2913974637279028217
+    second: Style Guide_18
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -212,585 +167,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blue Mage_0
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 480
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2df0ae70ff4f3d4e0800000000000000
-      internalID: -1957952036789415982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_1
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 480
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc4f1b203f386f290800000000000000
-      internalID: -7856947420155743027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_2
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 432
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8fec4cfa288dc0cc0800000000000000
-      internalID: -3743379134445465864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_3
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 432
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c86b7d04c4760410800000000000000
-      internalID: 1442969116007426240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_4
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 384
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d39d3cb488627e630800000000000000
-      internalID: 3956173164496804157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_5
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 384
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3fc49d38bc1f72570800000000000000
-      internalID: 8441981882921995507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_6
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 336
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c890555173ea5e8b0800000000000000
-      internalID: -5123497449459742324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_7
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 336
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 64810f2431d364850800000000000000
-      internalID: 6360838676644108358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_8
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 288
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73b652342371b9990800000000000000
-      internalID: -7378278059874096329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_9
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 288
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 320772d5429952b90800000000000000
-      internalID: -7267234042231689181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_10
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 288
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dfd917a7cf5933d60800000000000000
-      internalID: 7868797885564952061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_11
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 288
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ae2aefacdf9b69b0800000000000000
-      internalID: -5085795583991861596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_12
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 240
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ad1f3b82d211d1710800000000000000
-      internalID: 1665506322851033562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_13
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 240
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 41c85f7153417b910800000000000000
-      internalID: 1852971989954038804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_14
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 240
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5506ec2da473d15e0800000000000000
-      internalID: -1937331470195597227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_15
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 240
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8380d507cfca20450800000000000000
-      internalID: 6053591049356249144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_16
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 192
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: df147506a96b8faa0800000000000000
-      internalID: -6126946518880009731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_17
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 192
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0ff547e0574fb9950800000000000000
-      internalID: 6457023274356596720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_18
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 192
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3f0abcb7d476a0f0800000000000000
-      internalID: -1106068188539777217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_19
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 192
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e7696411bf7f6edd0800000000000000
-      internalID: -2457003888985336194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_20
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 144
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 96f881e2a682c53e0800000000000000
-      internalID: -2063730092737523863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_21
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 144
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4735a116087b79c0800000000000000
-      internalID: -3928414282489448627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_22
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 144
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6b9cdc8f513f3970800000000000000
-      internalID: 8736756088576973675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_23
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 144
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9cf0eaac236eebfc0800000000000000
-      internalID: -3477088756460286007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_24
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 47
-        width: 33
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ced788292ffb71a0800000000000000
-      internalID: -6810569459229008189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_25
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 95
-        width: 20
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e4d5e2962ea4cdf10800000000000000
-      internalID: 2295792246339820878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blue Mage_26
+      name: Style Guide_0
       rect:
         serializedVersion: 2
         x: 47
-        y: 47
-        width: 34
-        height: 34
+        y: 1791
+        width: 242
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -799,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6fbb9d4aa1ffa9880800000000000000
-      internalID: -8603283648237945866
+      spriteID: 600e423d065d1afe0800000000000000
+      internalID: -1179427015558373370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Mage_27
+      name: Style Guide_1
       rect:
         serializedVersion: 2
-        x: 54
-        y: 95
-        width: 21
-        height: 17
+        x: 319
+        y: 1791
+        width: 242
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -821,20 +204,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d59ed335344c7890800000000000000
-      internalID: -7459011887538203184
+      spriteID: 1fef8ac9c0fa954f0800000000000000
+      internalID: -839447386825097487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Mage_28
+      name: Style Guide_2
       rect:
         serializedVersion: 2
-        x: 95
-        y: 47
-        width: 34
-        height: 34
+        x: 47
+        y: 1599
+        width: 242
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -843,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a970df1a46f62350800000000000000
-      internalID: 5991747152484792738
+      spriteID: e9ba0c6b41e8b06b0800000000000000
+      internalID: -5329009514446279778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Mage_29
+      name: Style Guide_3
       rect:
         serializedVersion: 2
-        x: 97
-        y: 52
-        width: 7
-        height: 6
+        x: 319
+        y: 1599
+        width: 242
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -865,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd33aa26e5d056140800000000000000
-      internalID: 4712187284146500571
+      spriteID: 003c2e484975219b0800000000000000
+      internalID: -5110926331715861760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Mage_30
+      name: Style Guide_4
       rect:
         serializedVersion: 2
-        x: 100
-        y: 95
-        width: 24
-        height: 25
+        x: 47
+        y: 1391
+        width: 242
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -887,20 +270,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2524cf814fcb4c80800000000000000
-      internalID: -8337342404654521043
+      spriteID: 68cd6632931e31fc0800000000000000
+      internalID: -3525226447777637242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Mage_31
+      name: Style Guide_5
       rect:
         serializedVersion: 2
-        x: 144
-        y: 95
-        width: 33
-        height: 32
+        x: 319
+        y: 1391
+        width: 242
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -909,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f097543cfaece9d20800000000000000
-      internalID: 3287292032317749519
+      spriteID: 060218de55a05bf30800000000000000
+      internalID: 4590586759347249248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Mage_32
+      name: Style Guide_6
       rect:
         serializedVersion: 2
-        x: 17
-        y: 21
-        width: 9
-        height: 9
+        x: 607
+        y: 1407
+        width: 210
+        height: 146
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -931,20 +314,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a950d8de76b1a8b70800000000000000
-      internalID: 8901957746632230298
+      spriteID: 2bf2417741825d450800000000000000
+      internalID: 6112836137587584946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Mage_33
+      name: Style Guide_7
       rect:
         serializedVersion: 2
-        x: 64
-        y: 21
-        width: 10
-        height: 9
+        x: 863
+        y: 1423
+        width: 82
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -953,20 +336,262 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d36fd81be4653f530800000000000000
-      internalID: 3887545799337178685
+      spriteID: ad5672f9b62ad5960800000000000000
+      internalID: 7592403129931883994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Mage_34
+      name: Style Guide_8
       rect:
         serializedVersion: 2
-        x: 143
-        y: 45
-        width: 36
-        height: 38
+        x: 47
+        y: 1151
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff02444dc48612770800000000000000
+      internalID: 8584257043932913919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_9
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1151
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b9453719bb7e890800000000000000
+      internalID: -7428762826944767230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_10
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1151
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c84f6ba7fec371a0800000000000000
+      internalID: -6812874248152987451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_11
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1199
+        width: 82
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07031138694ba5ca0800000000000000
+      internalID: -6027306592744951696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 911
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8602c34898b6775d0800000000000000
+      internalID: -3064862783029108632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_13
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 911
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e64dbec01571ed0800000000000000
+      internalID: -2443395156887179749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_14
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 959
+        width: 82
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2e3c95ab6ade270800000000000000
+      internalID: 8281458609104347845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_15
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 719
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d160e87815bfd8090800000000000000
+      internalID: -8030486232946571747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_16
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 719
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c852a171513bb730800000000000000
+      internalID: 4015857718599506116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_17
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 719
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b97740fa2e8f5d0800000000000000
+      internalID: -3028421508084556984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_18
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 799
+        width: 82
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f3a3836e74807820800000000000000
+      internalID: 2913974637279028217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_0
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1296
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -975,8 +600,272 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b839b4f862c5c745bf1560490ccc030
-      internalID: -840793498
+      spriteID: cb442b56c75d4c542ab2395d34230c19
+      internalID: 613953833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_1
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1200
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67af7ce78b28af8498e132e39f3e4a2b
+      internalID: -1619265246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1281
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2f801f33868164689271b63e890d41
+      internalID: -249945212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_3
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1729
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb7a578bca4c4a41bf879d00a1d5498
+      internalID: -1262001916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_4
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 1729
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dcd32ef3aef6834ca264790c520f566
+      internalID: 925141239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1632
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6017f40a3452b4bb97e3201595de56
+      internalID: -1448421740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_6
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1632
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553fbf2fd87fbaf4584b8f566415e3fd
+      internalID: 1550227411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1694
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c822e0279ea144ba43c6d7699cab72
+      internalID: 858844383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_8
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1676
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b658aef1652554ab031e31cfc50602
+      internalID: -1813295502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1895
+        width: 48
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe10c732edac4b4d9e206e7b3bacb70
+      internalID: -1952144877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1878
+        width: 47
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c4098491093b8468dc48e5e344a1fc
+      internalID: -1843787129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_11
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2c92469826d9f458820a8634c14245
+      internalID: -2017647984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide 1_12
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 1208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a1465e38e118e469e440039da8f5f3
+      internalID: 1254553311
       vertices: []
       indices: 
       edges: []
@@ -985,7 +874,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5fab94ac465d8b74ba272abd5e592eb6
+    spriteID: 2376245e56d6d41478b298b3bfa0ed72
     internalID: 0
     vertices: []
     indices: 
@@ -995,41 +884,38 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Blue Mage_0: -1957952036789415982
-      Blue Mage_1: -7856947420155743027
-      Blue Mage_10: 7868797885564952061
-      Blue Mage_11: -5085795583991861596
-      Blue Mage_12: 1665506322851033562
-      Blue Mage_13: 1852971989954038804
-      Blue Mage_14: -1937331470195597227
-      Blue Mage_15: 6053591049356249144
-      Blue Mage_16: -6126946518880009731
-      Blue Mage_17: 6457023274356596720
-      Blue Mage_18: -1106068188539777217
-      Blue Mage_19: -2457003888985336194
-      Blue Mage_2: -3743379134445465864
-      Blue Mage_20: -2063730092737523863
-      Blue Mage_21: -3928414282489448627
-      Blue Mage_22: 8736756088576973675
-      Blue Mage_23: -3477088756460286007
-      Blue Mage_24: -6810569459229008189
-      Blue Mage_25: 2295792246339820878
-      Blue Mage_26: -8603283648237945866
-      Blue Mage_27: -7459011887538203184
-      Blue Mage_28: 5991747152484792738
-      Blue Mage_29: 4712187284146500571
-      Blue Mage_3: 1442969116007426240
-      Blue Mage_30: -8337342404654521043
-      Blue Mage_31: 3287292032317749519
-      Blue Mage_32: 8901957746632230298
-      Blue Mage_33: 3887545799337178685
-      Blue Mage_34: -840793498
-      Blue Mage_4: 3956173164496804157
-      Blue Mage_5: 8441981882921995507
-      Blue Mage_6: -5123497449459742324
-      Blue Mage_7: 6360838676644108358
-      Blue Mage_8: -7378278059874096329
-      Blue Mage_9: -7267234042231689181
+      Style Guide 1_0: 613953833
+      Style Guide 1_1: -1619265246
+      Style Guide 1_10: -1843787129
+      Style Guide 1_11: -2017647984
+      Style Guide 1_12: 1254553311
+      Style Guide 1_2: -249945212
+      Style Guide 1_3: -1262001916
+      Style Guide 1_4: 925141239
+      Style Guide 1_5: -1448421740
+      Style Guide 1_6: 1550227411
+      Style Guide 1_7: 858844383
+      Style Guide 1_8: -1813295502
+      Style Guide 1_9: -1952144877
+      Style Guide_0: -1179427015558373370
+      Style Guide_1: -839447386825097487
+      Style Guide_10: -6812874248152987451
+      Style Guide_11: -6027306592744951696
+      Style Guide_12: -3064862783029108632
+      Style Guide_13: -2443395156887179749
+      Style Guide_14: 8281458609104347845
+      Style Guide_15: -8030486232946571747
+      Style Guide_16: 4015857718599506116
+      Style Guide_17: -3028421508084556984
+      Style Guide_18: 2913974637279028217
+      Style Guide_2: -5329009514446279778
+      Style Guide_3: -5110926331715861760
+      Style Guide_4: -3525226447777637242
+      Style Guide_5: 4590586759347249248
+      Style Guide_6: 6112836137587584946
+      Style Guide_7: 7592403129931883994
+      Style Guide_8: 8584257043932913919
+      Style Guide_9: -7428762826944767230
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

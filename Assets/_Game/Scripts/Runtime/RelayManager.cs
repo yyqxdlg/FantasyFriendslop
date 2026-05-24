@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -7,75 +8,154 @@ using Unity.Services.Core;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class RelayManager : MonoBehaviour
 {
-    [SerializeField] Button hostBtn;
-    [SerializeField] Button joinBtn;
-    [SerializeField] TMP_InputField joinInput;
+    [Header("UI")]
+    [SerializeField] private TMP_InputField joinInput;
+    [SerializeField] private MenuFlowUI menuFlowUI;
+    [SerializeField] private LobbyPanelUI lobbyPanelUI;
 
-    [SerializeField] TMP_Text joinCodeDisplay;
-
-    [SerializeField] CanvasGroup relayCanvasGroup;
-
-    [SerializeField] CanvasGroup inGameCanvasGroup;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    async void Start()
+    private async void Start()
     {
-        await UnityServices.InitializeAsync();
+        try
+        {
+            if (UnityServices.State == ServicesInitializationState.Uninitialized)
+                await UnityServices.InitializeAsync();
 
-        await AuthenticationService.Instance.SignInAnonymouslyAsync();
-
-        hostBtn.onClick.AddListener(CreateRelay);
-
-        joinBtn.onClick.AddListener(() => JoinRelay(joinInput.text));
+            if (!AuthenticationService.Instance.IsSignedIn)
+                await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        }
+        catch (System.Exception e)
+        {
+            SystemMessage.ShowError("Services init failed.");
+            Debug.LogError(e.Message);
+        }
     }
 
-    async void CreateRelay()
+    public async void CreateRelay()
     {
-        Allocation allocation = await RelayService.Instance.CreateAllocationAsync(3);
+        if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
+        {
+            SystemMessage.ShowError("Already connected. Disconnect first.");
+            return;
+        }
 
-        string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+        try
+        {
+            SystemMessage.Show("Creating room...");
 
-        Debug.Log(joinCode);
+            int maxConnections = Mathf.Max(1, LocalGameSettings.MaxPeople - 1);
+            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
+            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
-        var relayServerData = allocation.ToRelayServerData("wss");
+            RelayServerData relayServerData = allocation.ToRelayServerData("wss");
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
-        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+            bool started = NetworkManager.Singleton.StartHost();
+            if (!started)
+            {
+                SystemMessage.ShowError("Host failed to start.");
+                return;
+            }
 
-        NetworkManager.Singleton.StartHost();
-
-        InGameUIMode();
-
-        joinCodeDisplay.text = joinCode;
+            if (lobbyPanelUI != null) lobbyPanelUI.SetRoomCode(joinCode);
+            if (menuFlowUI != null) menuFlowUI.ShowLobby();
+            SystemMessage.ShowSuccess("Room created! Code: " + joinCode);
+        }
+        catch (System.Exception e)
+        {
+            SystemMessage.ShowError("Failed to create room.");
+            Debug.LogError(e.Message);
+        }
     }
 
-    async void JoinRelay(string joinCode)
+    public async void JoinRelayFromInput()
     {
-        var joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+        string joinCode = joinInput == null ? "" : joinInput.text.Trim().ToUpper();
 
-        var relayServerData = joinAllocation.ToRelayServerData("wss");
+        if (string.IsNullOrWhiteSpace(joinCode))
+        {
+            SystemMessage.ShowError("Code cannot be empty.");
+            return;
+        }
 
-        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+        if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
+        {
+            SystemMessage.ShowError("Already connected. Disconnect first.");
+            return;
+        }
 
-        Debug.Log("Start client with code: " + joinCode);
+        try
+        {
+            SystemMessage.Show("Joining room...");
 
-        NetworkManager.Singleton.StartClient();
+            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+            RelayServerData relayServerData = joinAllocation.ToRelayServerData("wss");
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
-        InGameUIMode();
+            bool started = NetworkManager.Singleton.StartClient();
+            if (!started)
+            {
+                SystemMessage.ShowError("Failed to connect.");
+                return;
+            }
 
-        joinCodeDisplay.text = joinCode;
+            SystemMessage.Show("Connecting...");
+            float timeout = 10f;
+            float elapsed = 0f;
+
+            while (!NetworkManager.Singleton.IsConnectedClient && elapsed < timeout)
+            {
+                await System.Threading.Tasks.Task.Delay(200);
+                elapsed += 0.2f;
+            }
+
+            if (!NetworkManager.Singleton.IsConnectedClient)
+            {
+                NetworkManager.Singleton.Shutdown();
+                SystemMessage.ShowError("Connection timed out.");
+                return;
+            }
+
+            if (lobbyPanelUI != null) lobbyPanelUI.SetRoomCode(joinCode);
+            if (menuFlowUI != null) menuFlowUI.ShowLobby();
+            SystemMessage.ShowSuccess("Joined successfully!");
+        }
+        catch (System.Exception e)
+        {
+            SystemMessage.ShowError("Invalid room code.");
+            Debug.LogError(e.Message);
+        }
     }
 
-    public void InGameUIMode()
+    public void PasteJoinCode()
     {
-        relayCanvasGroup.alpha = 0;
-        relayCanvasGroup.blocksRaycasts = false;
+        if (joinInput != null)
+            joinInput.text = GUIUtility.systemCopyBuffer.Trim().ToUpper();
+    }
 
-        inGameCanvasGroup.alpha = 1;
-        inGameCanvasGroup.blocksRaycasts = false;
+    public void Disconnect()
+    {
+        StartCoroutine(DisconnectCoroutine());
+    }
+
+    private IEnumerator DisconnectCoroutine()
+    {
+        if (NetworkManager.Singleton != null &&
+            (NetworkManager.Singleton.IsHost ||
+             NetworkManager.Singleton.IsClient ||
+             NetworkManager.Singleton.IsServer))
+        {
+            NetworkManager.Singleton.Shutdown();
+            yield return new WaitForSeconds(0.5f);
+        }
+        else
+        {
+            yield return null;
+        }
+
+        if (menuFlowUI != null) menuFlowUI.ShowMultiplayer();
+        SystemMessage.Show("Disconnected.");
     }
 }

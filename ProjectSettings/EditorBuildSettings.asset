@@ -6,19 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Game/Scenes/Scenes/Demo Map.unity
-    guid: b516905fe10c30e4aa837b9b4fc02a04
-  - enabled: 1
-    path: Assets/_Game/Scenes/Scenes/Multiplayer.unity
-    guid: e19dcfb865a27c042b94312ef9eff853
-  - enabled: 1
-    path: Assets/_Game/Scenes/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/_Game/Scenes/Scenes/Multiplayer 1.unity
-    guid: 8d78c9f88a168e746b091b9d2c130d5a
-  - enabled: 1
     path: Assets/_Game/Scenes/Scenes/UIPage.unity
     guid: 89d27b437157eb546a77eded91cbc61b
+  - enabled: 1
+    path: Assets/_Game/Scenes/Scenes/Demo Map.unity
+    guid: b516905fe10c30e4aa837b9b4fc02a04
+  - enabled: 0
+    path: Assets/_Game/Scenes/Scenes/Multiplayer.unity
+    guid: e19dcfb865a27c042b94312ef9eff853
+  - enabled: 0
+    path: Assets/_Game/Scenes/Scenes/SampleScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
