@@ -25,7 +25,17 @@ public class LockedDoor : NetworkBehaviour
 
         doorOpen.OnValueChanged += OnDoorChange;
 
+        GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStartChange;
+
         OnDoorChange(false, doorOpen.Value);
+    }
+
+    private void OnLevelStartChange(bool prev, bool next)
+    {
+        if (!next)
+        {
+            doorOpen.Value = false;
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -34,16 +44,20 @@ public class LockedDoor : NetworkBehaviour
 
         if (!collision.isTrigger)
         {
-            CharacterBasic player = collision.gameObject.GetComponent<CharacterBasic>();
-
-            if (player != null)
+            if (!doorOpen.Value)
             {
-                if (player.CheckIfInInventory("DoorKey"))
+
+                CharacterBasic player = collision.gameObject.GetComponent<CharacterBasic>();
+
+                if (player != null)
                 {
-                    player.RemoveFromInventory("DoorKey");
-                    OpenDoorServerRpc();
+                    if (player.CheckIfInInventory("DoorKey"))
+                    {
+                        player.RemoveFromInventory("DoorKey");
+                        OpenDoorServerRpc();
+                    }
+
                 }
-                
             }
         }
     }

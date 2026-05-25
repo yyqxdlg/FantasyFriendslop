@@ -35,6 +35,9 @@ public class EnemySlimeFlower : EnemyBasic
     private bool isTransforming = false;
     private Animator _anim;
 
+    private Transform currentTarget = null;
+    private bool hasTarget = false;
+
     protected override void Awake()
     {
         base.Awake();

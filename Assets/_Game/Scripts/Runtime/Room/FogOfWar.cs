@@ -14,6 +14,8 @@ public class FogOfWar : NetworkBehaviour
 
         revealed.OnValueChanged += OnRevealedChange;
 
+        GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStartChange;
+
         OnRevealedChange(false, revealed.Value);
     }
 
@@ -25,6 +27,14 @@ public class FogOfWar : NetworkBehaviour
         } else
         {
             Obscure();
+        }
+    }
+
+    private void OnLevelStartChange(bool prev, bool next)
+    {
+        if (!next)
+        {
+            revealed.Value = false;
         }
     }
 
