@@ -21,7 +21,20 @@ public class RelayManager : MonoBehaviour
         try
         {
             if (UnityServices.State == ServicesInitializationState.Uninitialized)
-                await UnityServices.InitializeAsync();
+            {
+                // 用不同 Profile 区分同一台电脑的多个实例
+                var options = new InitializationOptions();
+
+                #if UNITY_EDITOR
+                // Editor 里用 ParrelSync 或者随机后缀区分
+                options.SetProfile("Editor_" + UnityEngine.Random.Range(0, 99999));
+                #else
+                // Build 版本用时间戳区分
+                options.SetProfile("Build_" + System.DateTime.Now.Ticks);
+                #endif
+
+                await UnityServices.InitializeAsync(options);
+            }
 
             if (!AuthenticationService.Instance.IsSignedIn)
                 await AuthenticationService.Instance.SignInAnonymouslyAsync();

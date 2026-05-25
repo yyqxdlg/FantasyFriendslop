@@ -3,6 +3,7 @@ using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Rendering;
+using System.Collections;
 
 public class CharacterBasic : Spawnable
 {
@@ -193,34 +194,39 @@ public virtual void Awake()
 	}
 
 	// start as dead, do animation, then become alive
-	private void SpawnBehavior()
-	{
-		if (IsOwner)
-		{
-			alive.Value = false;
-		}
+private void SpawnBehavior()
+{
+    if (IsOwner)
+        alive.Value = false;
 
-		animator.Play("Spawn");
+    StartCoroutine(PlaySpawnAnimation());
+}
 
-		AudioManager.Instance.PlaySound("birth", transform.position);
+private IEnumerator PlaySpawnAnimation()
+{
+    // 等一帧让网络和渲染都就绪
+    yield return null;
 
-		//animator.Update(0f);
+    animator.Play("Spawn");
+    animator.Update(0f);
 
-		float spawnClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+    float spawnClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
 
-		Debug.Log("Clip? " + animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+    AudioManager.Instance.PlaySound("birth", transform.position);
 
-		Invoke("BecomeAlive", spawnClipLength);
-	}
+    yield return new WaitForSeconds(spawnClipLength);
 
-	private void BecomeAlive()
-	{
-		if (IsOwner)
-		{
-			alive.Value = true;
-			StartInvincibility(spawnInvincibleDuration);
-		}
-	}
+    BecomeAlive();
+}
+
+private void BecomeAlive()
+{
+    if (IsOwner)
+    {
+        alive.Value = true;
+        StartInvincibility(spawnInvincibleDuration);
+    }
+}
 
 	public void StartInvincibility(float duration)
 	{

@@ -1,11 +1,14 @@
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
-using System.Collections;
 
 public class GameSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform[] spawnPoints;
-    [SerializeField] private SelectPlateController selectPlateController; // ← 加这行
+    // ── 改动：把原来的 Transform[] 换成 SpawnPointSet ────────────────────
+    // 原来：[SerializeField] private Transform[] spawnPoints;
+    // 现在：用 GameplayManager 里的 levelSpawnPoints[0]，不重复拖槽
+    // ──────────────────────────────────────────────────────────────────────
+    [SerializeField] private SelectPlateController selectPlateController;
 
     private void Start()
     {
@@ -30,18 +33,28 @@ public class GameSpawner : MonoBehaviour
             return;
         }
 
-        int spawnIndex = 0;
+        if (GameplayManager.Instance == null)
+        {
+            Debug.LogError("GameplayManager missing!");
+            return;
+        }
 
+        // ── 改动：每个玩家用不同出生点 ───────────────────────────────────
+        // 原来：所有人都用 spawnPoints[spawnIndex].position
+        // 现在：玩家i 用 GameplayManager 的 levelSpawnPoints[0] 第i个点
         for (int i = 0; i < LobbyNetworkState.Instance.Players.Count; i++)
         {
             PlayerLobbyData data = LobbyNetworkState.Instance.Players[i];
 
-            Vector3 spawnPos = spawnPoints != null && spawnIndex < spawnPoints.Length
-                ? spawnPoints[spawnIndex].position
-                : Vector3.zero;
+            SpawnPointSet set = GameplayManager.Instance.levelSpawnPoints != null
+                && GameplayManager.Instance.levelSpawnPoints.Length > 0
+                ? GameplayManager.Instance.levelSpawnPoints[0]
+                : null;
+
+            Vector3 spawnPos = set != null ? set.GetPoint(i) : Vector3.zero;
 
             LobbyNetworkState.Instance.SpawnHeroForPlayer(data.ClientId, data.HeroId, spawnPos);
-            spawnIndex++;
         }
+        // ──────────────────────────────────────────────────────────────────
     }
 }
