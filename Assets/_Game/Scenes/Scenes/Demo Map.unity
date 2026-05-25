@@ -34537,7 +34537,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnableName: Slime
   controller: {fileID: 0}
-  playerCounts: 0100000001000000010000000100000001000000020000000200000002000000030000000300000003000000040000000400000004000000
+  playerCounts: 01000000010000000100000001000000020000000200000003000000030000000400000004000000
   spawnRange: {x: 15, y: 10}
 --- !u!114 &534221204
 MonoBehaviour:
@@ -37201,7 +37201,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
-  levelMinInterestBase: 0a00000032000000c8000000
+  levelMinInterestBase: 010000001e00000096000000
   levelSpawnPoints:
   - {fileID: 55405393}
   - {fileID: 29848986}
@@ -66354,7 +66354,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnableName: Mouse Feral
   controller: {fileID: 0}
-  playerCounts: 010000000100000001000000010000000100000001000000020000000200000002000000030000000300000003000000040000000400000004000000
+  playerCounts: 01000000010000000100000001000000020000000200000003000000030000000400000004000000
   spawnRange: {x: 3, y: 9}
 --- !u!114 &840331833
 MonoBehaviour:
@@ -66429,7 +66429,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnableName: Mouse Feral
   controller: {fileID: 0}
-  playerCounts: 010000000100000001000000010000000100000001000000020000000200000002000000030000000300000003000000040000000400000004000000
+  playerCounts: 01000000010000000100000001000000020000000200000003000000030000000400000004000000
   spawnRange: {x: 10, y: 6}
 --- !u!114 &853265790
 MonoBehaviour:
@@ -114524,81 +114524,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510219854}
   m_CullTransparentMesh: 1
---- !u!1 &1511549021
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1511549022}
-  - component: {fileID: 1511549024}
-  - component: {fileID: 1511549023}
-  m_Layer: 0
-  m_Name: SpawnPoint (37)
-  m_TagString: SpawnPoint
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1511549022
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511549021}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.96, y: 62.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1982623166}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1511549023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511549021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8249c0712c288448934923f79367765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointCluster
-  ShowTopMostFoldoutHeaderGroup: 1
-  spawnableName: Mouse Feral
-  controller: {fileID: 0}
-  playerCounts: 0100000001000000010000000100000001000000020000000200000002000000030000000300000003000000040000000400000004000000
-  spawnRange: {x: 3, y: 8}
---- !u!114 &1511549024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511549021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2700631592
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 0
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!1 &1512439902
 GameObject:
   m_ObjectHideFlags: 0
@@ -120544,81 +120469,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1622515455
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1622515456}
-  - component: {fileID: 1622515458}
-  - component: {fileID: 1622515457}
-  m_Layer: 0
-  m_Name: SpawnPoint (27)
-  m_TagString: SpawnPoint
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1622515456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622515455}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.03, y: 72.94, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1982623166}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1622515457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622515455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8249c0712c288448934923f79367765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointCluster
-  ShowTopMostFoldoutHeaderGroup: 1
-  spawnableName: Slime
-  controller: {fileID: 0}
-  playerCounts: 01000000010000000100000001000000020000000200000003000000030000000400000004000000
-  spawnRange: {x: 11, y: 6}
---- !u!114 &1622515458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622515455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2643992116
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 0
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!1 &1622661658
 GameObject:
   m_ObjectHideFlags: 0
@@ -152587,10 +152437,8 @@ Transform:
   - {fileID: 1091476200}
   - {fileID: 840331831}
   - {fileID: 853265788}
-  - {fileID: 1511549022}
   - {fileID: 1333132832}
   - {fileID: 534221202}
-  - {fileID: 1622515456}
   m_Father: {fileID: 1058930781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1982623167
