@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Assemblies;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameplayManager : NetworkBehaviour
 {
@@ -53,7 +55,8 @@ public class GameplayManager : NetworkBehaviour
     );
 
     public Wiper wiper;
-
+		[SerializeField] private string gameSceneName = "Demo Map";
+		private bool isRestarting = false;
     void Awake()
 	{
 		if (Instance != null && Instance != this)
@@ -285,6 +288,8 @@ public class GameplayManager : NetworkBehaviour
 
     public void GameStateCheck()
 	{
+		if (isRestarting) return; // 
+
 		Debug.Log("Living players: " + characters.Count);
 
 		Debug.Log("Ghosts: " + ghosts.Count);
@@ -311,11 +316,124 @@ public class GameplayManager : NetworkBehaviour
         RestartServerRpc();
     }
 
-    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
-    public void RestartServerRpc()
+
+[Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+public void RestartServerRpc()
+{
+    if (!IsServer) return;
+
+    isRestarting = true;
+
+    // 重置所有状态
+    gameOver.Value = false;
+    levelStarted.Value = false;
+    level.Value = 0;
+    minInterestReached.Value = false;
+    partyFund.Value = 0;
+
+    // Despawn 所有角色
+    for (int i = characters.Count - 1; i >= 0; i--)
     {
-        Debug.Log("Restart not implemented");
+        if (characters[i] == null) continue;
+        NetworkObject netObj = characters[i].GetComponent<NetworkObject>();
+        if (netObj != null && netObj.IsSpawned)
+            netObj.Despawn(true);
     }
+    characters.Clear();
+
+    // Despawn 所有 Ghost
+    for (int i = ghosts.Count - 1; i >= 0; i--)
+    {
+        if (ghosts[i] == null) continue;
+        NetworkObject netObj = ghosts[i].GetComponent<NetworkObject>();
+        if (netObj != null && netObj.IsSpawned)
+            netObj.Despawn(true);
+    }
+    ghosts.Clear();
+
+    // 清掉所有敌人
+    for (int i = enemies.Count - 1; i >= 0; i--)
+    {
+        if (enemies[i] == null) continue;
+        NetworkObject netObj = enemies[i].GetComponent<NetworkObject>();
+        if (netObj != null && netObj.IsSpawned)
+            netObj.Despawn(true);
+    }
+    enemies.Clear();
+
+
+// isRestarting = false;
+    StartCoroutine(WipeAllThenSpawn());
+}
+
+private IEnumerator WipeAllThenSpawn()
+{
+		// 把 Wiper 移回初始位置，不盖住关卡1
+if (wiper != null)
+    wiper.transform.position = new Vector3(-112.4f, 32.9f, 0f);
+
+yield return new WaitForSeconds(0.1f);
+    // 清掉落物...
+    Spawnable[] allSpawnables = FindObjectsOfType<Spawnable>();
+    foreach (Spawnable s in allSpawnables)
+    {
+        if (s.GetComponent<CharacterBasic>() != null) continue;
+        if (s.GetComponent<EnemyBasic>() != null) continue;
+        if (s.GetComponent<GhostScript>() != null) continue;
+        NetworkObject netObj = s.GetComponent<NetworkObject>();
+        if (netObj != null && netObj.IsSpawned)
+            netObj.Despawn(true);
+    }
+
+    yield return new WaitForSeconds(0.3f);
+
+    MoveCameraToSpawnClientRpc(levelSpawnPoints[0].position);
+    yield return new WaitForSeconds(0.1f);
+
+    if (LobbyNetworkState.Instance == null)
+    {
+        Debug.LogError("LobbyNetworkState is NULL!");
+        isRestarting = false; // ← 失败也要设回
+        yield break;
+    }
+		// 重置所有 FogOfWar，让关卡1地图重新显示
+FogOfWar[] fogs = FindObjectsOfType<FogOfWar>();
+foreach (FogOfWar fog in fogs)
+{
+    fog.Reset(); // 重新启用所有 SpriteRenderer
+}
+    for (int i = 0; i < LobbyNetworkState.Instance.Players.Count; i++)
+    {
+        PlayerLobbyData data = LobbyNetworkState.Instance.Players[i];
+        LobbyNetworkState.Instance.SpawnHeroForPlayer(
+            data.ClientId,
+            data.HeroId,
+            levelSpawnPoints[0].position
+        );
+    }
+
+    // 等角色生成完成
+    yield return new WaitForSeconds(0.5f);
+
+    isRestarting = false; // ← 这里才设回 false！
+
+    SelectPlateController plateController = FindObjectOfType<SelectPlateController>();
+    if (plateController != null)
+        plateController.DisablePlates();
+}
+
+[ClientRpc]
+private void MoveCameraToSpawnClientRpc(Vector3 position)
+{
+    if (Camera.main != null)
+    {
+        Camera.main.transform.position = new Vector3(
+            position.x,
+            position.y,
+            Camera.main.transform.position.z
+        );
+    }
+}
 
 	public void GuildSmite()
 	{
