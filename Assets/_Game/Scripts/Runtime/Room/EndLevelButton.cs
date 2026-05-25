@@ -16,7 +16,9 @@ public class EndLevelButton : NetworkBehaviour
 
 		GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStateChanged;
 
-		GameplayManager.Instance.exitZoneGold.OnValueChanged += OnExitGoldChanged;
+        GameplayManager.Instance.currentMinInterest.OnValueChanged += OnInterestDisplayChanged;
+
+        GameplayManager.Instance.exitZoneGold.OnValueChanged += OnInterestDisplayChanged;
 
 		Invoke("DelayedInitialUpdate", 0.1f);
 	}
@@ -25,7 +27,7 @@ public class EndLevelButton : NetworkBehaviour
 	{
         OnLevelStateChanged(false, GameplayManager.Instance.levelStarted.Value);
 
-        OnExitGoldChanged(0, GameplayManager.Instance.GetCurrentMinInterest());
+        OnInterestDisplayChanged(0, GameplayManager.Instance.GetCurrentMinInterest());
     }
 
 	public void BtnClick()
@@ -115,7 +117,7 @@ public class EndLevelButton : NetworkBehaviour
 		group.blocksRaycasts = true;
 	}
 
-	private void OnExitGoldChanged(int prev, int next)
+	private void OnInterestDisplayChanged(int prev, int next)
 	{
 		if (GameplayManager.Instance.MinInterestReached())
 		{

@@ -850,6 +850,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 636896682}
+  - {fileID: 1368198944}
   - {fileID: 2021609194}
   - {fileID: 1109184815}
   m_Father: {fileID: 227620729}
@@ -868,7 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPointSet
   points:
   - {fileID: 636896682}
-  - {fileID: 0}
+  - {fileID: 1368198944}
   - {fileID: 2021609194}
   - {fileID: 1109184815}
 --- !u!1 &33560704
@@ -37207,11 +37208,6 @@ MonoBehaviour:
   - {fileID: 29848986}
   - {fileID: 19300938}
   - {fileID: 601667828}
-  minInterestReached:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
   spawnControllers:
   - {fileID: 875546856}
   - {fileID: 1787517450}
@@ -100008,6 +100004,37 @@ Transform:
   - {fileID: 465407114}
   - {fileID: 1988518650}
   m_Father: {fileID: 1058930781}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1368198943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1368198944}
+  m_Layer: 0
+  m_Name: EntryPoint_2
+  m_TagString: SpawnPoint
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1368198944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368198943}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.94, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 29848985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370917021
 GameObject:

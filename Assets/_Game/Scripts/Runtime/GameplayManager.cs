@@ -50,7 +50,13 @@ public class GameplayManager : NetworkBehaviour
 		NetworkVariableWritePermission.Owner
 	);
 
-	public NetworkVariable<int> partyGoldSafe = new NetworkVariable<int>(
+    public NetworkVariable<int> currentMinInterest = new NetworkVariable<int>(
+        0,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
+
+    public NetworkVariable<int> partyGoldSafe = new NetworkVariable<int>(
 		0,
 		NetworkVariableReadPermission.Everyone,
 		NetworkVariableWritePermission.Owner
@@ -85,7 +91,27 @@ public class GameplayManager : NetworkBehaviour
 		base.OnNetworkSpawn();
 
 		PlayLevelMusic();
+
+		level.OnValueChanged += UpdateMinInterest;
+
+		Invoke("DelayedUpdateInterest", 0.1f);
 	}
+
+	private void DelayedUpdateInterest()
+	{
+        UpdateMinInterest(0, level.Value);
+    }
+
+	private void UpdateMinInterest(int prev, int next)
+	{
+        int numberOfPlayers = ghosts.Count + characters.Count;
+
+        int minInterest = levelMinInterestBase[next];
+
+        minInterest += levelMinInterestBase[next] * (numberOfPlayers - 1) / 2;
+
+		currentMinInterest.Value = minInterest;
+    }
 
 	// 新增辅助方法：根据关卡和玩家索引取出生点
 	private Vector3 GetSpawnPoint(int levelIndex, int playerIndex)
@@ -94,18 +120,6 @@ public class GameplayManager : NetworkBehaviour
 		SpawnPointSet set = levelSpawnPoints[levelIndex];
 		if (set == null) return Vector3.zero;
 		return set.GetPoint(playerIndex);
-	}
-
-	public int GetLevelMinInterest(int level)
-	{
-		int numberOfPlayers = ghosts.Count + characters.Count;
-
-		int minInterest = levelMinInterestBase[level];
-
-		minInterest += levelMinInterestBase[level] * (numberOfPlayers - 1) / 2;
-
-
-        return minInterest;
 	}
 
 	public void AddPlayerCharacter(ulong objectNetworkId)
@@ -519,12 +533,12 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 
 	public int GetCurrentMinInterest()
 	{
-		return GetLevelMinInterest(level.Value);
-	}
+		return currentMinInterest.Value;
+    }
 
 	public bool MinInterestReached()
 	{
-		return (partyGoldSafe.Value + exitZoneGold.Value) >= GetLevelMinInterest(level.Value);
+		return (partyGoldSafe.Value + exitZoneGold.Value) >= GetCurrentMinInterest();
 	}
 
 	public void NextLevel()
@@ -573,7 +587,7 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 		partyGoldSafe.Value += exitZoneGold.Value;
 		exitZoneGold.Value = 0;
 
-		partyGoldSafe.Value -= GetLevelMinInterest(level.Value);
+		partyGoldSafe.Value -= GetCurrentMinInterest();
 
 		foreach (CharacterBasic character in characters)
 		{
