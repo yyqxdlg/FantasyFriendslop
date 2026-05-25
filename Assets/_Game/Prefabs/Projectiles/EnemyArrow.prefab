@@ -199,7 +199,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 18446744073709551615
-  speed: 15
+  speed: 10
   lifeTime: 2
   damage: 2
   hitSoundName: test audio clip
