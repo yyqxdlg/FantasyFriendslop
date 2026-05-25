@@ -65163,7 +65163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPointCluster
   ShowTopMostFoldoutHeaderGroup: 1
-  spawnableName: RangedEnemy
+  spawnableName: HiddenSkeleton
   controller: {fileID: 0}
   playerCounts: 0100000001000000010000000100000002000000020000000300000003000000040000000400000004000000
   spawnRange: {x: 12, y: 18}
@@ -110072,7 +110072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPointCluster
   ShowTopMostFoldoutHeaderGroup: 1
-  spawnableName: RangedEnemy
+  spawnableName: HiddenSkeleton
   controller: {fileID: 0}
   playerCounts: 010000000100000002000000020000000300000004000000
   spawnRange: {x: 12, y: 1.5}
@@ -128216,8 +128216,8 @@ Tilemap:
   - first: {x: 84, y: 53, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 1
+      m_TileIndex: 33
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -128226,8 +128226,8 @@ Tilemap:
   - first: {x: 85, y: 53, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 1
+      m_TileIndex: 33
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -132904,7 +132904,7 @@ Tilemap:
     m_RefCount: 0
     m_Data: {fileID: 11400000, guid: 399d6cfb8a04c084eabb077ccc74867c, type: 2}
   - serializedVersion: 2
-    m_RefCount: 247
+    m_RefCount: 245
     m_Data: {fileID: 11400000, guid: 1b01fe67d98647e458fec87e58ddd927, type: 2}
   - serializedVersion: 2
     m_RefCount: 7
@@ -132925,20 +132925,20 @@ Tilemap:
     m_RefCount: 122
     m_Data: {fileID: 11400000, guid: b4345f8c6db46b941b9e3a78a4ef9912, type: 2}
   - serializedVersion: 2
-    m_RefCount: 950
+    m_RefCount: 952
     m_Data: {fileID: 11400000, guid: f043a1a23d618b6458389dc53eb05efc, type: 2}
   m_TileSpriteArray:
   - serializedVersion: 2
     m_RefCount: 29
     m_Data: {fileID: -1119019039, guid: 6bb5d7e6f3aea34449ee8aec0c8f86e7, type: 3}
   - serializedVersion: 2
-    m_RefCount: 247
+    m_RefCount: 245
     m_Data: {fileID: 93160852, guid: 6bb5d7e6f3aea34449ee8aec0c8f86e7, type: 3}
   - serializedVersion: 2
     m_RefCount: 122
     m_Data: {fileID: -1073693582, guid: 6bb5d7e6f3aea34449ee8aec0c8f86e7, type: 3}
   - serializedVersion: 2
-    m_RefCount: 950
+    m_RefCount: 952
     m_Data: {fileID: -1386459165, guid: 6bb5d7e6f3aea34449ee8aec0c8f86e7, type: 3}
   - serializedVersion: 2
     m_RefCount: 130
