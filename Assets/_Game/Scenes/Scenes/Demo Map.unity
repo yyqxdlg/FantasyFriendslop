@@ -33471,6 +33471,10 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
   wiper: {fileID: 339309270}
+  levelMusicNames:
+  - Cave Theme
+  - Garden Theme
+  - Dungeon Theme
 --- !u!114 &627986235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149971,6 +149975,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 103a4272b7de39b4bb24671986d0b663, type: 3}
   - {fileID: 8300000, guid: 80efb64efc9930b4e86e7bd824c1e2b8, type: 3}
   - {fileID: 8300000, guid: 11b6d162cb5fbce43a57f240fa4e4c0b, type: 3}
+  - {fileID: 8300000, guid: 7ce1f7fee9c0fd542bbe9c87aeb6049b, type: 3}
+  - {fileID: 8300000, guid: 3ed1ea6a2c682e443b55d8b39ea58a1a, type: 3}
+  - {fileID: 8300000, guid: 887435660f4aed8449f5f22681ea5c05, type: 3}
+  - {fileID: 8300000, guid: 034d71173d630434a9968bcf632bc693, type: 3}
   player: {fileID: 0}
   masterVolume: 0.5
 --- !u!114 &4639549995097021289

@@ -25,6 +25,8 @@ public class AudioManager : NetworkBehaviour
 		}
 
 		Instance = this;
+
+		backgroundSongObject = null;
 	}
 
 	// note: if you want to play a sound with uniform sound across the map, make range float.MaxValue
