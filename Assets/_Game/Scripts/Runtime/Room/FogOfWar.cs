@@ -16,6 +16,11 @@ public class FogOfWar : NetworkBehaviour
 
         GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStartChange;
 
+        Invoke("DelayedUpdate", 0.1f);
+    }
+
+    public void DelayedUpdate()
+    {
         OnRevealedChange(false, revealed.Value);
     }
 
@@ -45,6 +50,8 @@ public class FogOfWar : NetworkBehaviour
 
     public void Obscure()
     {
+        Debug.Log("OBSCURING");
+
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
 
         SpriteRenderer[] childRenderers = GetComponentsInChildren<SpriteRenderer>();

@@ -37222,6 +37222,11 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 1
+  currentMinInterest:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
   partyGoldSafe:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -118612,8 +118617,8 @@ Transform:
   - {fileID: 2033468430}
   - {fileID: 943565625}
   - {fileID: 2137900078}
-  - {fileID: 2082523734}
   - {fileID: 1704922343}
+  - {fileID: 2082523734}
   m_Father: {fileID: 1894231932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1576830187
@@ -156432,9 +156437,9 @@ Transform:
   m_Children:
   - {fileID: 1328728006}
   - {fileID: 754821286}
+  - {fileID: 974152794}
   - {fileID: 1608331556}
   - {fileID: 1011082306}
-  - {fileID: 974152794}
   m_Father: {fileID: 1573509743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086517837

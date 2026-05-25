@@ -14,7 +14,7 @@ public class FogOfWarColliderTrigger : MonoBehaviour
 
                 if (player.isMe)
                 {
-                    fow.Reveal();
+                    fow.revealed.Value = true;
                 }
             }
         }

@@ -110,6 +110,12 @@ public class GameplayManager : NetworkBehaviour
 
         minInterest += levelMinInterestBase[next] * (numberOfPlayers - 1) / 2;
 
+		Debug.Log("WHAT?");
+
+        Debug.Log(numberOfPlayers);
+
+        Debug.Log(minInterest);
+
 		currentMinInterest.Value = minInterest;
     }
 

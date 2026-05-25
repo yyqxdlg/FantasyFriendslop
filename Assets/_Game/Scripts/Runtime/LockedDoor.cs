@@ -83,7 +83,7 @@ public class LockedDoor : NetworkBehaviour
 
         if(fow != null)
         {
-            fow.Reveal();
+            fow.revealed.Value = next;
         }
     }
 }
