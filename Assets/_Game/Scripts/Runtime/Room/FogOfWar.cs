@@ -16,6 +16,15 @@ public class FogOfWar : MonoBehaviour
             childRenderer.enabled = true;
         }
     }
+    public void Reset()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = true;
+
+        SpriteRenderer[] childRenderers = GetComponentsInChildren<SpriteRenderer>(true);
+        foreach (SpriteRenderer childRenderer in childRenderers)
+            childRenderer.enabled = true;
+    }
     public void Reveal()
     {
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
