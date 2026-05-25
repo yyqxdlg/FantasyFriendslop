@@ -32,7 +32,8 @@ public class GameplayManager : NetworkBehaviour
 
 	public int[] levelMinInterest;
 
-	public Transform[] levelSpawnPoints;
+	// 改：Transform[] → SpawnPointSet[]，每个关卡有多个出生点
+	public SpawnPointSet[] levelSpawnPoints;
 
 	public NetworkVariable<bool> minInterestReached = new NetworkVariable<bool>(
 		false,
@@ -89,6 +90,15 @@ public class GameplayManager : NetworkBehaviour
 		base.OnNetworkSpawn();
 
 		PlayLevelMusic();
+	}
+
+	// 新增辅助方法：根据关卡和玩家索引取出生点
+	private Vector3 GetSpawnPoint(int levelIndex, int playerIndex)
+	{
+		if (levelSpawnPoints == null || levelIndex >= levelSpawnPoints.Length) return Vector3.zero;
+		SpawnPointSet set = levelSpawnPoints[levelIndex];
+		if (set == null) return Vector3.zero;
+		return set.GetPoint(playerIndex);
 	}
 
 	public void AddPlayerCharacter(ulong objectNetworkId)
@@ -177,8 +187,6 @@ public class GameplayManager : NetworkBehaviour
 			}
 		}
 
-		//Debug.Log(NetworkManager.Singleton == null);
-
 		bool found = NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(
 			objectNetworkId,
 			out NetworkObject netObj
@@ -253,8 +261,6 @@ public class GameplayManager : NetworkBehaviour
 			}
 		}
 
-		//Debug.Log(NetworkManager.Singleton == null);
-
 		bool found = NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(
 			objectNetworkId,
 			out NetworkObject netObj
@@ -311,7 +317,7 @@ public class GameplayManager : NetworkBehaviour
 
 	public void GameStateCheck()
 	{
-		if (isRestarting) return; // 
+		if (isRestarting) return;
 
 		Debug.Log("Living players: " + characters.Count);
 
@@ -347,14 +353,12 @@ public class GameplayManager : NetworkBehaviour
 
 		isRestarting = true;
 
-		// 重置所有状态
 		gameOver.Value = false;
 		levelStarted.Value = false;
 		level.Value = 0;
 		minInterestReached.Value = false;
 		partyGoldSafe.Value = 0;
 
-		// Despawn 所有角色
 		for (int i = characters.Count - 1; i >= 0; i--)
 		{
 			if (characters[i] == null) continue;
@@ -364,7 +368,6 @@ public class GameplayManager : NetworkBehaviour
 		}
 		characters.Clear();
 
-		// Despawn 所有 Ghost
 		for (int i = ghosts.Count - 1; i >= 0; i--)
 		{
 			if (ghosts[i] == null) continue;
@@ -374,7 +377,6 @@ public class GameplayManager : NetworkBehaviour
 		}
 		ghosts.Clear();
 
-		// 清掉所有敌人
 		for (int i = enemies.Count - 1; i >= 0; i--)
 		{
 			if (enemies[i] == null) continue;
@@ -386,18 +388,16 @@ public class GameplayManager : NetworkBehaviour
 
 		PlayLevelMusic();
 
-		// isRestarting = false;
 		StartCoroutine(WipeAllThenSpawn());
 	}
 
 private IEnumerator WipeAllThenSpawn()
 {
-		// 把 Wiper 移回初始位置，不盖住关卡1
-if (wiper != null)
-	wiper.transform.position = new Vector3(-112.4f, 32.9f, 0f);
+	if (wiper != null)
+		wiper.transform.position = new Vector3(-112.4f, 32.9f, 0f);
 
-yield return new WaitForSeconds(0.1f);
-	// 清掉落物...
+	yield return new WaitForSeconds(0.1f);
+
 	Spawnable[] allSpawnables = FindObjectsOfType<Spawnable>();
 	foreach (Spawnable s in allSpawnables)
 	{
@@ -411,35 +411,37 @@ yield return new WaitForSeconds(0.1f);
 
 	yield return new WaitForSeconds(0.3f);
 
-	MoveCameraToSpawnClientRpc(levelSpawnPoints[0].position);
+	// 改：用 GetSpawnPoint 代替 levelSpawnPoints[0].position
+	MoveCameraToSpawnClientRpc(GetSpawnPoint(0, 0));
 	yield return new WaitForSeconds(0.1f);
 
 	if (LobbyNetworkState.Instance == null)
 	{
 		Debug.LogError("LobbyNetworkState is NULL!");
-		isRestarting = false; // ← 失败也要设回
+		isRestarting = false;
 		yield break;
 	}
-		// 重置所有 FogOfWar，让关卡1地图重新显示
-FogOfWar[] fogs = FindObjectsOfType<FogOfWar>();
-foreach (FogOfWar fog in fogs)
-{
-	fog.Reset(); // 重新启用所有 SpriteRenderer
-}
+
+	FogOfWar[] fogs = FindObjectsOfType<FogOfWar>();
+	foreach (FogOfWar fog in fogs)
+	{
+		fog.Reset();
+	}
+
+	// 改：每个玩家用不同出生点
 	for (int i = 0; i < LobbyNetworkState.Instance.Players.Count; i++)
 	{
 		PlayerLobbyData data = LobbyNetworkState.Instance.Players[i];
 		LobbyNetworkState.Instance.SpawnHeroForPlayer(
 			data.ClientId,
 			data.HeroId,
-			levelSpawnPoints[0].position
+			GetSpawnPoint(0, i)
 		);
 	}
 
-	// 等角色生成完成
 	yield return new WaitForSeconds(0.5f);
 
-	isRestarting = false; // ← 这里才设回 false！
+	isRestarting = false;
 
 	SelectPlateController plateController = FindObjectOfType<SelectPlateController>();
 	if (plateController != null)
@@ -508,7 +510,6 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 		minInterestReached.Value = exitZoneGold.Value + partyGoldSafe.Value >= levelMinInterest[level.Value];
 
 		allLivingSafe.Value = characters.Count == exitZoneCharacters.Count;
-
 	}
 
 	public int GetCurrentMinInterest()
@@ -531,7 +532,7 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 		EnemyWipe();
 
 		FullWipe();
-		DespawnAllGhosts(); //clear all ghosts
+		DespawnAllGhosts();
 		ClearInventories();
 
 		RespawnAndRestorePlayers();
@@ -559,16 +560,21 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 
 	public void TeleportPlayersToLevel()
 	{
-		for (int i = 0; i < characters.Count; i++)
-		{
-			characters[i].Teleport(levelSpawnPoints[level.Value].position);
-		}
+			for (int i = 0; i < characters.Count; i++)
+			{
+					ulong clientId = characters[i].GetComponent<NetworkObject>().OwnerClientId;
+					int playerIndex = GetPlayerIndex(clientId);
+					characters[i].Teleport(GetSpawnPoint(level.Value, playerIndex));
+			}
 
-		for (int i = 0; i < ghosts.Count; i++)
-		{
-			ghosts[i].Teleport(levelSpawnPoints[level.Value].position);
-		}
+			for (int i = 0; i < ghosts.Count; i++)
+			{
+					ulong clientId = ghosts[i].GetComponent<NetworkObject>().OwnerClientId;
+					int playerIndex = GetPlayerIndex(clientId);
+					ghosts[i].Teleport(GetSpawnPoint(level.Value, playerIndex));
+			}
 	}
+
 private void DespawnAllGhosts()
 {
 	for (int i = ghosts.Count - 1; i >= 0; i--)
@@ -582,6 +588,7 @@ private void DespawnAllGhosts()
 	}
 	ghosts.Clear();
 }
+
 	public void EnemyWipe()
 	{
 		foreach(EnemyBasic enemy in enemies)
@@ -596,44 +603,51 @@ private void DespawnAllGhosts()
 	}
 
 	public void RespawnAndRestorePlayers()
-{
-	// 治愈现有存活角色
-	foreach (CharacterBasic character in characters)
 	{
-		character.HealAmount(1000);
-	}
-
-	// 给死亡玩家（原来的Ghost）重新生成角色
-	if (LobbyNetworkState.Instance == null) return;
-
-	for (int i = 0; i < LobbyNetworkState.Instance.Players.Count; i++)
-	{
-		PlayerLobbyData data = LobbyNetworkState.Instance.Players[i];
-
-		// 检查这个玩家是否已经有存活角色
-		bool hasAliveCharacter = false;
 		foreach (CharacterBasic character in characters)
 		{
-			NetworkObject netObj = character.GetComponent<NetworkObject>();
-			if (netObj != null && netObj.OwnerClientId == data.ClientId)
+			character.HealAmount(1000);
+		}
+
+		if (LobbyNetworkState.Instance == null) return;
+
+		for (int i = 0; i < LobbyNetworkState.Instance.Players.Count; i++)
+		{
+			PlayerLobbyData data = LobbyNetworkState.Instance.Players[i];
+
+			bool hasAliveCharacter = false;
+			foreach (CharacterBasic character in characters)
 			{
-				hasAliveCharacter = true;
-				break;
+				NetworkObject netObj = character.GetComponent<NetworkObject>();
+				if (netObj != null && netObj.OwnerClientId == data.ClientId)
+				{
+					hasAliveCharacter = true;
+					break;
+				}
+			}
+
+			// 改：每个玩家用不同出生点
+			if (!hasAliveCharacter)
+			{
+					LobbyNetworkState.Instance.SpawnHeroForPlayer(
+							data.ClientId,
+							data.HeroId,
+							GetSpawnPoint(level.Value, i) // i 就是 LobbyNetworkState 里的玩家索引，不变
+					);
 			}
 		}
-
-		// 没有存活角色的玩家重新生成
-		if (!hasAliveCharacter)
-		{
-			LobbyNetworkState.Instance.SpawnHeroForPlayer(
-				data.ClientId,
-				data.HeroId,
-				levelSpawnPoints[level.Value].position
-			);
-		}
 	}
-}
-
+	// 新增辅助方法：根据 ClientId 获取固定玩家索引
+	private int GetPlayerIndex(ulong clientId)
+	{
+			if (LobbyNetworkState.Instance == null) return 0;
+			for (int i = 0; i < LobbyNetworkState.Instance.Players.Count; i++)
+			{
+					if (LobbyNetworkState.Instance.Players[i].ClientId == clientId)
+							return i;
+			}
+			return 0;
+	}
 	public void ClearInventories()
 	{
 		foreach (CharacterBasic character in characters)
