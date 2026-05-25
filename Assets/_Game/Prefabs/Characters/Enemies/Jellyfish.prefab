@@ -558,7 +558,7 @@ MonoBehaviour:
   dropSpawnableName: Jellyfish_Drop
   roomId: -1
   maxHealth: 5
-  speed: 2
+  speed: 3
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0

@@ -523,8 +523,8 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 18446744073709551615
   isMe: 0
-  speed: 5
-  attackCooldown: 0.5
+  speed: 7
+  attackCooldown: 0.35
   maxHealth: 15
   healthBar: {fileID: 0}
   coinCount:

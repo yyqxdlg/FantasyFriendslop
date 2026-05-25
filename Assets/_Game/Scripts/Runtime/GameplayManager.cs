@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Assemblies;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 public class GameplayManager : NetworkBehaviour
 {
@@ -30,7 +31,7 @@ public class GameplayManager : NetworkBehaviour
 		NetworkVariableWritePermission.Owner
 	);
 
-	public int[] levelMinInterest;
+	[SerializeField] private int[] levelMinInterestBase;
 
 	public Transform[] levelSpawnPoints;
 
@@ -89,6 +90,18 @@ public class GameplayManager : NetworkBehaviour
 		base.OnNetworkSpawn();
 
 		PlayLevelMusic();
+	}
+
+	public int GetLevelMinInterest(int level)
+	{
+		int numberOfPlayers = ghosts.Count + characters.Count;
+
+		int minInterest = levelMinInterestBase[level];
+
+		minInterest += levelMinInterestBase[level] * (numberOfPlayers - 1) / 2;
+
+
+        return minInterest;
 	}
 
 	public void AddPlayerCharacter(ulong objectNetworkId)
@@ -505,15 +518,17 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 
 		exitZoneGold.Value = goldSum;
 
-		minInterestReached.Value = exitZoneGold.Value + partyGoldSafe.Value >= levelMinInterest[level.Value];
+		minInterestReached.Value = exitZoneGold.Value + partyGoldSafe.Value >= GetLevelMinInterest(level.Value);
 
 		allLivingSafe.Value = characters.Count == exitZoneCharacters.Count;
+
+		//Debug.Log("Interest update, sum: " + goldSum);
 
 	}
 
 	public int GetCurrentMinInterest()
 	{
-		return levelMinInterest[level.Value];
+		return GetLevelMinInterest(level.Value);
 	}
 
 	public void NextLevel()
@@ -549,7 +564,7 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 		partyGoldSafe.Value += exitZoneGold.Value;
 		exitZoneGold.Value = 0;
 
-		partyGoldSafe.Value -= levelMinInterest[level.Value];
+		partyGoldSafe.Value -= GetLevelMinInterest(level.Value);
 
 		foreach (CharacterBasic character in characters)
 		{
