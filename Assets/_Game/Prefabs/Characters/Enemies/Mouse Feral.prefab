@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 4832192965437554087}
   - component: {fileID: 6660361883723201244}
   m_Layer: 10
-  m_Name: Mouse
+  m_Name: Mouse Feral
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2847427288
+  GlobalObjectIdHash: 3137020899
   InScenePlacedSourceGlobalObjectIdHash: 2847427288
   DeferredDespawnTick: 0
   Ownership: 1
@@ -499,7 +499,7 @@ MonoBehaviour:
   dropSpawnableName: Coin
   roomId: -1
   maxHealth: 1
-  speed: 4
+  speed: 6
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -527,9 +527,9 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
   randomAlertedMovement: 1
-  alerted: 0
+  alerted: 1
   randMovementVector: {x: 0, y: 0}
-  newRandTimer: 5
+  newRandTimer: 3
   moveThreshold: 0.05
   facingDeadZone: 0.15
   deathParticleName: SlimeDeath
@@ -584,7 +584,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1621394836268213013, guid: a2b02828059334644b5355afd0a8879b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5235849, b: 0.5235849, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

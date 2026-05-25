@@ -310,9 +310,9 @@ GameObject:
   - component: {fileID: 6666094081906648241}
   - component: {fileID: -4100512339941352848}
   - component: {fileID: 3531163685520308510}
-  - component: {fileID: 232659275722252281}
   - component: {fileID: 4832192965437554087}
   - component: {fileID: 5183945306564482645}
+  - component: {fileID: 7657536481179547373}
   m_Layer: 10
   m_Name: NiceGuy
   m_TagString: Enemy
@@ -471,65 +471,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &232659275722252281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3388104308899182308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf91c96a765137545af5306911613e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySlime
-  ShowTopMostFoldoutHeaderGroup: 1
-  creatorNetworkId:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
-  hasSpawnAnimation: 0
-  hasAttackAnimation: 0
-  hasDeathAnimation: 0
-  spawnLockTime: 0.6
-  attackHitDelay: 0.25
-  deathDespawnDelay: 0.7
-  dropLootOnDeath: 1
-  dropSpawnableName: 
-  roomId: -1
-  maxHealth: 5
-  speed: 2
-  health:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
-  healthBar: {fileID: 0}
-  targetingRangeObject: {fileID: 2900984723075450811}
-  animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  animProfile: 6
-  useAnimIndexBlendTree: 1
-  useAttackIndexBlendTree: 0
-  useFlipForSideDirections: 1
-  sideSpriteFacesLeft: 1
-  standingRange: 0
-  strafeSpeed: 1.5
-  strafeChangeInterval: 2
-  attackCooldown: 2
-  attackDamage: 0
-  attackRange: 0
-  coinsToDrop: 3
-  hasInventory: 1
-  inventory:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-  moveThreshold: 0.05
-  facingDeadZone: 0.15
-  deathParticleName: SlimeDeath
-  attackParticleName: SlimeAttack
 --- !u!212 &4832192965437554087
 SpriteRenderer:
   serializedVersion: 2
@@ -611,6 +552,67 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7657536481179547373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388104308899182308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d840d5480c2d58459ab46b08b38ffd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyNiceGuy
+  ShowTopMostFoldoutHeaderGroup: 1
+  creatorNetworkId:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 18446744073709551615
+  hasSpawnAnimation: 0
+  hasAttackAnimation: 0
+  hasDeathAnimation: 1
+  spawnLockTime: 0.6
+  attackHitDelay: 0.25
+  deathDespawnDelay: 0.8
+  dropLootOnDeath: 1
+  dropSpawnableName: Coin
+  roomId: -1
+  maxHealth: 10
+  speed: 2
+  health:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  healthBar: {fileID: 0}
+  targetingRangeObject: {fileID: 2900984723075450811}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  animProfile: 0
+  useAnimIndexBlendTree: 0
+  useAttackIndexBlendTree: 0
+  useFlipForSideDirections: 1
+  sideSpriteFacesLeft: 1
+  standingRange: 0
+  strafeSpeed: 1.5
+  strafeChangeInterval: 2
+  attackCooldown: 1
+  attackDamage: 1
+  attackRange: 1
+  coinsToDrop: 1
+  hasInventory: 1
+  inventory:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+  randomAlertedMovement: 0
+  alerted: 0
+  randMovementVector: {x: 0, y: 0}
+  newRandTimer: 5
+  moveThreshold: 0.05
+  facingDeadZone: 0.15
 --- !u!1 &4069787323468268524
 GameObject:
   m_ObjectHideFlags: 0

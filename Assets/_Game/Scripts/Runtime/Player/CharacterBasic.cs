@@ -702,6 +702,18 @@ private void ApplyKnockdownOwnerRpc(Vector2 velocity, float duration)
 		}
 	}
 
+    public void DeleteCoins()
+	{
+		DeleteCoinsRpc();
+	}
+
+    [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Everyone)]
+    private void DeleteCoinsRpc()
+	{
+        coinCount.Value = 0;
+        UpdateCoinVisual();
+    }
+
 	public void Teleport(Vector3 posTo)
 	{
 		TeleportOwnerRpc(posTo);

@@ -467,7 +467,7 @@ MonoBehaviour:
     m_InternalValue: 18446744073709551615
   isMe: 0
   speed: 5
-  attackCooldown: 0.5
+  attackCooldown: 0.75
   maxHealth: 20
   healthBar: {fileID: 0}
   coinCount:
@@ -625,7 +625,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -635,7 +635,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8, y: 1.35}
+  m_Size: {x: 0.8, y: 1.1}
   m_EdgeRadius: 0
 --- !u!1 &5486628184577562929
 GameObject:
