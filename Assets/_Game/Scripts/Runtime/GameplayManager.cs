@@ -36,12 +36,6 @@ public class GameplayManager : NetworkBehaviour
 	// 改：Transform[] → SpawnPointSet[]，每个关卡有多个出生点
 	public SpawnPointSet[] levelSpawnPoints;
 
-	public NetworkVariable<bool> minInterestReached = new NetworkVariable<bool>(
-		false,
-		NetworkVariableReadPermission.Everyone,
-		NetworkVariableWritePermission.Owner
-	);
-
 	public SpawnPointController[] spawnControllers;
 
 	public NetworkVariable<bool> gameOver = new NetworkVariable<bool>(
@@ -369,7 +363,6 @@ public class GameplayManager : NetworkBehaviour
 		gameOver.Value = false;
 		levelStarted.Value = false;
 		level.Value = 0;
-		minInterestReached.Value = false;
 		partyGoldSafe.Value = 0;
 
 		for (int i = characters.Count - 1; i >= 0; i--)
@@ -520,8 +513,6 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 
 		exitZoneGold.Value = goldSum;
 
-		minInterestReached.Value = exitZoneGold.Value + partyGoldSafe.Value >= GetLevelMinInterest(level.Value);
-
 		allLivingSafe.Value = characters.Count == exitZoneCharacters.Count;
 
 	}
@@ -529,6 +520,11 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 	public int GetCurrentMinInterest()
 	{
 		return GetLevelMinInterest(level.Value);
+	}
+
+	public bool MinInterestReached()
+	{
+		return (partyGoldSafe.Value + exitZoneGold.Value) >= GetLevelMinInterest(level.Value);
 	}
 
 	public void NextLevel()

@@ -14,18 +14,23 @@ public class EndLevelButton : NetworkBehaviour
 	{
 		base.OnNetworkSpawn();
 
-		OnLevelStateChanged(false, GameplayManager.Instance.levelStarted.Value);
-
 		GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStateChanged;
 
-		OnMinReachedChange(false, GameplayManager.Instance.minInterestReached.Value);
+		GameplayManager.Instance.exitZoneGold.OnValueChanged += OnExitGoldChanged;
 
-		GameplayManager.Instance.minInterestReached.OnValueChanged += OnMinReachedChange;
+		Invoke("DelayedInitialUpdate", 0.1f);
 	}
+
+	public void DelayedInitialUpdate()
+	{
+        OnLevelStateChanged(false, GameplayManager.Instance.levelStarted.Value);
+
+        OnExitGoldChanged(0, GameplayManager.Instance.GetCurrentMinInterest());
+    }
 
 	public void BtnClick()
 	{
-		if (GameplayManager.Instance.minInterestReached.Value)
+		if (GameplayManager.Instance.MinInterestReached())
 		{
 			if (GameplayManager.Instance.allLivingSafe.Value)
 			{
@@ -66,7 +71,7 @@ public class EndLevelButton : NetworkBehaviour
 	[Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
 	private void ConfirmClickServerRpc()
 	{
-		if (!GameplayManager.Instance.minInterestReached.Value)
+		if (!GameplayManager.Instance.MinInterestReached())
 		{
 			GameplayManager.Instance.GuildSmiteSelective(ExitZone.GetPlayersInExitZone());
 		}
@@ -110,9 +115,9 @@ public class EndLevelButton : NetworkBehaviour
 		group.blocksRaycasts = true;
 	}
 
-	private void OnMinReachedChange(bool prev, bool next)
+	private void OnExitGoldChanged(int prev, int next)
 	{
-		if (next)
+		if (GameplayManager.Instance.MinInterestReached())
 		{
 			interestText.text = "Minimum interest " + GameplayManager.Instance.GetCurrentMinInterest() + " reached";
 
