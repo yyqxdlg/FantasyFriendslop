@@ -1,30 +1,54 @@
 using UnityEngine;
-
-public class FogOfWar : MonoBehaviour
+using Unity.Netcode;
+public class FogOfWar : NetworkBehaviour
 {
+    public NetworkVariable<bool> revealed = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
 
-    public void Start()
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        revealed.OnValueChanged += OnRevealedChange;
+
+        OnRevealedChange(false, revealed.Value);
+    }
+
+    public void OnRevealedChange(bool prev, bool next)
+    {
+        if (next)
+        {
+            Reveal();
+        } else
+        {
+            Obscure();
+        }
+    }
+
+    public void Reset()
+    {
+        revealed.Value = false;
+    }
+
+    public void Obscure()
     {
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
 
         SpriteRenderer[] childRenderers = GetComponentsInChildren<SpriteRenderer>();
 
         renderer.enabled = true;
+        renderer.color = Color.black;
 
-        foreach(SpriteRenderer childRenderer in childRenderers)
+        foreach (SpriteRenderer childRenderer in childRenderers)
         {
             childRenderer.enabled = true;
+            childRenderer.color = Color.black;
         }
     }
-    public void Reset()
-    {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.enabled = true;
 
-        SpriteRenderer[] childRenderers = GetComponentsInChildren<SpriteRenderer>(true);
-        foreach (SpriteRenderer childRenderer in childRenderers)
-            childRenderer.enabled = true;
-    }
     public void Reveal()
     {
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();

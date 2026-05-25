@@ -644,7 +644,7 @@ MonoBehaviour:
     m_InternalValue: 0
   isMe: 0
   speed: 5
-  attackCooldown: 1
+  attackCooldown: 0.75
   maxHealth: 15
   healthBar: {fileID: 9198338880382930201}
   coinCount:
