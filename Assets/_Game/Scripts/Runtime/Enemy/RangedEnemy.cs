@@ -54,7 +54,6 @@ public class RangedEnemy : EnemyBasic
 
         if (IsServer)
         {
-            Debug.Log("MOVE?");
             UpdateCrosshairPosition();
         }
 

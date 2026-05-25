@@ -25,4 +25,15 @@ public class EnemyNiceGuy : EnemyBasic
     // Nice Guy 的核心行为和普通 EnemyBasic 一样：发现玩家就走过去
     // 但如果你想让他"无害"地游荡（不追玩家），
     // 可以把 Targeting Range 的 Collider 半径设得很小，或者取消攻击
+
+    public override void TakeDamage(float Damage)
+    {
+        SpawnerUtil.Instance.NetworkSpawnGameObject("NotNiceGuy", transform.position);
+
+        NetworkDestroy();
+    }
+    public override void Attack()
+    {
+        target.GetComponent<CharacterBasic>().HealAmount(attackDamage);
+    }
 }
