@@ -10,9 +10,12 @@ public class FogOfWarColliderTrigger : MonoBehaviour
         {
             CharacterBasic player = col.gameObject.GetComponent<CharacterBasic>();
 
-            if (player.isMe)
-            {
-                fow.Reveal();
+            if(player != null) {
+
+                if (player.isMe)
+                {
+                    fow.Reveal();
+                }
             }
         }
     }
