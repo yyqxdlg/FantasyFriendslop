@@ -40,12 +40,6 @@ public class GameplayManager : NetworkBehaviour
 		NetworkVariableWritePermission.Owner
 	);
 
-    public NetworkVariable<int> partyFund = new NetworkVariable<int>(
-        0,
-        NetworkVariableReadPermission.Everyone,
-        NetworkVariableWritePermission.Owner
-    );
-
 	public SpawnPointController[] spawnControllers;
 
     public NetworkVariable<bool> gameOver = new NetworkVariable<bool>(
@@ -56,6 +50,18 @@ public class GameplayManager : NetworkBehaviour
 
     public NetworkVariable<bool> allLivingSafe = new NetworkVariable<bool>(
         true,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
+
+    public NetworkVariable<int> partyGoldSafe = new NetworkVariable<int>(
+        0,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
+
+    public NetworkVariable<int> exitZoneGold = new NetworkVariable<int>(
+        0,
         NetworkVariableReadPermission.Everyone,
         NetworkVariableWritePermission.Owner
     );
@@ -346,7 +352,7 @@ public void RestartServerRpc()
     levelStarted.Value = false;
     level.Value = 0;
     minInterestReached.Value = false;
-    partyFund.Value = 0;
+    partyGoldSafe.Value = 0;
 
     // Despawn 所有角色
     for (int i = characters.Count - 1; i >= 0; i--)
@@ -496,8 +502,9 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 			goldSum += character.coinCount.Value;
 		}
 
+        exitZoneGold.Value = goldSum;
 
-		minInterestReached.Value = goldSum >= levelMinInterest[level.Value];
+        minInterestReached.Value = exitZoneGold.Value + partyGoldSafe.Value >= levelMinInterest[level.Value];
 
         allLivingSafe.Value = characters.Count == exitZoneCharacters.Count;
 
@@ -514,9 +521,11 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 
 		levelStarted.Value = false;
 
+        PersistGold();
+
         level.Value += 1;
 
-		TeleportPlayersToLevel();
+        TeleportPlayersToLevel();
 
 		EnemyWipe();
 
@@ -532,6 +541,19 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
     private void PlayLevelMusic()
     {
         AudioManager.Instance.PlayBackgroundSong(levelMusicNames[level.Value], 1);
+    }
+
+    private void PersistGold()
+    {
+        partyGoldSafe.Value += exitZoneGold.Value;
+        exitZoneGold.Value = 0;
+
+        partyGoldSafe.Value -= levelMinInterest[level.Value];
+
+        foreach (CharacterBasic character in characters)
+        {
+            character.DeleteCoins();
+        }
     }
 
 	public void TeleportPlayersToLevel()
