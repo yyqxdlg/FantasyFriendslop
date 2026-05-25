@@ -535,6 +535,12 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 	{
 		if (!IsServer) { return; }
 
+		if (level.Value == 2)
+		{
+			WinScreen();
+			return;
+		}
+
 		levelStarted.Value = false;
 
 		PersistGold();
@@ -551,6 +557,13 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 
 		RespawnAndRestorePlayers();
 
+		PlayLevelMusic();
+	}
+
+	public void WinScreen()
+	{
+        level.Value += 1;
+        TeleportPlayersToLevel();
 		PlayLevelMusic();
 	}
 
