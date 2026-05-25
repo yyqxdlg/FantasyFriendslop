@@ -33499,6 +33499,10 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
   wiper: {fileID: 339309270}
+  levelMusicNames:
+  - Cave Theme
+  - Garden Theme
+  - Dungeon Theme
   gameSceneName: Demo Map
 --- !u!114 &627986235
 MonoBehaviour:
@@ -65192,7 +65196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPointCluster
   ShowTopMostFoldoutHeaderGroup: 1
-  spawnableName: RangedEnemy
+  spawnableName: HiddenSkeleton
   controller: {fileID: 0}
   playerCounts: 0100000001000000010000000100000002000000020000000300000003000000040000000400000004000000
   spawnRange: {x: 12, y: 18}
@@ -110101,7 +110105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPointCluster
   ShowTopMostFoldoutHeaderGroup: 1
-  spawnableName: RangedEnemy
+  spawnableName: HiddenSkeleton
   controller: {fileID: 0}
   playerCounts: 010000000100000002000000020000000300000004000000
   spawnRange: {x: 12, y: 1.5}
@@ -128245,8 +128249,8 @@ Tilemap:
   - first: {x: 84, y: 53, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 1
+      m_TileIndex: 33
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -128255,8 +128259,8 @@ Tilemap:
   - first: {x: 85, y: 53, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 1
+      m_TileIndex: 33
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -132933,7 +132937,7 @@ Tilemap:
     m_RefCount: 0
     m_Data: {fileID: 11400000, guid: 399d6cfb8a04c084eabb077ccc74867c, type: 2}
   - serializedVersion: 2
-    m_RefCount: 247
+    m_RefCount: 245
     m_Data: {fileID: 11400000, guid: 1b01fe67d98647e458fec87e58ddd927, type: 2}
   - serializedVersion: 2
     m_RefCount: 7
@@ -132954,20 +132958,20 @@ Tilemap:
     m_RefCount: 122
     m_Data: {fileID: 11400000, guid: b4345f8c6db46b941b9e3a78a4ef9912, type: 2}
   - serializedVersion: 2
-    m_RefCount: 950
+    m_RefCount: 952
     m_Data: {fileID: 11400000, guid: f043a1a23d618b6458389dc53eb05efc, type: 2}
   m_TileSpriteArray:
   - serializedVersion: 2
     m_RefCount: 29
     m_Data: {fileID: -1119019039, guid: 6bb5d7e6f3aea34449ee8aec0c8f86e7, type: 3}
   - serializedVersion: 2
-    m_RefCount: 247
+    m_RefCount: 245
     m_Data: {fileID: 93160852, guid: 6bb5d7e6f3aea34449ee8aec0c8f86e7, type: 3}
   - serializedVersion: 2
     m_RefCount: 122
     m_Data: {fileID: -1073693582, guid: 6bb5d7e6f3aea34449ee8aec0c8f86e7, type: 3}
   - serializedVersion: 2
-    m_RefCount: 950
+    m_RefCount: 952
     m_Data: {fileID: -1386459165, guid: 6bb5d7e6f3aea34449ee8aec0c8f86e7, type: 3}
   - serializedVersion: 2
     m_RefCount: 130
@@ -150000,6 +150004,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 103a4272b7de39b4bb24671986d0b663, type: 3}
   - {fileID: 8300000, guid: 80efb64efc9930b4e86e7bd824c1e2b8, type: 3}
   - {fileID: 8300000, guid: 11b6d162cb5fbce43a57f240fa4e4c0b, type: 3}
+  - {fileID: 8300000, guid: 7ce1f7fee9c0fd542bbe9c87aeb6049b, type: 3}
+  - {fileID: 8300000, guid: 3ed1ea6a2c682e443b55d8b39ea58a1a, type: 3}
+  - {fileID: 8300000, guid: 887435660f4aed8449f5f22681ea5c05, type: 3}
+  - {fileID: 8300000, guid: 034d71173d630434a9968bcf632bc693, type: 3}
   player: {fileID: 0}
   masterVolume: 0.5
 --- !u!114 &4639549995097021289

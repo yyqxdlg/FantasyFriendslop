@@ -26,7 +26,12 @@ public class EnemySlimeFlower : EnemyBasic
         NetworkVariableWritePermission.Server
     );
 
-    private bool hasTransformed = false;
+    private NetworkVariable<bool> hasTransformed = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    );
+
     private bool isTransforming = false;
     private Animator _anim;
 
@@ -61,7 +66,7 @@ public class EnemySlimeFlower : EnemyBasic
 
         if (IsServer)
         {
-            hasTransformed = false;
+            hasTransformed.Value = false;
             isTransforming = false;
 
             // Server 自己也要关碰撞/血条
@@ -83,7 +88,7 @@ public class EnemySlimeFlower : EnemyBasic
         if (!IsServer) return;
 
         // 花朵阶段 / 变身阶段：不移动，不攻击
-        if (!hasTransformed)
+        if (!hasTransformed.Value)
         {
             StopEnemyMovement();
             SetMovingAnimationState(false);
@@ -107,7 +112,7 @@ public class EnemySlimeFlower : EnemyBasic
     public override void TakeDamage(float damage)
     {
         // 只要还没完全变成怪，就不能被打
-        if (!hasTransformed)
+        if (!hasTransformed.Value)
             return;
 
         if (!isSlimeMode.Value)
@@ -120,7 +125,7 @@ public class EnemySlimeFlower : EnemyBasic
     {
         if (!IsServer) yield break;
         if (isTransforming) yield break;
-        if (hasTransformed) yield break;
+        if (hasTransformed.Value) yield break;
 
         isTransforming = true;
 
@@ -137,7 +142,7 @@ public class EnemySlimeFlower : EnemyBasic
 
         // 变身正式完成
         isSlimeMode.Value = true;
-        hasTransformed = true;
+        hasTransformed.Value = true;
 
         // 恢复血条和身体碰撞
         ApplyDisguiseStateLocal(false);

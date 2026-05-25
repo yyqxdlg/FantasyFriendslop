@@ -57,6 +57,10 @@ public class GameplayManager : NetworkBehaviour
     public Wiper wiper;
 		[SerializeField] private string gameSceneName = "Demo Map";
 		private bool isRestarting = false;
+
+    [Header("Music")]
+    public string[] levelMusicNames;
+
     void Awake()
 	{
 		if (Instance != null && Instance != this)
@@ -67,6 +71,13 @@ public class GameplayManager : NetworkBehaviour
 
 		Instance = this;
 	}
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        PlayLevelMusic();
+    }
 
 	public void AddPlayerCharacter(ulong objectNetworkId)
 	{
@@ -505,6 +516,13 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
         ClearInventories();
 
         RespawnAndRestorePlayers();
+
+        PlayLevelMusic();
+    }
+
+    private void PlayLevelMusic()
+    {
+        AudioManager.Instance.PlayBackgroundSong(levelMusicNames[level.Value], 1);
     }
 
 	public void TeleportPlayersToLevel()

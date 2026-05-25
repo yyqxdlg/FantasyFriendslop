@@ -10,10 +10,9 @@ public class RangedEnemy : EnemyBasic
     [SerializeField] private string bulletPrefabName;
     //[SerializeField] private float bulletSpeed = 10f;
     [SerializeField] private float stopDistance = 8f; // Distance to stop and attack
-    [SerializeField] private Transform crossHair;
-    [SerializeField] private float crossHairDistance;
+    [SerializeField] private Transform crossHairPivot;
+    [SerializeField] private Transform crossHairPoint;
 
-    public NetworkVariable<Vector3> crossHairLocation = new NetworkVariable<Vector3>();
     public NetworkVariable<float> crossHairAngle = new NetworkVariable<float>();
 
     [Header("Audio")]
@@ -68,9 +67,7 @@ public class RangedEnemy : EnemyBasic
         {
             Vector3 dirVector = target.transform.position - transform.position;
 
-            dirVector = dirVector.normalized * crossHairDistance;
-
-            crossHairLocation.Value = transform.position + dirVector;
+            dirVector = dirVector.normalized;
 
             crossHairAngle.Value = FFUtilities.CounterClockwiseAngle(dirVector, new Vector2(1, 0));
         }
@@ -78,11 +75,7 @@ public class RangedEnemy : EnemyBasic
 
     private void RenderCrosshair()
     {
-        Debug.Log("RENDER?");
-
-        crossHair.transform.position = crossHairLocation.Value;
-
-        crossHair.transform.rotation = Quaternion.Euler(0, 0, crossHairAngle.Value);
+        crossHairPivot.transform.rotation = Quaternion.Euler(0, 0, crossHairAngle.Value);
     }
 
     /*
@@ -121,6 +114,6 @@ public class RangedEnemy : EnemyBasic
         if (shootSoundName != null)
             AudioManager.Instance.PlaySound(shootSoundName, transform.position);
 
-        SpawnerUtil.Instance.NetworkSpawnGameObject(bulletPrefabName, crossHair.transform.position, 0, GetComponent<NetworkObject>().NetworkObjectId);
+        SpawnerUtil.Instance.NetworkSpawnGameObject(bulletPrefabName, crossHairPoint.transform.position, 0, GetComponent<NetworkObject>().NetworkObjectId);
     }
 }
