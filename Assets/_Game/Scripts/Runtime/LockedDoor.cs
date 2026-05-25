@@ -24,10 +24,14 @@ public class LockedDoor : NetworkBehaviour
         base.OnNetworkSpawn();
 
         doorOpen.OnValueChanged += OnDoorChange;
+
+        OnDoorChange(false, doorOpen.Value);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        if(!IsServer) { return; }
+
         if (!collision.isTrigger)
         {
             CharacterBasic player = collision.gameObject.GetComponent<CharacterBasic>();
@@ -49,7 +53,6 @@ public class LockedDoor : NetworkBehaviour
     public void OpenDoorServerRpc()
     {
         doorOpen.Value = true;
-        Debug.Log("Opening door?");
     }
 
     public void OnDoorChange(bool prev, bool next)
