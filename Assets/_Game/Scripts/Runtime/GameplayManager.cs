@@ -52,6 +52,12 @@ public class GameplayManager : NetworkBehaviour
         NetworkVariableWritePermission.Owner
     );
 
+    public NetworkVariable<bool> allLivingSafe = new NetworkVariable<bool>(
+        true,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
+
     public Wiper wiper;
 
     [Header("Music")]
@@ -373,7 +379,10 @@ public class GameplayManager : NetworkBehaviour
 
 
 		minInterestReached.Value = goldSum >= levelMinInterest[level.Value];
-	}
+
+        allLivingSafe.Value = characters.Count == exitZoneCharacters.Count;
+
+    }
 
 	public int GetCurrentMinInterest()
 	{

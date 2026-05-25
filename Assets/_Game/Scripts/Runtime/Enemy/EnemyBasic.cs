@@ -878,7 +878,7 @@ protected void UpdateFacingFromMove(Vector2 movementVector)
 
 		SetRandVectorByAngle(angle);
 
-		Debug.Log("RANDOMIZE");
+		//Debug.Log("RANDOMIZE");
     }
 
 	private void RandVectorBounce(Vector2 normal)
