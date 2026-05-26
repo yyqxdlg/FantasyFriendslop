@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8867797020045924299}
   - component: {fileID: 4544854607773558100}
   - component: {fileID: 6502797852101882930}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: arrowPiercing
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,8 +22,8 @@ TagManager:
   - Wall
   - Pickup
   - Trigger
+  - PlayerProjectileFriendly
   - PlayerProjectile
-  - 
   - 
   - WorldspaceUI
   - 
