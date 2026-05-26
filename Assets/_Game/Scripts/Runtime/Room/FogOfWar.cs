@@ -50,8 +50,6 @@ public class FogOfWar : NetworkBehaviour
 
     public void Obscure()
     {
-        Debug.Log("OBSCURING");
-
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
 
         SpriteRenderer[] childRenderers = GetComponentsInChildren<SpriteRenderer>();

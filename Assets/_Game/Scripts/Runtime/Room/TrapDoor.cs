@@ -97,5 +97,10 @@ public class TrapDoor : NetworkBehaviour
         {
             blocker.enabled = !next;
         }
+
+        if (IsServer)
+        {
+            AudioManager.Instance.PlaySound("door", transform.position);
+        }
     }
 }

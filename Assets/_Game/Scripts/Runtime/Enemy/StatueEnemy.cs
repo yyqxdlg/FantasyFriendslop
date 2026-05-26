@@ -229,6 +229,8 @@ public class StatueEnemy : EnemyBasic
 
             PlayAttackVisual();
 
+            PlayAttackSound();
+
             // 显示矩形攻击范围。
             if (telegraph != null)
             {

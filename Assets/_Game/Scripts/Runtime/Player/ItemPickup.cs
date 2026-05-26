@@ -24,6 +24,8 @@ public class ItemPickup : Spawnable
 				{
                     enemy.AddToInventory(prefabName);
 
+					AudioManager.Instance.PlaySound("key pick up", transform.position);
+
                     NetworkDestroy();
                 }
             }

@@ -85,5 +85,10 @@ public class LockedDoor : NetworkBehaviour
         {
             fow.revealed.Value = next;
         }
+
+        if (IsServer)
+        {
+            AudioManager.Instance.PlaySound("door", transform.position);
+        }
     }
 }
