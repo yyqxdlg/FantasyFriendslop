@@ -68230,7 +68230,7 @@ MonoBehaviour:
   openVis: {fileID: 1493090165}
   blocker: {fileID: 2126522869}
   closeDelay: 0.25
-  openAutomatically: 30
+  openAutomatically: 10
 --- !u!114 &883290563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87866,7 +87866,7 @@ MonoBehaviour:
   openVis: {fileID: 924201556}
   blocker: {fileID: 1099521851}
   closeDelay: 0.25
-  openAutomatically: 20
+  openAutomatically: 10
 --- !u!1 &1202345558
 GameObject:
   m_ObjectHideFlags: 0
@@ -158511,7 +158511,7 @@ MonoBehaviour:
   openVis: {fileID: 357658640}
   blocker: {fileID: 1249994875}
   closeDelay: 0.25
-  openAutomatically: 10
+  openAutomatically: 7
 --- !u!114 &2119101459
 MonoBehaviour:
   m_ObjectHideFlags: 0
