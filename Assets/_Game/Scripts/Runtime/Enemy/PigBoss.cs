@@ -98,7 +98,8 @@ public class PigBoss : EnemyBasic
         if (isBossActing) return;
 
         target = NearestLivingTarget();
-
+        if (TryStartPhaseCoinUlt())
+            return;
         if (target == null)
         {
             StopEnemyMovement();
@@ -117,8 +118,7 @@ public class PigBoss : EnemyBasic
         StopEnemyMovement();
         UpdateFacingOnly(dir);
 
-        if (TryStartPhaseCoinUlt())
-            return;
+       
 
         StartCoroutine(BossAttackCycle());
     }
