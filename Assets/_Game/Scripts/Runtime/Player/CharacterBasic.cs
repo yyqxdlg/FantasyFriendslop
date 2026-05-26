@@ -464,7 +464,9 @@ private void PlayHurtFeedback()
 		animator.Play("Die");
 		animator.Update(0f);
 
-		float deathClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        InGameUI.Instance.SetHasKey(false);
+
+        float deathClipLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
 
 		AudioManager.Instance.PlaySound("death", transform.position, 0.5f);
 
