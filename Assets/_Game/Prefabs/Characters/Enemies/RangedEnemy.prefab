@@ -543,7 +543,7 @@ MonoBehaviour:
   dropSpawnableName: Skelton_Drop
   roomId: -1
   maxHealth: 10
-  speed: 4
+  speed: 3
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0

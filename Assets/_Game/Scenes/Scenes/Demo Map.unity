@@ -84033,7 +84033,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spawnableName: Mouse Feral
   controller: {fileID: 0}
-  playerCounts: 01000000010000000100000001000000020000000200000003000000030000000400000004000000
+  playerCounts: 0100000001000000020000000300000004000000
   spawnRange: {x: 12, y: 8}
 --- !u!114 &1091476202
 MonoBehaviour:
