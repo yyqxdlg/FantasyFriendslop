@@ -7,8 +7,6 @@ using System.Collections;
 
 public class CharacterBasic : Spawnable
 {
-	public bool isMe = false;
-
 	public float speed = 5f;
 
 	public float attackCooldown = 1f;
@@ -156,8 +154,6 @@ public virtual void Awake()
 			{
                 AudioManager.Instance.player = gameObject;
             }
-
-            isMe = true;
 
             InGameUI.Instance.SetType(ghostType);
 		}

@@ -118026,7 +118026,7 @@ MonoBehaviour:
   closedVis: {fileID: 223468004}
   openVis: {fileID: 1097008947}
   blocker: {fileID: 1558178339}
-  fow: {fileID: 0}
+  fow: {fileID: 1022670897}
 --- !u!1 &1558178337
 GameObject:
   m_ObjectHideFlags: 0
@@ -121493,7 +121493,7 @@ MonoBehaviour:
   closedVis: {fileID: 1676299414}
   openVis: {fileID: 2094834610}
   blocker: {fileID: 2029713570}
-  fow: {fileID: 1022670897}
+  fow: {fileID: 0}
 --- !u!1 &1631377688
 GameObject:
   m_ObjectHideFlags: 0

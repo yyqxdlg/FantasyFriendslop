@@ -67,7 +67,7 @@ public class CharacterWarrior : CharacterBasic
 	{
 		updateMousePos();
 
-		HitAllInCone(swingBoxSmall, swingDamage, swingKnockback);
+		HitAllInCone(swingBoxSmall, swingDamage, swingKnockback, false);
 
 		PlayAttackSound();
 
@@ -80,7 +80,7 @@ public class CharacterWarrior : CharacterBasic
 		{
 			updateMousePos();
 
-			HitAllInCone(swingBoxLarge, largeSwingDamage, largeSwingKnockback);
+			HitAllInCone(swingBoxLarge, largeSwingDamage, largeSwingKnockback, true);
 
             PlayAttackAnimation();
 
@@ -88,7 +88,7 @@ public class CharacterWarrior : CharacterBasic
         }
 	}
 
-	private void HitAllInCone(ObjectListCollider boxScript, float damage, float knockback)
+	private void HitAllInCone(ObjectListCollider boxScript, float damage, float knockback, bool friendlyFire)
 	{
 		for (int i = 0; i < boxScript.GetNumberOfTargets(); i++)
 		{
@@ -101,7 +101,18 @@ public class CharacterWarrior : CharacterBasic
 				currEnemy.KnockBack(knockBackVector);
 
 				currEnemy.TakeDamage(damage);
-			}
+			} else
+			{
+                if (friendlyFire)
+                {
+                    CharacterBasic ally = boxScript.GetTarget(i).GetComponent<CharacterBasic>();
+
+                    if (ally != null)
+                    {
+						ally.TakeDamage(damage);
+                    }
+                }
+            }
 		}
 	}
 
