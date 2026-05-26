@@ -498,7 +498,7 @@ MonoBehaviour:
   dropLootOnDeath: 1
   dropSpawnableName: Coin
   roomId: -1
-  maxHealth: 1
+  maxHealth: 3
   speed: 4
   health:
     UpdateTraits:

@@ -128,6 +128,8 @@ public class EnemyBasic : Spawnable
 
 	public float attackRange = 1f;
 
+	float targetCheckDelay = 0.5f;
+
 	[Header("Loot")]
 	public int coinsToDrop = 1;
 
@@ -192,7 +194,40 @@ public class EnemyBasic : Spawnable
 		}
 
 		AddSelfToEnemyList();
+
+		UpdateTargetPeriodic();
 	}
+
+	private void UpdateTargetPeriodic()
+	{
+        GameObject targetOut = null;
+
+        float targetOutDistance = float.MaxValue;
+
+        for (int i = 0; i < targetingRange.GetNumberOfTargets(); i++)
+        {
+            GameObject currentTarget = targetingRange.GetTarget(i);
+
+            if (currentTarget.GetComponent<CharacterBasic>().alive.Value)
+            {
+                LayerMask obstacleMask = LayerMask.GetMask("Wall");
+                if (CheckLineOfSight(currentTarget.transform, obstacleMask))
+                {
+                    float currentDistance = DistanceToSelf(currentTarget);
+
+                    if (DistanceToSelf(currentTarget) < targetOutDistance)
+                    {
+                        targetOut = currentTarget;
+                        targetOutDistance = currentDistance;
+                    }
+                }
+            }
+        }
+
+		target = targetOut;
+
+		Invoke("UpdateTargetPeriodic", targetCheckDelay);
+    }
 
 	private void AddSelfToEnemyList()
 	{
@@ -323,14 +358,14 @@ public virtual void Die()
 			DropCoins(coinsToDrop);
 		}
 	}
-private IEnumerator Server_DespawnAfterDeathAnimation()
-{
-	yield return new WaitForSeconds(deathDespawnDelay);
+	private IEnumerator Server_DespawnAfterDeathAnimation()
+	{
+		yield return new WaitForSeconds(deathDespawnDelay);
 
-	DropLootIfNeeded();
+		DropLootIfNeeded();
 
-	DespawnSelf();
-}
+		DespawnSelf();
+	}
 	private void DespawnSelf()
 	{
 		NetworkObject netObj = GetComponent<NetworkObject>();
@@ -368,31 +403,7 @@ private IEnumerator Server_DespawnAfterDeathAnimation()
 
 	public GameObject NearestLivingTarget()
 	{
-		GameObject targetOut = null;
-
-		float targetOutDistance = float.MaxValue;
-
-		for (int i = 0; i < targetingRange.GetNumberOfTargets(); i++)
-		{
-			GameObject currentTarget = targetingRange.GetTarget(i);
-
-			if (currentTarget.GetComponent<CharacterBasic>().alive.Value)
-			{
-				LayerMask obstacleMask = LayerMask.GetMask("Wall");
-				if (CheckLineOfSight(currentTarget.transform, obstacleMask))
-				{
-					float currentDistance = DistanceToSelf(currentTarget);
-
-					if (DistanceToSelf(currentTarget) < targetOutDistance)
-					{
-						targetOut = currentTarget;
-						targetOutDistance = currentDistance;
-					}
-				}
-			}
-		}
-
-		return targetOut;
+		return target;
 	}
 
 	private bool CheckLineOfSight(Transform target, LayerMask layerMask)

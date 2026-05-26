@@ -619,12 +619,16 @@ MonoBehaviour:
   attackCooldown: 3
   attackDamage: 2
   attackRange: 2.5
-  coinsToDrop: 30
+  coinsToDrop: 100
   hasInventory: 1
   inventory:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
+  randomAlertedMovement: 0
+  alerted: 0
+  randMovementVector: {x: 0, y: 0}
+  newRandTimer: 5
   moveThreshold: 0.05
   facingDeadZone: 0.15
   stompHitDelay: 0.25

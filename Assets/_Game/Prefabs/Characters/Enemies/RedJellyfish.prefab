@@ -558,7 +558,7 @@ MonoBehaviour:
   dropSpawnableName: RedJellyfish_Drop
   roomId: -1
   maxHealth: 5
-  speed: 3
+  speed: 4
   health:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
@@ -579,7 +579,7 @@ MonoBehaviour:
   attackCooldown: 1
   attackDamage: 1
   attackRange: 1
-  coinsToDrop: 1
+  coinsToDrop: 2
   hasInventory: 1
   inventory:
     UpdateTraits:

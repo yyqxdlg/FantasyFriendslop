@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Assemblies;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 public class GameplayManager : NetworkBehaviour
 {
@@ -30,16 +31,10 @@ public class GameplayManager : NetworkBehaviour
 		NetworkVariableWritePermission.Owner
 	);
 
-	public int[] levelMinInterest;
+	[SerializeField] private int[] levelMinInterestBase;
 
 	// 改：Transform[] → SpawnPointSet[]，每个关卡有多个出生点
 	public SpawnPointSet[] levelSpawnPoints;
-
-	public NetworkVariable<bool> minInterestReached = new NetworkVariable<bool>(
-		false,
-		NetworkVariableReadPermission.Everyone,
-		NetworkVariableWritePermission.Owner
-	);
 
 	public SpawnPointController[] spawnControllers;
 
@@ -55,7 +50,13 @@ public class GameplayManager : NetworkBehaviour
 		NetworkVariableWritePermission.Owner
 	);
 
-	public NetworkVariable<int> partyGoldSafe = new NetworkVariable<int>(
+    public NetworkVariable<int> currentMinInterest = new NetworkVariable<int>(
+        0,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
+
+    public NetworkVariable<int> partyGoldSafe = new NetworkVariable<int>(
 		0,
 		NetworkVariableReadPermission.Everyone,
 		NetworkVariableWritePermission.Owner
@@ -90,7 +91,33 @@ public class GameplayManager : NetworkBehaviour
 		base.OnNetworkSpawn();
 
 		PlayLevelMusic();
+
+		level.OnValueChanged += UpdateMinInterest;
+
+		Invoke("DelayedUpdateInterest", 0.1f);
 	}
+
+	private void DelayedUpdateInterest()
+	{
+        UpdateMinInterest(0, level.Value);
+    }
+
+	private void UpdateMinInterest(int prev, int next)
+	{
+        int numberOfPlayers = ghosts.Count + characters.Count;
+
+        int minInterest = levelMinInterestBase[next];
+
+        minInterest += levelMinInterestBase[next] * (numberOfPlayers - 1) / 2;
+
+		Debug.Log("WHAT?");
+
+        Debug.Log(numberOfPlayers);
+
+        Debug.Log(minInterest);
+
+		currentMinInterest.Value = minInterest;
+    }
 
 	// 新增辅助方法：根据关卡和玩家索引取出生点
 	private Vector3 GetSpawnPoint(int levelIndex, int playerIndex)
@@ -356,7 +383,6 @@ public class GameplayManager : NetworkBehaviour
 		gameOver.Value = false;
 		levelStarted.Value = false;
 		level.Value = 0;
-		minInterestReached.Value = false;
 		partyGoldSafe.Value = 0;
 
 		for (int i = characters.Count - 1; i >= 0; i--)
@@ -507,19 +533,29 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 
 		exitZoneGold.Value = goldSum;
 
-		minInterestReached.Value = exitZoneGold.Value + partyGoldSafe.Value >= levelMinInterest[level.Value];
-
 		allLivingSafe.Value = characters.Count == exitZoneCharacters.Count;
+
 	}
 
 	public int GetCurrentMinInterest()
 	{
-		return levelMinInterest[level.Value];
+		return currentMinInterest.Value;
+    }
+
+	public bool MinInterestReached()
+	{
+		return (partyGoldSafe.Value + exitZoneGold.Value) >= GetCurrentMinInterest();
 	}
 
 	public void NextLevel()
 	{
 		if (!IsServer) { return; }
+
+		if (level.Value == 2)
+		{
+			WinScreen();
+			return;
+		}
 
 		levelStarted.Value = false;
 
@@ -540,6 +576,13 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 		PlayLevelMusic();
 	}
 
+	public void WinScreen()
+	{
+        level.Value += 1;
+        TeleportPlayersToLevel();
+		PlayLevelMusic();
+	}
+
 	private void PlayLevelMusic()
 	{
 		AudioManager.Instance.PlayBackgroundSong(levelMusicNames[level.Value], 1);
@@ -550,7 +593,7 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 		partyGoldSafe.Value += exitZoneGold.Value;
 		exitZoneGold.Value = 0;
 
-		partyGoldSafe.Value -= levelMinInterest[level.Value];
+		partyGoldSafe.Value -= GetCurrentMinInterest();
 
 		foreach (CharacterBasic character in characters)
 		{

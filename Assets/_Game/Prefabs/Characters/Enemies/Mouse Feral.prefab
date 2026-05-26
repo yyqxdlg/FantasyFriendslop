@@ -246,7 +246,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 10
+  m_Radius: 20
 --- !u!114 &7693928846909319922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
   dropLootOnDeath: 1
   dropSpawnableName: Coin
   roomId: -1
-  maxHealth: 1
+  maxHealth: 3
   speed: 6
   health:
     UpdateTraits:
@@ -518,16 +518,16 @@ MonoBehaviour:
   strafeSpeed: 1.5
   strafeChangeInterval: 2
   attackCooldown: 2
-  attackDamage: 1
+  attackDamage: 2
   attackRange: 1.5
-  coinsToDrop: 1
+  coinsToDrop: 2
   hasInventory: 1
   inventory:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
   randomAlertedMovement: 1
-  alerted: 1
+  alerted: 0
   randMovementVector: {x: 0, y: 0}
   newRandTimer: 3
   moveThreshold: 0.05
