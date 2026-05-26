@@ -349,7 +349,7 @@ public class GameplayManager : NetworkBehaviour
 
 		Debug.Log("Ghosts: " + ghosts.Count);
 
-		if (characters.Count == 0 && levelStarted.Value)
+		if (characters.Count == 0 && ghosts.Count != 0)
 		{
 			GameOver();
 		} else
