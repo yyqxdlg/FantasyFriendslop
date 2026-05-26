@@ -30,10 +30,14 @@ public class EnemyNiceGuy : EnemyBasic
     {
         SpawnerUtil.Instance.NetworkSpawnGameObject("NotNiceGuy", transform.position);
 
+        PlayDeathSound();
+
         NetworkDestroy();
     }
     public override void Attack()
     {
         target.GetComponent<CharacterBasic>().HealAmount(attackDamage);
+
+        PlayAttackSound();
     }
 }

@@ -530,6 +530,8 @@ MonoBehaviour:
   alerted: 0
   randMovementVector: {x: 0, y: 0}
   newRandTimer: 3
+  deathSoundName: rat die
+  attackSoundName: 
   moveThreshold: 0.05
   facingDeadZone: 0.15
   deathParticleName: SlimeDeath

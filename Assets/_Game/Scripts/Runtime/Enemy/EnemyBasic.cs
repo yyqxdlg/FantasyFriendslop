@@ -150,6 +150,10 @@ public class EnemyBasic : Spawnable
 	public Vector2 randMovementVector = Vector2.zero;
 	public float newRandTimer = 5f;
 
+	[Header("Audio")]
+	public string deathSoundName;
+	public string attackSoundName;
+
 	protected virtual void Awake()
 	{
 		healthBar = GetComponentInChildren<Healthbar>();
@@ -178,7 +182,7 @@ public class EnemyBasic : Spawnable
 		if (randomAlertedMovement && alerted)
 		{
 			AlertEnemy();
-        }
+		}
 
 		if (hasSpawnAnimation)
 		{
@@ -200,34 +204,34 @@ public class EnemyBasic : Spawnable
 
 	private void UpdateTargetPeriodic()
 	{
-        GameObject targetOut = null;
+		GameObject targetOut = null;
 
-        float targetOutDistance = float.MaxValue;
+		float targetOutDistance = float.MaxValue;
 
-        for (int i = 0; i < targetingRange.GetNumberOfTargets(); i++)
-        {
-            GameObject currentTarget = targetingRange.GetTarget(i);
+		for (int i = 0; i < targetingRange.GetNumberOfTargets(); i++)
+		{
+			GameObject currentTarget = targetingRange.GetTarget(i);
 
-            if (currentTarget.GetComponent<CharacterBasic>().alive.Value)
-            {
-                LayerMask obstacleMask = LayerMask.GetMask("Wall");
-                if (CheckLineOfSight(currentTarget.transform, obstacleMask))
-                {
-                    float currentDistance = DistanceToSelf(currentTarget);
+			if (currentTarget.GetComponent<CharacterBasic>().alive.Value)
+			{
+				LayerMask obstacleMask = LayerMask.GetMask("Wall");
+				if (CheckLineOfSight(currentTarget.transform, obstacleMask))
+				{
+					float currentDistance = DistanceToSelf(currentTarget);
 
-                    if (DistanceToSelf(currentTarget) < targetOutDistance)
-                    {
-                        targetOut = currentTarget;
-                        targetOutDistance = currentDistance;
-                    }
-                }
-            }
-        }
+					if (DistanceToSelf(currentTarget) < targetOutDistance)
+					{
+						targetOut = currentTarget;
+						targetOutDistance = currentDistance;
+					}
+				}
+			}
+		}
 
 		target = targetOut;
 
 		Invoke("UpdateTargetPeriodic", targetCheckDelay);
-    }
+	}
 
 	private void AddSelfToEnemyList()
 	{
@@ -323,35 +327,46 @@ public class EnemyBasic : Spawnable
 	}
 	// add more when ebemy die
 
-public virtual void Die()
-{
-	if (!IsServer) return;
-	if (hasDied) return;
+	public virtual void Die()
+		{
+		if (!IsServer) return;
+		if (hasDied) return;
 
-	hasDied = true;
-	canAct = false;
+		PlayDeathSound();
 
-	if (rb != null)
-	{
-		rb.linearVelocity = Vector2.zero;
+		hasDied = true;
+		canAct = false;
+
+		if (rb != null)
+		{
+			rb.linearVelocity = Vector2.zero;
+		}
+
+		isMoving.Value = false;
+
+		OnEnemyDiedInRoom?.Invoke(roomId, transform.position);
+
+		if (hasDeathAnimation)
+		{
+			isDeadForAnimation.Value = true;
+			StartCoroutine(Server_DespawnAfterDeathAnimation());
+		}
+		else
+		{
+			DropLootIfNeeded();
+			DespawnSelf();
+		}
 	}
 
-	isMoving.Value = false;
+    public void PlayDeathSound()
+    {
+        if (deathSoundName != null && deathSoundName != "")
+        {
+            AudioManager.Instance.PlaySound(deathSoundName, transform.position);
+        }
+    }
 
-	OnEnemyDiedInRoom?.Invoke(roomId, transform.position);
-
-	if (hasDeathAnimation)
-	{
-		isDeadForAnimation.Value = true;
-		StartCoroutine(Server_DespawnAfterDeathAnimation());
-	}
-	else
-	{
-		DropLootIfNeeded();
-		DespawnSelf();
-	}
-}
-	private void DropLootIfNeeded()
+    private void DropLootIfNeeded()
 	{
 		if (dropLootOnDeath)
 		{
@@ -458,10 +473,20 @@ public virtual void Die()
 			animator.SetTrigger("Attack");
 		}
 	}
-public virtual void Attack()
-{
-	target.GetComponent<CharacterBasic>().TakeDamage(attackDamage);
-}
+	public virtual void Attack()
+	{
+		target.GetComponent<CharacterBasic>().TakeDamage(attackDamage);
+
+	
+	}
+
+	public void PlayAttackSound()
+	{
+		if (attackSoundName != null && attackSoundName != "")
+		{
+			AudioManager.Instance.PlaySound(attackSoundName, transform.position);
+		}
+	}
 
 protected void SetCanAct(bool value)
 {
@@ -824,8 +849,8 @@ protected void UpdateFacingFromMove(Vector2 movementVector)
 
 			if(randomAlertedMovement && alerted)
 			{
-                randMovementVector = dir;
-            }
+				randMovementVector = dir;
+			}
 
 			Vector2 strafeDir = new Vector2(-dir.y, dir.x) * strafeDirection;
 
@@ -848,29 +873,29 @@ protected void UpdateFacingFromMove(Vector2 movementVector)
 			{
 				ApplyMoveVector(randMovementVector * speed);
 
-            } else
+			} else
 			{
 				ApplyMoveVector(Vector2.zero);
 			}
 		}
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
 		/*
 		Debug.Log("Collision?");
 
 		Debug.Log(randomAlertedMovement);
-        Debug.Log(alerted);
-        Debug.Log(collision.gameObject.layer == 11);
-        Debug.Log(target == null);
+		Debug.Log(alerted);
+		Debug.Log(collision.gameObject.layer == 11);
+		Debug.Log(target == null);
 		*/
 
-        if (randomAlertedMovement && alerted && collision.gameObject.layer == 11 && target == null)
+		if (randomAlertedMovement && alerted && collision.gameObject.layer == 11 && target == null)
 		{
 			RandVectorBounce(collision.contacts[0].normal);
 		}
-    }
+	}
 
 
 	private void RandomizeRandPeriodic()
@@ -881,16 +906,16 @@ protected void UpdateFacingFromMove(Vector2 movementVector)
 		{
 			Invoke("RandomizeRandPeriodic", UnityEngine.Random.Range(0,newRandTimer));
 		}
-    }
+	}
 
 	private void RandomizeRandVector()
 	{
-        float angle = UnityEngine.Random.Range(0, 360);
+		float angle = UnityEngine.Random.Range(0, 360);
 
 		SetRandVectorByAngle(angle);
 
 		//Debug.Log("RANDOMIZE");
-    }
+	}
 
 	private void RandVectorBounce(Vector2 normal)
 	{
@@ -900,13 +925,13 @@ protected void UpdateFacingFromMove(Vector2 movementVector)
 
 		float newAngle = normalAngle - oldAngle;
 
-        SetRandVectorByAngle(newAngle);
-    }
+		SetRandVectorByAngle(newAngle);
+	}
 
 	private void SetRandVectorByAngle(float angle)
 	{
 		randMovementVector = new Vector2((Mathf.Cos(Mathf.Deg2Rad * angle)), Mathf.Sin(Mathf.Deg2Rad * angle));
-    }
+	}
 
 	private void AlertEnemy()
 	{
@@ -915,8 +940,8 @@ protected void UpdateFacingFromMove(Vector2 movementVector)
 		RandomizeRandPeriodic();
 	}
 
-    //applies the desired movement vector to motion, but takes into account knockback
-    protected void ApplyMoveVector(Vector2 movementVector)
+	//applies the desired movement vector to motion, but takes into account knockback
+	protected void ApplyMoveVector(Vector2 movementVector)
 	{
 		rb.linearVelocity = movementVector + knockbackVector;
 		UpdateFacingFromMove(movementVector);

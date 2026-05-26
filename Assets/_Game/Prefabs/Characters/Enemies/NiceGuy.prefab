@@ -598,8 +598,8 @@ MonoBehaviour:
   standingRange: 0
   strafeSpeed: 1.5
   strafeChangeInterval: 2
-  attackCooldown: 1
-  attackDamage: 1
+  attackCooldown: 3
+  attackDamage: 3
   attackRange: 1
   coinsToDrop: 1
   hasInventory: 1
@@ -611,6 +611,8 @@ MonoBehaviour:
   alerted: 0
   randMovementVector: {x: 0, y: 0}
   newRandTimer: 5
+  deathSoundName: not so nice guy spawn
+  attackSoundName: nice guy heal
   moveThreshold: 0.05
   facingDeadZone: 0.15
 --- !u!1 &4069787323468268524

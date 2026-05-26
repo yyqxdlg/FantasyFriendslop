@@ -531,6 +531,8 @@ MonoBehaviour:
   alerted: 0
   randMovementVector: {x: 0, y: 0}
   newRandTimer: 5
+  deathSoundName: slime die
+  attackSoundName: 
   moveThreshold: 0.05
   facingDeadZone: 0.15
   deathParticleName: SlimeDeath

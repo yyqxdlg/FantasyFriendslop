@@ -611,6 +611,8 @@ MonoBehaviour:
   alerted: 0
   randMovementVector: {x: 0, y: 0}
   newRandTimer: 5
+  deathSoundName: not so nice guy dying
+  attackSoundName: 
   moveThreshold: 0.05
   facingDeadZone: 0.15
 --- !u!1 &4069787323468268524
