@@ -67,4 +67,13 @@ public class Healthbar : MonoBehaviour
         barGroup.interactable = false;
         barGroup.blocksRaycasts = false;
     }
+
+    public void SetVisualOwn()
+    {
+        Transform fillObject = transform.Find("Fill Area/Fill");
+
+        Image fill = fillObject.gameObject.GetComponent<Image>();
+
+        fill.color = Color.green;
+    }
 }

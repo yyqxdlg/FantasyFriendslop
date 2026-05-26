@@ -141,7 +141,8 @@ public virtual void Awake()
 			// 玩家自己的世界血条不一定存在，所以必须判空
 			if (healthBar != null)
 			{
-				healthBar.Hide();
+				//healthBar.Hide();
+				healthBar.SetVisualOwn();
 			}
 
 			coinCount.Value = 0;
@@ -354,13 +355,12 @@ private void BecomeAlive()
 
 	private void UpdateHealth()
 	{
-		if (IsOwner)
+        healthBar.UpdateHealthBar(health.Value, maxHealth);
+
+        if (IsOwner)
 		{
 			InGameUI.Instance.SetHealthMax(maxHealth);
 			InGameUI.Instance.SetHealthValue(health.Value);
-		} else
-		{
-			healthBar.UpdateHealthBar(health.Value, maxHealth);
 		}
 
 	}
