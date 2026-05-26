@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 2281014092804740205}
   - component: {fileID: -5725688224788454672}
   - component: {fileID: -3798260423952276214}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: CharacterArcher
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -522,7 +522,6 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 18446744073709551615
-  isMe: 0
   speed: 7
   attackCooldown: 0.35
   maxHealth: 15

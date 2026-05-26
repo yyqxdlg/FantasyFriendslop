@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 2281014092804740205}
   - component: {fileID: -5725688224788454672}
   - component: {fileID: -3798260423952276214}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: CharacterMage
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1887746272
+  GlobalObjectIdHash: 2325388411
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
