@@ -593,7 +593,7 @@ TextureImporter:
         width: 73
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -602,6 +602,28 @@ TextureImporter:
       bones: []
       spriteID: 2833ef877e40ad84098236e726d9ac40
       internalID: -1573202089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Style Guide_20
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1912
+        width: 77
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176207f5368394d43ac2581a13d31ead
+      internalID: -970694768
       vertices: []
       indices: 
       edges: []
@@ -633,6 +655,7 @@ TextureImporter:
       Style Guide_18: 2913974637279028217
       Style Guide_19: -1573202089
       Style Guide_2: -5329009514446279778
+      Style Guide_20: -970694768
       Style Guide_3: -5110926331715861760
       Style Guide_4: -3525226447777637242
       Style Guide_5: 4590586759347249248
