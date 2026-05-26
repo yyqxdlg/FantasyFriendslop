@@ -14,13 +14,13 @@ public class EndLevelButton : NetworkBehaviour
 	{
 		base.OnNetworkSpawn();
 
-		GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStateChanged;
+        GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStateChanged;
 
         GameplayManager.Instance.currentMinInterest.OnValueChanged += OnInterestDisplayChanged;
 
         GameplayManager.Instance.exitZoneGold.OnValueChanged += OnInterestDisplayChanged;
 
-		Invoke("DelayedInitialUpdate", 0.1f);
+		Invoke("DelayedInitialUpdate", 0.5f);
 	}
 
 	public void DelayedInitialUpdate()
@@ -87,8 +87,6 @@ public class EndLevelButton : NetworkBehaviour
 
 	private void OnLevelStateChanged(bool prev, bool next)
 	{
-		Debug.Log("LEVEL STATE: " + next);
-
 		if (next)
 		{
 			Show();
@@ -121,14 +119,14 @@ public class EndLevelButton : NetworkBehaviour
 	{
 		if (GameplayManager.Instance.MinInterestReached())
 		{
-			interestText.text = "Minimum interest " + GameplayManager.Instance.GetCurrentMinInterest() + " reached";
+			interestText.text = "Minimum interest " + GameplayManager.Instance.currentMinInterest.Value + " reached";
 
 			buttonText.text = "Next Quest?";
 		}
 		else
 		{
 
-			interestText.text = "Minimum interest " + GameplayManager.Instance.GetCurrentMinInterest() + " NOT reached";
+			interestText.text = "Minimum interest " + GameplayManager.Instance.currentMinInterest.Value + " NOT reached";
 
 			buttonText.text = "Face the Guild?";
 		}

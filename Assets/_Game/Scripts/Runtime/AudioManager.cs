@@ -26,8 +26,15 @@ public class AudioManager : NetworkBehaviour
 
 		Instance = this;
 
-		backgroundSongObject = null;
+		
 	}
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        backgroundSongObject = Instantiate(soundObject, new Vector3(0, 0, 0), Quaternion.identity);
+    }
 
 	// note: if you want to play a sound with uniform sound across the map, make range float.MaxValue
 	public void PlayRandomSound(string[] possibleClipNames, Vector2 playPos, float volume, float range)
@@ -72,12 +79,32 @@ public class AudioManager : NetworkBehaviour
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void PlayBackgroundSongRpc(string clipName, float volume)
+    {
+        Debug.Log("TEST 1");
+        Debug.Log(backgroundSongObject);
+
+        Debug.Log("TEST");
+
+        AudioClip clip = GetSoundClip(clipName);
+
+        float playVolume = volume * masterVolume;
+
+        backgroundSongObject.GetComponent<SoundObject>().PlaySound(clip, playVolume, true);
+    }
+
+    /*
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void PlayBackgroundSongRpc(string clipName, float volume)
 	{
+		Debug.Log("TEST");
+		Debug.Log(backgroundSongObject);
+
         if (backgroundSongObject != null)
         {
             if (backgroundSongObject.clip.name == clipName) return;
 
             Destroy(backgroundSongObject);
+			backgroundSongObject = null;
         }
 
         AudioSource source = Instantiate(soundObject, new Vector3(0, 0, 0), Quaternion.identity);
@@ -90,6 +117,7 @@ public class AudioManager : NetworkBehaviour
 
 		backgroundSongObject = source;
     }
+	*/
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
 	public void PlaySoundEveryoneRpc(string clipName, Vector2 playPos, float volume, float range)

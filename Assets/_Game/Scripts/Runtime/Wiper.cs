@@ -32,7 +32,12 @@ public class Wiper : MonoBehaviour
     {
         if (!col.isTrigger)
         {
-            col.gameObject.GetComponent<Spawnable>().NetworkDestroy();
+            Spawnable spawnable = GetComponent<Spawnable>();
+
+            if(spawnable != null)
+            {
+                spawnable.NetworkDestroy();
+            }
         }
     }
 }

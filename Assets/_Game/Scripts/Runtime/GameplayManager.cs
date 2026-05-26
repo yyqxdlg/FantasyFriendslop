@@ -7,6 +7,7 @@ using UnityEngine.Assemblies;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
+using Unity.VisualScripting;
 
 public class GameplayManager : NetworkBehaviour
 {
@@ -90,7 +91,7 @@ public class GameplayManager : NetworkBehaviour
 	{
 		base.OnNetworkSpawn();
 
-		PlayLevelMusic();
+		PlayLevelMusicDelayed();
 
 		level.OnValueChanged += UpdateMinInterest;
 
@@ -144,8 +145,6 @@ public class GameplayManager : NetworkBehaviour
 			objectNetworkId,
 			out NetworkObject netObj
 		);
-
-		Debug.Log("TRYING TO ADD PLAYER");
 
 		if (found)
 		{
@@ -412,7 +411,7 @@ public class GameplayManager : NetworkBehaviour
 		}
 		enemies.Clear();
 
-		PlayLevelMusic();
+		PlayLevelMusicDelayed();
 
 		StartCoroutine(WipeAllThenSpawn());
 	}
@@ -573,17 +572,22 @@ private void MoveCameraToSpawnClientRpc(Vector3 position)
 
 		RespawnAndRestorePlayers();
 
-		PlayLevelMusic();
+		PlayLevelMusicDelayed();
 	}
 
 	public void WinScreen()
 	{
         level.Value += 1;
         TeleportPlayersToLevel();
-		PlayLevelMusic();
+		PlayLevelMusicDelayed();
 	}
 
-	private void PlayLevelMusic()
+    private void PlayLevelMusicDelayed()
+    {
+		Invoke("PlayLevelMusic", 0.1f);
+    }
+
+    private void PlayLevelMusic()
 	{
 		AudioManager.Instance.PlayBackgroundSong(levelMusicNames[level.Value], 1);
 	}
