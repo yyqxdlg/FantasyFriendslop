@@ -685,11 +685,11 @@ PlayerSettings:
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
   enableDirectStorage: 0
-  cloudProjectId: dca4e909-1ae2-444d-8f83-5982a9b7f32f
+  cloudProjectId: f7c36fc9-335d-4521-a165-3c966ebe7562
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Fantasy Friendslop
-  organizationId: sadisticsquirrel
+  projectName: ComputerGameDesign
+  organizationId: yuz2mnhum72p
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

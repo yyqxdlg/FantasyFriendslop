@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -18,8 +19,57 @@ public class RelayManager : MonoBehaviour
 
     private string pendingJoinCode = "";
     private bool waitingForClientConnect = false;
+    private bool isBusy = false;
+    private bool callbacksRegistered = false;
 
     private async void Start()
+    {
+        RegisterNetworkCallbacks();
+        await EnsureServicesReady();
+    }
+
+    private void OnEnable()
+    {
+        RegisterNetworkCallbacks();
+    }
+
+    private void OnDisable()
+    {
+        UnregisterNetworkCallbacks();
+    }
+
+    private void OnDestroy()
+    {
+        UnregisterNetworkCallbacks();
+    }
+
+    private void RegisterNetworkCallbacks()
+    {
+        if (callbacksRegistered) return;
+        if (NetworkManager.Singleton == null) return;
+
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
+        NetworkManager.Singleton.OnTransportFailure += OnTransportFailure;
+
+        callbacksRegistered = true;
+    }
+
+    private void UnregisterNetworkCallbacks()
+    {
+        if (!callbacksRegistered) return;
+
+        if (NetworkManager.Singleton != null)
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+            NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnected;
+            NetworkManager.Singleton.OnTransportFailure -= OnTransportFailure;
+        }
+
+        callbacksRegistered = false;
+    }
+
+    private async Task<bool> EnsureServicesReady()
     {
         try
         {
@@ -28,7 +78,7 @@ public class RelayManager : MonoBehaviour
                 var options = new InitializationOptions();
 
 #if UNITY_EDITOR
-                options.SetProfile("Editor_" + UnityEngine.Random.Range(0, 99999));
+                options.SetProfile("Editor_" + Random.Range(0, 99999));
 #else
                 options.SetProfile("Build_" + System.DateTime.Now.Ticks);
 #endif
@@ -37,25 +87,169 @@ public class RelayManager : MonoBehaviour
             }
 
             if (!AuthenticationService.Instance.IsSignedIn)
+            {
                 await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            }
+
+            return true;
         }
         catch (System.Exception e)
         {
             SystemMessage.ShowError("Services init failed.");
             Debug.LogError(e);
+            return false;
         }
     }
 
-    private void OnEnable()
+    public async void CreateRelay()
     {
-        if (NetworkManager.Singleton != null)
-            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        if (isBusy)
+        {
+            SystemMessage.Show("Please wait...");
+            return;
+        }
+
+        if (NetworkManager.Singleton == null)
+        {
+            SystemMessage.ShowError("NetworkManager is missing.");
+            return;
+        }
+
+        if (NetworkManager.Singleton.IsListening)
+        {
+            SystemMessage.ShowError("Already connected. Disconnect first.");
+            return;
+        }
+
+        isBusy = true;
+
+        try
+        {
+            bool servicesReady = await EnsureServicesReady();
+            if (!servicesReady) return;
+
+            SystemMessage.Show("Creating room...");
+
+            int maxConnections = Mathf.Max(1, LocalGameSettings.MaxPeople - 1);
+
+            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
+            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+
+            string connectionType = GetRelayConnectionType();
+            Debug.Log("[RelayManager] Relay connection type = " + connectionType);
+
+            RelayServerData relayServerData = allocation.ToRelayServerData(connectionType);
+            Debug.Log("[RelayManager] Relay endpoint = " + relayServerData.Endpoint);
+
+            ApplyRelayServerData(relayServerData);
+
+            bool started = NetworkManager.Singleton.StartHost();
+
+            if (!started)
+            {
+                SystemMessage.ShowError("Host failed to start.");
+                SafeShutdown();
+                return;
+            }
+
+            pendingJoinCode = "";
+            waitingForClientConnect = false;
+
+            if (lobbyPanelUI != null)
+                lobbyPanelUI.SetRoomCode(joinCode);
+
+            if (menuFlowUI != null)
+                menuFlowUI.ShowLobby();
+
+            SystemMessage.ShowSuccess("Room created! Code: " + joinCode);
+        }
+        catch (System.Exception e)
+        {
+            SystemMessage.ShowError("Failed to create room.");
+            Debug.LogError(e);
+            SafeShutdown();
+        }
+        finally
+        {
+            isBusy = false;
+        }
     }
 
-    private void OnDisable()
+    public async void JoinRelayFromInput()
     {
-        if (NetworkManager.Singleton != null)
-            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+        if (isBusy)
+        {
+            SystemMessage.Show("Please wait...");
+            return;
+        }
+
+        if (NetworkManager.Singleton == null)
+        {
+            SystemMessage.ShowError("NetworkManager is missing.");
+            return;
+        }
+
+        if (NetworkManager.Singleton.IsListening)
+        {
+            SystemMessage.ShowError("Already connected. Disconnect first.");
+            return;
+        }
+
+        string joinCode = joinInput == null ? "" : joinInput.text.Trim().ToUpper();
+
+        if (string.IsNullOrWhiteSpace(joinCode))
+        {
+            SystemMessage.ShowError("Code cannot be empty.");
+            return;
+        }
+
+        isBusy = true;
+
+        try
+        {
+            bool servicesReady = await EnsureServicesReady();
+            if (!servicesReady) return;
+
+            SystemMessage.Show("Joining room...");
+
+            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+
+            string connectionType = GetRelayConnectionType();
+            Debug.Log("[RelayManager] Relay connection type = " + connectionType);
+
+            RelayServerData relayServerData = joinAllocation.ToRelayServerData(connectionType);
+            Debug.Log("[RelayManager] Relay endpoint = " + relayServerData.Endpoint);
+
+            ApplyRelayServerData(relayServerData);
+
+            pendingJoinCode = joinCode;
+            waitingForClientConnect = true;
+
+            bool started = NetworkManager.Singleton.StartClient();
+
+            if (!started)
+            {
+                waitingForClientConnect = false;
+                pendingJoinCode = "";
+                SystemMessage.ShowError("Failed to connect.");
+                SafeShutdown();
+                return;
+            }
+
+            SystemMessage.Show("Connecting...");
+        }
+        catch (System.Exception e)
+        {
+            waitingForClientConnect = false;
+            pendingJoinCode = "";
+            SystemMessage.ShowError("Invalid room code or connection failed.");
+            Debug.LogError(e);
+            SafeShutdown();
+        }
+        finally
+        {
+            isBusy = false;
+        }
     }
 
     private void OnClientConnected(ulong clientId)
@@ -75,97 +269,37 @@ public class RelayManager : MonoBehaviour
         SystemMessage.ShowSuccess("Joined successfully!");
     }
 
-    public async void CreateRelay()
+    private void OnClientDisconnected(ulong clientId)
     {
-        if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
+        if (NetworkManager.Singleton == null) return;
+        if (clientId != NetworkManager.Singleton.LocalClientId) return;
+
+        if (waitingForClientConnect)
         {
-            SystemMessage.ShowError("Already connected. Disconnect first.");
-            return;
-        }
-
-        try
-        {
-            SystemMessage.Show("Creating room...");
-
-            int maxConnections = Mathf.Max(1, LocalGameSettings.MaxPeople - 1);
-
-            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
-            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-
-            string connectionType = GetRelayConnectionType();
-            Debug.Log("Relay connection type = " + connectionType);
-
-            RelayServerData relayServerData = allocation.ToRelayServerData(connectionType);
-            ApplyRelayServerData(relayServerData);
-
-            bool started = NetworkManager.Singleton.StartHost();
-            if (!started)
-            {
-                SystemMessage.ShowError("Host failed to start.");
-                return;
-            }
-
-            if (lobbyPanelUI != null)
-                lobbyPanelUI.SetRoomCode(joinCode);
+            waitingForClientConnect = false;
+            pendingJoinCode = "";
 
             if (menuFlowUI != null)
-                menuFlowUI.ShowLobby();
+                menuFlowUI.ShowMultiplayer();
 
-            SystemMessage.ShowSuccess("Room created! Code: " + joinCode);
-        }
-        catch (System.Exception e)
-        {
-            SystemMessage.ShowError("Failed to create room.");
-            Debug.LogError(e);
+            SystemMessage.ShowError("Connection failed or was disconnected.");
         }
     }
 
-    public async void JoinRelayFromInput()
+    private void OnTransportFailure()
     {
-        string joinCode = joinInput == null ? "" : joinInput.text.Trim().ToUpper();
+        Debug.LogError("[RelayManager] Transport failure. Relay allocation must be recreated.");
 
-        if (string.IsNullOrWhiteSpace(joinCode))
-        {
-            SystemMessage.ShowError("Code cannot be empty.");
-            return;
-        }
+        waitingForClientConnect = false;
+        pendingJoinCode = "";
+        isBusy = false;
 
-        if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
-        {
-            SystemMessage.ShowError("Already connected. Disconnect first.");
-            return;
-        }
+        SafeShutdown();
 
-        try
-        {
-            SystemMessage.Show("Joining room...");
+        if (menuFlowUI != null)
+            menuFlowUI.ShowMultiplayer();
 
-            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
-
-            string connectionType = GetRelayConnectionType();
-            Debug.Log("Relay connection type = " + connectionType);
-
-            RelayServerData relayServerData = joinAllocation.ToRelayServerData(connectionType);
-            ApplyRelayServerData(relayServerData);
-
-            bool started = NetworkManager.Singleton.StartClient();
-            if (!started)
-            {
-                SystemMessage.ShowError("Failed to connect.");
-                return;
-            }
-
-            pendingJoinCode = joinCode;
-            waitingForClientConnect = true;
-
-            SystemMessage.Show("Connecting...");
-        }
-        catch (System.Exception e)
-        {
-            waitingForClientConnect = false;
-            SystemMessage.ShowError("Invalid room code.");
-            Debug.LogError(e);
-        }
+        SystemMessage.ShowError("Connection to Relay failed. Please create or join a new room.");
     }
 
     public void PasteJoinCode()
@@ -191,19 +325,11 @@ public class RelayManager : MonoBehaviour
     {
         waitingForClientConnect = false;
         pendingJoinCode = "";
+        isBusy = false;
 
-        if (NetworkManager.Singleton != null &&
-            (NetworkManager.Singleton.IsHost ||
-             NetworkManager.Singleton.IsClient ||
-             NetworkManager.Singleton.IsServer))
-        {
-            NetworkManager.Singleton.Shutdown();
-            yield return new WaitForSeconds(0.5f);
-        }
-        else
-        {
-            yield return null;
-        }
+        SafeShutdown();
+
+        yield return new WaitForSeconds(0.5f);
 
         if (menuFlowUI != null)
             menuFlowUI.ShowMultiplayer();
@@ -211,22 +337,42 @@ public class RelayManager : MonoBehaviour
         SystemMessage.Show("Disconnected.");
     }
 
+    private void SafeShutdown()
+    {
+        if (NetworkManager.Singleton == null)
+            return;
+
+        if (NetworkManager.Singleton.IsListening ||
+            NetworkManager.Singleton.IsHost ||
+            NetworkManager.Singleton.IsClient ||
+            NetworkManager.Singleton.IsServer)
+        {
+            NetworkManager.Singleton.Shutdown();
+        }
+    }
+
     private string GetRelayConnectionType()
     {
-        #if UNITY_WEBGL
-                return "wss";
-        #else
-                return "dtls";
-        #endif
-            }
+#if UNITY_WEBGL
+        return "wss";
+#else
+        return "dtls";
+#endif
+    }
 
     private void ApplyRelayServerData(RelayServerData relayServerData)
     {
+        if (NetworkManager.Singleton == null)
+        {
+            Debug.LogError("[RelayManager] NetworkManager is missing.");
+            return;
+        }
+
         UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
 
         if (transport == null)
         {
-            Debug.LogError("UnityTransport is missing on NetworkManager.");
+            Debug.LogError("[RelayManager] UnityTransport is missing on NetworkManager.");
             return;
         }
 
