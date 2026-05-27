@@ -16,22 +16,22 @@ public class RelayManager : MonoBehaviour
     [SerializeField] private MenuFlowUI menuFlowUI;
     [SerializeField] private LobbyPanelUI lobbyPanelUI;
 
+    private string pendingJoinCode = "";
+    private bool waitingForClientConnect = false;
+
     private async void Start()
     {
         try
         {
             if (UnityServices.State == ServicesInitializationState.Uninitialized)
             {
-                // 用不同 Profile 区分同一台电脑的多个实例
                 var options = new InitializationOptions();
 
-                #if UNITY_EDITOR
-                // Editor 里用 ParrelSync 或者随机后缀区分
+#if UNITY_EDITOR
                 options.SetProfile("Editor_" + UnityEngine.Random.Range(0, 99999));
-                #else
-                // Build 版本用时间戳区分
+#else
                 options.SetProfile("Build_" + System.DateTime.Now.Ticks);
-                #endif
+#endif
 
                 await UnityServices.InitializeAsync(options);
             }
@@ -42,8 +42,37 @@ public class RelayManager : MonoBehaviour
         catch (System.Exception e)
         {
             SystemMessage.ShowError("Services init failed.");
-            Debug.LogError(e.Message);
+            Debug.LogError(e);
         }
+    }
+
+    private void OnEnable()
+    {
+        if (NetworkManager.Singleton != null)
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+    }
+
+    private void OnDisable()
+    {
+        if (NetworkManager.Singleton != null)
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+    }
+
+    private void OnClientConnected(ulong clientId)
+    {
+        if (!waitingForClientConnect) return;
+        if (NetworkManager.Singleton == null) return;
+        if (clientId != NetworkManager.Singleton.LocalClientId) return;
+
+        waitingForClientConnect = false;
+
+        if (lobbyPanelUI != null)
+            lobbyPanelUI.SetRoomCode(pendingJoinCode);
+
+        if (menuFlowUI != null)
+            menuFlowUI.ShowLobby();
+
+        SystemMessage.ShowSuccess("Joined successfully!");
     }
 
     public async void CreateRelay()
@@ -59,11 +88,15 @@ public class RelayManager : MonoBehaviour
             SystemMessage.Show("Creating room...");
 
             int maxConnections = Mathf.Max(1, LocalGameSettings.MaxPeople - 1);
+
             Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
             string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
-            RelayServerData relayServerData = allocation.ToRelayServerData("wss");
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+            string connectionType = GetRelayConnectionType();
+            Debug.Log("Relay connection type = " + connectionType);
+
+            RelayServerData relayServerData = allocation.ToRelayServerData(connectionType);
+            ApplyRelayServerData(relayServerData);
 
             bool started = NetworkManager.Singleton.StartHost();
             if (!started)
@@ -72,14 +105,18 @@ public class RelayManager : MonoBehaviour
                 return;
             }
 
-            if (lobbyPanelUI != null) lobbyPanelUI.SetRoomCode(joinCode);
-            if (menuFlowUI != null) menuFlowUI.ShowLobby();
+            if (lobbyPanelUI != null)
+                lobbyPanelUI.SetRoomCode(joinCode);
+
+            if (menuFlowUI != null)
+                menuFlowUI.ShowLobby();
+
             SystemMessage.ShowSuccess("Room created! Code: " + joinCode);
         }
         catch (System.Exception e)
         {
             SystemMessage.ShowError("Failed to create room.");
-            Debug.LogError(e.Message);
+            Debug.LogError(e);
         }
     }
 
@@ -104,8 +141,12 @@ public class RelayManager : MonoBehaviour
             SystemMessage.Show("Joining room...");
 
             JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
-            RelayServerData relayServerData = joinAllocation.ToRelayServerData("wss");
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
+            string connectionType = GetRelayConnectionType();
+            Debug.Log("Relay connection type = " + connectionType);
+
+            RelayServerData relayServerData = joinAllocation.ToRelayServerData(connectionType);
+            ApplyRelayServerData(relayServerData);
 
             bool started = NetworkManager.Singleton.StartClient();
             if (!started)
@@ -114,38 +155,31 @@ public class RelayManager : MonoBehaviour
                 return;
             }
 
+            pendingJoinCode = joinCode;
+            waitingForClientConnect = true;
+
             SystemMessage.Show("Connecting...");
-            float timeout = 10f;
-            float elapsed = 0f;
-
-            while (!NetworkManager.Singleton.IsConnectedClient && elapsed < timeout)
-            {
-                await System.Threading.Tasks.Task.Delay(200);
-                elapsed += 0.2f;
-            }
-
-            if (!NetworkManager.Singleton.IsConnectedClient)
-            {
-                NetworkManager.Singleton.Shutdown();
-                SystemMessage.ShowError("Connection timed out.");
-                return;
-            }
-
-            if (lobbyPanelUI != null) lobbyPanelUI.SetRoomCode(joinCode);
-            if (menuFlowUI != null) menuFlowUI.ShowLobby();
-            SystemMessage.ShowSuccess("Joined successfully!");
         }
         catch (System.Exception e)
         {
+            waitingForClientConnect = false;
             SystemMessage.ShowError("Invalid room code.");
-            Debug.LogError(e.Message);
+            Debug.LogError(e);
         }
     }
 
     public void PasteJoinCode()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        if (joinInput != null)
+        {
+            joinInput.ActivateInputField();
+            SystemMessage.Show("Please paste manually with Ctrl+V / Cmd+V.");
+        }
+#else
         if (joinInput != null)
             joinInput.text = GUIUtility.systemCopyBuffer.Trim().ToUpper();
+#endif
     }
 
     public void Disconnect()
@@ -155,6 +189,9 @@ public class RelayManager : MonoBehaviour
 
     private IEnumerator DisconnectCoroutine()
     {
+        waitingForClientConnect = false;
+        pendingJoinCode = "";
+
         if (NetworkManager.Singleton != null &&
             (NetworkManager.Singleton.IsHost ||
              NetworkManager.Singleton.IsClient ||
@@ -168,7 +205,31 @@ public class RelayManager : MonoBehaviour
             yield return null;
         }
 
-        if (menuFlowUI != null) menuFlowUI.ShowMultiplayer();
+        if (menuFlowUI != null)
+            menuFlowUI.ShowMultiplayer();
+
         SystemMessage.Show("Disconnected.");
+    }
+
+    private string GetRelayConnectionType()
+    {
+        #if UNITY_WEBGL
+                return "wss";
+        #else
+                return "dtls";
+        #endif
+            }
+
+    private void ApplyRelayServerData(RelayServerData relayServerData)
+    {
+        UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
+
+        if (transport == null)
+        {
+            Debug.LogError("UnityTransport is missing on NetworkManager.");
+            return;
+        }
+
+        transport.SetRelayServerData(relayServerData);
     }
 }

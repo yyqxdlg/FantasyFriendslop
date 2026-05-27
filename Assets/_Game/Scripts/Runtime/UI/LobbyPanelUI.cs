@@ -2,13 +2,16 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class LobbyPanelUI : MonoBehaviour
 {
     [Header("Room code")]
     [SerializeField] private TMP_Text roomCodeText;
+
     [Header("Local player")]
     [SerializeField] private TMP_Text localPlayerNameText;
+
     [Header("Player list")]
     [SerializeField] private Transform playerListContainer;
     [SerializeField] private GameObject playerRowPrefab;
@@ -22,50 +25,66 @@ public class LobbyPanelUI : MonoBehaviour
     [SerializeField] private Button startGameButton;
 
     private string currentRoomCode = "";
+    private bool refreshQueued = false;
+    private bool subscribed = false;
 
     private void OnEnable()
     {
         Subscribe();
+
         if (localPlayerNameText != null)
             localPlayerNameText.text = LocalGameSettings.PlayerName;
+
         if (LobbyNetworkState.Instance != null && LobbyNetworkState.Instance.IsSpawned)
-            Refresh();
+            QueueRefresh();
     }
 
     private void OnDisable()
     {
         Unsubscribe();
     }
-    private void OnDestroy() // ← 新加
+
+    private void OnDestroy()
     {
         Unsubscribe();
     }
+
     private void Update()
     {
-        if (startGameButton == null || NetworkManager.Singleton == null) return;
+        if (startGameButton == null || NetworkManager.Singleton == null)
+            return;
 
         bool isHost = NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsServer;
+
         startGameButton.gameObject.SetActive(isHost);
-        startGameButton.interactable = isHost
-            && LobbyNetworkState.Instance != null
-            && LobbyNetworkState.Instance.AllRegisteredPlayersSelectedLocal();
+
+        startGameButton.interactable =
+            isHost &&
+            LobbyNetworkState.Instance != null &&
+            LobbyNetworkState.Instance.AllRegisteredPlayersSelectedLocal();
     }
 
     public void SetRoomCode(string code)
     {
         currentRoomCode = code;
-        if (roomCodeText != null) roomCodeText.text = code;
+
+        if (roomCodeText != null)
+            roomCodeText.text = code;
     }
 
     public void CopyRoomCode()
     {
+        if (string.IsNullOrWhiteSpace(currentRoomCode) && roomCodeText != null)
+            currentRoomCode = roomCodeText.text.Trim();
+
         if (string.IsNullOrWhiteSpace(currentRoomCode))
         {
             SetMessage("No room code yet.");
             return;
         }
-        GUIUtility.systemCopyBuffer = currentRoomCode;
-        SetMessage("Room code copied!");
+
+        WebClipboard.Copy(currentRoomCode);
+        SetMessage("Room code copied: " + currentRoomCode);
     }
 
     public void StartGame()
@@ -75,77 +94,152 @@ public class LobbyPanelUI : MonoBehaviour
             SetMessage("Lobby state is missing.");
             return;
         }
+
         LobbyNetworkState.Instance.RequestStartGame();
     }
 
     public void Refresh()
     {
-        if (playerListContainer == null || playerRowPrefab == null) return;
+        Debug.Log("[LobbyPanelUI] Refresh START");
 
-        // 清掉旧的行
+        if (playerListContainer == null)
+        {
+            Debug.LogError("[LobbyPanelUI] playerListContainer is null");
+            return;
+        }
+
+        if (playerRowPrefab == null)
+        {
+            Debug.LogError("[LobbyPanelUI] playerRowPrefab is null");
+            return;
+        }
+
         foreach (Transform child in playerListContainer)
+        {
             Destroy(child.gameObject);
+        }
 
-        if (LobbyNetworkState.Instance == null) return;
-        if (localPlayerNameText != null)
-            localPlayerNameText.text = LocalGameSettings.PlayerName;
+        if (LobbyNetworkState.Instance == null)
+        {
+            Debug.LogError("[LobbyPanelUI] LobbyNetworkState.Instance is null");
+            return;
+        }
+
+        Debug.Log("[LobbyPanelUI] Player count: " + LobbyNetworkState.Instance.Players.Count);
+
         for (int i = 0; i < LobbyNetworkState.Instance.Players.Count; i++)
         {
+            Debug.Log("[LobbyPanelUI] Creating row " + i);
+
             PlayerLobbyData data = LobbyNetworkState.Instance.Players[i];
+
             GameObject row = Instantiate(playerRowPrefab, playerListContainer);
 
-            // 设置英雄图标
             Image heroIcon = row.transform.Find("HeroIcon")?.GetComponent<Image>();
-            if (heroIcon != null)
-            {
-                int heroId = data.HeroId;
-              
-                if (heroId >= 0 && heroId < heroSprites.Length && heroSprites[heroId] != null)
-                    heroIcon.sprite = heroSprites[heroId];
-                else
-                    heroIcon.sprite = notSelectedSprite;
-                
-                if (heroIcon.sprite != null)
-                {
-                    AspectRatioFitter fitter = heroIcon.GetComponent<AspectRatioFitter>();
-                    if (fitter != null)
-                        fitter.aspectRatio = (float)heroIcon.sprite.rect.width / heroIcon.sprite.rect.height;
-                }
-            }
-
-            // 设置名字和英雄状态
             TMP_Text nameText = row.transform.Find("NameText")?.GetComponent<TMP_Text>();
+
             if (nameText != null)
             {
                 string heroName = LobbyNetworkState.Instance.GetHeroDisplayName(data.HeroId);
                 nameText.text = $"{data.PlayerName}  {heroName}";
             }
+            else
+            {
+                Debug.LogWarning("[LobbyPanelUI] NameText missing in PlayerRow prefab.");
+            }
+
+            if (heroIcon != null)
+            {
+                Sprite iconSprite = notSelectedSprite;
+
+                if (data.HeroId >= 0 &&
+                    heroSprites != null &&
+                    data.HeroId < heroSprites.Length &&
+                    heroSprites[data.HeroId] != null)
+                {
+                    iconSprite = heroSprites[data.HeroId];
+                }
+
+                heroIcon.sprite = iconSprite;
+                heroIcon.enabled = iconSprite != null;
+                heroIcon.preserveAspect = true;
+
+                Color c = heroIcon.color;
+                c.a = 1f;
+                heroIcon.color = c;
+
+                Debug.Log($"[LobbyPanelUI] Row {i}: player={data.PlayerName}, heroId={data.HeroId}, icon={(iconSprite != null ? iconSprite.name : "null")}");
+            }
+            else
+            {
+                Debug.LogWarning("[LobbyPanelUI] HeroIcon missing in PlayerRow prefab.");
+            }
         }
+
+        Debug.Log("[LobbyPanelUI] Refresh DONE");
     }
 
     private void Subscribe()
     {
-        if (LobbyNetworkState.Instance == null) return;
+        if (subscribed)
+            return;
+
+        if (LobbyNetworkState.Instance == null)
+            return;
+
         LobbyNetworkState.Instance.Players.OnListChanged += OnPlayersChanged;
         LobbyNetworkState.Instance.OnLobbyMessage += SetMessage;
-        LobbyNetworkState.Instance.OnPlayersReady += Refresh;
+        LobbyNetworkState.Instance.OnPlayersReady += QueueRefresh;
+
+        subscribed = true;
     }
 
     private void Unsubscribe()
     {
-        if (LobbyNetworkState.Instance == null) return;
+        if (!subscribed)
+            return;
+
+        if (LobbyNetworkState.Instance == null)
+        {
+            subscribed = false;
+            return;
+        }
+
         LobbyNetworkState.Instance.Players.OnListChanged -= OnPlayersChanged;
         LobbyNetworkState.Instance.OnLobbyMessage -= SetMessage;
-        LobbyNetworkState.Instance.OnPlayersReady -= Refresh;
+        LobbyNetworkState.Instance.OnPlayersReady -= QueueRefresh;
+
+        subscribed = false;
     }
 
     private void OnPlayersChanged(NetworkListEvent<PlayerLobbyData> changeEvent)
     {
+        QueueRefresh();
+    }
+
+    private void QueueRefresh()
+    {
+        if (!isActiveAndEnabled)
+            return;
+
+        if (refreshQueued)
+            return;
+
+        StartCoroutine(RefreshNextFrame());
+    }
+
+    private IEnumerator RefreshNextFrame()
+    {
+        refreshQueued = true;
+        yield return null;
+        refreshQueued = false;
+
         Refresh();
     }
 
     private void SetMessage(string message)
     {
-        if (messageText != null) messageText.text = message;
+        if (messageText != null)
+            messageText.text = message;
     }
 }

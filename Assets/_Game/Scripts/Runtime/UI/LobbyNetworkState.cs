@@ -117,28 +117,43 @@ public class LobbyNetworkState : NetworkBehaviour
     }
 
     private void RegisterOrUpdatePlayer(ulong clientId, string playerName)
+{
+    Debug.Log("[Lobby] RegisterOrUpdatePlayer START");
+
+    int index = FindPlayerIndex(clientId);
+
+    Debug.Log("[Lobby] FindPlayerIndex done: " + index);
+
+    FixedString64Bytes safeName = new FixedString64Bytes(
+        string.IsNullOrWhiteSpace(playerName) ? "Player" + clientId : playerName.Trim()
+    );
+
+    Debug.Log("[Lobby] safeName created: " + safeName.ToString());
+
+    if (index >= 0)
     {
-        int index = FindPlayerIndex(clientId);
-        FixedString64Bytes safeName = new FixedString64Bytes(
-            string.IsNullOrWhiteSpace(playerName) ? "Player" + clientId : playerName.Trim()
-        );
+        Debug.Log("[Lobby] Updating existing player");
 
-        if (index >= 0)
-        {
-            PlayerLobbyData data = Players[index];
-            data.PlayerName = safeName;
-            Players[index] = data;
-            return;
-        }
+        PlayerLobbyData data = Players[index];
+        data.PlayerName = safeName;
+        Players[index] = data;
 
-        Players.Add(new PlayerLobbyData
-        {
-            ClientId = clientId,
-            PlayerName = safeName,
-            HeroId = -1,
-            CharacterObjectId = ulong.MaxValue
-        });
+        Debug.Log("[Lobby] Updated existing player DONE");
+        return;
     }
+
+    Debug.Log("[Lobby] About to Players.Add");
+
+    Players.Add(new PlayerLobbyData
+    {
+        ClientId = clientId,
+        PlayerName = safeName,
+        HeroId = -1,
+        CharacterObjectId = ulong.MaxValue
+    });
+
+    Debug.Log("[Lobby] Players.Add DONE");
+}
 
     private void OnClientDisconnected(ulong clientId)
     {

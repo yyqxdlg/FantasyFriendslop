@@ -54,7 +54,7 @@ public class GameplayManager : NetworkBehaviour
     public NetworkVariable<int> currentMinInterest = new NetworkVariable<int>(
         0,
         NetworkVariableReadPermission.Everyone,
-        NetworkVariableWritePermission.Owner
+        NetworkVariableWritePermission.Server
     );
 
     public NetworkVariable<int> partyGoldSafe = new NetworkVariable<int>(
@@ -116,8 +116,8 @@ public class GameplayManager : NetworkBehaviour
         Debug.Log(numberOfPlayers);
 
         Debug.Log(minInterest);
-
-		currentMinInterest.Value = minInterest;
+				if (!IsServer) return;
+				currentMinInterest.Value = minInterest;
     }
 
 	// 新增辅助方法：根据关卡和玩家索引取出生点

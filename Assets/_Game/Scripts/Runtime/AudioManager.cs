@@ -44,18 +44,30 @@ public class AudioManager : NetworkBehaviour
 
     // note: if you want to play a sound with uniform sound across the map, make range float.MaxValue
     public void PlaySound(string clipName, Vector2 playPos, float volume, float range)
-	{
+    {
+        if (!IsSpawned)
+        {
+            Debug.LogWarning("AudioManager is not spawned yet. Skipping sound: " + clipName);
+            return;
+        }
+
+        if (NetworkManager.Singleton == null || !NetworkManager.Singleton.IsListening)
+        {
+            Debug.LogWarning("NetworkManager is not listening. Skipping sound: " + clipName);
+            return;
+        }
+
         PlaySoundEveryoneRpc(clipName, playPos, volume, range);
-	}
+    }
 
     public void PlaySound(string clipName, Vector2 playPos, float volume)
     {
-        PlaySoundEveryoneRpc(clipName, playPos, volume, 10);
+        PlaySound(clipName, playPos, volume, 10f);
     }
 
     public void PlaySound(string clipName, Vector2 playPos)
     {
-        PlaySoundEveryoneRpc(clipName, playPos, 1, 10);
+        PlaySound(clipName, playPos, 1f, 10f);
     }
 
     private AudioClip GetSoundClip(string clipName)
@@ -120,36 +132,52 @@ public class AudioManager : NetworkBehaviour
 	*/
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
-	public void PlaySoundEveryoneRpc(string clipName, Vector2 playPos, float volume, float range)
-	{
-        AudioSource source = Instantiate(soundObject, playPos, Quaternion.identity);
-
-        AudioClip clip = GetSoundClip(clipName);
-
-		float distToPlayer = ((Vector2)player.transform.position - playPos).magnitude;
-
-        float playVolume = volume * masterVolume;
-
-        if (range != float.MaxValue)
-        {
-			if(distToPlayer > 0.5)
-			{
-                float distT = 1 - (distToPlayer / range);
-
-                if (distT < 0)
-                {
-                    distT = 0;
-                }
-
-                playVolume = distT * playVolume;
-            } else
-			{
-				playVolume = playVolume * 0.5f;
-			}
-				
-        }
-
-		source.GetComponent<SoundObject>().PlaySound(clip, playVolume, false);
+public void PlaySoundEveryoneRpc(string clipName, Vector2 playPos, float volume, float range)
+{
+    if (soundObject == null)
+    {
+        Debug.LogWarning("AudioManager soundObject is missing.");
+        return;
     }
+
+    AudioClip clip = null;
+
+    foreach (var audioClip in audioClips)
+    {
+        if (audioClip != null && audioClip.name == clipName)
+        {
+            clip = audioClip;
+            break;
+        }
+    }
+
+    if (clip == null)
+    {
+        Debug.LogWarning("No such clip: " + clipName);
+        return;
+    }
+
+    AudioSource source = Instantiate(soundObject, playPos, Quaternion.identity);
+
+    float playVolume = volume * masterVolume;
+
+    if (range != float.MaxValue && player != null)
+    {
+        float distToPlayer = ((Vector2)player.transform.position - playPos).magnitude;
+
+        if (distToPlayer > 0.5f)
+        {
+            float distT = 1 - (distToPlayer / range);
+            if (distT < 0) distT = 0;
+            playVolume = distT * playVolume;
+        }
+        else
+        {
+            playVolume *= 0.5f;
+        }
+    }
+
+    source.GetComponent<SoundObject>().PlaySound(clip, playVolume, false);
+}
 
 }

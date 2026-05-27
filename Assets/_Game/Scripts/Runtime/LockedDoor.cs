@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class LockedDoor : NetworkBehaviour
 {
-
     public NetworkVariable<bool> doorOpen = new NetworkVariable<bool>(
-            false,
-            NetworkVariableReadPermission.Everyone,
-            NetworkVariableWritePermission.Server
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
     );
 
-    public SpriteRenderer lockRenderer;
+    private bool initialized = false;
 
+    public SpriteRenderer lockRenderer;
     public SpriteRenderer closedVis;
     public SpriteRenderer openVis;
 
@@ -25,70 +25,95 @@ public class LockedDoor : NetworkBehaviour
 
         doorOpen.OnValueChanged += OnDoorChange;
 
-        GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStartChange;
+        if (GameplayManager.Instance != null)
+            GameplayManager.Instance.levelStarted.OnValueChanged += OnLevelStartChange;
 
-        OnDoorChange(false, doorOpen.Value);
+        // Apply visual state only during spawn.
+        // Do not play network sound during NetworkObject spawn.
+        ApplyDoorVisual(doorOpen.Value);
+
+        initialized = true;
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        doorOpen.OnValueChanged -= OnDoorChange;
+
+        if (GameplayManager.Instance != null)
+            GameplayManager.Instance.levelStarted.OnValueChanged -= OnLevelStartChange;
+
+        base.OnNetworkDespawn();
     }
 
     private void OnLevelStartChange(bool prev, bool next)
     {
-        if (!next)
-        {
+        if (!IsServer) return;
+
+        if (!next && doorOpen.Value != false)
             doorOpen.Value = false;
-        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!IsServer) { return; }
+        if (!IsServer) return;
+        if (collision.isTrigger) return;
 
-        if (!collision.isTrigger)
+        if (doorOpen.Value) return;
+
+        CharacterBasic player = collision.gameObject.GetComponent<CharacterBasic>();
+
+        if (player != null && player.CheckIfInInventory("DoorKey"))
         {
-            if (!doorOpen.Value)
-            {
-
-                CharacterBasic player = collision.gameObject.GetComponent<CharacterBasic>();
-
-                if (player != null)
-                {
-                    if (player.CheckIfInInventory("DoorKey"))
-                    {
-                        player.RemoveFromInventory("DoorKey");
-                        OpenDoorServerRpc();
-                    }
-
-                }
-            }
+            player.RemoveFromInventory("DoorKey");
+            OpenDoor();
         }
     }
-
 
     [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
     public void OpenDoorServerRpc()
     {
-        doorOpen.Value = true;
+        OpenDoor();
     }
 
-    public void OnDoorChange(bool prev, bool next)
+    private void OpenDoor()
     {
-        lockRenderer.enabled = !next;
-        closedVis.enabled = !next;
+        if (!IsServer) return;
 
-        openVis.enabled = next;
+        if (doorOpen.Value != true)
+            doorOpen.Value = true;
+    }
 
-        if(blocker != null)
-        {
-            blocker.enabled = !next;
-        }
+    private void OnDoorChange(bool prev, bool next)
+    {
+        ApplyDoorVisual(next);
 
-        if(fow != null)
-        {
-            fow.revealed.Value = next;
-        }
+        // Do not play sound during initial network spawn.
+        if (!initialized) return;
 
-        if (IsServer)
+        // Do not play sound if the value did not actually change.
+        if (prev == next) return;
+
+        if (IsServer && AudioManager.Instance != null)
         {
             AudioManager.Instance.PlaySound("door", transform.position);
         }
+    }
+
+    private void ApplyDoorVisual(bool isOpen)
+    {
+        if (lockRenderer != null)
+            lockRenderer.enabled = !isOpen;
+
+        if (closedVis != null)
+            closedVis.enabled = !isOpen;
+
+        if (openVis != null)
+            openVis.enabled = isOpen;
+
+        if (blocker != null)
+            blocker.enabled = !isOpen;
+
+        if (fow != null && IsServer)
+            fow.revealed.Value = isOpen;
     }
 }
